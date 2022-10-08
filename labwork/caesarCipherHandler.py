@@ -9,8 +9,9 @@
     caesar_cipher_handler
 """
 
+# Faster alternative
+"""
 import string
-
 
 # one function for both operation; encrypt == -decrypt
 # this function performs the caesar cipher operation by mapping each character to another alphabet
@@ -34,6 +35,30 @@ def perform_caesar_cipher(text, shift):
     # map each character using the created lookup table
     # any mismatched characters will be mapped using the identity function, noop
     return text.translate(lookup)
+"""
+
+
+# preparation for vigenere; attrib(shift): replace type int with function
+# perform caesar with f(x) -> (-)shift
+# perform vigenere with f(x) -> (-)round_robin_shift()
+def perform_caesar_cipher(text, shift):
+    def shift_char(char):
+        # char is in range a - z
+        if ord('a') <= char <= ord('z'):
+            # 1. reduction of ord(char) into Z26
+            # 2. shifting char
+            # 3. mod 26 to stay in Z26
+            # 4. inflating of char into original space
+            return ((char - ord('a') + shift) % (ord('z') - ord('a') + 1)) + ord('a')
+        # char is in range A - Z
+        elif ord('A') <= char <= ord('Z'):
+            return ((char - ord('A') + shift) % (ord('Z') - ord('A') + 1)) + ord('A')
+        # do not shift char
+        else:
+            return char
+
+    # generate string by joining all shifted chars
+    return "".join(chr(shift_char(ord(char))) for char in text)
 
 
 def caesar_cipher_handler(assignment):
