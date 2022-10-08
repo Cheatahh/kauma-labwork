@@ -1,0 +1,6 @@
+#!/bin/bash
+tar -xvf labwork.tar.gz
+chmod +x labwork/*
+rm labwork.tar.gz
+tar -czvf labwork.tar.gz labwork
+rm -r labwork
