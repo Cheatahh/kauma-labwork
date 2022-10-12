@@ -10,7 +10,7 @@
 """
 
 
-def strcat_handler(assignment):
+def strcat_handler(assignment, session):
     """Handler-function for the 'strcat' type"""
 
     parts = assignment["parts"]

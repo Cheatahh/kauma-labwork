@@ -10,7 +10,7 @@
 """
 
 
-def histogram_handler(assignment):
+def histogram_handler(assignment, session):
     """Handler-function for the 'histogram' type"""
 
     text = assignment["text"]

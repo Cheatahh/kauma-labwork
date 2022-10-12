@@ -12,6 +12,8 @@ import sys
 import requests
 
 # import handler functions
+from mulGF128Handler import mul_gf_128_handler
+from blockCipherHandler import block_cipher_handler
 from passwordKeyspaceHandler import password_keyspace_handler
 from caesarCipherHandler import caesar_cipher_handler
 from histogramHandler import histogram_handler
@@ -22,7 +24,9 @@ handlers = {
     "strcat": strcat_handler,
     "histogram": histogram_handler,
     "caesar_cipher": caesar_cipher_handler,
-    "password_keyspace": password_keyspace_handler
+    "password_keyspace": password_keyspace_handler,
+    "mul_gf2_128": mul_gf_128_handler,
+    "block_cipher": block_cipher_handler
 }
 
 # setup config from system args
@@ -82,7 +86,7 @@ for testcase in assignments["testcases"]:
     try:
         # lookup & run handler for case type
         start = time.process_time()
-        result = handlers[case_type](testcase["assignment"])
+        result = handlers[case_type](testcase["assignment"], session)
         end = time.process_time()
         print("Result:", result, "in", end - start, "seconds")
         total_time[case_type] += end - start
@@ -113,8 +117,8 @@ for testcase in assignments["testcases"]:
         if submit_result["status"] == "pass":
             passed_cases[case_type] += 1
 
-    except KeyError:
-        print("Error: Could not match type", case_type)
+    except KeyError as e:
+        print("Error: Could not match type", case_type, e)
 
 session.close()
 

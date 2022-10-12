@@ -61,7 +61,7 @@ def perform_caesar_cipher(text, shift):
     return "".join(chr(shift_char(ord(char))) for char in text)
 
 
-def caesar_cipher_handler(assignment):
+def caesar_cipher_handler(assignment, session):
     """Handler-function for the 'caesar_cipher' type"""
 
     shift = assignment["letter_shift"]
