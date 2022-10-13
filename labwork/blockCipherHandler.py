@@ -10,7 +10,8 @@
 """
 import base64
 
-from labwork.blockCiphers import block_cipher_ctr, block_cipher_xex, block_cipher_cbc, block_size
+from blockCiphers import block_cipher_ctr, block_cipher_xex, block_cipher_cbc
+from helpers import block_size, bytes2int
 
 
 def block_cipher_handler(assignment, api):
@@ -32,22 +33,22 @@ def block_cipher_handler(assignment, api):
     ]
 
     # match encryption/decryption mode
-    match mode:
-        case "cbc":
-            # extract specific config values (iv)
-            iv = base64.b64decode(assignment["iv"])
-            iv = int.from_bytes(iv, byteorder="little")
-            blocks = block_cipher_cbc(blocks, key, iv, api, encrypt)
-        case "ctr":
-            # extract specific config values (nonce)
-            nonce = base64.b64decode(assignment["nonce"])
-            blocks = block_cipher_ctr(blocks, key, nonce, api)
-        case "xex":
-            # extract specific config values (tweak)
-            tweak = base64.b64decode(assignment["tweak"])
-            blocks = block_cipher_xex(blocks, key, tweak, api, encrypt)
-        case unknown:
-            raise ValueError("Unknown operation mode '" + unknown + "'")
+    # container does not run python 3.10 (match statement)? -> changed to chained if/else
+    if mode == "cbc":
+        # extract specific config values (iv)
+        iv = base64.b64decode(assignment["iv"])
+        iv = bytes2int(iv)
+        blocks = block_cipher_cbc(blocks, key, iv, api, encrypt)
+    elif mode == "ctr":
+        # extract specific config values (nonce)
+        nonce = base64.b64decode(assignment["nonce"])
+        blocks = block_cipher_ctr(blocks, key, nonce, api)
+    elif mode == "xex":
+        # extract specific config values (tweak)
+        tweak = base64.b64decode(assignment["tweak"])
+        blocks = block_cipher_xex(blocks, key, tweak, api, encrypt)
+    else:
+        raise ValueError("Unknown operation mode '" + mode + "'")
 
     # encode encrypted/decrypted text for submission
     return {

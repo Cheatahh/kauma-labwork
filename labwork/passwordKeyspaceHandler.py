@@ -88,28 +88,28 @@ def password_keyspace_handler(assignment, _):
     """
 
     def filter_by_restriction(values, res):
-        match res:
-            case "at_least_one_special_char":
-                # if any char is a special char -> pass filter
-                return filter(lambda value: any(char in special_chars for char in value), values)
-            case "at_least_one_uppercase_char":
-                # if any char is uppercase -> pass filter
-                return filter(lambda value: any(char.isupper() for char in value), values)
-            case "at_least_one_lowercase_char":
-                # if any char is lowercase -> pass filter
-                return filter(lambda value: any(char.islower() for char in value), values)
-            case "at_least_one_digit":
-                # if any char a digit -> pass filter
-                return filter(lambda value: any(char.isdigit() for char in value), values)
-            case "no_consecutive_same_char":
-                # iterate over each index (except last char, 0 <= index < length - 1)
-                # compare current char and next char
-                # if there are [not any] = [none] consecutive chars -> pass filter
-                return filter(lambda value: not any(char == value[index + 1] for index, char in enumerate(value[:-1])),
-                              values)
-            case "special_char_not_last_place":
-                # if last char is not a special char -> pass filter
-                return filter(lambda value: value[-1] not in special_chars, values)
+        # container does not run python 3.10 (match statement)? -> changed to chained if/else
+        if res == "at_least_one_special_char":
+            # if any char is a special char -> pass filter
+            return filter(lambda value: any(char in special_chars for char in value), values)
+        elif res == "at_least_one_uppercase_char":
+            # if any char is uppercase -> pass filter
+            return filter(lambda value: any(char.isupper() for char in value), values)
+        elif res == "at_least_one_lowercase_char":
+            # if any char is lowercase -> pass filter
+            return filter(lambda value: any(char.islower() for char in value), values)
+        elif res == "at_least_one_digit":
+            # if any char a digit -> pass filter
+            return filter(lambda value: any(char.isdigit() for char in value), values)
+        elif res == "no_consecutive_same_char":
+            # iterate over each index (except last char, 0 <= index < length - 1)
+            # compare current char and next char
+            # if there are [not any] = [none] consecutive chars -> pass filter
+            return filter(lambda value: not any(char == value[index + 1] for index, char in enumerate(value[:-1])),
+                          values)
+        elif res == "special_char_not_last_place":
+            # if last char is not a special char -> pass filter
+            return filter(lambda value: value[-1] not in special_chars, values)
 
     # second approach, filter possibilities with restrictions
     # seems to be ~30% faster, memory usage stays the same

@@ -11,7 +11,7 @@
 import base64
 
 
-from labwork.blockCiphers import bytes2int, int2bytes
+from helpers import bytes2int, int2bytes
 
 
 # multiply value by alpha
@@ -59,4 +59,3 @@ def mul_gf_128_handler(assignment, _):
     return {
         "block_times_alpha": block
     }
-

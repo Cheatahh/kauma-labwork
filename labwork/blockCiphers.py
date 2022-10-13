@@ -6,8 +6,6 @@
 
     Functions:
 
-    int2bytes
-    bytes2int
     block_cipher_cbc_encrypt
     block_cipher_cbc_decrypt
     block_cipher_cbc
@@ -16,21 +14,8 @@
 """
 import base64
 
-from labwork.mulGF128Handler import mul_gf_128
-
-block_size = 16
-
-
-# helper function to convert an integer to a bytes block (length 16)
-def int2bytes(value):
-    # fixed byteorder="little", as python (usually) uses the system-default endian
-    return value.to_bytes(byteorder="little", length=block_size)
-
-
-# helper function to convert a bytes block to an integer
-def bytes2int(value):
-    # fixed byteorder="little", as python (usually) uses the system-default endian
-    return int.from_bytes(value, byteorder="little")
+from helpers import bytes2int, int2bytes
+from mulGF128Handler import mul_gf_128
 
 
 # helper function to perform oracle queries
