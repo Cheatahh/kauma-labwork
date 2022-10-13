@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [[ "$#" -ne 1 ]]; then
+    echo "Usage: <client-id>" >&2
+    exit 1
+fi
+
+# repack tar & make executable
+tar -xvf labwork.tar.gz >/dev/null
+chmod +x labwork/*
+rm labwork.tar.gz
+tar -czvf labwork.tar.gz labwork >/dev/null
+rm -r labwork
+
+# test for all labs
+labs=("labwork01" "labwork02")
+for lab in "${labs[@]}"; do
+    ./labwork-execute "https://dhbw.johannes-bauer.com/lwsub" "$1" "$lab" #--debug
+done

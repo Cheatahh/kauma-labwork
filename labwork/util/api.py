@@ -13,13 +13,14 @@ import sys
 import requests
 
 # setup config from system args
-if len(sys.argv) != 4:
-    print("Usage: <endpoint> <client-id> <assignment>")
+if not 4 <= len(sys.argv) <= 5:
+    print("Usage: <endpoint> <client-id> <assignment> <optional --debug>")
     exit(1)
 
 endpoint = sys.argv[1]
 client_id = sys.argv[2]
 labwork = sys.argv[3]
+debug = sys.argv[4] == "--debug" if len(sys.argv) == 5 else False
 
 # http content headers
 request_headers = {
@@ -28,10 +29,11 @@ request_headers = {
 }
 
 # print config
-print("------ CONFIG ------")
-print("Endpoint:", endpoint)
-print("Client ID:", client_id)
-print("Assignment Name:", labwork)
+if debug:
+    print("------ CONFIG ------")
+    print("Endpoint:", endpoint)
+    print("Client ID:", client_id)
+    print("Assignment Name:", labwork)
 
 
 # try-with-resources wrapper for session

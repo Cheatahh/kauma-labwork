@@ -8,14 +8,14 @@
 import json
 import time
 
-from api import API
+from util.api import API, debug, labwork
 # import handler functions
-from blockCipherHandler import block_cipher_handler
-from caesarCipherHandler import caesar_cipher_handler
-from histogramHandler import histogram_handler
-from mulGF128Handler import mul_gf_128_handler
-from passwordKeyspaceHandler import password_keyspace_handler
-from strcatHandler import strcat_handler
+from handlers.blockCipherHandler import block_cipher_handler
+from handlers.caesarCipherHandler import caesar_cipher_handler
+from handlers.histogramHandler import histogram_handler
+from handlers.mulGF128Handler import mul_gf_128_handler
+from handlers.passwordKeyspaceHandler import password_keyspace_handler
+from handlers.strcatHandler import strcat_handler
 
 # handler lookup
 handlers = {
@@ -32,8 +32,9 @@ with API() as api:
     # get assigment
     assignments = api.get_assignments()
 
-    print("Assignment Header:", json.dumps(dict(filter(
-        lambda pack: pack[0] != "testcases", assignments.items())), indent=2))
+    if debug:
+        print("Assignment Header:", json.dumps(dict(filter(
+            lambda pack: pack[0] != "testcases", assignments.items())), indent=2))
 
     # setup diagnostics
     total_time = {}
@@ -49,8 +50,9 @@ with API() as api:
 
         # get case type
         case_type = testcase["type"]
-        print("------ NEW CASE ------")
-        print("Case:", json.dumps(testcase, indent=2))
+        if debug:
+            print("------ NEW CASE ------")
+            print("Case:", json.dumps(testcase, indent=2))
 
         # diagnostics (cases)
         if case_type in total_cases:
@@ -65,7 +67,8 @@ with API() as api:
             start = time.process_time()
             result = handlers[case_type](testcase["assignment"], api)
             end = time.process_time()
-            print("Result:", result, "in", end - start, "seconds")
+            if debug:
+                print("Result:", result, "in", end - start, "seconds")
             total_time[case_type] += end - start
 
             # local test for expected solutions
@@ -79,14 +82,16 @@ with API() as api:
                     passed_sample_solutions[case_type] = 0
 
                 match = result == testcase["expect_solution"]
-                print("Matches expectation (local):", match)
+                if debug:
+                    print("Matches expectation (local):", match)
 
                 if match:
                     passed_sample_solutions[case_type] += 1
 
             # submit result
             submit_result = api.post_submission(testcase["tcid"], result)
-            print("Submit Result:", submit_result)
+            if debug:
+                print("Submit Result:", submit_result)
 
             if submit_result["status"] == "pass":
                 passed_cases[case_type] += 1
@@ -101,7 +106,7 @@ with API() as api:
             print("Error:", err)
 
 # print diagnostics conclusion
-print("------ CONCLUSION ------")
+print("------ CONCLUSION", labwork, "------")
 
 print("Total sample solutions:", sum(total_sample_solutions.values()))
 print("Passed sample solutions:")
@@ -121,3 +126,6 @@ for case_type, passes in passed_cases.items():
         percent=float(passes) / float(total_cases[case_type]),
         seconds=total_time[case_type]
     ))
+
+if sum(total_cases.values()) == sum(passed_cases.values()):
+    print("PASSED in", sum(total_time.values()), "seconds")

@@ -10,8 +10,8 @@
 """
 import base64
 
-from blockCiphers import block_cipher_ctr, block_cipher_xex, block_cipher_cbc
-from helpers import block_size, bytes2int
+from util.blockCiphers import block_cipher_ctr, block_cipher_xex, block_cipher_cbc
+from util.helpers import block_size, bytes2int
 
 
 def block_cipher_handler(assignment, api):

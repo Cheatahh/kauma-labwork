@@ -11,7 +11,7 @@
 import base64
 
 
-from helpers import bytes2int, int2bytes
+from util.helpers import bytes2int, int2bytes
 
 
 # multiply value by alpha

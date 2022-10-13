@@ -14,8 +14,8 @@
 """
 import base64
 
-from helpers import bytes2int, int2bytes
-from mulGF128Handler import mul_gf_128
+from util.helpers import bytes2int, int2bytes
+from handlers.mulGF128Handler import mul_gf_128
 
 
 # helper function to perform oracle queries
