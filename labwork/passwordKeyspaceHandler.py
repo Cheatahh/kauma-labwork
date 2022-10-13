@@ -1,5 +1,5 @@
 """
-    This file is a handler module for response program (T3INF9004: Kryptoanalyse und Methoden-Audit).
+    This file is a handler module for response program (T3INF9004: Cryptanalyses und Method-Audit).
 
     License: CC-0
     Authors: DHBW Students 200374 & 200357 (2022)
@@ -14,10 +14,8 @@ from string import ascii_lowercase, ascii_uppercase, digits
 
 
 # This function contains multiple approaches to solve this problem, see comments for detail
-def password_keyspace_handler(assignment, session):
+def password_keyspace_handler(assignment, _):
     """Handler-function for the 'password_keyspace' type."""
-
-    return 0
 
     # shortcut and safety
     length = assignment["length"]
@@ -27,7 +25,7 @@ def password_keyspace_handler(assignment, session):
     # extract special chars from alphabet, do not have to rely on presets
     special_chars = "".join({*assignment["alphabet"]} - {*(ascii_lowercase + ascii_uppercase + digits)})
 
-    # generate all possible strings of length 'length' by
+    # generate all possible strings (permutations) of length 'length' by
     possibilities = ["".join(item) for item in product(assignment["alphabet"], repeat=length)]
 
     # test if a possible value is failing a given restriction

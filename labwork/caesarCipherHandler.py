@@ -1,5 +1,5 @@
 """
-    This file is a handler module for response program (T3INF9004: Kryptoanalyse und Methoden-Audit).
+    This file is a handler module for response program (T3INF9004: Cryptanalyses und Method-Audit).
 
     License: CC-0
     Authors: DHBW Students 200374 & 200357 (2022)
@@ -15,7 +15,7 @@ import string
 
 # one function for both operation; encrypt == -decrypt
 # this function performs the caesar cipher operation by mapping each character to another alphabet
-def perform_caesar_cipher(text, shift):
+def caesar_cipher(text, shift):
 
     # get the ascii lowercase alphabet
     lowercase_chars = string.ascii_lowercase
@@ -41,7 +41,7 @@ def perform_caesar_cipher(text, shift):
 # preparation for vigenere; attrib(shift): replace type int with function
 # perform caesar with f(x) -> (-)shift
 # perform vigenere with f(x) -> (-)round_robin_shift()
-def perform_caesar_cipher(text, shift):
+def caesar_cipher(text, shift):
     def shift_char(char):
         # char is in range a - z
         if ord('a') <= char <= ord('z'):
@@ -61,13 +61,13 @@ def perform_caesar_cipher(text, shift):
     return "".join(chr(shift_char(ord(char))) for char in text)
 
 
-def caesar_cipher_handler(assignment, session):
+def caesar_cipher_handler(assignment, _):
     """Handler-function for the 'caesar_cipher' type"""
 
     shift = assignment["letter_shift"]
     if assignment["action"] == "encrypt":
         # encrypt operation, shift is positive
-        return perform_caesar_cipher(assignment["plaintext"], shift)
+        return caesar_cipher(assignment["plaintext"], shift)
     else:
         # decrypt operation, shift is negative
-        return perform_caesar_cipher(assignment["ciphertext"], -shift)
+        return caesar_cipher(assignment["ciphertext"], -shift)

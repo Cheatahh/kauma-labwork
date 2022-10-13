@@ -1,5 +1,5 @@
 """
-    This file is a handler module for response program (T3INF9004: Kryptoanalyse und Methoden-Audit).
+    This file is a handler module for response program (T3INF9004: Cryptanalyses und Method-Audit).
 
     License: CC-0
     Authors: DHBW Students 200374 & 200357 (2022)
@@ -10,7 +10,7 @@
 """
 
 
-def histogram_handler(assignment, session):
+def histogram_handler(assignment, _):
     """Handler-function for the 'histogram' type"""
 
     text = assignment["text"]

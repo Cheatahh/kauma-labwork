@@ -1,22 +1,20 @@
 """
-    Response program for the exercise in T3INF9004: Kryptoanalyse und Methoden-Audit.
+    Response program for the exercise in T3INF9004: Cryptanalyses und Method-Audit.
 
     License: CC-0
     Authors: DHBW Students 200374 & 200357 (2022)
 """
 
-import time
 import json
-import sys
+import time
 
-import requests
-
+from api import API
 # import handler functions
-from mulGF128Handler import mul_gf_128_handler
 from blockCipherHandler import block_cipher_handler
-from passwordKeyspaceHandler import password_keyspace_handler
 from caesarCipherHandler import caesar_cipher_handler
 from histogramHandler import histogram_handler
+from mulGF128Handler import mul_gf_128_handler
+from passwordKeyspaceHandler import password_keyspace_handler
 from strcatHandler import strcat_handler
 
 # handler lookup
@@ -29,98 +27,78 @@ handlers = {
     "block_cipher": block_cipher_handler
 }
 
-# setup config from system args
-if len(sys.argv) != 4:
-    print("Usage: <endpoint> <client-id> <assignment>")
-    exit(1)
+with API() as api:
 
-endpoint = sys.argv[1]
-client_id = sys.argv[2]
-labwork = sys.argv[3]
+    # get assigment
+    assignments = api.get_assignments()
 
-request_headers = {"Accept": "application/json", "Content-Type": "application/json"}
+    print("Assignment Header:", json.dumps(dict(filter(
+        lambda pack: pack[0] != "testcases", assignments.items())), indent=2))
 
-# print config
-print("------ CONFIG ------")
-print("Endpoint:", endpoint)
-print("Client ID:", client_id)
-print("Assignment Name:", labwork)
+    # setup diagnostics
+    total_time = {}
 
-# session setup
-session = requests.Session()
+    total_sample_solutions = {}
+    passed_sample_solutions = {}
 
-# get assigment
-assignments_response = session.get(endpoint + "/assignment/" + client_id + "/" + labwork,
-                                   headers=request_headers)
-assert assignments_response.status_code == 200
-assignments = assignments_response.json()
+    total_cases = {}
+    passed_cases = {}
 
-print("Assignment Header:", json.dumps(dict(filter(
-    lambda pack: pack[0] != "testcases", assignments.items())), indent=2))
+    # process cases
+    for testcase in assignments["testcases"]:
 
-# setup diagnostics
-total_time = {}
+        # get case type
+        case_type = testcase["type"]
+        print("------ NEW CASE ------")
+        print("Case:", json.dumps(testcase, indent=2))
 
-total_sample_solutions = {}
-passed_sample_solutions = {}
+        # diagnostics (cases)
+        if case_type in total_cases:
+            total_cases[case_type] += 1
+        else:
+            total_cases[case_type] = 1
+            passed_cases[case_type] = 0
+            total_time[case_type] = 0
 
-total_cases = {}
-passed_cases = {}
+        try:
+            # lookup & run handler for case type
+            start = time.process_time()
+            result = handlers[case_type](testcase["assignment"], api)
+            end = time.process_time()
+            print("Result:", result, "in", end - start, "seconds")
+            total_time[case_type] += end - start
 
-# process cases
-for testcase in assignments["testcases"]:
+            # local test for expected solutions
+            if "expect_solution" in testcase:
 
-    # get case type
-    case_type = testcase["type"]
-    print("------ NEW CASE ------")
-    print("Case:", json.dumps(testcase, indent=2))
+                # diagnostics (testcases)
+                if case_type in total_sample_solutions:
+                    total_sample_solutions[case_type] += 1
+                else:
+                    total_sample_solutions[case_type] = 1
+                    passed_sample_solutions[case_type] = 0
 
-    # diagnostics (cases)
-    if case_type in total_cases:
-        total_cases[case_type] += 1
-    else:
-        total_cases[case_type] = 1
-        passed_cases[case_type] = 0
-        total_time[case_type] = 0
+                match = result == testcase["expect_solution"]
+                print("Matches expectation (local):", match)
 
-    try:
-        # lookup & run handler for case type
-        start = time.process_time()
-        result = handlers[case_type](testcase["assignment"], session)
-        end = time.process_time()
-        print("Result:", result, "in", end - start, "seconds")
-        total_time[case_type] += end - start
+                if match:
+                    passed_sample_solutions[case_type] += 1
 
-        # local test for expected solutions
-        if "expect_solution" in testcase:
+            # submit result
+            submit_result = api.post_submission(testcase["tcid"], result)
+            print("Submit Result:", submit_result)
 
-            # diagnostics (testcases)
-            if case_type in total_sample_solutions:
-                total_sample_solutions[case_type] += 1
-            else:
-                total_sample_solutions[case_type] = 1
-                passed_sample_solutions[case_type] = 0
+            if submit_result["status"] == "pass":
+                passed_cases[case_type] += 1
 
-            match = result == testcase["expect_solution"]
-            print("Matches expectation (local):", match)
+        except KeyError:
+            print("Error: Could not match type", case_type)
 
-            if match:
-                passed_sample_solutions[case_type] += 1
+        except ValueError as err:
+            print("Error:", err)
 
-        # submit result
-        submit_result_response = session.post(endpoint + "/submission/" + testcase["tcid"],
-                                              headers=request_headers, json=result)
-        assert submit_result_response.status_code == 200
-        submit_result = submit_result_response.json()
-        print("Submit Result:", submit_result)
-
-        if submit_result["status"] == "pass":
-            passed_cases[case_type] += 1
-
-    except KeyError as e:
-        print("Error: Could not match type", case_type, e)
-
-session.close()
+        except AssertionError as err:
+            print("Error:", err)
 
 # print diagnostics conclusion
 print("------ CONCLUSION ------")
