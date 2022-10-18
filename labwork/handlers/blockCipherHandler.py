@@ -3,6 +3,7 @@
 
     License: CC-0
     Authors: DHBW Students 200374 & 200357 (2022)
+    Component: Labwork02
 
     Functions:
 
@@ -11,7 +12,7 @@
 import base64
 
 from util.blockCiphers import block_cipher_ctr, block_cipher_xex, block_cipher_cbc
-from util.helpers import block_size, bytes2int
+from util.converters import bytes2int, split_blocks
 
 
 def block_cipher_handler(assignment, api):
@@ -24,13 +25,8 @@ def block_cipher_handler(assignment, api):
 
     # extract text based on operation mode
     text = base64.b64decode(assignment["plaintext" if encrypt else "ciphertext"])
-    # checks
-    assert len(text) % block_size == 0, "Text size must be a multiple of " + block_size
     # split text into byte blocks
-    blocks = [
-        text[(block_size * index):(block_size * (index + 1))]
-        for index in range(int(len(text) / block_size))
-    ]
+    blocks = split_blocks(text)
 
     # match encryption/decryption mode
     # container does not run python 3.10 (match statement)? -> changed to chained if/else

@@ -3,6 +3,7 @@
 
     License: CC-0
     Authors: DHBW Students 200374 & 200357 (2022)
+    Component: Labwork02
 
     Functions:
 
@@ -11,7 +12,7 @@
 import base64
 
 
-from util.helpers import bytes2int, int2bytes
+from util.converters import bytes2int, int2bytes
 
 
 # multiply value by alpha

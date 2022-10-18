@@ -14,13 +14,13 @@ import requests
 
 # setup config from system args
 if not 4 <= len(sys.argv) <= 5:
-    print("Usage: <endpoint> <client-id> <assignment> <optional --debug>")
+    print("Usage: <endpoint> <client-id> <assignment> <optional --no-debug>")
     exit(1)
 
 endpoint = sys.argv[1]
 client_id = sys.argv[2]
 labwork = sys.argv[3]
-debug = sys.argv[4] == "--debug" if len(sys.argv) == 5 else False
+debug = sys.argv[4] != "--no-debug" if len(sys.argv) == 5 else True
 
 # http content headers
 request_headers = {
@@ -48,7 +48,7 @@ class API:
                 endpoint + "/assignment/" + client_id + "/" + labwork,
                 headers=request_headers
         ) as response:
-            assert response.status_code == 200
+            assert response.status_code == 200, response.text
             return response.json()
 
     def post_submission(self, case_id, body):
@@ -56,7 +56,7 @@ class API:
                 endpoint + "/submission/" + case_id,
                 headers=request_headers, json=body
         ) as response:
-            assert response.status_code == 200
+            assert response.status_code == 200, response.text
             return response.json()
 
     def query_oracle(self, case_type, body):
@@ -64,7 +64,7 @@ class API:
                 endpoint + "/oracle/" + case_type,
                 headers=request_headers, json=body
         ) as response:
-            assert response.status_code == 200
+            assert response.status_code == 200, response.text
             return response.json()
 
     def __enter__(self):

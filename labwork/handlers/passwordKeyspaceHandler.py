@@ -3,6 +3,7 @@
 
     License: CC-0
     Authors: DHBW Students 200374 & 200357 (2022)
+    Component: Labwork02
 
     Functions:
 

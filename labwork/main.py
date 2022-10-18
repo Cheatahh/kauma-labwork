@@ -8,14 +8,16 @@
 import json
 import time
 
-from util.api import API, debug, labwork
 # import handler functions
 from handlers.blockCipherHandler import block_cipher_handler
 from handlers.caesarCipherHandler import caesar_cipher_handler
 from handlers.histogramHandler import histogram_handler
 from handlers.mulGF128Handler import mul_gf_128_handler
 from handlers.passwordKeyspaceHandler import password_keyspace_handler
+from handlers.pkcs7paddingHandler import pkcs7_padding_handler
 from handlers.strcatHandler import strcat_handler
+from util.api import API, debug, labwork
+from util.progressBar import ProgressBar
 
 # handler lookup
 handlers = {
@@ -24,108 +26,76 @@ handlers = {
     "caesar_cipher": caesar_cipher_handler,
     "password_keyspace": password_keyspace_handler,
     "mul_gf2_128": mul_gf_128_handler,
-    "block_cipher": block_cipher_handler
+    "block_cipher": block_cipher_handler,
+    "pkcs7_padding": pkcs7_padding_handler
 }
 
 with API() as api:
 
     # get assigment
     assignments = api.get_assignments()
+    testcases = assignments["testcases"]
 
     if debug:
         print("Assignment Header:", json.dumps(dict(filter(
-            lambda pack: pack[0] != "testcases", assignments.items())), indent=2))
+            lambda key: key[0] != "testcases", assignments.items())), indent=2))
 
-    # setup diagnostics
-    total_time = {}
+    # group testcases by type
+    testcases = {case_type: [
+        *filter(lambda _case: _case["type"] == case_type, testcases)] for case_type in
+        {testcase["type"] for testcase in testcases}
+    }
+    max_type_chars = max(len(case_type) for case_type in testcases)
 
-    total_sample_solutions = {}
-    passed_sample_solutions = {}
+    results = []
+    # process each case type
+    for case_type, cases in testcases.items():
 
-    total_cases = {}
-    passed_cases = {}
+        # setup diagnostics & processbar
+        progress = ProgressBar(case_type, max_type_chars - len(case_type), len(cases))
+        total_time = 0
 
-    # process cases
-    for testcase in assignments["testcases"]:
+        # process each case
+        for case in cases:
 
-        # get case type
-        case_type = testcase["type"]
-        if debug:
-            print("------ NEW CASE ------")
-            print("Case:", json.dumps(testcase, indent=2))
+            result = None
+            submit_response = None
 
-        # diagnostics (cases)
-        if case_type in total_cases:
-            total_cases[case_type] += 1
-        else:
-            total_cases[case_type] = 1
-            passed_cases[case_type] = 0
-            total_time[case_type] = 0
+            start = time.time()
+            try:
+                # lookup & run handler for case type
+                result = handlers[case_type](case["assignment"], api)
+                submit_response = api.post_submission(case["tcid"], result)
+            except Exception as err:
+                result = err
+            end = time.time()
 
-        try:
-            # lookup & run handler for case type
-            start = time.process_time()
-            result = handlers[case_type](testcase["assignment"], api)
-            end = time.process_time()
-            if debug:
-                print("Result:", result, "in", end - start, "seconds")
-            total_time[case_type] += end - start
+            # create log message
+            logMessage = "------ NEW CASE ------\nCase: %s\n%s\n" % (
+                json.dumps(case, indent=2),
+                "Result: %s\nTime: %s seconds\nResponse: %s" % (result, end - start, submit_response)
+                if not isinstance(result, Exception) else "Error: %s" % result
+            ) if debug else ""
+            passed = submit_response["status"] == "pass" if submit_response is not None else False
 
-            # local test for expected solutions
-            if "expect_solution" in testcase:
+            # update processbar
+            progress.step(logMessage, passed)
+            total_time += end - start
 
-                # diagnostics (testcases)
-                if case_type in total_sample_solutions:
-                    total_sample_solutions[case_type] += 1
-                else:
-                    total_sample_solutions[case_type] = 1
-                    passed_sample_solutions[case_type] = 0
+        progress.finish()
 
-                match = result == testcase["expect_solution"]
-                if debug:
-                    print("Matches expectation (local):", match)
+        # add case results
+        results.append((case_type, progress.passed, progress.total, total_time))
 
-                if match:
-                    passed_sample_solutions[case_type] += 1
+# print debug info
+if debug:
+    print("------ CONCLUSION", labwork, "------")
+    total_cases = sum(total for _, _, total, _ in results)
+    passed_cases = sum(passed for _, passed, _, _ in results)
+    print("Total Cases:", total_cases)
+    print("Passed Cases:", passed_cases)
+    for case_type, passed, total, total_time in results:
+        print("\t'%s': %d/%d in %f seconds" % (case_type, passed, total, total_time))
 
-            # submit result
-            submit_result = api.post_submission(testcase["tcid"], result)
-            if debug:
-                print("Submit Result:", submit_result)
-
-            if submit_result["status"] == "pass":
-                passed_cases[case_type] += 1
-
-        except KeyError:
-            print("Error: Could not match type", case_type)
-
-        except ValueError as err:
-            print("Error:", err)
-
-        except AssertionError as err:
-            print("Error:", err)
-
-# print diagnostics conclusion
-print("------ CONCLUSION", labwork, "------")
-
-print("Total sample solutions:", sum(total_sample_solutions.values()))
-print("Passed sample solutions:")
-for case_type, passes in passed_sample_solutions.items():
-    # pretty print
-    print("\t'{case_type}' {passes} of {total} [{percent:.0%}]".format(
-        case_type=case_type, passes=passes, total=total_sample_solutions[case_type],
-        percent=float(passes) / float(total_sample_solutions[case_type]))
-    )
-
-print("Total cases:", sum(total_cases.values()))
-print("Passed cases:")
-for case_type, passes in passed_cases.items():
-    # pretty print
-    print("\t'{case_type}' {passes} of {total} [{percent:.0%}] in {seconds} seconds".format(
-        case_type=case_type, passes=passes, total=total_cases[case_type],
-        percent=float(passes) / float(total_cases[case_type]),
-        seconds=total_time[case_type]
-    ))
-
-if sum(total_cases.values()) == sum(passed_cases.values()):
-    print("PASSED in", sum(total_time.values()), "seconds")
+    print("%s in %f seconds" % ("PASSED" if total_cases == passed_cases else "FAILED",
+                                sum(total_time for _, _, _, total_time in results)))

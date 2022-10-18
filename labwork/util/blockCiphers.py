@@ -14,7 +14,7 @@
 """
 import base64
 
-from util.helpers import bytes2int, int2bytes
+from util.converters import bytes2int, int2bytes, block_size
 from handlers.mulGF128Handler import mul_gf_128
 
 
@@ -100,12 +100,12 @@ def block_cipher_ctr(blocks, key, nonce, api):
 def block_cipher_xex(blocks, key, tweak, api, encrypt):
 
     # extract lower 16 bytes from key
-    key1 = base64.b64decode(key)[:16]
+    key1 = base64.b64decode(key)[:block_size]
     # encode it ready for oracle query
     key1 = base64.b64encode(key1).decode("utf-8")
 
     # extract upper 16 bytes from key
-    key2 = base64.b64decode(key)[16:]
+    key2 = base64.b64decode(key)[block_size:]
     # encode it ready for oracle query
     key2 = base64.b64encode(key2).decode("utf-8")
 
