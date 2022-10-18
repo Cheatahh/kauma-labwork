@@ -27,10 +27,10 @@ class ProgressBar:
 
     # clear previous line and print progress bar
     def update(self, insert=""):
-        currentProgress = int(self.charsPerStep * self.current)
+        current_progress = int(self.charsPerStep * self.current)
         result = "\r%s'%s'%s[%s%s%s] %d/%d (%d%%) | %s" % (
-            insert, self.name, " " * self.indent, "=" * (currentProgress - 1),
-            ">" if 0 < currentProgress else "", " " * (20 - currentProgress),
+            insert, self.name, " " * self.indent, "=" * (current_progress - 1),
+            ">" if 0 < current_progress else "", " " * (20 - current_progress),
             self.current, self.total, self.current / self.total * 100,
             "Passed %d/%d (%d%%)" % (self.passed, self.total, self.passed / self.total * 100)
             if self.passed < self.total else "PASSED             "
