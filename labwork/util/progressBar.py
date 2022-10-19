@@ -10,33 +10,42 @@
 """
 
 import sys
+import shutil
 
 
 # ProgressBar for pretty printing
 class ProgressBar:
 
     # constructor
-    def __init__(self, name, indent, total):
+    def __init__(self, name, indent, total, verbosityLevel):
         self.name = name
         self.indent = indent + 1
         self.total = total
         self.current = 0
         self.passed = 0
+        self.progressTextCache = ""
         self.charsPerStep = 20.0 / total
+        self.verbosityLevel = verbosityLevel
         self.update()
 
     # clear previous line and print progress bar
-    def update(self, insert=""):
-        current_progress = int(self.charsPerStep * self.current)
-        result = "\r%s'%s'%s[%s%s%s] %d/%d (%d%%) | %s" % (
-            insert, self.name, " " * self.indent, "=" * (current_progress - 1),
-            ">" if 0 < current_progress else "", " " * (20 - current_progress),
-            self.current, self.total, self.current / self.total * 100,
-            "Passed %d/%d (%d%%)" % (self.passed, self.total, self.passed / self.total * 100)
-            if self.passed < self.total else "PASSED             "
-        )
-        sys.stdout.write(result)
-        sys.stdout.flush()
+    def update(self, insert="", requiredVerbosity=-1):
+        if requiredVerbosity <= self.verbosityLevel:
+            current_progress = int(self.charsPerStep * self.current)
+            result = "\r%s'%s'%s[%s%s%s] %d/%d (%d%%) | %s" % (
+                insert, self.name, " " * self.indent, "=" * (current_progress - 1),
+                ">" if 0 < current_progress else "", " " * (20 - current_progress),
+                self.current, self.total, self.current / self.total * 100,
+                "Passed %d/%d (%d%%)" % (self.passed, self.total, self.passed / self.total * 100)
+                if self.passed < self.total else "PASSED             "
+            )
+
+            # clear terminal line for the linux users
+            sys.stdout.write("\r" + " " * shutil.get_terminal_size().columns)
+
+            # print progress bar
+            sys.stdout.write(result)
+            sys.stdout.flush()
 
     # increment progress bar
     def step(self, insert, passed):

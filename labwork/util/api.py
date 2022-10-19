@@ -8,19 +8,28 @@
 
     API
 """
+import argparse
 import sys
 
 import requests
 
 # setup config from system args
-if not 4 <= len(sys.argv) <= 5:
-    print("Usage: <endpoint> <client-id> <assignment> <optional --no-debug>")
-    exit(1)
+parser = argparse.ArgumentParser(description="Response program (T3INF9004: Cryptanalyses und Method-Audit)\nAuthors: "
+                                             "DHBW Students 200374 & 200357 (2022)")
+parser.add_argument(dest="endpoint", action="store", type=str,
+                    help="labwork endpoint, for example https://example.com/endpoint")
+parser.add_argument(dest="client_id", action="store", type=str,
+                    help="client UUID, for example 'cafebabe-0000-0000-0000-000000000000'")
+parser.add_argument(dest="labwork", action="store", type=str,
+                    help="labwork name, for example 'labwork01'")
+parser.add_argument("-v", "--verbose", dest="verbosity", action="count", default=0,
+                    help="increase verbosity (up to 3 times)")
+args = parser.parse_args(sys.argv[1:])
 
-endpoint = sys.argv[1]
-client_id = sys.argv[2]
-labwork = sys.argv[3]
-debug = sys.argv[4] != "--no-debug" if len(sys.argv) == 5 else True
+endpoint = args.endpoint
+client_id = args.client_id
+labwork = args.labwork
+verbosity = args.verbosity
 
 # http content headers
 request_headers = {
@@ -29,7 +38,7 @@ request_headers = {
 }
 
 # print config
-if debug:
+if verbosity > 0:
     print("------ CONFIG ------")
     print("Endpoint:", endpoint)
     print("Client ID:", client_id)

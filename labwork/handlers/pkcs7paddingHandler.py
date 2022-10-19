@@ -15,7 +15,7 @@ from util.converters import split_blocks
 from util.pkcs7padding import decrypt_pkcs7_oracle
 
 
-def pkcs7_padding_handler(assignment, api):
+def pkcs7_padding_handler(assignment, api, progress):
     """Handler-function for the 'pkcs7_padding' type"""
 
     # extract from assignment
@@ -28,11 +28,14 @@ def pkcs7_padding_handler(assignment, api):
     # go through each block reversed (cbc decrypt)
     for index in range(len(blocks) - 1, -1, -1):
 
+        # log
+        progress.update("Processing block #%d\n" % index, 2)
+
         # current vector is previous ciphertext block, or iv if first block
         cv = blocks[index - 1] if index != 0 else iv
 
         # decrypt the block
-        P = decrypt_pkcs7_oracle(assignment["keyname"], cv, blocks[index], api)
+        P = decrypt_pkcs7_oracle(assignment["keyname"], cv, blocks[index], api, progress)
 
         # extract padding
         padding = P[-1]

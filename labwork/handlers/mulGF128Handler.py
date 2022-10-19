@@ -39,7 +39,7 @@ def mul_gf_128(value):
     return value
 
 
-def mul_gf_128_handler(assignment, _):
+def mul_gf_128_handler(assignment, _0, _1):
     """Handler-function for the 'mul_gf_128' type"""
 
     # decode base64 string to raw bytes

@@ -24,28 +24,28 @@ def oracle_pkcs7_padding(api, keyname, iv, ciphertext):
 
 
 # brute force the padding match
-def find_padding_match(keyname, cv, ciphertext, byte_index, api):
+def find_padding_match(keyname, Q, ciphertext, byte_index, api):
 
     # go through all possible values
     for i in range(256):
 
         # edit the cv to match the padding
-        cv[byte_index] = i
+        Q[byte_index] = i
 
         # check if the padding is correct
-        if oracle_pkcs7_padding(api, keyname, cv, ciphertext):
+        if oracle_pkcs7_padding(api, keyname, Q, ciphertext):
 
             # check if byte is the last byte
             if byte_index == block_size - 1:
 
                 # invert byte
-                cv[byte_index - 1] = ~cv[byte_index - 1] & 0xff
+                Q[byte_index - 1] = ~Q[byte_index - 1] & 0xff
 
                 # check if the padding is still correct
-                if oracle_pkcs7_padding(api, keyname, cv, ciphertext):
+                if oracle_pkcs7_padding(api, keyname, Q, ciphertext):
 
                     # invert byte back
-                    cv[byte_index - 1] = ~cv[byte_index - 1] & 0xff
+                    Q[byte_index - 1] = ~Q[byte_index - 1] & 0xff
                     return i
             else:
                 return i
@@ -55,7 +55,18 @@ def find_padding_match(keyname, cv, ciphertext, byte_index, api):
 
 
 # decrypt a ciphertext block using the pkcs7 oracle
-def decrypt_pkcs7_oracle(keyname, iv, ciphertext, api):
+#
+#          C
+#          v
+#       decrypt <- KEY
+#          v
+#         D(C) = target we are trying to find
+#          v
+#    Q -> xor
+#          v
+#          P = plaintext + padding
+#
+def decrypt_pkcs7_oracle(keyname, iv, ciphertext, api, progress):
 
     # initialize vector (nulls) for xor operation
     Q = bytearray(block_size)
@@ -69,6 +80,9 @@ def decrypt_pkcs7_oracle(keyname, iv, ciphertext, api):
         # find the padding match
         # D(C) ^ value = (block_size - index), f.e. 0x1 for the first byte
         value = find_padding_match(keyname, Q, ciphertext, index, api)
+
+        # log
+        progress.update("Found valid padding at Q = %s\n" % Q.hex(), 2)
 
         # solve for D(C)
         DC[index] = value ^ (block_size - index)

@@ -15,7 +15,7 @@ from util.blockCiphers import block_cipher_ctr, block_cipher_xex, block_cipher_c
 from util.converters import bytes2int, split_blocks
 
 
-def block_cipher_handler(assignment, api):
+def block_cipher_handler(assignment, api, _1):
     """Handler-function for the 'block_cipher' type."""
 
     # extract config
