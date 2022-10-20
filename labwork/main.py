@@ -67,7 +67,7 @@ with API() as api:
             start = time.time()
             try:
                 # lookup & run handler for case type
-                result = handlers[case_type](case["assignment"], api, progress)
+                result = handlers[case_type](0, case["assignment"], api, progress)
                 submit_response = api.post_submission(case["tcid"], result)
             except Exception as err:
                 result = err

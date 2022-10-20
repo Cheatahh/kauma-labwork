@@ -11,7 +11,7 @@
 """
 
 
-def strcat_handler(assignment, _0, _1):
+def strcat_handler(_0, assignment, _1, _2):
     """Handler-function for the 'strcat' type"""
 
     parts = assignment["parts"]

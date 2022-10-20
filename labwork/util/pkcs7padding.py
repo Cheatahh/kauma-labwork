@@ -11,6 +11,7 @@
 """
 import base64
 
+from util.api import verbosity
 from util.converters import block_size, bytes_xor
 
 
@@ -66,7 +67,7 @@ def find_padding_match(keyname, Q, ciphertext, byte_index, api):
 #          v
 #          P = plaintext + padding
 #
-def decrypt_pkcs7_oracle(keyname, iv, ciphertext, api, progress):
+def decrypt_pkcs7_oracle(keyname, iv, ciphertext, _id, api, progress):
 
     # initialize vector (nulls) for xor operation
     Q = bytearray(block_size)
@@ -82,7 +83,7 @@ def decrypt_pkcs7_oracle(keyname, iv, ciphertext, api, progress):
         value = find_padding_match(keyname, Q, ciphertext, index, api)
 
         # log
-        progress.update("Found valid padding at Q = %s\n" % Q.hex(), 2)
+        progress.update("[#%d] Found valid padding at Q = %s\n" % (_id, Q.hex()), 2)
 
         # solve for D(C)
         DC[index] = value ^ (block_size - index)

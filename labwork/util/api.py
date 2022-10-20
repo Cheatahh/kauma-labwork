@@ -24,12 +24,15 @@ parser.add_argument(dest="labwork", action="store", type=str,
                     help="labwork name, for example 'labwork01'")
 parser.add_argument("-v", "--verbose", dest="verbosity", action="count", default=0,
                     help="increase verbosity (up to 3 times)")
+parser.add_argument("-p", "--threads", dest="threads_count", action="store", type=int, default=1,
+                    help="number of threads to use for processing")
 args = parser.parse_args(sys.argv[1:])
 
 endpoint = args.endpoint
 client_id = args.client_id
 labwork = args.labwork
-verbosity = args.verbosity
+verbosity = max(0, args.verbosity)
+threads_count = max(1, args.threads_count)
 
 # http content headers
 request_headers = {
@@ -43,14 +46,16 @@ if verbosity > 0:
     print("Endpoint:", endpoint)
     print("Client ID:", client_id)
     print("Assignment Name:", labwork)
+    print("Threads:", threads_count)
 
 
 # try-with-resources wrapper for session
 # only make tls handshake once
 class API:
 
-    # setup session
-    session = requests.Session()
+    def __init__(self):
+        # setup session
+        self.session = requests.Session()
 
     def get_assignments(self):
         with self.session.get(

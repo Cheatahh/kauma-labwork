@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 main.py "$@" -vv #double verbosity
+python3 main_mt.py "$@" -vv -p 66 #double verbosity, 66 threads

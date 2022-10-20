@@ -11,11 +11,12 @@
 """
 import base64
 
+from util.api import verbosity
 from util.converters import split_blocks
 from util.pkcs7padding import decrypt_pkcs7_oracle
 
 
-def pkcs7_padding_handler(assignment, api, progress):
+def pkcs7_padding_handler(_id, assignment, api, progress):
     """Handler-function for the 'pkcs7_padding' type"""
 
     # extract from assignment
@@ -29,22 +30,24 @@ def pkcs7_padding_handler(assignment, api, progress):
     for index in range(len(blocks) - 1, -1, -1):
 
         # log
-        progress.update("Processing block #%d\n" % index, 2)
+        progress.update("[#%d] Processing block #%d\n" % (_id, index), 2)
 
         # current vector is previous ciphertext block, or iv if first block
         cv = blocks[index - 1] if index != 0 else iv
 
         # decrypt the block
-        P = decrypt_pkcs7_oracle(assignment["keyname"], cv, blocks[index], api, progress)
+        P = decrypt_pkcs7_oracle(assignment["keyname"], cv, blocks[index], _id, api, progress)
 
-        # extract padding
-        padding = P[-1]
-
-        # remove padding from block
-        blocks[index] = P[:-padding]
+        blocks[index] = P
 
     # join all blocks together
     blocks = b"".join([*blocks])
+
+    # extract padding
+    padding = blocks[-1]
+
+    # remove padding from block
+    blocks = blocks[:-padding]
 
     # pack plaintext
     blocks = base64.b64encode(blocks).decode("utf-8")
