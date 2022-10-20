@@ -14,7 +14,7 @@ import sys
 import requests
 
 # setup config from system args
-parser = argparse.ArgumentParser(description="Response program (T3INF9004: Cryptanalyses und Method-Audit)\nAuthors: "
+parser = argparse.ArgumentParser(description="Response program (T3INF9004: Cryptanalysis und Method-Audit)\nAuthors: "
                                              "DHBW Students 200374 & 200357 (2022)")
 parser.add_argument(dest="endpoint", action="store", type=str,
                     help="labwork endpoint, for example https://example.com/endpoint")

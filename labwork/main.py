@@ -63,6 +63,7 @@ with API() as api:
             if verbosity > 0:
                 progress.update("------ NEW CASE, '%s' ------\n" % case_type)
 
+            # handle case
             start = time.time()
             try:
                 # lookup & run handler for case type
