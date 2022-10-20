@@ -15,5 +15,5 @@ rm -r labwork
 # test for all labs
 labs=("labwork01" "labwork02" "labwork03")
 for lab in "${labs[@]}"; do
-    ./labwork-execute "https://dhbw.johannes-bauer.com/lwsub" "$1" "$lab" #--no-debug
+    ./labwork-execute "https://dhbw.johannes-bauer.com/lwsub" "$1" "$lab"
 done

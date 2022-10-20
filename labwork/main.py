@@ -1,5 +1,5 @@
 """
-    Response program for the exercise in T3INF9004: Cryptanalyses und Method-Audit.
+    Response program for the exercise in T3INF9004: Cryptanalysis und Method-Audit.
 
     License: CC-0
     Authors: DHBW Students 200374 & 200357 (2022)
