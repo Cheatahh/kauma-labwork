@@ -9,13 +9,14 @@
 
     password_keyspace_handler
 """
+
 from functools import reduce
 from itertools import product
 from string import ascii_lowercase, ascii_uppercase, digits
 
 
 # This function contains multiple approaches to solve this problem, see comments for detail
-def password_keyspace_handler(_0, assignment, _1, progress):
+def password_keyspace_handler(assignment, _api, log):
     """Handler-function for the 'password_keyspace' type."""
 
     # shortcut and safety
@@ -91,7 +92,7 @@ def password_keyspace_handler(_0, assignment, _1, progress):
     def filter_by_restriction(values, res):
 
         # log
-        progress.update("Applying filter '%s'\n" % res, 2)
+        log.log(f"Applying filter '{res}'", 2)
 
         # container does not run python 3.10 (match statement)? -> changed to chained if/else
         if res == "at_least_one_special_char":

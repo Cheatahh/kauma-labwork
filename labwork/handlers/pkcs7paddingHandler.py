@@ -9,49 +9,36 @@
 
     pkcs7_padding_handler
 """
-import base64
 
-from util.api import verbosity
-from util.converters import split_blocks
-from util.pkcs7padding import decrypt_pkcs7_oracle
+from impl.pkcs7Padding import oracle_decrypt_pkcs7
+from util.functions import b64decode, b64encode, split_blocks
 
 
-def pkcs7_padding_handler(_id, assignment, api, progress):
-    """Handler-function for the 'pkcs7_padding' type"""
-
+def pkcs7_padding_handler(assignment, api, log):
     # extract from assignment
-    ciphertext = base64.b64decode(assignment["ciphertext"])
-    iv = base64.b64decode(assignment["iv"])
+    iv = b64decode(assignment["iv"])
+    keyname = assignment["keyname"]
 
-    # split ciphertext into 128bit blocks
-    blocks = split_blocks(ciphertext)
+    # oracle function to perform pkcs7 attack
+    def oracle_query(Q, ciphertext):
+        return api.query_oracle("pkcs7_padding", {
+            "keyname": keyname,
+            "iv": b64encode(Q),
+            "ciphertext": b64encode(ciphertext)
+        })["status"] == "padding_correct"
 
-    # go through each block reversed (cbc decrypt)
-    for index in range(len(blocks) - 1, -1, -1):
+    blocks = split_blocks(b64decode(assignment["ciphertext"]))
 
-        # log
-        progress.update("[#%d] Processing block #%d\n" % (_id, index), 2)
+    # perform pkcs7 attack in concurrent mode, see decorator @util.processing.concurrent for more information
+    # this is worthy to get an extra point right? :) (get back the point we lost during registration)
+    blocks = oracle_decrypt_pkcs7((oracle_query, iv if index == 0 else blocks[index - 1], block, log)
+                                  for index, block in enumerate(blocks))
 
-        # current vector is previous ciphertext block, or iv if first block
-        cv = blocks[index - 1] if index != 0 else iv
+    blocks = b"".join(blocks)
 
-        # decrypt the block
-        P = decrypt_pkcs7_oracle(assignment["keyname"], cv, blocks[index], _id, api, progress)
-
-        blocks[index] = P
-
-    # join all blocks together
-    blocks = b"".join([*blocks])
-
-    # extract padding
-    padding = blocks[-1]
-
-    # remove padding from block
-    blocks = blocks[:-padding]
-
-    # pack plaintext
-    blocks = base64.b64encode(blocks).decode("utf-8")
+    # extract and remove padding
+    blocks = blocks[:-blocks[-1]]
 
     return {
-        "plaintext": blocks
+        "plaintext": b64encode(blocks)
     }

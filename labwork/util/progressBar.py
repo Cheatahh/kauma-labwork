@@ -9,53 +9,85 @@
     ProgressBar
 """
 
-import sys
 import shutil
+import sys
 
 
-# ProgressBar for pretty printing
+# simple console ProgressBar
 class ProgressBar:
+    spinner = ["|", "/", "-", "\\"]
 
-    # constructor
-    def __init__(self, name, indent, total, verbosityLevel):
+    # helper class to simulate a shared value between processes
+    # used if multiprocessing_manager is None
+    class Value:
+        def __init__(self, value):
+            self.value = value
+
+    # helper class to simulate a shared lock between processes
+    # used if multiprocessing_manager is None
+    class Lock:
+        def __init__(self):
+            pass
+
+        def acquire(self):
+            pass
+
+        def release(self):
+            pass
+
+    # if multiprocessing_manager is not None, the ProgressBar state will be shared between processes
+    def __init__(self, name, pb_start, pb_length, max_value, verbosity_level=0, multiprocessing_manager=None):
         self.name = name
-        self.indent = indent + 1
-        self.total = total
-        self.current = 0
-        self.passed = 0
-        self.progressTextCache = ""
-        self.charsPerStep = 20.0 / total
-        self.verbosityLevel = verbosityLevel
-        self.update()
+        self.max_value = max_value
+        if multiprocessing_manager is not None:
+            self.current = multiprocessing_manager.Value('i', 0)
+            self.passed = multiprocessing_manager.Value('i', 0)
+            self.spinner_value = multiprocessing_manager.Value('i', 0)
+            self.lock = multiprocessing_manager.Lock()
+        else:
+            self.current = ProgressBar.Value(0)
+            self.passed = ProgressBar.Value(0)
+            self.spinner_value = ProgressBar.Value(0)
+            self.lock = ProgressBar.Lock()
+        self.pb_length = pb_length
+        self.spacing = " " * max(pb_start - len(name), 0)
+        self.charsPerStep = pb_length / max_value
+        self.verbosityLevel = verbosity_level
+        self.insert("")
 
-    # clear previous line and print progress bar
-    def update(self, insert="", requiredVerbosity=-1):
-        if requiredVerbosity <= self.verbosityLevel:
-            current_progress = int(self.charsPerStep * self.current)
-            result = "\r%s'%s'%s[%s%s%s] %d/%d (%d%%) | %s" % (
-                insert, self.name, " " * self.indent, "=" * (current_progress - 1),
-                ">" if 0 < current_progress else "", " " * (20 - current_progress),
-                self.current, self.total, self.current / self.total * 100,
-                "Passed %d/%d (%d%%)" % (self.passed, self.total, self.passed / self.total * 100)
-                if self.passed < self.total else "PASSED             "
-            )
-
-            # clear terminal line for the linux users
-            sys.stdout.write("\r" + " " * shutil.get_terminal_size().columns)
-
-            # print progress bar
+    # insert a piece of text above the process bar
+    # while this class is used, any output to the console should flow through ProgressBar.insert()
+    def insert(self, text, required_verbosity=-1):
+        if required_verbosity <= self.verbosityLevel:
+            current_progress = int(self.charsPerStep * self.current.value)
+            # create one large string to avoid multiple console writes
+            result = f"""\r{' ' * shutil.get_terminal_size().columns}\r{text}{
+            self.spinner[self.spinner_value.value % len(self.spinner)]} '{self.name}'{
+            self.spacing}[{'=' * (current_progress - 1)}{'>' if 0 < current_progress else ''}{
+            ' ' * (self.pb_length - current_progress)}] {self.current.value}/{self.max_value} ({
+            int(self.current.value / self.max_value * 100)}%) | {
+            f'Passed {self.passed.value}/{self.max_value} ({int(self.passed.value / self.max_value * 100)}%)'
+            if self.passed.value < self.max_value else 'PASSED             '} """
             sys.stdout.write(result)
             sys.stdout.flush()
 
-    # increment progress bar
-    def step(self, insert, passed):
-        self.current += 1
+    # increment the current process bar state
+    def step(self, passed, insert=""):
+        self.lock.acquire()
+        self.current.value += 1
         if passed:
-            self.passed += 1
-        self.update(insert)
+            self.passed.value += 1
+        self.lock.release()
+        self.insert(insert)
 
-    # finish up progress bar printing
-    def finish(self):
-        self.current = self.total
-        self.update()
+    # turn the spinner by one
+    def turn_spinner(self):
+        self.lock.acquire()
+        self.spinner_value.value += 1
+        self.lock.release()
+        self.insert("")
+
+    # finish printing, console can be used regularly again
+    @staticmethod
+    def finish():
         print()

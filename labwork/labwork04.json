@@ -1,0 +1,927 @@
+{
+  "name": "labwork04",
+  "description": "This is the fourth assignment. You will program a key recovery for wrongly used AES with Key == IV and perform computation in the GCM Galois field.",
+  "start_utc": "2022-10-24T00:00:00Z",
+  "end_utc": "2022-11-02T00:00:00Z",
+  "max_points": 8,
+  "testcases": [
+    {
+      "tcid": "a2e7c7c8-4c72-4abb-990e-ceb874262cc3",
+      "passed_at_utc": "2022-10-25T10:20:50Z",
+      "type": "cbc_key_equals_iv",
+      "assignment": {
+        "keyname": "testkey-1",
+        "valid_ciphertext": "stjAIohJZkI1xNmzkSgl8zbC+LoJivxLYSuLZ3FPpQdMIdr6g/kQ3hCI6KSBXQY0"
+      },
+      "expect_solution": {
+        "key": "4g+DhFYa4f9EvZD8Q4Ic9A=="
+      }
+    },
+    {
+      "tcid": "c36f4e1e-dd91-4866-ab3b-5089428adf74",
+      "passed_at_utc": "2022-10-25T10:20:51Z",
+      "type": "cbc_key_equals_iv",
+      "assignment": {
+        "keyname": "testkey-2",
+        "valid_ciphertext": "+Mo9wkwJAsAAmQ+W2Biaf0TS5nF0PYAdzB1EwzCqBE6iLWMB5PnXtkvjiP58ITB3"
+      },
+      "expect_solution": {
+        "key": "V1QEKRfHktpmoxnWA5E1zw=="
+      }
+    },
+    {
+      "tcid": "3a9eed46-712c-4243-a93e-765329e2cff5",
+      "passed_at_utc": "2022-10-25T10:20:51Z",
+      "type": "cbc_key_equals_iv",
+      "assignment": {
+        "keyname": "testkey-3",
+        "valid_ciphertext": "bC16HSsiU5beRfzWrUwJuQSe0lYR8clSYLYj46FUBwTHhGDHaIG5nYZhnR0cSYtU"
+      },
+      "expect_solution": {
+        "key": "UjPYvyRhmaF8QfHPa0EcLg=="
+      }
+    },
+    {
+      "tcid": "023ecb08-75fe-4a65-b131-7fbb856ce16d",
+      "passed_at_utc": "2022-10-25T10:20:51Z",
+      "type": "cbc_key_equals_iv",
+      "assignment": {
+        "keyname": "testkey-4",
+        "valid_ciphertext": "yeBTvAq4cw9ygC3lBJJ89lyzJyBJ/+g6hTUHQcB+TGsh9J+WHRJ/3oe1DpWSnODH"
+      },
+      "expect_solution": {
+        "key": "sIgDE7a+dxp8r4NiO2m9Gg=="
+      }
+    },
+    {
+      "tcid": "cd5a9492-f660-4d40-83b4-37de3bbc931a",
+      "passed_at_utc": "2022-10-25T10:20:52Z",
+      "type": "cbc_key_equals_iv",
+      "assignment": {
+        "keyname": "testkey-5",
+        "valid_ciphertext": "0/GndwX47pcUpGGQ2wFIUM8mV9ZXbdROR5NZQJKnEAkJI8m0osLfKXAmVsio+qzJ"
+      },
+      "expect_solution": {
+        "key": "tqkDdI7mriz7DtGJZPbMBA=="
+      }
+    },
+    {
+      "tcid": "0a692be4-7496-4337-a76a-21b923efe26b",
+      "passed_at_utc": "2022-10-25T10:20:53Z",
+      "type": "cbc_key_equals_iv",
+      "assignment": {
+        "keyname": "prodkey-1",
+        "valid_ciphertext": "IzL5byxaYaUT6A/D/EVx9W/SyymEg3a5wpD9LkAfGP4wqt6DZ3GCDHpUUsFH2YiT"
+      }
+    },
+    {
+      "tcid": "0f31491f-f20d-43ab-a12b-82df03d66b21",
+      "passed_at_utc": "2022-10-25T10:20:54Z",
+      "type": "cbc_key_equals_iv",
+      "assignment": {
+        "keyname": "prodkey-1416526",
+        "valid_ciphertext": "qEpShQkj/ZrkWw9uywkdozMYSHrCT2pksRnjzbAyh/h4HhjpwVtlXgVKP3NQ93Hl"
+      }
+    },
+    {
+      "tcid": "6126148f-8dcb-4b04-af19-a5877dce6a51",
+      "passed_at_utc": "2022-10-25T10:20:54Z",
+      "type": "cbc_key_equals_iv",
+      "assignment": {
+        "keyname": "prodkey-8252594",
+        "valid_ciphertext": "SIVBBPj4271N0vw1mKn0Dx2vJRInum4+bhta36du8HaI0CZbZbf6FWtK8ASGHgMk"
+      }
+    },
+    {
+      "tcid": "5673641d-efb6-45ca-872d-b0d9a9e6a484",
+      "passed_at_utc": "2022-10-25T10:20:54Z",
+      "type": "cbc_key_equals_iv",
+      "assignment": {
+        "keyname": "prodkey-9433588",
+        "valid_ciphertext": "zs04o1evkXVevUU/qsAYmcGRZF77KdwumL2E6ug5Wvc2L7TKAKWHEZKKiYos96PB"
+      }
+    },
+    {
+      "tcid": "daccc678-4139-453a-9513-59224db59986",
+      "passed_at_utc": "2022-10-25T10:20:55Z",
+      "type": "cbc_key_equals_iv",
+      "assignment": {
+        "keyname": "prodkey-6966153",
+        "valid_ciphertext": "wPtFjI/mGiLubAmGmyeuqZ6jIVjzbPhzevOFeKsN6AisDqDVw5L1FV2+sK+AEaxR"
+      }
+    },
+    {
+      "tcid": "0ef7391e-c124-4e59-9a90-c8922b76782d",
+      "passed_at_utc": "2022-10-25T10:20:55Z",
+      "type": "cbc_key_equals_iv",
+      "assignment": {
+        "keyname": "prodkey-1326274",
+        "valid_ciphertext": "zN3HEL3EZ1jmTP40QKQq76mntczSp2JoV0PlNTqaV1nuWrzRO4dwQzBZNemsPaSB"
+      }
+    },
+    {
+      "tcid": "71fd0269-6ba3-4718-9791-3e20a7d97c0f",
+      "passed_at_utc": "2022-10-24T10:40:38Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "AAAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "coefficients": []
+      }
+    },
+    {
+      "tcid": "739b1ae1-032f-46de-a050-4d622fd0b729",
+      "passed_at_utc": "2022-10-24T10:40:38Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "AQAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "coefficients": [
+          7
+        ]
+      }
+    },
+    {
+      "tcid": "10aa1367-1e28-4cdd-9471-aa4d1dda4be1",
+      "passed_at_utc": "2022-10-24T10:40:38Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "AgAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "coefficients": [
+          6
+        ]
+      }
+    },
+    {
+      "tcid": "82177dc0-f534-49e6-91ef-15a314eec9db",
+      "passed_at_utc": "2022-10-24T10:40:38Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "AwAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "coefficients": [
+          6,
+          7
+        ]
+      }
+    },
+    {
+      "tcid": "81f35884-4090-4432-ae20-3c21b0f02516",
+      "passed_at_utc": "2022-10-24T10:40:38Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "BAAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "coefficients": [
+          5
+        ]
+      }
+    },
+    {
+      "tcid": "97aaa280-80b1-457f-a934-7e5e355e2dca",
+      "passed_at_utc": "2022-10-24T10:40:38Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "gAAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "coefficients": [
+          0
+        ]
+      }
+    },
+    {
+      "tcid": "afa34a77-723f-4b98-84d7-1a3d2da644ec",
+      "passed_at_utc": "2022-10-24T10:40:38Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "AYAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "coefficients": [
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "tcid": "6ed31d4b-b4a6-43b4-ae89-8a2ffbc5dcba",
+      "passed_at_utc": "2022-10-24T10:40:38Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "AAEAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "coefficients": [
+          15
+        ]
+      }
+    },
+    {
+      "tcid": "a9bca746-156f-46a1-a09f-90b1ddc3bee7",
+      "passed_at_utc": "2022-10-24T10:40:38Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "AAoAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "coefficients": [
+          12,
+          14
+        ]
+      }
+    },
+    {
+      "tcid": "f0d160ba-78a2-4994-9995-b44ff2472c2f",
+      "passed_at_utc": "2022-10-24T10:40:38Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "UAoAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "coefficients": [
+          1,
+          3,
+          12,
+          14
+        ]
+      }
+    },
+    {
+      "tcid": "934adfed-7e31-4481-a7a0-c09c0a37623a",
+      "passed_at_utc": "2022-10-24T10:40:39Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "A4jazmC2o5LzKMK5cbL+eA=="
+      },
+      "expect_solution": {
+        "coefficients": [
+          6,
+          7,
+          8,
+          12,
+          16,
+          17,
+          19,
+          20,
+          22,
+          24,
+          25,
+          28,
+          29,
+          30,
+          33,
+          34,
+          40,
+          42,
+          43,
+          45,
+          46,
+          48,
+          50,
+          54,
+          55,
+          56,
+          59,
+          62,
+          64,
+          65,
+          66,
+          67,
+          70,
+          71,
+          74,
+          76,
+          80,
+          81,
+          86,
+          88,
+          90,
+          91,
+          92,
+          95,
+          97,
+          98,
+          99,
+          103,
+          104,
+          106,
+          107,
+          110,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          121,
+          122,
+          123,
+          124
+        ]
+      }
+    },
+    {
+      "tcid": "7d2874f1-cb94-4bb0-892d-eae81a3eddf2",
+      "passed_at_utc": "2022-10-24T10:40:39Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "ZulL1O+KLDuITPpZyjQrLg=="
+      },
+      "expect_solution": {
+        "coefficients": [
+          1,
+          2,
+          5,
+          6,
+          8,
+          9,
+          10,
+          12,
+          15,
+          17,
+          20,
+          22,
+          23,
+          24,
+          25,
+          27,
+          29,
+          32,
+          33,
+          34,
+          36,
+          37,
+          38,
+          39,
+          40,
+          44,
+          46,
+          50,
+          52,
+          53,
+          58,
+          59,
+          60,
+          62,
+          63,
+          64,
+          68,
+          73,
+          76,
+          77,
+          80,
+          81,
+          82,
+          83,
+          84,
+          86,
+          89,
+          91,
+          92,
+          95,
+          96,
+          97,
+          100,
+          102,
+          106,
+          107,
+          109,
+          114,
+          116,
+          118,
+          119,
+          122,
+          124,
+          125,
+          126
+        ]
+      }
+    },
+    {
+      "tcid": "ce4223b6-cc65-4917-92c0-ef445d164c17",
+      "passed_at_utc": "2022-10-24T10:40:39Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "Xi7HRpFwYogshbBoU1Petw=="
+      },
+      "expect_solution": {
+        "coefficients": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          10,
+          12,
+          13,
+          14,
+          16,
+          17,
+          21,
+          22,
+          23,
+          25,
+          29,
+          30,
+          32,
+          35,
+          39,
+          41,
+          42,
+          43,
+          49,
+          50,
+          54,
+          56,
+          60,
+          66,
+          68,
+          69,
+          72,
+          77,
+          79,
+          80,
+          82,
+          83,
+          89,
+          90,
+          92,
+          97,
+          99,
+          102,
+          103,
+          105,
+          107,
+          110,
+          111,
+          112,
+          113,
+          115,
+          116,
+          117,
+          118,
+          120,
+          122,
+          123,
+          125,
+          126,
+          127
+        ]
+      }
+    },
+    {
+      "tcid": "28555b19-009e-4aaf-b200-d3fcb2c6d828",
+      "passed_at_utc": "2022-10-24T10:40:39Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "8H0Y+VNXKWav+fETaRo7Kw=="
+      }
+    },
+    {
+      "tcid": "094f22d7-ef22-47e2-b101-8882c85f9a75",
+      "passed_at_utc": "2022-10-24T10:40:39Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "Idqxr8ciK9XdLCqJlVMkDA=="
+      }
+    },
+    {
+      "tcid": "e852213c-118a-4195-ad22-ddcdd16d49b2",
+      "passed_at_utc": "2022-10-24T10:40:39Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "xs61kJ7du/I+k0aEEH7rJg=="
+      }
+    },
+    {
+      "tcid": "d055f62a-7a8d-441f-a799-cd94caf4cfac",
+      "passed_at_utc": "2022-10-24T10:40:39Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "MBQSlsc6dYnOSO23pp0pMA=="
+      }
+    },
+    {
+      "tcid": "3e022566-940f-44b0-8374-0de58f70cce6",
+      "passed_at_utc": "2022-10-24T10:40:39Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "Svc+Rae3nOfEW/h6tWdUWg=="
+      }
+    },
+    {
+      "tcid": "aef641c9-3319-48fe-8d04-71793312d3e6",
+      "passed_at_utc": "2022-10-24T10:40:39Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "A7n3GuvMR+ZH5tvEHwFnYw=="
+      }
+    },
+    {
+      "tcid": "53634ac8-33da-446d-8c75-8507daef15a1",
+      "passed_at_utc": "2022-10-24T10:40:39Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "QEeDju9LKvgiFFdpe7gjNg=="
+      }
+    },
+    {
+      "tcid": "8910ef96-a0a4-4404-9433-ca64b99c5770",
+      "passed_at_utc": "2022-10-24T10:40:39Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "QpQpx+3/pVOnTuZLSWRFtA=="
+      }
+    },
+    {
+      "tcid": "c973b1b0-c458-480b-a5b2-575a67e4490d",
+      "passed_at_utc": "2022-10-24T10:40:39Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "KAi2pP45O4rsWNEHULj7Pg=="
+      }
+    },
+    {
+      "tcid": "35e2c726-5369-4bde-b5d3-fc20f01037fa",
+      "passed_at_utc": "2022-10-24T10:40:39Z",
+      "type": "gcm_block_to_poly",
+      "assignment": {
+        "block": "EYq0fEhJ0unY1wjpNfRhzA=="
+      }
+    },
+    {
+      "tcid": "8267821a-7985-41f6-8bb5-1d24a6047294",
+      "passed_at_utc": "2022-10-24T10:41:44Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "AAAAAAAAAAAAAAAAAAAAAA==",
+        "b": "AAAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "a*b": "AAAAAAAAAAAAAAAAAAAAAA=="
+      }
+    },
+    {
+      "tcid": "6bc0d31c-2e56-411b-98e8-1146340a190d",
+      "passed_at_utc": "2022-10-24T10:41:44Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "/wAAAAAAAAAAAAAAAAAAAA==",
+        "b": "gAAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "a*b": "/wAAAAAAAAAAAAAAAAAAAA=="
+      }
+    },
+    {
+      "tcid": "659484bc-d45c-4e1c-bcfe-9236e927a9b2",
+      "passed_at_utc": "2022-10-25T09:42:51Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "/wAAAAAAAAAAAAAAAAAAAA==",
+        "b": "AgAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "a*b": "A/wAAAAAAAAAAAAAAAAAAA=="
+      }
+    },
+    {
+      "tcid": "d5a8eff7-5f98-4291-8f53-c10261d8e673",
+      "passed_at_utc": "2022-10-25T09:42:51Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "/wAAAAAAAAAAAAAAAAAAAA==",
+        "b": "AQAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "a*b": "Af4AAAAAAAAAAAAAAAAAAA=="
+      }
+    },
+    {
+      "tcid": "e07c01c8-a943-47e4-80e5-298ff742f95e",
+      "passed_at_utc": "2022-10-24T11:44:33Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "/wAAAAAAAAAAAAAAAAAAAA==",
+        "b": "/wAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "a*b": "qqoAAAAAAAAAAAAAAAAAAA=="
+      }
+    },
+    {
+      "tcid": "59c7810b-ef5b-4e3a-bc3e-22ac82bc989c",
+      "passed_at_utc": "2022-10-24T10:41:44Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "/////////////////////w==",
+        "b": "gAAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "a*b": "/////////////////////w=="
+      }
+    },
+    {
+      "tcid": "4a5877eb-2550-4143-90b3-5217f54b16d9",
+      "passed_at_utc": "2022-10-24T10:46:03Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "/////////////////////w==",
+        "b": "wAAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "a*b": "YQAAAAAAAAAAAAAAAAAAAA=="
+      }
+    },
+    {
+      "tcid": "d8ee6f0d-7b06-44e3-afdd-37a05fcdd796",
+      "passed_at_utc": "2022-10-24T10:46:03Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "/////////////////////w==",
+        "b": "4AAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "a*b": "z3///////////////////w=="
+      }
+    },
+    {
+      "tcid": "d14d70a7-a073-4ad8-b71c-1f47820b36ed",
+      "passed_at_utc": "2022-10-24T10:46:03Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "/////////////////////w==",
+        "b": "8AAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "a*b": "eUAAAAAAAAAAAAAAAAAAAA=="
+      }
+    },
+    {
+      "tcid": "1dfd8b61-4ab1-4cc1-bc93-27d89333adb1",
+      "passed_at_utc": "2022-10-24T10:46:03Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "/////////////////////w==",
+        "b": "+AAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "a*b": "w1///////////////////w=="
+      }
+    },
+    {
+      "tcid": "5d338ca0-a613-471f-932f-577032357adb",
+      "passed_at_utc": "2022-10-24T10:46:03Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "/////////////////////w==",
+        "b": "/AAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "a*b": "f1AAAAAAAAAAAAAAAAAAAA=="
+      }
+    },
+    {
+      "tcid": "4164d2a4-df3e-4e38-84f8-dc69a40e7753",
+      "passed_at_utc": "2022-10-24T10:46:03Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "/////////////////////w==",
+        "b": "/gAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "a*b": "wFf//////////////////w=="
+      }
+    },
+    {
+      "tcid": "8c2022f8-e6aa-4f71-b846-5da6062972f3",
+      "passed_at_utc": "2022-10-24T10:46:03Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "/////////////////////w==",
+        "b": "/wAAAAAAAAAAAAAAAAAAAA=="
+      },
+      "expect_solution": {
+        "a*b": "ftQAAAAAAAAAAAAAAAAAAA=="
+      }
+    },
+    {
+      "tcid": "36bb0c44-b376-403e-9f85-1d07a76c44f9",
+      "passed_at_utc": "2022-10-25T09:42:52Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "6TfcGd1TMfH+Hv/eTyLKeQ==",
+        "b": "sR0Q5cfeYV2wMHdKqoV+Uw=="
+      },
+      "expect_solution": {
+        "a*b": "C7tMRrR2MXPP5XzHHjVVIw=="
+      }
+    },
+    {
+      "tcid": "f43db9d1-258c-416c-9bb6-6a84abcacc87",
+      "passed_at_utc": "2022-10-25T09:42:52Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "txSJCdn4e02C2clJxemHuw==",
+        "b": "9V4NRTttYR+wMUfNQgwn7A=="
+      },
+      "expect_solution": {
+        "a*b": "0kXxZE8D98s11Yeiovhrtg=="
+      }
+    },
+    {
+      "tcid": "4d1d12eb-909a-423b-847d-b5d44b41ddf1",
+      "passed_at_utc": "2022-10-25T09:42:52Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "8FxiKYdBD+5kHDvE8Rc/ag==",
+        "b": "0X7MJtfy4kUolxLGWFELAA=="
+      },
+      "expect_solution": {
+        "a*b": "IpPF6gzCO8f+0MYp6yLCqw=="
+      }
+    },
+    {
+      "tcid": "b508f94d-0437-41bc-8767-1feb4cc8c43e",
+      "passed_at_utc": "2022-10-25T09:42:53Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "2s2+q/jY6eh2R4gTjCzn/w==",
+        "b": "kM3sQORMPIUWE7P5NXNZeA=="
+      },
+      "expect_solution": {
+        "a*b": "108Ja7W/8f9cTQKoNwksEg=="
+      }
+    },
+    {
+      "tcid": "8d12c677-13a9-4ee1-8e00-12e175fdf8b3",
+      "passed_at_utc": "2022-10-25T09:42:53Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "iQYjgl2VGh9m2O2ocKp06A==",
+        "b": "U5pZWP69LWGshziaD765dw=="
+      },
+      "expect_solution": {
+        "a*b": "wqwBEuvd0srtqnPXVOxNzQ=="
+      }
+    },
+    {
+      "tcid": "d4825462-241f-4911-bf71-05304bc93e23",
+      "passed_at_utc": "2022-10-25T09:42:53Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "R8CDkv2KRSXGYIjH50o8WQ==",
+        "b": "AROIXyfawhXyXCJnhigzPA=="
+      },
+      "expect_solution": {
+        "a*b": "yb3+BELGC39RA9fCP/54hg=="
+      }
+    },
+    {
+      "tcid": "b6e225de-c8f9-4777-8e2b-f58823605bad",
+      "passed_at_utc": "2022-10-25T09:42:53Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "R111m2Izdeird7L2nC9euA==",
+        "b": "uVkftN3RjEfnWIuwrEb14g=="
+      },
+      "expect_solution": {
+        "a*b": "ROSiPR23kMR25jc0JFKZWA=="
+      }
+    },
+    {
+      "tcid": "13813c9f-a69d-4083-8795-773a37703c63",
+      "passed_at_utc": "2022-10-25T09:42:53Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "oe30LKZCCNHRkeQx0PAkDg==",
+        "b": "FawRmzU5ryA4gQfrLIQuEA=="
+      },
+      "expect_solution": {
+        "a*b": "H34bapoDwxiV0Nn/CRCN/Q=="
+      }
+    },
+    {
+      "tcid": "0e6e6bbc-407f-4bfe-8dd9-4be09fd19007",
+      "passed_at_utc": "2022-10-25T09:42:53Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "vOX27ibGPsTf56L4Y75sWw==",
+        "b": "bvRRkDWpxu2YOs4PvMxHPA=="
+      },
+      "expect_solution": {
+        "a*b": "vcsajyQBT7dE61/CUq/M1Q=="
+      }
+    },
+    {
+      "tcid": "bccc6809-3ab8-4877-aace-5b5dfe91eba4",
+      "passed_at_utc": "2022-10-25T09:42:53Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "namFYGmgbautUG0SfRfMhw==",
+        "b": "mBfHv6B/8u4NZE12n2NOYg=="
+      },
+      "expect_solution": {
+        "a*b": "2wwqom+tor3o26EXzz4Mwg=="
+      }
+    },
+    {
+      "tcid": "a715a2c5-4f1f-4746-987e-d4e68b101ab1",
+      "passed_at_utc": "2022-10-25T09:42:53Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "WOuzJWCcJTbwgTxDVKJ0Zg==",
+        "b": "OAaFPk2YbXH7eQbr1LIc4w=="
+      }
+    },
+    {
+      "tcid": "f35d67d0-3ec4-465b-a0ad-ffcf2db37eb6",
+      "passed_at_utc": "2022-10-25T09:42:53Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "r1Ib3oFoXfVFr0nniXNSUw==",
+        "b": "TpWx0SS4RiaMP6QkFaJoeQ=="
+      }
+    },
+    {
+      "tcid": "0c005d8c-62ea-4191-80bf-491e1d16d66c",
+      "passed_at_utc": "2022-10-25T09:42:53Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "UazChnY2cNlIRE+rytt/AA==",
+        "b": "RXL3TfdEO/TuPyTZ70nH9Q=="
+      }
+    },
+    {
+      "tcid": "046cf75d-0045-4dfa-ac9d-2689fff24089",
+      "passed_at_utc": "2022-10-25T09:42:53Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "NsKLtcCmmrZhOQuqpYNBNg==",
+        "b": "eYdgWz+06l+zrPBnyAsnhw=="
+      }
+    },
+    {
+      "tcid": "117861dc-9628-4232-9226-a4c8310ee8e1",
+      "passed_at_utc": "2022-10-25T09:42:53Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "j3vWeSZkI8JSwZ88HqIVTg==",
+        "b": "0Gqc12Rezo3IDg7UOhFgqQ=="
+      }
+    },
+    {
+      "tcid": "0186d129-a887-4520-8d57-9db0cbdd03fd",
+      "passed_at_utc": "2022-10-25T09:42:54Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "MGiJReTTJ3K7lKhIKNGVYg==",
+        "b": "rprp9R51LtBWca+IdCPzFw=="
+      }
+    },
+    {
+      "tcid": "bfe33e48-db9d-4180-92d5-44acd66b29e0",
+      "passed_at_utc": "2022-10-25T09:42:54Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "ognf1ZncbOW2Ql9NkSZvzg==",
+        "b": "gG6ScnvNsvEFgEoWGk2zQw=="
+      }
+    },
+    {
+      "tcid": "bc47577a-c47d-40c5-8cd7-bff68dc594c0",
+      "passed_at_utc": "2022-10-25T09:42:54Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "Qgyi0zAgpNBp0X44nwAT5A==",
+        "b": "Zzfo0jX9/W49dxZZJAj57g=="
+      }
+    },
+    {
+      "tcid": "897a9d27-e61b-447f-ab83-819bce44e347",
+      "passed_at_utc": "2022-10-25T09:42:54Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "NjH0pi61ww0+VtLyvht6Fw==",
+        "b": "ky0d+SvwowakBG8Ebgujug=="
+      }
+    },
+    {
+      "tcid": "c9c07e9d-5ffa-49d0-820f-c0a9497b52cd",
+      "passed_at_utc": "2022-10-25T09:42:54Z",
+      "type": "gcm_mul_gf2_128",
+      "assignment": {
+        "a": "YsXES623Gq8NKlRIp+aPoQ==",
+        "b": "vSp1v83s+0hM9KMo0Zks0Q=="
+      }
+    }
+  ]
+}

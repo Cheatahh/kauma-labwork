@@ -1,0 +1,861 @@
+{
+  "name": "labwork03",
+  "description": "This is the third assignment, dealing with a CBC padding oracle attack.",
+  "start_utc": "2022-10-17T00:00:00Z",
+  "end_utc": "2022-10-26T00:00:00Z",
+  "max_points": 14,
+  "testcases": [
+    {
+      "tcid": "8c76a5bf-46bf-48ba-a816-4be0b2f0bd51",
+      "passed_at_utc": "2022-10-20T15:31:45Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "PxWSf6bVCngolbbtDeJP3A==",
+        "iv": "RK6sik3YFhUrMT6+kYGBNg==",
+        "keyname": "testkey-1",
+        "private_data": {
+          "key": "qzqdo96/Uqdq88DoRU0LRA=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "T25lIGJsb2NrLg=="
+      }
+    },
+    {
+      "tcid": "db5ff63d-266b-482c-b058-e597cb130fbf",
+      "passed_at_utc": "2022-10-20T15:31:58Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "XymLKFPB8y6GAJycdiEgpQ==",
+        "iv": "SdbNFweDi63pu9Z/eHG2yw==",
+        "keyname": "testkey-2",
+        "private_data": {
+          "key": "f3wGu5a3Jy8dvNr1d9+ZZw=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "T25lIGJsb2NrLg=="
+      }
+    },
+    {
+      "tcid": "9757df6a-7717-418d-9942-dd74d395c0c8",
+      "passed_at_utc": "2022-10-20T15:31:55Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "lxbAXYNG77ptaCTH2wQdkw==",
+        "iv": "zd6J4riucWo/0P7LGHZtLw==",
+        "keyname": "testkey-3",
+        "private_data": {
+          "key": "vGL10OdLH2VXXqE2UaDZRQ=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "T25lIGJsb2NrLg=="
+      }
+    },
+    {
+      "tcid": "7d9d24e3-7b72-4e92-8c6e-a1272cfa9c6a",
+      "passed_at_utc": "2022-10-20T15:31:40Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "vVQtieXAk5xqkWpEwFpLwA==",
+        "iv": "vGdqIzcWPd67+wIl1UVpzw==",
+        "keyname": "prodkey-1"
+      }
+    },
+    {
+      "tcid": "6128c183-dfdb-4108-b3e5-0449895cbab2",
+      "passed_at_utc": "2022-10-20T15:31:45Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "WD7Es9CWjRqzZ3ShN6lTIw==",
+        "iv": "XHCyT5FAqBoXobfUOT/awA==",
+        "keyname": "prodkey-2"
+      }
+    },
+    {
+      "tcid": "76680a9b-1281-43c4-bee8-4a6e615e7fc7",
+      "passed_at_utc": "2022-10-20T15:31:44Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "F/yuoDU9MhQFvUktDCidZw==",
+        "iv": "VqesfEZmhNPKOZU60nC6cQ==",
+        "keyname": "prodkey-3"
+      }
+    },
+    {
+      "tcid": "9ad638d3-a59c-48fe-8488-2c1496f4393a",
+      "passed_at_utc": "2022-10-20T15:55:35Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "YRuGc8VMn3BdnJv9pwjfRptXhKDIgiVmxm0aoPrFOpg=",
+        "iv": "AAAAAAAAAAAAAAAAAAAAAA==",
+        "keyname": "testkey-1",
+        "private_data": {
+          "key": "qzqdo96/Uqdq88DoRU0LRA=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "VGhpcyBpcyBhIHNob3J0IHRlc3Qu"
+      }
+    },
+    {
+      "tcid": "b1554f5a-4ab8-484d-8500-a4430472ae23",
+      "passed_at_utc": "2022-10-20T15:56:54Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "L2rN2BvDxYtJZKlgQ0csuzzh61wq22tQerCV6/eG6k/MQCrOajkdmKrsH16RHSxj",
+        "iv": "XO2MlOPOQO0T+RJf8XrHRA==",
+        "keyname": "testkey-1",
+        "private_data": {
+          "key": "qzqdo96/Uqdq88DoRU0LRA=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "VGhpcyBpcyBhbm90aGVyIHRlc3QsIGJ1dCBvZiBkaWZmZXJlbnQgbGVuZ3RoLg=="
+      }
+    },
+    {
+      "tcid": "136f6004-319d-4eea-a5f3-dc6413e8a199",
+      "passed_at_utc": "2022-10-20T15:55:50Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "w9qusPRgVighMPdln+xR2mgLFLlQNBeHbZYirn68b5w=",
+        "iv": "AAAAAAAAAAAAAAAAAAAAAA==",
+        "keyname": "testkey-2",
+        "private_data": {
+          "key": "f3wGu5a3Jy8dvNr1d9+ZZw=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "VGhpcyBpcyBhIHNob3J0IHRlc3Qu"
+      }
+    },
+    {
+      "tcid": "114b4d02-14e3-4f45-8057-158240b707a3",
+      "passed_at_utc": "2022-10-20T15:56:53Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "nmwdoUjr+cmuAjkGtlfNTM5/wGf86YVWB8K+K6a1PUVmz725Lj+HFJSL4cCHxAZf",
+        "iv": "tRoyCKKfkGQyLnkWd6UxRw==",
+        "keyname": "testkey-2",
+        "private_data": {
+          "key": "f3wGu5a3Jy8dvNr1d9+ZZw=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "VGhpcyBpcyBhbm90aGVyIHRlc3QsIGJ1dCBvZiBkaWZmZXJlbnQgbGVuZ3RoLg=="
+      }
+    },
+    {
+      "tcid": "596ff897-f22f-4a6c-ab6d-473e07b08349",
+      "passed_at_utc": "2022-10-20T15:55:42Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "+grPaPdnfBWEabhQoayx6KsDDh3MSwK5ZwtiBnFDhdQ=",
+        "iv": "AAAAAAAAAAAAAAAAAAAAAA==",
+        "keyname": "testkey-3",
+        "private_data": {
+          "key": "vGL10OdLH2VXXqE2UaDZRQ=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "VGhpcyBpcyBhIHNob3J0IHRlc3Qu"
+      }
+    },
+    {
+      "tcid": "524d3fc5-1b60-4cda-a954-c26f2a9828d9",
+      "passed_at_utc": "2022-10-20T15:56:46Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "h3y8lH3C0261UyqF10ptvY4hOwNjGZLr093CNX6nUUwdHXvNskmZVEi8f/6I9qlS",
+        "iv": "ZJYC+n5RGu0gZcAZaxTENA==",
+        "keyname": "testkey-3",
+        "private_data": {
+          "key": "vGL10OdLH2VXXqE2UaDZRQ=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "VGhpcyBpcyBhbm90aGVyIHRlc3QsIGJ1dCBvZiBkaWZmZXJlbnQgbGVuZ3RoLg=="
+      }
+    },
+    {
+      "tcid": "bc851001-2a10-4611-8f10-fb7d6a11552c",
+      "passed_at_utc": "2022-10-20T15:31:31Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "xNpz/sOyvWBhD+ZBd1XzbA==",
+        "iv": "QGUBio842ny2GzFyeF2mJA==",
+        "keyname": "testkey-0",
+        "private_data": {
+          "key": "haOOaY7ZC2jBKi5hZvPkfg=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "TW9v"
+      }
+    },
+    {
+      "tcid": "d03a6f1f-57d8-446d-bd1e-5272c40988a4",
+      "passed_at_utc": "2022-10-20T15:31:41Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "vdTPmW6KjBeYj4tiVscsJg==",
+        "iv": "8j/75na4QgvlN22GFEpitA==",
+        "keyname": "testkey-1",
+        "private_data": {
+          "key": "qzqdo96/Uqdq88DoRU0LRA=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "TW9vIQ=="
+      }
+    },
+    {
+      "tcid": "f5b0d166-39a0-41d7-82d8-ab61016dc80e",
+      "passed_at_utc": "2022-10-20T15:31:48Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "WEGZK46NUqW68kYAit7Qgw==",
+        "iv": "W/W+gRHMvJmsZ5MnZSrOdQ==",
+        "keyname": "testkey-2",
+        "private_data": {
+          "key": "f3wGu5a3Jy8dvNr1d9+ZZw=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "TW9vISE="
+      }
+    },
+    {
+      "tcid": "bfc9e227-f1ab-4df6-85e0-a1def0eeb5d4",
+      "passed_at_utc": "2022-10-20T15:32:05Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "lVO0gogtgv6uN1J+pqUapQ==",
+        "iv": "/JsiF3/c/Ejly5LB6oJUUQ==",
+        "keyname": "testkey-3",
+        "private_data": {
+          "key": "vGL10OdLH2VXXqE2UaDZRQ=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "TW9vISEh"
+      }
+    },
+    {
+      "tcid": "c83eb898-3656-4cc5-9ae9-5a8bce0b2d4a",
+      "passed_at_utc": "2022-10-20T15:32:48Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "D1U4z8HoMmgYSrHzbDnJmw==",
+        "iv": "mFEJo6TMDgTheWD16s8rtA==",
+        "keyname": "testkey-4",
+        "private_data": {
+          "key": "YwJjAwJ1b5HPOHxQ2sPNag=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "TW9vISEhIQ=="
+      }
+    },
+    {
+      "tcid": "cdbaee7c-3feb-4421-a7bf-c34296d038f8",
+      "passed_at_utc": "2022-10-20T15:32:46Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "Ir4u9H4fKs3OsDw+ACJ57Q==",
+        "iv": "Iz/rJ2bDr2cBN3bcdUZp1A==",
+        "keyname": "testkey-5",
+        "private_data": {
+          "key": "vECoW20KUOV6ZDNLvk65Fg=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "TW9vISEhISE="
+      }
+    },
+    {
+      "tcid": "89451b75-41fe-444f-9a6c-a2afb404e094",
+      "passed_at_utc": "2022-10-20T15:56:54Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "tg5/deLjkMhKIb02+7qxrEftucdzjyHxvz0kmQUqOIKbzRVGRGf8LSZcv7WI0TdZ",
+        "iv": "CxaeoKM+LBf/E1d7dtZeEg==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "c463cf94-1338-4603-8d9e-71f95a5d98f7",
+      "passed_at_utc": "2022-10-20T16:00:55Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "jPcsdBPNvCDh42X3TRhK5rebY2IelyDwL7Zy9jWM0JxQJV1ULl1W/hUqKt2no3zjyymd+vkhCkvnBs0Z4+MIarUyToAxfyeSe9D1UyhVsXHhdxrTidUA5Vc8+cbscw2dJekSxW6yUg5wefRrdc7oo+BqgotPVleQNKaekI0arpXRNToaU2BPzpKxlzIWBnvmTS/QLSjTcThTDOo96sZe2A==",
+        "iv": "05KQ9bEFQZ9TFIYh1AmZcA==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "edbbf4cf-ad3f-4327-8647-e58e1b214ecc",
+      "passed_at_utc": "2022-10-20T15:32:32Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "kGcg2Hw0BeJ4h2q2OEDT5g==",
+        "iv": "bOTgg8sgf24xEuU3+I0MQg==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "e5d4997a-2e63-4dbb-925d-c5fda004b8eb",
+      "passed_at_utc": "2022-10-20T15:32:48Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "yRYKdLQhDzFA+iK4DG9QSw==",
+        "iv": "rZnLASLEr/vg8DrqE3Q+2A==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "3b7e3878-70e6-44e3-af04-c2028114d8f9",
+      "passed_at_utc": "2022-10-20T15:33:19Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "AfGitbJak2TPjlsXFpUBfg==",
+        "iv": "NQ0RvoXG4LFrlyGH5BC3Dg==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "1c645bc4-a889-46d4-abbf-c78fe6e95003",
+      "passed_at_utc": "2022-10-20T15:53:32Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "QmW7WqgvEQVBhxN6XxbAjA==",
+        "iv": "H68n6Moy7MYwOgd8HVp+6A==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "076bc687-c54f-428a-8f06-f401ca9e9997",
+      "passed_at_utc": "2022-10-20T15:33:33Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "adOAERUJNfFDQMCbkdAYfw==",
+        "iv": "CIWFAZj8jfh+OlsD75G5dg==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "175e1e76-16b4-441d-9aaf-774c304ac000",
+      "passed_at_utc": "2022-10-20T15:52:49Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "Q9n/Q0ODusHP9FsdhFTnnQ==",
+        "iv": "oyx1fWMgYHBpkgtAHiicxg==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "a2f38eaa-9dae-4e06-9af0-87251fadc448",
+      "passed_at_utc": "2022-10-20T16:01:09Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "6aTycP7DywbSy0DP4f3Flkj5+TQ9a8lWu0udGOTmVzLUZUhlrk1K37mntxeJU5GUzI6uqXrKpzvPw7PqljNR4/AwUm0d2fnvbW31KshaiffUHjbvFTjZeqICdQ+Ph3mEIsOrvv6p++UfqtD3Aove8yJ/aePW/crfjL0TOr+rvOhrLwUTYqlXh/2krjClvSo9xnyhU4GOlDoyehAGHMEQjzFttRNXF+NrYHgV9sb6NWo=",
+        "iv": "JectZHdhRl95GkAdffuW5g==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "3bdcd555-5552-4086-be70-4f176879c55c",
+      "passed_at_utc": "2022-10-20T15:56:25Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "UGjhuDA3pVjCc4kQyt2u662XUXCe6V+bm9hTFFArJmU=",
+        "iv": "5qlUwSmz3JKGpJTpDR0Ehw==",
+        "keyname": "testkey",
+        "private_data": {
+          "key": "SNiuLGTvuTFYI5lpaz+nSg=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "3J8UBWQMvaViKUA8d5b2dg=="
+      }
+    },
+    {
+      "tcid": "aadec10d-8f21-4fe2-b8ba-f3df30137efe",
+      "passed_at_utc": "2022-10-20T15:55:56Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "F7KsQRdCz9N2nJDUfjdEGqk0XpUXcjHJlpicFRcM94I=",
+        "iv": "yNaorIksuBi/i3WvJ9H3HQ==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "a7a8dbf2-b43d-42ae-a5c9-489084e47431",
+      "passed_at_utc": "2022-10-20T15:56:19Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "aILQhfn2syssr8cVY/xErKwiswcJ7cPNFfhgNyiwuJs=",
+        "iv": "VnDJR555jqGCYukhkKuqtw==",
+        "keyname": "testkey",
+        "private_data": {
+          "key": "SNiuLGTvuTFYI5lpaz+nSg=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "vVXudmvY8EQpYTtcV7mo+A=="
+      }
+    },
+    {
+      "tcid": "5b4e28b4-4680-40e7-a3ea-7ae4519ace94",
+      "passed_at_utc": "2022-10-20T15:56:23Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "dklyKrLeYPXpKwvzxViijTEyqWiVeqlteA+OdIP7h9E=",
+        "iv": "Ht11OtclEzj+HUfrZnVpBA==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "2c0be27e-a629-43db-82df-3d71b54d4869",
+      "passed_at_utc": "2022-10-20T15:55:43Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "KoSWC1JBg5r18WcZXV2qu10XK6yLy4baLcjAk2RRQHU=",
+        "iv": "jnjjI1TP9t87wYK07s01fw==",
+        "keyname": "testkey",
+        "private_data": {
+          "key": "SNiuLGTvuTFYI5lpaz+nSg=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "OhfE1lq/fpOPo5LRLIdWBA=="
+      }
+    },
+    {
+      "tcid": "1d13fcdf-56ee-4879-99b0-c8d291391b0b",
+      "passed_at_utc": "2022-10-20T15:56:27Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "zNg471vCWWDL9YTSfa4DN2AReZY74TJVyEdPIcKTTdo=",
+        "iv": "mdNwVUMNkD+ErALJn+I6bQ==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "d43e22fa-bc3b-477a-b40e-583272dc9deb",
+      "passed_at_utc": "2022-10-20T15:56:20Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "po6bbf85PzNvrez7e0gve4yhIQ5mNVlWQ1VNcQPYonU=",
+        "iv": "1UPCZS2V8z0iiq7YCk1zHg==",
+        "keyname": "testkey",
+        "private_data": {
+          "key": "SNiuLGTvuTFYI5lpaz+nSg=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "OjD6nz7xkVBZh0QBneObgA=="
+      }
+    },
+    {
+      "tcid": "64766c04-48e1-4c8a-9b04-6a54606bf762",
+      "passed_at_utc": "2022-10-20T15:56:17Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "/BD57cWH7dGz107omH8gbMQiiUTXs/32aVwIhlcM8ss=",
+        "iv": "ABssay5hjyzortx7L9lLUA==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "5d138b98-705f-4791-94bc-4c7cc68f0f33",
+      "passed_at_utc": "2022-10-20T15:56:30Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "CuLicerTlAqFwoJ15aAE5HX0Z3eNYs9bgiidwzAHFow=",
+        "iv": "4XzPfrL2z562W6oYBYX3AQ==",
+        "keyname": "testkey",
+        "private_data": {
+          "key": "SNiuLGTvuTFYI5lpaz+nSg=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "FTk/3cdv8ZE2pDjKXigfVQ=="
+      }
+    },
+    {
+      "tcid": "3aba5b50-9ede-416f-8f30-543f3bd0967d",
+      "passed_at_utc": "2022-10-20T15:56:01Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "8vn1nAf9E2sZSYp0FnnvEqrWOaZCXdw/2mQq+5pkr0Q=",
+        "iv": "ky/bjlBRA84KZV8Z4mAChQ==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "d3f26f37-91ad-4875-bafc-ed44f5260c94",
+      "passed_at_utc": "2022-10-20T15:57:45Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "30VCFEz1GlQgCztCcDhG3AuDPr0aEK/yh2oXmnbDjvK+TyJSlPPhj2RqVqwEa9bQ2JMm5otdHsEVRB+LDbTXjTTUHRs5LRjNgwH9UFaZiMU=",
+        "iv": "cMh9kDcHTaCBnN7kynLaIQ==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "2143431a-d509-4719-86f6-772c6a3d1004",
+      "passed_at_utc": "2022-10-20T15:58:05Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "ZlIzN2kjC6u/4lAzXndNbSemGkDkTBDvY7hbbYR+8+AJBjIoGAMDLb3iWKwJAihSMdwgi2ukvD16tOXo3W/L36xyShB/pUksU3ZOJnZps4I=",
+        "iv": "l+nEyHEzmj/Ts3dTG76X2A==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "1c7b1274-2dbf-4f7c-abf0-2e22f7b562cd",
+      "passed_at_utc": "2022-10-20T15:58:26Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "Yh7SFRpHozWSB9ouJnUQR8CCMsqcjWa5k3UhCUSXIKLJQkRnJwT1SibhGOao/NRO3vmpd4a0kKW66ml/hrCd9Ygm7ZtiSBOJijOZ/iFAnHA=",
+        "iv": "N46ZFh2KAYayIF43krPPwA==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "b0848066-92c4-418c-8f83-1d4bd7efdbd8",
+      "passed_at_utc": "2022-10-20T15:58:25Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "zbSNa2MtQNHPZ798YhQpP/e6ViCVQ5Qiy+U3q7LBIZU4scT+rbDiun31T7yB6lAoQTGxEdpA7vZjXd86Ddm5LIOBKfbhL8JThbRXwZ95i2Y=",
+        "iv": "m68l+JqdBwve7YZCoqazDw==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "ff66db0e-5383-483f-a38d-0c6401fe2896",
+      "passed_at_utc": "2022-10-20T15:58:27Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "mb+vG2rCw5sEV0dypCjqqwqlDHxK7i1k05PgxhZ56bEr4EKMppamu4ZsCbcCyOZ+Undghefzo/6W6zGGjJ+06TuLnqqwT+IR2TwCuNKL3fI=",
+        "iv": "J8sZH6JYCMR9u3zuvmGosw==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "2e5bf06c-e5c4-4e52-8206-680e5c230e41",
+      "passed_at_utc": "2022-10-20T15:56:20Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "Zr8+742EgOQlUoZi3eGZp4oB0M0jVsMfu8eoJ0+Y/Lw=",
+        "iv": "GoyRt2rXnzNhnkf31p59Og==",
+        "keyname": "testkey",
+        "private_data": {
+          "key": "SNiuLGTvuTFYI5lpaz+nSg=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "JXGa/D/YMUMBAQEBAQEBAQ=="
+      }
+    },
+    {
+      "tcid": "2d13be90-0099-441c-976d-fb391ba0064e",
+      "passed_at_utc": "2022-10-20T15:55:40Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "NXKqzasvYEevte4KKNsjFe7vsZBFTEch/34iufdsFfg=",
+        "iv": "nWubNAzrzV8QCFoOV0kfBg==",
+        "keyname": "testkey",
+        "private_data": {
+          "key": "SNiuLGTvuTFYI5lpaz+nSg=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "O4JwouoU30kCAgICAgICAg=="
+      }
+    },
+    {
+      "tcid": "f624678a-3d56-4341-9ad8-458d5c35011d",
+      "passed_at_utc": "2022-10-20T15:55:37Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "S0lYgsEDJIqiwXAqXlsnXXeFTKrXi3ICP9diTYUeqCc=",
+        "iv": "CjwUQefDpgJMFwYprueG+Q==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "68a3e671-1c3c-4ba2-8dbf-3877f67fbfca",
+      "passed_at_utc": "2022-10-20T15:56:09Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "UtXOFiW3xdN+UNoELUpIfY407xQ6QzZS6Y2cdQSiLfE=",
+        "iv": "Wi62mA2lLuIO1btXX/k5Mg==",
+        "keyname": "prodkey"
+      }
+    },
+    {
+      "tcid": "45333513-811a-4f0d-82ed-ad2ab7b96110",
+      "passed_at_utc": "2022-10-20T15:56:14Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "GwORGBVCaZo9Z6qJKeLCIqIcuI3EFFcGBXKc2v0gvhA=",
+        "iv": "BDIcwyvfmtpvVuW7BhiQVQ==",
+        "keyname": "testkey-1",
+        "private_data": {
+          "key": "qzqdo96/Uqdq88DoRU0LRA=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "q8EwG8qlekxqC4Np/f39Ag=="
+      }
+    },
+    {
+      "tcid": "7062462e-b124-4314-90b4-c8caa89cbbcb",
+      "passed_at_utc": "2022-10-20T15:56:14Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "oNd8n+jpqfJtmuHHFw3MWc3ej6D/uVbvStPRjRFH/ts=",
+        "iv": "kcoTqWiS7NcarpdJLfLq6w==",
+        "keyname": "testkey-2",
+        "private_data": {
+          "key": "f3wGu5a3Jy8dvNr1d9+ZZw=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "/1xX/T2vZGY9DYgk/f39Ag=="
+      }
+    },
+    {
+      "tcid": "313fa89f-ef7a-41ca-b10a-8076e3dfb830",
+      "passed_at_utc": "2022-10-20T15:55:52Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "MQKstvgx1UHQoEMMACeYSJ0oZxWUK0ysI+prAI8kUqA=",
+        "iv": "KTy0nCE75az2ijbgfmEwDQ==",
+        "keyname": "testkey-3",
+        "private_data": {
+          "key": "vGL10OdLH2VXXqE2UaDZRQ=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "Lp6VVEwbiH0lyrKq/f39Ag=="
+      }
+    },
+    {
+      "tcid": "1e652638-fef0-43b2-99e6-ccf03bece247",
+      "passed_at_utc": "2022-10-20T15:56:09Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "8sBxDPENS0rkcTjiE1qufJg3mSPQAqew+5qTR5thnrE=",
+        "iv": "sQBhzRdj/LwbjZX9f5BbTw==",
+        "keyname": "testkey-4",
+        "private_data": {
+          "key": "YwJjAwJ1b5HPOHxQ2sPNag=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "+sB2hlUeGwBKt3p4/f39Ag=="
+      }
+    },
+    {
+      "tcid": "14ba7232-bf97-4183-8247-893c6e55e06b",
+      "passed_at_utc": "2022-10-20T15:56:14Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "b2H9NKGFl8jsXX5qcFhlO/ztMuY+/cwcR6MJcWzRBsc=",
+        "iv": "/a0zjLsrK3ttGUeiO08Kkg==",
+        "keyname": "testkey-5",
+        "private_data": {
+          "key": "vECoW20KUOV6ZDNLvk65Fg=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "+etvmVLxTQwsWKyR/f39Ag=="
+      }
+    },
+    {
+      "tcid": "3b47064a-a3c0-4675-8974-d59e0dcfb22f",
+      "passed_at_utc": "2022-10-20T15:55:54Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "PQoZPPT5FAnPw3Oqxi6YqEK44WOplIew60X51LWE2Ek=",
+        "iv": "w4TSXQNFhUiImm1n/6vD2w==",
+        "keyname": "testkey-6",
+        "private_data": {
+          "key": "j7uLeAXrq5kSPXlouzerlw=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "nrIXFOKTXH9Nr/p2/f39Ag=="
+      }
+    },
+    {
+      "tcid": "3649513b-74a1-45b7-8588-43d09bb42c98",
+      "passed_at_utc": "2022-10-20T15:56:16Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "TS72ZJ6b1hBGyWNJmX+TkOmztJglBTeAFU33vymOie8=",
+        "iv": "IGZgCcfXZe7cHQ5jN9PgIQ==",
+        "keyname": "testkey-7",
+        "private_data": {
+          "key": "jkc63MrH0ptiMx7OUvxC3A=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "sdS/HGXKwxs2zRiU/f39Ag=="
+      }
+    },
+    {
+      "tcid": "d5d4a7b0-b1d9-4d71-841d-ea8fb9ac6a77",
+      "passed_at_utc": "2022-10-20T15:56:09Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "xH+lWwukVDSer+w+/W8hSFYAodHJ6Vxbqkkdc2Ke1BY=",
+        "iv": "+PuphNk/s+0SHWPUOO6FuQ==",
+        "keyname": "testkey-8",
+        "private_data": {
+          "key": "JenMp5goi9aL+iJ/VQeHOA=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "w2Gg6RdAC7Vk2udp/f39Ag=="
+      }
+    },
+    {
+      "tcid": "33de5ff6-5c33-46bd-a436-bd90f264a642",
+      "passed_at_utc": "2022-10-20T15:55:57Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "qfpLPbpyS/ErHBLzQavwBgpm8Lyqjds2e17n/ER9TZw=",
+        "iv": "UY/Ob8wLGF5mNRQx0mvq3w==",
+        "keyname": "testkey-9",
+        "private_data": {
+          "key": "EuVkutEPXERlO3iNKFXyDA=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "uYZJfBcUZhqh1Rld/f39Ag=="
+      }
+    },
+    {
+      "tcid": "73a3982c-e8e9-4796-aba0-8020018c6ad8",
+      "passed_at_utc": "2022-10-20T15:56:14Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "kOdZwmXrVSegw5NHWt1+HtB1oQF4LJZiFDrlWyEjDHM=",
+        "iv": "J1OD9Km/45mK4LjGNZ2CKg==",
+        "keyname": "testkey-10",
+        "private_data": {
+          "key": "kHXUZaU5cc8dZDrIvoLBIA=="
+        }
+      },
+      "expect_solution": {
+        "plaintext": "V4EIAC9XhLzG9Tdb/f39Ag=="
+      }
+    },
+    {
+      "tcid": "70e08d0f-b464-4759-89a4-8f4321317cef",
+      "passed_at_utc": "2022-10-20T15:55:44Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "gVQB2tL7GR7RaOYEBWFTaioM5P36ZYanMXm9PDI+A60=",
+        "iv": "vbgHm1ETnF1ycA9I8DTSPQ==",
+        "keyname": "prodkey-1"
+      }
+    },
+    {
+      "tcid": "56d7e8af-bfa2-4f9c-a2b8-3845604e122f",
+      "passed_at_utc": "2022-10-20T15:55:21Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "Y7QrPeObCSEjGtZQTBQ9Is6hbNamQhMvNUyHnBXs6xM=",
+        "iv": "PqsO536se+NPPlnlxA3Lgw==",
+        "keyname": "prodkey-2"
+      }
+    },
+    {
+      "tcid": "36d631a5-06be-4801-99e3-1f4bcf7665f6",
+      "passed_at_utc": "2022-10-20T15:56:24Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "uIqQRSUcyeeskEZSVCaf6GRFOM7tG4qbR288bmAKKQU=",
+        "iv": "Y9ambtQV/mvIymVsp4UPAA==",
+        "keyname": "prodkey-3"
+      }
+    },
+    {
+      "tcid": "7b3be735-53ba-4fde-818d-30e81f60d21e",
+      "passed_at_utc": "2022-10-20T15:56:18Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "hvXXj6Fs7oQMoBsOq12yxv4nZiZJBh0oo79OnHPnWPw=",
+        "iv": "3hOjGfTIj7nH7JDvRaTblw==",
+        "keyname": "prodkey-4"
+      }
+    },
+    {
+      "tcid": "f76e1271-8bec-4be9-a413-91c8c40c7617",
+      "passed_at_utc": "2022-10-20T15:56:18Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "yKF9+CH2t1+HNd0/0W3316nULSpoJyv9O01P5bWMeUc=",
+        "iv": "/qTVfHwhQJ+vcdWIHu54Qg==",
+        "keyname": "prodkey-5"
+      }
+    },
+    {
+      "tcid": "9e3e20ab-6eb9-48f0-896d-9f01903827b2",
+      "passed_at_utc": "2022-10-20T15:55:52Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "fhWA0rdFRNrNnA2TCdWCRaDCF3YoxMtwSABTsGu9wwY=",
+        "iv": "FVM6Mxf8Ei6+zXfVe/3TCA==",
+        "keyname": "prodkey-6"
+      }
+    },
+    {
+      "tcid": "c5cbe92f-7aa9-49a0-a97e-05b89aaf5de3",
+      "passed_at_utc": "2022-10-20T15:55:19Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "H2RwYkfb5X1nbJyhFRcPp5AvgIxH3wUdRLmzvu4d6yk=",
+        "iv": "WmMkkmMtE3JPJnSg4u4Qkw==",
+        "keyname": "prodkey-7"
+      }
+    },
+    {
+      "tcid": "2f41c7e6-c77d-4d1b-a02b-c947e3aa3c48",
+      "passed_at_utc": "2022-10-20T15:56:27Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "XY5atKaPVoPmINbnOaTQU2CTxEMnODmbvYYK+v2JNBY=",
+        "iv": "7t4yRDKuDPCxr2A8Z0KQUw==",
+        "keyname": "prodkey-8"
+      }
+    },
+    {
+      "tcid": "9a6e278e-dc4f-401c-8f6a-40039dae7f39",
+      "passed_at_utc": "2022-10-20T15:56:26Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "lfrfPeCGoVpSr01oOxGlh7ZQG6E+N6WLPlbWHBBBCB0=",
+        "iv": "0v+D03tf8y7wr2vJurpVXg==",
+        "keyname": "prodkey-9"
+      }
+    },
+    {
+      "tcid": "3700aa8a-27e1-45a4-99bc-b729c8fd3d02",
+      "passed_at_utc": "2022-10-20T15:56:08Z",
+      "type": "pkcs7_padding",
+      "assignment": {
+        "ciphertext": "fbdx9TCGJaTcTeQLKcgJ50XzrgYJiQZcGLODY+Y8qrI=",
+        "iv": "4WB/2LZFU8qrZpMpdmDgrg==",
+        "keyname": "prodkey-10"
+      }
+    }
+  ]
+}

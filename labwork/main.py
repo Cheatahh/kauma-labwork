@@ -1,12 +1,26 @@
 """
-    Response program for the exercise in T3INF9004: Cryptanalysis und Method-Audit.
+    Response program (T3INF9004: Cryptanalysis und Method-Audit).
 
     License: CC-0
     Authors: DHBW Students 200374 & 200357 (2022)
 """
 
+# stdlib import
 import json
+import os
 import time
+from itertools import groupby
+from multiprocessing import freeze_support, Manager
+
+# imports
+import config
+from handlers.cbcKeyEqualsIVHandler import cbc_key_equals_iv_handler
+from handlers.gcmBlockToPolyHandler import gcm_block_to_poly_handler
+from handlers.gcmMulGF128Handler import gcm_mul_gf2_128_handler
+from util.api import LabworkAPI
+from util.log import Log
+from util.processing import ProcessPool
+from util.progressBar import ProgressBar
 
 # import handler functions
 from handlers.blockCipherHandler import block_cipher_handler
@@ -16,8 +30,6 @@ from handlers.mulGF128Handler import mul_gf_128_handler
 from handlers.passwordKeyspaceHandler import password_keyspace_handler
 from handlers.pkcs7paddingHandler import pkcs7_padding_handler
 from handlers.strcatHandler import strcat_handler
-from util.api import API, labwork, verbosity
-from util.progressBar import ProgressBar
 
 # handler lookup
 handlers = {
@@ -27,78 +39,98 @@ handlers = {
     "password_keyspace": password_keyspace_handler,
     "mul_gf2_128": mul_gf_128_handler,
     "block_cipher": block_cipher_handler,
-    "pkcs7_padding": pkcs7_padding_handler
+    "pkcs7_padding": pkcs7_padding_handler,
+    "gcm_block_to_poly": gcm_block_to_poly_handler,
+    "gcm_mul_gf2_128": gcm_mul_gf2_128_handler,
+    "cbc_key_equals_iv": cbc_key_equals_iv_handler
 }
 
-with API() as api:
-    # get assigment
-    assignments = api.get_assignments()
-    testcases = assignments["testcases"]
 
-    if verbosity > 2:
-        print("Assignment Header:", json.dumps(dict(filter(
-            lambda key: key[0] != "testcases", assignments.items())), indent=2))
+# process a single case
+# the function will be parallelized by the ProcessPool
+def process_case(case_type, case, api, log):
+    submit_response = None
 
-    # group testcases by type
-    testcases = {case_type: [
-        *filter(lambda _case: _case["type"] == case_type, testcases)] for case_type in
-        {testcase["type"] for testcase in testcases}
-    }
-    max_type_chars = max(len(case_type) for case_type in testcases)
+    # handle case
+    start = time.time()
+    try:
+        # lookup & run handler for case type
+        result = handlers[case_type](case["assignment"], api, log)
+        # submit result
+        submit_response = api.post_submission(case["tcid"], result)
+    except Exception as err:
+        result = err
+    end = time.time()
 
-    results = []
-    # process each case type
-    for case_type, cases in testcases.items():
+    # create log message
+    nl = '\n'
+    log_msg = f"------ Result Case #{log.identifier} '{case_type}' ------\n" \
+              f"{f'Case: {json.dumps(case, indent=2)}{nl}' if config.verbosity > 2 else ''}" \
+              f"""{f'Result: {result}{nl}Time: {end - start} seconds{nl}Response: {submit_response}'
+              if not isinstance(result, Exception) else f'Error: {result}'}\n""" if config.verbosity > 0 else ""
 
-        # setup diagnostics & processbar
-        progress = ProgressBar(case_type, max_type_chars - len(case_type), len(cases), verbosity)
-        total_time = 0
+    # update progressbar and set diagnostics
+    passed = submit_response["status"] == "pass" if submit_response is not None else False
+    log.progress_bar.step(passed, log_msg)
 
-        # process each case
-        for case in cases:
 
-            result = None
-            submit_response = None
+# entry point
+if __name__ == "__main__":
 
-            if verbosity > 0:
-                progress.update("------ NEW CASE, '%s' ------\n" % case_type)
+    print(f"{config.name}\n------ CONFIG ------\n{json.dumps(vars(config.config), indent=2)}")
 
-            # handle case
-            start = time.time()
+    # enable freeze support, e.g. allow the current process to be unresponsive during child process creation
+    freeze_support()
+
+    # handshake with API & prepare http requests
+    with LabworkAPI(config.config) as labwork_api:
+
+        # get current assignment
+        assignments = labwork_api.get_assignments()
+        if config.debug:
+            with open(f"{config.labwork_id}.json", "w") as file:
+                json.dump(assignments, file, indent=2)
+
+        # group testcases by type
+        testcases = [(case_type, [*cases]) for case_type, cases in
+                     groupby(assignments["testcases"], lambda case: case["type"])]
+        max_case_type = max(len(case_type) for case_type, _ in testcases)
+
+        # init process pool
+        results = []
+        with ProcessPool(config.process_count) as pool:
+
+            # manage shared variables between processes
+            manager = Manager()
+
             try:
-                # lookup & run handler for case type
-                result = handlers[case_type](0, case["assignment"], api, progress)
-                submit_response = api.post_submission(case["tcid"], result)
-            except Exception as err:
-                result = err
-            end = time.time()
+                # process each case type
+                for case_type, cases in testcases:
+                    # create progressbar
+                    progressbar = ProgressBar(case_type, max_case_type - len(case_type) + 1, 20, len(cases),
+                                              config.verbosity, manager)
 
-            # create log message
-            logMessage = "%s%s\n" % (
-                "Case: %s\n" % (json.dumps(case, indent=2)) if verbosity > 2 else "",
-                "Result: %s\nTime: %s seconds\nResponse: %s" % (result, end - start, submit_response)
-                if not isinstance(result, Exception) else "Error: %s" % result
-            ) if verbosity > 0 else ""
-            passed = submit_response["status"] == "pass" if submit_response is not None else False
+                    # run function 'process_case' with each case in the process pool
+                    req_time, _ = pool.run(process_case, ((case_type, case, labwork_api, Log(identifier, progressbar))
+                                                          for identifier, case in enumerate(cases)), progressbar)
 
-            # update processbar
-            progress.step(logMessage, passed)
-            total_time += end - start
+                    # finish progressbar for case type and append results
+                    progressbar.finish()
+                    results.append((case_type, progressbar.passed.value, progressbar.max_value, req_time))
 
-        progress.finish()
+            except KeyboardInterrupt:
+                print("Interrupted by user :(")
+                # noinspection PyUnresolvedReferences, PyProtectedMember
+                # bad practice, but we need to terminate the child processes somehow
+                os._exit(1)
 
-        # add case results
-        results.append((case_type, progress.passed, progress.total, total_time))
-
-# print debug info
-if verbosity > 0:
-    print("------ CONCLUSION", labwork, "------")
-    total_cases = sum(total for _, _, total, _ in results)
-    passed_cases = sum(passed for _, passed, _, _ in results)
-    print("Total Cases:", total_cases)
-    print("Passed Cases:", passed_cases)
-    for case_type, passed, total, total_time in results:
-        print("\t'%s': %d/%d in %f seconds" % (case_type, passed, total, total_time))
-
-    print("%s in %f seconds (with waiting & printing)" % ("PASSED" if total_cases == passed_cases else "FAILED",
-                                                          sum(total_time for _, _, _, total_time in results)))
+    # print conclusion
+    if config.verbosity > 0:
+        print(f"------ CONCLUSION '{config.labwork_id}'------")
+        total_cases = sum(total for _, _, total, _ in results)
+        passed_cases = sum(passed for _, passed, _, _ in results)
+        print(f"Total Cases: {total_cases}\nPassed Cases: {passed_cases}")
+        for case_type, passed, total, total_time in results:
+            print(f"\t'{case_type}': {passed}/{total} in {total_time} seconds")
+        print(f"""{'PASSED' if total_cases == passed_cases else 'FAILED'} in {
+        sum(total_time for _, _, _, total_time in results)} seconds (with waiting & printing)""")

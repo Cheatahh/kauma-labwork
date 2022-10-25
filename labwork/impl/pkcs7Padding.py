@@ -7,52 +7,43 @@
     Functions:
 
     find_padding_match
-    decrypt_pkcs7_oracle
+    @concurrent oracle_decrypt_pkcs7
 """
-import base64
 
-from util.api import verbosity
-from util.converters import block_size, bytes_xor
-
-
-# helper function to perform oracle queries
-def oracle_pkcs7_padding(api, keyname, iv, ciphertext):
-    return api.query_oracle("pkcs7_padding", {
-        "keyname": keyname,
-        "iv": base64.b64encode(iv).decode("utf-8"),
-        "ciphertext": base64.b64encode(ciphertext).decode("utf-8")
-    })["status"] == "padding_correct"
+from util.functions import bytes_xor, block_size
+from util.processing import concurrent
 
 
 # brute force the padding match
-def find_padding_match(keyname, Q, ciphertext, byte_index, api):
+def find_padding_match(oracle, Q, ciphertext, index):
 
     # go through all possible values
     for i in range(256):
 
-        # edit the cv to match the padding
-        Q[byte_index] = i
+        # edit the Q vector to match the padding
+        Q[index] = i
 
         # check if the padding is correct
-        if oracle_pkcs7_padding(api, keyname, Q, ciphertext):
+        if oracle(Q, ciphertext):
 
-            # check if byte is the last byte
-            if byte_index == block_size - 1:
+            # check if byte is not the last byte
+            if index != block_size - 1:
+                return i
 
-                # invert byte
-                Q[byte_index - 1] = ~Q[byte_index - 1] & 0xff
+            # otherwise, check if the padding is still correct if the previous byte is inverted
 
-                # check if the padding is still correct
-                if oracle_pkcs7_padding(api, keyname, Q, ciphertext):
+            # invert byte
+            Q[index - 1] = ~Q[index - 1] & 0xff
 
-                    # invert byte back
-                    Q[byte_index - 1] = ~Q[byte_index - 1] & 0xff
-                    return i
-            else:
+            # check if the padding is still correct
+            if oracle(Q, ciphertext):
+
+                # invert byte back
+                Q[index - 1] = ~Q[index - 1] & 0xff
                 return i
 
     # no match found, should not happen
-    return None
+    raise Exception(f"No match found for Q = {Q.hex()} at index {index}")
 
 
 # decrypt a ciphertext block using the pkcs7 oracle
@@ -67,7 +58,8 @@ def find_padding_match(keyname, Q, ciphertext, byte_index, api):
 #          v
 #          P = plaintext + padding
 #
-def decrypt_pkcs7_oracle(keyname, iv, ciphertext, _id, api, progress):
+@concurrent
+def oracle_decrypt_pkcs7(oracle, iv, ciphertext, log):
 
     # initialize vector (nulls) for xor operation
     Q = bytearray(block_size)
@@ -80,10 +72,8 @@ def decrypt_pkcs7_oracle(keyname, iv, ciphertext, _id, api, progress):
 
         # find the padding match
         # D(C) ^ value = (block_size - index), f.e. 0x1 for the first byte
-        value = find_padding_match(keyname, Q, ciphertext, index, api)
-
-        # log
-        progress.update("[#%d] Found valid padding at Q = %s\n" % (_id, Q.hex()), 2)
+        value = find_padding_match(oracle, Q, ciphertext, index)
+        log.log(f"Found valid padding at Q = {Q.hex()}", 2)
 
         # solve for D(C)
         DC[index] = value ^ (block_size - index)

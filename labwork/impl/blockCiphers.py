@@ -12,10 +12,9 @@
     block_cipher_ctr
     block_cipher_xex
 """
-import base64
 
-from util.converters import bytes2int, int2bytes, block_size
-from handlers.mulGF128Handler import mul_gf_128
+from handlers.mulGF128Handler import mul_gf2_128
+from util.functions import b64encode, bytes2int, int2bytes, b64decode, block_size
 
 
 # helper function to perform oracle queries
@@ -23,7 +22,7 @@ def oracle_block_cipher(api, key, value, encrypt):
     return api.query_oracle("block_cipher", {
         "operation": "encrypt" if encrypt else "decrypt",
         "key": key,
-        "plaintext" if encrypt else "ciphertext": base64.b64encode(value).decode("utf-8")
+        "plaintext" if encrypt else "ciphertext": b64encode(value)
     })["ciphertext" if encrypt else "plaintext"]
 
 
@@ -39,7 +38,7 @@ def block_cipher_cbc_encrypt(blocks, key, iv, api):
 
         # oracle: encrypt block with key
         oracle = oracle_block_cipher(api, key, block, True)
-        block = base64.b64decode(oracle)
+        block = b64decode(oracle)
 
         # next vector (iv) will be the result block
         iv = bytes2int(block)
@@ -60,7 +59,7 @@ def block_cipher_cbc_decrypt(blocks, key, iv, api):
 
         # oracle: decrypt block with key
         oracle = oracle_block_cipher(api, key, block, False)
-        block = base64.b64decode(oracle)
+        block = b64decode(oracle)
 
         # block xor with current vector
         block = bytes2int(block) ^ cv
@@ -82,7 +81,7 @@ def block_cipher_ctr(blocks, key, nonce, api):
     for index in range(len(blocks)):
         # oracle: encrypt (nonce || counter) with key
         oracle = oracle_block_cipher(api, key, nonce + counter.to_bytes(byteorder="big", length=4), True)
-        oracle = bytes2int(base64.b64decode(oracle))
+        oracle = bytes2int(b64decode(oracle))
 
         # inc counter
         counter += 1
@@ -100,18 +99,18 @@ def block_cipher_ctr(blocks, key, nonce, api):
 def block_cipher_xex(blocks, key, tweak, api, encrypt):
 
     # extract lower 16 bytes from key
-    key1 = base64.b64decode(key)[:block_size]
+    key1 = b64decode(key)[:block_size]
     # encode it ready for oracle query
-    key1 = base64.b64encode(key1).decode("utf-8")
+    key1 = b64encode(key1)
 
     # extract upper 16 bytes from key
-    key2 = base64.b64decode(key)[block_size:]
+    key2 = b64decode(key)[block_size:]
     # encode it ready for oracle query
-    key2 = base64.b64encode(key2).decode("utf-8")
+    key2 = b64encode(key2)
 
     # oracle: encrypt tweak with key2
     key2 = oracle_block_cipher(api, key2, tweak, True)
-    key2 = bytes2int(base64.b64decode(key2))
+    key2 = bytes2int(b64decode(key2))
 
     # block-wise operation
     for index in range(len(blocks)):
@@ -123,11 +122,11 @@ def block_cipher_xex(blocks, key, tweak, api, encrypt):
 
         # oracle: encrypt/decrypt block with key1
         oracle = oracle_block_cipher(api, key1, block, encrypt)
-        block = bytes2int(base64.b64decode(oracle))
+        block = bytes2int(b64decode(oracle))
 
         # second xor of block with key2
         blocks[index] = int2bytes(block ^ key2)
 
-        key2 = mul_gf_128(key2)
+        key2 = mul_gf2_128(key2)
 
     return blocks
