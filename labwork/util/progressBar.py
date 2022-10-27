@@ -62,12 +62,12 @@ class ProgressBar:
             current_progress = int(self.charsPerStep * self.current.value)
             # create one large string to avoid multiple console writes
             result = f"""\r{' ' * shutil.get_terminal_size().columns}\r{text}{
-            self.spinner[self.spinner_value.value % len(self.spinner)]} '{self.name}'{
-            self.spacing}[{'=' * (current_progress - 1)}{'>' if 0 < current_progress else ''}{
+            self.spinner[self.spinner_value.value % len(self.spinner)] if self.passed.value < self.max_value else "✓"} '{
+            self.name}'{self.spacing}[{'=' * (current_progress - 1)}{'>' if 0 < current_progress else ''}{
             ' ' * (self.pb_length - current_progress)}] {self.current.value}/{self.max_value} ({
             int(self.current.value / self.max_value * 100)}%) | {
             f'Passed {self.passed.value}/{self.max_value} ({int(self.passed.value / self.max_value * 100)}%)'
-            if self.passed.value < self.max_value else 'PASSED             '} """
+            if self.passed.value < self.max_value else 'PASSED             '}"""
             sys.stdout.write(result)
             sys.stdout.flush()
 

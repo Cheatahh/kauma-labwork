@@ -21,12 +21,12 @@ def gcm_mul_gf2_128(value_a, value_b):
     polynomials = gcm_polynomials_128(value_b)
 
     result = 0
-    for idx in range(128):
+    for bit in range(128):
 
         # checks if polynomial is set -> add to result (xor)
         # this could also be done using a bit mask with b,
         # I just felt like using the previous function is more pretty
-        if idx in polynomials:
+        if bit in polynomials:
             result ^= value_a
 
         # multiply a by x (alpha)

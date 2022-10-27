@@ -107,7 +107,7 @@ if __name__ == "__main__":
                 # process each case type
                 for case_type, cases in testcases:
                     # create progressbar
-                    progressbar = ProgressBar(case_type, max_case_type - len(case_type) + 1, 20, len(cases),
+                    progressbar = ProgressBar(case_type, max_case_type + 1, 20, len(cases),
                                               config.verbosity, manager)
 
                     # run function 'process_case' with each case in the process pool
