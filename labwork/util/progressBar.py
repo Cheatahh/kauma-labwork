@@ -15,7 +15,9 @@ import sys
 
 # simple console ProgressBar
 class ProgressBar:
-    spinner = ["|", "/", "-", "\\"]
+
+    # spinner = ["|", "/", "-", "\\"]
+    spinner = ["⠹", "⠼", "⠶", "⠧", "⠏", "⠛"]
 
     # helper class to simulate a shared value between processes
     # used if multiprocessing_manager is None

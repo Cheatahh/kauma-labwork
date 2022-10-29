@@ -22,10 +22,11 @@ def cbc_key_equals_iv_handler(assignment, api, _log):
 
     # split ciphertext
     blocks = split_blocks(ciphertext)
+    assert len(blocks) >= 3, "Ciphertext must contain at least 3 blocks"
 
     # duplicate the last two blocks to keep a valid padding
-    blocks.append(blocks[1])
-    blocks.append(blocks[2])
+    blocks.append(blocks[-2])
+    blocks.append(blocks[-2])
 
     # set C2 (C[1]) = 0
     # so that P3 = D(C3) ^ C2 = D(C3) ^ 0 = D(C3)
