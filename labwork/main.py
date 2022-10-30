@@ -17,6 +17,7 @@ import config
 from handlers.cbcKeyEqualsIVHandler import cbc_key_equals_iv_handler
 from handlers.gcmBlockToPolyHandler import gcm_block_to_poly_handler
 from handlers.gcmMulGF128Handler import gcm_mul_gf2_128_handler
+from util.ansiEscape import ansi_red, ansi_reset, ansi_blue, ansi_green, ansi_white
 from util.api import LabworkAPI
 from util.log import Log
 from util.processing import ProcessPool
@@ -63,11 +64,12 @@ def process_case(case_type, case, api, log):
     end = time.time()
 
     # create log message
-    nl = '\n'
-    log_msg = f"------ Result Case #{log.identifier} '{case_type}' ------\n" \
-              f"{f'Case: {json.dumps(case, indent=2)}{nl}' if config.verbosity > 2 else ''}" \
-              f"""{f'Result: {result}{nl}Time: {end - start} seconds{nl}Response: {submit_response}'
-              if not isinstance(result, Exception) else f'Error: {result}'}\n""" if config.verbosity > 0 else ""
+    log_msg = "%s------ Result Case #%d '%s' ------%s\n%s%s\n" % (
+        ansi_blue, log.identifier, case_type, ansi_reset,
+        f'Case: {json.dumps(case, indent=2)}\n' if config.verbosity > 2 else '',
+        f'{ansi_red}Error:{ansi_reset} {result}' if isinstance(result, Exception) else
+        f'Result: {result}\nTime: {end - start} seconds\nResponse: {submit_response}'
+    ) if config.verbosity > 0 else ""
 
     # update progressbar and set diagnostics
     passed = submit_response["status"] == "pass" if submit_response is not None else False
@@ -77,7 +79,7 @@ def process_case(case_type, case, api, log):
 # entry point
 if __name__ == "__main__":
 
-    print(f"{config.name}\n------ CONFIG ------\n{json.dumps(vars(config.config), indent=2)}")
+    print(f"{ansi_white}{config.name}\n{ansi_blue}------ CONFIG ------{ansi_reset}\n{json.dumps(vars(config.config), indent=2)}")
 
     # enable freeze support, e.g. allow the current process to be unresponsive during child process creation
     freeze_support()
@@ -126,11 +128,11 @@ if __name__ == "__main__":
 
     # print conclusion
     if config.verbosity > 0:
-        print(f"------ CONCLUSION '{config.labwork_id}'------")
+        print(f"{ansi_blue}------ CONCLUSION '{config.labwork_id}' ------{ansi_reset}")
         total_cases = sum(total for _, _, total, _ in results)
         passed_cases = sum(passed for _, passed, _, _ in results)
         print(f"Total Cases: {total_cases}\nPassed Cases: {passed_cases}")
         for case_type, passed, total, total_time in results:
             print(f"\t'{case_type}': {passed}/{total} in {total_time} seconds")
-        print(f"""{'PASSED' if total_cases == passed_cases else 'FAILED'} in {
+        print(f"""{f'{ansi_green}PASSED' if total_cases == passed_cases else f'{ansi_red}FAILED'}{ansi_reset} in {
         sum(total_time for _, _, _, total_time in results)} seconds (with waiting & printing)""")

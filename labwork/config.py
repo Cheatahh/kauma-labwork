@@ -13,17 +13,17 @@ name = "Response program (T3INF9004: Cryptanalysis und Method-Audit)\nAuthors: D
 # parse cli arguments
 parser = argparse.ArgumentParser(description=name)
 parser.add_argument(dest="endpoint", action="store", type=str,
-                    help="labwork endpoint, for example https://example.com/endpoint")
+                    help="labwork endpoint, for example 'https://example.com/endpoint'")
 parser.add_argument(dest="client_id", action="store", type=str,
                     help="client uuid, for example 'cafebabe-0000-0000-0000-000000000000'")
 parser.add_argument(dest="labwork_id", action="store", type=str,
                     help="labwork identifier, for example 'labwork01'")
 parser.add_argument("-v", "--verbose", dest="verbosity", action="count", default=0,
                     help="increase verbosity (up to 3 times)")
-parser.add_argument("-p", "--processes", dest="process_count", action="store", type=int, default=1,
-                    help="number of processes to use for parallel processing")
+parser.add_argument("-p", dest="process_count", action="store", type=int, default=1,
+                    help="number of processes to use for parallel processing (same case type)")
 parser.add_argument("--debug", dest="debug", action="store_true", default=False,
-                    help="debug mode")
+                    help="enable debug mode")
 config = parser.parse_args(sys.argv[1:])
 
 # extracted config values to ease access

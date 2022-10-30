@@ -12,6 +12,8 @@
 import shutil
 import sys
 
+from util.ansiEscape import ansi_white, ansi_blue, ansi_reset, ansi_green, ansi_red
+
 
 # simple console ProgressBar
 class ProgressBar:
@@ -44,13 +46,14 @@ class ProgressBar:
         if multiprocessing_manager is not None:
             self.current = multiprocessing_manager.Value('i', 0)
             self.passed = multiprocessing_manager.Value('i', 0)
-            self.spinner_value = multiprocessing_manager.Value('i', 0)
+            self.spinner_val = multiprocessing_manager.Value('i', 0)
             self.lock = multiprocessing_manager.Lock()
         else:
             self.current = ProgressBar.Value(0)
             self.passed = ProgressBar.Value(0)
-            self.spinner_value = ProgressBar.Value(0)
+            self.spinner_val = ProgressBar.Value(0)
             self.lock = ProgressBar.Lock()
+        self.finished = False
         self.pb_length = pb_length
         self.spacing = " " * max(pb_start - len(name), 0)
         self.charsPerStep = pb_length / max_value
@@ -63,13 +66,19 @@ class ProgressBar:
         if required_verbosity <= self.verbosityLevel:
             current_progress = int(self.charsPerStep * self.current.value)
             # create one large string to avoid multiple console writes
-            result = f"""\r{' ' * shutil.get_terminal_size().columns}\r{text}{
-            self.spinner[self.spinner_value.value % len(self.spinner)] if self.passed.value < self.max_value else "✓"} '{
-            self.name}'{self.spacing}[{'=' * (current_progress - 1)}{'>' if 0 < current_progress else ''}{
-            ' ' * (self.pb_length - current_progress)}] {self.current.value}/{self.max_value} ({
-            int(self.current.value / self.max_value * 100)}%) | {
-            f'Passed {self.passed.value}/{self.max_value} ({int(self.passed.value / self.max_value * 100)}%)'
-            if self.passed.value < self.max_value else 'PASSED             '}"""
+            result = "\r%s\r%s%s%s %s'%s'%s%s[%s%s%s] %d/%d (%d%%) | %s%s" % (
+                ' ' * shutil.get_terminal_size().columns, text, ansi_blue,
+                self.spinner[self.spinner_val.value % len(self.spinner)] if self.passed.value < self.max_value else "✓",
+                ansi_white, self.name, ansi_reset,
+                self.spacing, '=' * (current_progress - 1), '>' if current_progress > 0 else '',
+                ' ' * (self.pb_length - current_progress), self.current.value, self.max_value,
+                self.current.value / self.max_value * 100,
+                f'Passed {self.passed.value}/{self.max_value} ({int(self.passed.value / self.max_value * 100)}%)'
+                if not self.finished else (
+                    f'{ansi_red}FAILED ({self.passed.value}/{self.max_value})'
+                    if self.passed.value < self.max_value else f'{ansi_green}PASSED             '
+                ), ansi_reset
+            )
             sys.stdout.write(result)
             sys.stdout.flush()
 
@@ -85,11 +94,12 @@ class ProgressBar:
     # turn the spinner by one
     def turn_spinner(self):
         self.lock.acquire()
-        self.spinner_value.value += 1
+        self.spinner_val.value += 1
         self.lock.release()
         self.insert("")
 
     # finish printing, console can be used regularly again
-    @staticmethod
-    def finish():
+    def finish(self):
+        self.finished = True
+        self.insert("")
         print()
