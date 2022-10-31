@@ -49,12 +49,12 @@ def b64encode(text):
 
 
 # helper function to split text into byte blocks
-def split_blocks(text):
+def split_blocks(text, size=block_size):
     # checks
-    assert len(text) % block_size == 0, f"Text size must be a multiple of {block_size}"
+    assert len(text) % size == 0, f"Text size must be a multiple of {size}"
     return [
-        text[index:index + block_size]
-        for index in range(0, len(text), block_size)
+        text[index:index + size]
+        for index in range(0, len(text), size)
     ]
 
 

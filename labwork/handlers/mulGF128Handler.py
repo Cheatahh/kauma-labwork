@@ -14,7 +14,7 @@ from impl.galoisField import mul_gf2_128
 from util.functions import b64decode, bytes2int, int2bytes, b64encode
 
 
-def mul_gf_128_handler(assignment, _api, _log):
+def mul_gf_128_handler(assignment, _api, _log, _case_id):
     """Handler-function for the 'mul_gf_128' type"""
 
     # decode base64 string to raw bytes

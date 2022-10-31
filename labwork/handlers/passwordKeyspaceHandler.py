@@ -16,7 +16,7 @@ from string import ascii_lowercase, ascii_uppercase, digits
 
 
 # This function contains multiple approaches to solve this problem, see comments for detail
-def password_keyspace_handler(assignment, _api, log):
+def password_keyspace_handler(assignment, _api, log, _case_id):
     """Handler-function for the 'password_keyspace' type."""
 
     # shortcut and safety

@@ -14,7 +14,7 @@ from impl.pkcs7Padding import oracle_decrypt_pkcs7
 from util.functions import b64decode, b64encode, split_blocks
 
 
-def pkcs7_padding_handler(assignment, api, log):
+def pkcs7_padding_handler(assignment, api, log, _case_id):
     # extract from assignment
     iv = b64decode(assignment["iv"])
     keyname = assignment["keyname"]

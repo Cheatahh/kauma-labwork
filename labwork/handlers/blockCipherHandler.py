@@ -14,7 +14,7 @@ from impl.blockCiphers import block_cipher_cbc, block_cipher_xex, block_cipher_c
 from util.functions import b64decode, split_blocks, bytes2int, b64encode
 
 
-def block_cipher_handler(assignment, api, _log):
+def block_cipher_handler(assignment, api, _log, _case_id):
     """Handler-function for the 'block_cipher' type."""
 
     # extract config

@@ -14,7 +14,7 @@ from impl.galoisCounterMode import gcm_mul_gf2_128
 from util.functions import b64decode, b64encode, bytes2gcm, gcm2bytes
 
 
-def gcm_mul_gf2_128_handler(assignment, _api, _log):
+def gcm_mul_gf2_128_handler(assignment, _api, _log, _case_id):
     """Handler-function for the 'gcm_mul_gf2_128' type"""
 
     # extract values

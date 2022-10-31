@@ -14,7 +14,7 @@ from impl.galoisCounterMode import gcm_polynomials_128
 from util.functions import b64decode, bytes2gcm
 
 
-def gcm_block_to_poly_handler(assignment, _api, _log):
+def gcm_block_to_poly_handler(assignment, _api, _log, _case_id):
     """Handler-function for the 'gcm_block_to_poly' type"""
 
     # extract block

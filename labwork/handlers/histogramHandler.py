@@ -11,7 +11,7 @@
 """
 
 
-def histogram_handler(assignment, _api, _log):
+def histogram_handler(assignment, _api, _log, _case_id):
     """Handler-function for the 'histogram' type"""
 
     text = assignment["text"]

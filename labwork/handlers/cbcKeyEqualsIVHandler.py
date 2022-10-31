@@ -13,7 +13,7 @@
 from util.functions import b64decode, split_blocks, b64encode, bytes_xor
 
 
-def cbc_key_equals_iv_handler(assignment, api, _log):
+def cbc_key_equals_iv_handler(assignment, api, _log, _case_id):
     """Handler-function for the 'cbc_key_equals_iv' type"""
 
     # extract values

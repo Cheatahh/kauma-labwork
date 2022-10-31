@@ -17,6 +17,7 @@ import config
 from handlers.cbcKeyEqualsIVHandler import cbc_key_equals_iv_handler
 from handlers.gcmBlockToPolyHandler import gcm_block_to_poly_handler
 from handlers.gcmMulGF128Handler import gcm_mul_gf2_128_handler
+from handlers.rc4fmsHandler import rc4_fms_handler
 from util.ansiEscape import ansi_red, ansi_reset, ansi_blue, ansi_green, ansi_white
 from util.api import LabworkAPI
 from util.log import Log
@@ -43,7 +44,8 @@ handlers = {
     "pkcs7_padding": pkcs7_padding_handler,
     "gcm_block_to_poly": gcm_block_to_poly_handler,
     "gcm_mul_gf2_128": gcm_mul_gf2_128_handler,
-    "cbc_key_equals_iv": cbc_key_equals_iv_handler
+    "cbc_key_equals_iv": cbc_key_equals_iv_handler,
+    "rc4_fms": rc4_fms_handler
 }
 
 
@@ -56,7 +58,7 @@ def process_case(case_type, case, api, log):
     start = time.time()
     try:
         # lookup & run handler for case type
-        result = handlers[case_type](case["assignment"], api, log)
+        result = handlers[case_type](case["assignment"], api, log, case["tcid"])
         # submit result
         submit_response = api.post_submission(case["tcid"], result)
     except Exception as err:
@@ -67,7 +69,7 @@ def process_case(case_type, case, api, log):
     log_msg = "%s------ Result Case #%d '%s' ------%s\n%s%s\n" % (
         ansi_blue, log.identifier, case_type, ansi_reset,
         f'Case: {json.dumps(case, indent=2)}\n' if config.verbosity > 2 else '',
-        f'{ansi_red}Error:{ansi_reset} {result}' if isinstance(result, Exception) else
+        f'{ansi_red}{type(result).__name__}:{ansi_reset} {result}' if isinstance(result, Exception) else
         f'Result: {result}\nTime: {end - start} seconds\nResponse: {submit_response}'
     ) if config.verbosity > 0 else ""
 
@@ -79,7 +81,8 @@ def process_case(case_type, case, api, log):
 # entry point
 if __name__ == "__main__":
 
-    print(f"{ansi_white}{config.name}\n{ansi_blue}------ CONFIG ------{ansi_reset}\n{json.dumps(vars(config.config), indent=2)}")
+    print(f"""{ansi_white}{config.name}\n{ansi_blue}------ CONFIG ------{ansi_reset}\n{
+        json.dumps(vars(config.config), indent=2)}""")
 
     # enable freeze support, e.g. allow the current process to be unresponsive during child process creation
     freeze_support()
@@ -94,8 +97,10 @@ if __name__ == "__main__":
                 json.dump(assignments, file, indent=2)
 
         # group testcases by type
+        testcases = assignments["testcases"]
+        testcases.sort(key=lambda case: case["type"])
         testcases = [(case_type, [*cases]) for case_type, cases in
-                     groupby(assignments["testcases"], lambda case: case["type"])]
+                     groupby(testcases, lambda case: case["type"])]
         max_case_type = max(len(case_type) for case_type, _ in testcases)
 
         # init process pool

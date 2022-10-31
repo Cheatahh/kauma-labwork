@@ -68,7 +68,8 @@ class ProgressBar:
             # create one large string to avoid multiple console writes
             result = "\r%s\r%s%s%s %s'%s'%s%s[%s%s%s] %d/%d (%d%%) | %s%s" % (
                 ' ' * shutil.get_terminal_size().columns, text, ansi_blue,
-                self.spinner[self.spinner_val.value % len(self.spinner)] if self.passed.value < self.max_value else "✓",
+                self.spinner[self.spinner_val.value % len(self.spinner)] if
+                self.current.value < self.max_value else "✓",
                 ansi_white, self.name, ansi_reset,
                 self.spacing, '=' * (current_progress - 1), '>' if current_progress > 0 else '',
                 ' ' * (self.pb_length - current_progress), self.current.value, self.max_value,

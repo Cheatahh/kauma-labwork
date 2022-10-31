@@ -13,7 +13,7 @@
 from impl.streamCiphers import caesar_cipher
 
 
-def caesar_cipher_handler(assignment, _api, _log):
+def caesar_cipher_handler(assignment, _api, _log, _case_id):
     """Handler-function for the 'caesar_cipher' type"""
 
     shift = assignment["letter_shift"]
