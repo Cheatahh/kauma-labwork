@@ -10,6 +10,7 @@ tar -xvf labwork.tar.gz >/dev/null
 chmod +x labwork/*
 chmod +x rc4-bonus/*
 rm labwork.tar.gz
+rm labwork/labwork*.json
 tar -czvf labwork.tar.gz labwork rc4-bonus >/dev/null
 rm -r labwork
 

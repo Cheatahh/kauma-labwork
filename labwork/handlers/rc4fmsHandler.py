@@ -1,3 +1,15 @@
+"""
+    This file is a handler module for response program (T3INF9004: Cryptanalysis und Method-Audit).
+
+    License: CC-0
+    Authors: DHBW Students 200374 & 200357 (2022)
+    Component: Labwork05
+
+    Functions:
+
+    rc4_fms_handler
+"""
+
 from itertools import groupby
 
 from util.functions import split_blocks, b64decode, b64encode

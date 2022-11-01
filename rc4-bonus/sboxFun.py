@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+"""
+    This file is the solution to a bonus exercise (T3INF9004: Cryptanalysis und Method-Audit).
+
+    License: CC-0
+    Authors: DHBW Students 200374 & 200357 (2022)
+    Component: Labwork05 (bonus)
+"""
+
 # noinspection PyUnresolvedReferences
 from random import shuffle
 
@@ -12,10 +21,11 @@ from random import shuffle
         S[i], S[j] = S[j], S[i]                 <-- if j = i, no changes would be done
         
     
+    -> required j = i; j gets assigned by term j = (j + S[i] + K[i % len(K)]) % 256
     -> term (j + S[i] + K[i % len(K)]) % 256 must be equal to i
     
     -> (j + S[i] + K[i % len(K)]) % 256 = i                       // set equal to i
-               j + S[i] + K[i % len(K)] = i                       // were in F256
+               j + S[i] + K[i % len(K)] = i                       // we are in F256 anyway -> move % 256 to later assignment
                           K[i % len(K)] = i - j - S[i]            // rearrange
                                    K[i] = i - j - S[i]            // assumption max(i) = 255 < len(K)
     
@@ -32,7 +42,7 @@ def generate_null_key(S):
     for i in range(256):
         # K[i] = i - j - S[i]
         required_key_at_i = i - j - S[i]
-        K.append(required_key_at_i % 256)
+        K.append(required_key_at_i % 256)  # re-add modulo 256
         j = i
     return K
 
@@ -55,7 +65,7 @@ print("           =", bytes(null_key).hex())
 s_box_ksa = s_box.copy()
 regular_ksa(null_key, s_box_ksa)
 print("S (before) =", s_box)
-print("S (after)  =", s_box)
+print("S (after)  =", s_box_ksa)
 
 print("Are equal  =", s_box == s_box_ksa)
 
