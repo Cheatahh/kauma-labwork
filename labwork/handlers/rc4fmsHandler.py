@@ -23,7 +23,7 @@ class Case:
     def fsm_histogram(self, A, blocks, K):
         histogram = {byte: 0 for byte in range(256)}
         for block in blocks:
-            S = [i for i in range(256)]
+            S = [*range(256)]
             ksa = block[:3] + K[:A]
             j = 0
             for i in range(A + 3):
