@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
     This file is the solution to a bonus exercise (T3INF9004: Cryptanalysis und Method-Audit).
+    A generated output is provided as a multi-line string down below (line 88).
 
     License: CC-0
     Authors: DHBW Students 200374 & 200357 (2022)
@@ -47,6 +48,20 @@ def generate_null_key(S):
     return K
 
 
+# generates a key to convert any S-box to its identity
+def generate_identity_key(S):
+    S = S.copy()  # required as we change S
+    K = []
+    j = 0
+    for i in range(256):
+        req_i = S.index(i)  # where is value i in S? let's find out!
+        required_key_at_i = req_i - j - S[i]
+        K.append(required_key_at_i % 256)  # re-add modulo 256
+        j = req_i
+        S[i], S[j] = S[j], S[i]
+    return K
+
+
 def regular_ksa(K, S):
     j = 0
     for i in range(256):
@@ -79,3 +94,15 @@ print("Are equal  =", s_box == s_box_ksa)
     Are equal  = True
 
 """
+
+shuffle(s_box)
+identity_key = generate_identity_key(s_box)
+
+print("K (ident)  = ", identity_key)
+print("           = ", bytes(identity_key).hex())
+s_box_ksa = s_box.copy()
+regular_ksa(identity_key, s_box_ksa)
+print("S (before) =", s_box)
+print("S (after)  =", s_box_ksa)
+
+print("Is ident   =", [*range(256)] == s_box_ksa)
