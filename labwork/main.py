@@ -14,10 +14,6 @@ from multiprocessing import freeze_support, Manager
 
 # imports
 import config
-from handlers.cbcKeyEqualsIVHandler import cbc_key_equals_iv_handler
-from handlers.gcmBlockToPolyHandler import gcm_block_to_poly_handler
-from handlers.gcmMulGF128Handler import gcm_mul_gf2_128_handler
-from handlers.rc4fmsHandler import rc4_fms_handler
 from util.ansiEscape import ansi_red, ansi_reset, ansi_blue, ansi_green, ansi_white
 from util.api import LabworkAPI
 from util.log import Log
@@ -25,6 +21,11 @@ from util.processing import ProcessPool
 from util.progressBar import ProgressBar
 
 # import handler functions
+from handlers.cbcKeyEqualsIVHandler import cbc_key_equals_iv_handler
+from handlers.chiSquareHandler import chi_square_handler
+from handlers.gcmBlockToPolyHandler import gcm_block_to_poly_handler
+from handlers.gcmMulGF128Handler import gcm_mul_gf2_128_handler
+from handlers.rc4fmsHandler import rc4_fms_handler
 from handlers.blockCipherHandler import block_cipher_handler
 from handlers.caesarCipherHandler import caesar_cipher_handler
 from handlers.histogramHandler import histogram_handler
@@ -45,7 +46,8 @@ handlers = {
     "gcm_block_to_poly": gcm_block_to_poly_handler,
     "gcm_mul_gf2_128": gcm_mul_gf2_128_handler,
     "cbc_key_equals_iv": cbc_key_equals_iv_handler,
-    "rc4_fms": rc4_fms_handler
+    "rc4_fms": rc4_fms_handler,
+    "chi_square": chi_square_handler
 }
 
 

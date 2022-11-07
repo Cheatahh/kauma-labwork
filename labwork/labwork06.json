@@ -1,0 +1,5081 @@
+{
+  "name": "labwork06",
+  "description": "This is the sixth assignment. You will be given data, decimate it, create histograms of it and make chi-square judgements.",
+  "start_utc": "2022-11-07T00:00:00Z",
+  "end_utc": "2022-11-16T00:00:00Z",
+  "max_points": 8,
+  "testcases": [
+    {
+      "tcid": "4b7efd57-a116-4077-9044-c8447175027c",
+      "passed_at_utc": "2022-11-07T10:16:06Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "decimate",
+        "data": "AAECAwQFBgc=",
+        "selectors": [
+          {}
+        ]
+      },
+      "expect_solution": [
+        {
+          "decimated_data": "AAECAwQFBgc="
+        }
+      ]
+    },
+    {
+      "tcid": "9cc433ca-b46f-4ce9-996f-966ad71d9e8d",
+      "passed_at_utc": "2022-11-07T10:08:43Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "decimate",
+        "data": "PR+xjHkqlwWhjLfHzr6Hoh5lLHsIyVmEig4mA1jT",
+        "selectors": [
+          {
+            "offset": 0,
+            "stride": 1
+          },
+          {
+            "offset": 0,
+            "stride": 2
+          },
+          {
+            "offset": 1,
+            "stride": 2
+          },
+          {
+            "offset": 0,
+            "stride": 3
+          },
+          {
+            "offset": 1,
+            "stride": 3
+          },
+          {
+            "offset": 2,
+            "stride": 3
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "decimated_data": "PR+xjHkqlwWhjLfHzr6Hoh5lLHsIyVmEig4mA1jT"
+        },
+        {
+          "decimated_data": "PbF5l6G3zoceLAhZiiZY"
+        },
+        {
+          "decimated_data": "H4wqBYzHvqJle8mEDgPT"
+        },
+        {
+          "decimated_data": "PYyXjM6iLMmKAw=="
+        },
+        {
+          "decimated_data": "H3kFt74ee1kOWA=="
+        },
+        {
+          "decimated_data": "sSqhx4dlCIQm0w=="
+        }
+      ]
+    },
+    {
+      "tcid": "aa0b9c78-3ee3-4390-b7ee-695a15d9b415",
+      "passed_at_utc": "2022-11-07T10:08:43Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "decimate",
+        "data": "jEkpV19DPpdd+oDRpvEM2uaekC8JPg/ZJoJInZaf",
+        "selectors": [
+          {
+            "offset": 0,
+            "stride": 1
+          },
+          {
+            "offset": 0,
+            "stride": 2
+          },
+          {
+            "offset": 1,
+            "stride": 2
+          },
+          {
+            "offset": 0,
+            "stride": 3
+          },
+          {
+            "offset": 1,
+            "stride": 3
+          },
+          {
+            "offset": 2,
+            "stride": 3
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "decimated_data": "jEkpV19DPpdd+oDRpvEM2uaekC8JPg/ZJoJInZaf"
+        },
+        {
+          "decimated_data": "jClfPl2ApgzmkAkPJkiW"
+        },
+        {
+          "decimated_data": "SVdDl/rR8dqeLz7Zgp2f"
+        },
+        {
+          "decimated_data": "jFc++qbakD4mnQ=="
+        },
+        {
+          "decimated_data": "SV+XgPHmLw+Clg=="
+        },
+        {
+          "decimated_data": "KUNd0QyeCdlInw=="
+        }
+      ]
+    },
+    {
+      "tcid": "590f26bf-f878-4c34-ad0e-1a852ee1479c",
+      "passed_at_utc": "2022-11-07T10:08:43Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "decimate",
+        "data": "2LoabNexUhLhlQyePcZQ7AHkf0KrgrcUn2TDMKZ9",
+        "selectors": [
+          {
+            "offset": 0,
+            "stride": 1
+          },
+          {
+            "offset": 0,
+            "stride": 2
+          },
+          {
+            "offset": 1,
+            "stride": 2
+          },
+          {
+            "offset": 0,
+            "stride": 3
+          },
+          {
+            "offset": 1,
+            "stride": 3
+          },
+          {
+            "offset": 2,
+            "stride": 3
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "decimated_data": "2LoabNexUhLhlQyePcZQ7AHkf0KrgrcUn2TDMKZ9"
+        },
+        {
+          "decimated_data": "2BrXUuEMPVABf6u3n8Om"
+        },
+        {
+          "decimated_data": "umyxEpWexuzkQoIUZDB9"
+        },
+        {
+          "decimated_data": "2GxSlT3sf4KfMA=="
+        },
+        {
+          "decimated_data": "utcSDMYBQrdkpg=="
+        },
+        {
+          "decimated_data": "GrHhnlDkqxTDfQ=="
+        }
+      ]
+    },
+    {
+      "tcid": "25dd21d9-1f72-49f0-90c2-111061382267",
+      "passed_at_utc": "2022-11-07T10:15:03Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "decimate",
+        "data": "cQCiUfuh+vvLIUM40FU0XSCOQQEWmwO05dZysfAjMt3ssIYeUob/3Z0XUEzGUrByHIzvAqOd16QbXu1+FcAenW/SIefrCHtQjjSMFYBRGD5Ly+UU2ui/x9VgbgCxji/HnXfkag==",
+        "selectors": [
+          {
+            "stride": 1
+          },
+          {
+            "stride": 2
+          },
+          {
+            "stride": 3
+          },
+          {
+            "stride": 4
+          },
+          {
+            "stride": 5
+          },
+          {
+            "stride": 6
+          },
+          {
+            "stride": 7
+          },
+          {
+            "stride": 8
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "decimated_data": "cQCiUfuh+vvLIUM40FU0XSCOQQEWmwO05dZysfAjMt3ssIYeUob/3Z0XUEzGUrByHIzvAqOd16QbXu1+FcAenW/SIefrCHtQjjSMFYBRGD5Ly+UU2ui/x9VgbgCxji/HnXfkag=="
+        },
+        {
+          "decimated_data": "caL7+stD0DQgQRYD5XLwMuyGUv+dUMawHO+j1xvtFR5vIet7joyAGEvl2r/VbrEvneQ="
+        },
+        {
+          "decimated_data": "cVH6IdBdQZvlsTKwUt1QUhwC114VnSEIjhUYy9rHbo6dag=="
+        },
+        {
+          "decimated_data": "cfvL0CAW5fDsUp3GHKMbFW/rjoBL2tWxnQ=="
+        },
+        {
+          "decimated_data": "caFDXRbWMh6dUu+kFdJ7FUvobsc="
+        },
+        {
+          "decimated_data": "cfrQQeUyUlAc1xUhjhjabp0="
+        },
+        {
+          "decimated_data": "cfs0m/AeUIwbnXtR2gDk"
+        },
+        {
+          "decimated_data": "ccsg5eydHBtvjkvVnQ=="
+        }
+      ]
+    },
+    {
+      "tcid": "3b2a6b97-5ed2-457e-81fb-6e68cfc492f3",
+      "passed_at_utc": "2022-11-07T10:16:06Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "decimate",
+        "data": "Nn5cl+yuJ1acxKcH11Tkpe6fdAeeT8a/Fz7drdwvfPdV3wbn7z2N3OwVN88ujz5OPX/OD0TftKYGDbxNBO21/XxUdt0eNEyWpZSPnYZPPs6GD6w9ZaysfZb+V38Ujo60PL0sdwwNd82tDVy0Rp/mjeXN/K62764PZ4d1T9w3/PRvrIx9jr7WZaUm5dTMH9WFJFc87T/tdBXuHDQdZx1HBa3fTpXlzib8F3fcBUX8r9bPhKadDV9fRtZdRzV2rpfvd/eWrq0/DEyNbMfnHhyM73wEZqwvD6789qae9Wz1D8/EJiQXrz9cBf+utd0+XASlL4f2tva+hV03dB/f915vFsRs7b30rW4PRccH3WaeDdTcDK+vNIeW1q5HZd30l70NDPxGrSVF/RbkXnSdJsw9rgR3dUfkvIV3/lQPvBVcHXc2pF+H33e0lWSXTvzF73TET14Gx3xEruU1FxW99pbWvF11XKdfbW++NVbVRHRGz+RMxxwcNUT1NlbUdQaWT6wGDG72nk43/n3FVPw85fT9513mtNW/zsckzZbG/6zkx+fOTRzUN5SURDx1DMfM9QcGDZa1HF1ldXetrK8thI31TwxUtR02P46PFGS2xm2V1ycMdsYlVW4cJi8E7M0tNtQ/hSbcXj8eTpe2tsYPNv+X3FTsLcbGTC6dBfz8j080lW9XJoaUnt4Fb6wVzbQMxj7u1w6M3Y8uZ/WnFlVXzmyEfK/l7kY2b8bV/Zwd18T8JX/URP4n38e/tUwmP5yObVfuHAT0zCxmRkZsJc1VdR8PlCRlRB5FhpbebVZsnl9ej5zHzs3kfAcWtXzlz3UvpTflfL3mDD3UjF5vhg9n7RSXRjwH5Y+vBBZ8DVeWn/6Vl/z0FUe85p2sh4f2BrxWn7cvRaZnLL5GRnVPrrXU7lyk1kyEF0TERt0X5I/ULM0fZD9Elv121DfOTGQO/5Suz9adjs5ejx2mFIYfnO9/nPxHDDckXP5m3rXnNN7PZLfvBB1XrzwvdvzndSzMD00kPYWX78ylJb4H50VkrW0uLJR0DO5034/GzEw8155WpJ0ujDaWpXat7ne0zMSVh2fEfBSsdi61VD123j18BrSMVa383+yUJATPBFxu/6UnBv3E5i/NvA79l6TXrq01RlxEVnQE7aUE3t0n14S/Hb0Xfz+FblUOzefmBnzsz6b1PjReZ2+2tOcnp9WWzL2X/C0fbP8VNzwGRrUPh7YMviVPvEY/5u42DP3lHtzFDkXcTaT0fqxFlRTFBk6/Z9/Elt9ljbXmLN3M9EUVVYfsXw30bvUN5DcO7HwNF24GNCcFfG/+tXQXDW3PTB+9rg==",
+        "selectors": [
+          {}
+        ]
+      },
+      "expect_solution": [
+        {
+          "decimated_data": "Nn5cl+yuJ1acxKcH11Tkpe6fdAeeT8a/Fz7drdwvfPdV3wbn7z2N3OwVN88ujz5OPX/OD0TftKYGDbxNBO21/XxUdt0eNEyWpZSPnYZPPs6GD6w9ZaysfZb+V38Ujo60PL0sdwwNd82tDVy0Rp/mjeXN/K62764PZ4d1T9w3/PRvrIx9jr7WZaUm5dTMH9WFJFc87T/tdBXuHDQdZx1HBa3fTpXlzib8F3fcBUX8r9bPhKadDV9fRtZdRzV2rpfvd/eWrq0/DEyNbMfnHhyM73wEZqwvD6789qae9Wz1D8/EJiQXrz9cBf+utd0+XASlL4f2tva+hV03dB/f915vFsRs7b30rW4PRccH3WaeDdTcDK+vNIeW1q5HZd30l70NDPxGrSVF/RbkXnSdJsw9rgR3dUfkvIV3/lQPvBVcHXc2pF+H33e0lWSXTvzF73TET14Gx3xEruU1FxW99pbWvF11XKdfbW++NVbVRHRGz+RMxxwcNUT1NlbUdQaWT6wGDG72nk43/n3FVPw85fT9513mtNW/zsckzZbG/6zkx+fOTRzUN5SURDx1DMfM9QcGDZa1HF1ldXetrK8thI31TwxUtR02P46PFGS2xm2V1ycMdsYlVW4cJi8E7M0tNtQ/hSbcXj8eTpe2tsYPNv+X3FTsLcbGTC6dBfz8j080lW9XJoaUnt4Fb6wVzbQMxj7u1w6M3Y8uZ/WnFlVXzmyEfK/l7kY2b8bV/Zwd18T8JX/URP4n38e/tUwmP5yObVfuHAT0zCxmRkZsJc1VdR8PlCRlRB5FhpbebVZsnl9ej5zHzs3kfAcWtXzlz3UvpTflfL3mDD3UjF5vhg9n7RSXRjwH5Y+vBBZ8DVeWn/6Vl/z0FUe85p2sh4f2BrxWn7cvRaZnLL5GRnVPrrXU7lyk1kyEF0TERt0X5I/ULM0fZD9Elv121DfOTGQO/5Suz9adjs5ejx2mFIYfnO9/nPxHDDckXP5m3rXnNN7PZLfvBB1XrzwvdvzndSzMD00kPYWX78ylJb4H50VkrW0uLJR0DO5034/GzEw8155WpJ0ujDaWpXat7ne0zMSVh2fEfBSsdi61VD123j18BrSMVa383+yUJATPBFxu/6UnBv3E5i/NvA79l6TXrq01RlxEVnQE7aUE3t0n14S/Hb0Xfz+FblUOzefmBnzsz6b1PjReZ2+2tOcnp9WWzL2X/C0fbP8VNzwGRrUPh7YMviVPvEY/5u42DP3lHtzFDkXcTaT0fqxFlRTFBk6/Z9/Elt9ljbXmLN3M9EUVVYfsXw30bvUN5DcO7HwNF24GNCcFfG/+tXQXDW3PTB+9rg=="
+        }
+      ]
+    },
+    {
+      "tcid": "dc7a944f-6b7e-4e9f-a444-a771b2077d97",
+      "passed_at_utc": "2022-11-07T10:16:06Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "decimate",
+        "data": "//8A////AP/+/gD+/v4A/v79Af39/AH8+/sB+vr5Afn4+AH4+PgB+Pf3Avf29QL19PQC8/LyAvHx8QLx8PAC8PDwAvDw7wPv7+8D7u7uA+7t7QPs7OsD6+vrBOvr6wTr6+oE6urqBerq6gXp6ekF6ejoBujm5gbm5eUG5OTkB+Li4gfh4eEH4ODgB+Dg3wff398H397eCN7e3gje3dwI3NzbCNva2gna2dkJ2dnZCdnY2ArX19cK1tbWCtbV1QrU1NML09PTC9LS0gzR0NAM0NDQDM/PzwzPzs4Nzs7ODc3MzA3MzMsNy8vLDcvLyw3Ly8oNysrJDcnJyQ7JyckOyMfHDsfHxw/FxcUPxcXED8TEww/Dw8MQw8PDEMLCwhDCwcERwMDAEcDAvxG/v78Rv76+Eb6+vRG9vbwRvLu7Ebu7uhG6uroSubm5Eri4txK3t7cSt7e2E7a2thO1tbUTtbW1E7S0tBO0tLQTtLSzE7OzshSysbEUsbGxFLGxsBSvr64Urq6uFa6trRWtra0Vra2sFaysqxWrq6oWqampFqmpqRapqKgWqKenFqampRakpKQXo6OjF6OioheioaEXoaGhF6GhoBegoJ8Xn56eF52cnBibm5oYmpmZGJmZmRiYmJcYl5eWGZaVlRmVlJMZk5OTGZOTkhmRkZEZkZGRGpGRkBqQkJAakJCPGo+PjxqOjo0bjY2NG4yMixuKioobiomIG4iIiByIiIgch4eHHIaGhhyGhoYdhYWFHYWFhR2FhIQdg4ODHYKCgh6CgoEegYCAH39/fx9/f38ff35+IH18fCB8fHwge3t7IHt6eiF6enkheXl5IXl5eSF4eHchd3Z2InZ2diJ1dXUidXV0I3R0dCNzc3Mjc3NzJHJycSRxcXEkcXFxJHFwcCVwcG8lb29uJW5ubiVtbWwlbGxrJWtrayVqamkmaWlpJmloaCZoaGgmaGdnJmdnZydnZ2YnZmZmJ2ZmZSdlZWUnZGRjKGNjYyhjYWEoYWFhKGFhYClgYF8pX15eKl5eXSpdXV0qXV1dKl1dXCtcXFwrXFxcK1xbWytbWlorWlpaLFpaWSxZWVktWVlYLVhYVy1XV1cuV1dXLldWVi5WVVUuVVRUL1RTUy9TUlIvUlJSL1JRUS9RUVAwUFBQMFBQTzFPT04xTk1NMUxMSzJLS0syS0tLMktKSjNKSkkzSUlJM0hISDRISEg0SEhINEdHRzRHR0c0RkZFNUVFRDZEREM2Q0NDNkNBQTZBQUA2QEA/Nj8/Pzc/Pj03PT09Nz09PTc8PDw4PDw8ODs7Ozg6Ojo4Ojo6ODk5OTg5OTk5OQ==",
+        "selectors": [
+          {},
+          {
+            "offset": 0,
+            "stride": 4
+          },
+          {
+            "offset": 1,
+            "stride": 4
+          },
+          {
+            "offset": 2,
+            "stride": 4
+          },
+          {
+            "offset": 3,
+            "stride": 4
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "decimated_data": "//8A////AP/+/gD+/v4A/v79Af39/AH8+/sB+vr5Afn4+AH4+PgB+Pf3Avf29QL19PQC8/LyAvHx8QLx8PAC8PDwAvDw7wPv7+8D7u7uA+7t7QPs7OsD6+vrBOvr6wTr6+oE6urqBerq6gXp6ekF6ejoBujm5gbm5eUG5OTkB+Li4gfh4eEH4ODgB+Dg3wff398H397eCN7e3gje3dwI3NzbCNva2gna2dkJ2dnZCdnY2ArX19cK1tbWCtbV1QrU1NML09PTC9LS0gzR0NAM0NDQDM/PzwzPzs4Nzs7ODc3MzA3MzMsNy8vLDcvLyw3Ly8oNysrJDcnJyQ7JyckOyMfHDsfHxw/FxcUPxcXED8TEww/Dw8MQw8PDEMLCwhDCwcERwMDAEcDAvxG/v78Rv76+Eb6+vRG9vbwRvLu7Ebu7uhG6uroSubm5Eri4txK3t7cSt7e2E7a2thO1tbUTtbW1E7S0tBO0tLQTtLSzE7OzshSysbEUsbGxFLGxsBSvr64Urq6uFa6trRWtra0Vra2sFaysqxWrq6oWqampFqmpqRapqKgWqKenFqampRakpKQXo6OjF6OioheioaEXoaGhF6GhoBegoJ8Xn56eF52cnBibm5oYmpmZGJmZmRiYmJcYl5eWGZaVlRmVlJMZk5OTGZOTkhmRkZEZkZGRGpGRkBqQkJAakJCPGo+PjxqOjo0bjY2NG4yMixuKioobiomIG4iIiByIiIgch4eHHIaGhhyGhoYdhYWFHYWFhR2FhIQdg4ODHYKCgh6CgoEegYCAH39/fx9/f38ff35+IH18fCB8fHwge3t7IHt6eiF6enkheXl5IXl5eSF4eHchd3Z2InZ2diJ1dXUidXV0I3R0dCNzc3Mjc3NzJHJycSRxcXEkcXFxJHFwcCVwcG8lb29uJW5ubiVtbWwlbGxrJWtrayVqamkmaWlpJmloaCZoaGgmaGdnJmdnZydnZ2YnZmZmJ2ZmZSdlZWUnZGRjKGNjYyhjYWEoYWFhKGFhYClgYF8pX15eKl5eXSpdXV0qXV1dKl1dXCtcXFwrXFxcK1xbWytbWlorWlpaLFpaWSxZWVktWVlYLVhYVy1XV1cuV1dXLldWVi5WVVUuVVRUL1RTUy9TUlIvUlJSL1JRUS9RUVAwUFBQMFBQTzFPT04xTk1NMUxMSzJLS0syS0tLMktKSjNKSkkzSUlJM0hISDRISEg0SEhINEdHRzRHR0c0RkZFNUVFRDZEREM2Q0NDNkNBQTZBQUA2QEA/Nj8/Pzc/Pj03PT09Nz09PTc8PDw4PDw8ODs7Ozg6Ojo4Ojo6ODk5OTg5OTk5OQ=="
+        },
+        {
+          "decimated_data": "///+/v79+/r4+Pf29PLx8PDw7+7t7Ovr6+rq6ejm5eTi4eDg397e3dza2dnY19bV1NPS0NDPzs7MzMvLy8rJycfHxcXEw8PCwcDAv76+vbu7urm4t7e2tbW0tLSzsbGxr66tra2sq6mpqKempKOioaGhoJ6cm5mZmJeVlJOTkZGRkJCPjo2MiomIiIeGhoWFhIOCgoB/f358fHt6enl5eHZ2dXV0c3NycXFwcG9ubWxramloaGdnZ2ZmZWRjYWFhYF5eXV1dXFxbWlpaWVlYV1dWVVRTUlJRUVBQT01MS0tKSklISEhHR0ZFRENBQUA/Pj09PDw7Ojo5OQ=="
+        },
+        {
+          "decimated_data": "///+/v38+/n4+Pf19PLx8PDv7+7t6+vr6urq6ejm5eTi4eDf397e3Nva2dnY19bV09PS0NDPzs7My8vLysnJycfHxcTDw8PCwcC/v769vLu6urm3t7a2tbW0tLOysbGwrq6trayrqqmpqKelpKOioaGgn56cmpmZl5aVk5OSkZGQkI+PjY2LioiIiIeGhoWFhIOCgYB/f358fHt6eXl5d3Z2dXR0c3NxcXFwb25ubGtraWloaGdnZmZlZWNjYWFgX15dXV1cXFxbWlpZWVhXV1dWVVRTUlJRUFBPTk1LS0tKSUlISEhHR0VEQ0NBQD8/PT09PDw7Ojo5OQ=="
+        },
+        {
+          "decimated_data": "AAAAAAEBAQEBAQICAgICAgIDAwMDAwQEBAUFBQYGBgcHBwcHBwgICAgJCQkKCgoKCwsMDAwMDQ0NDQ0NDQ0ODg4PDw8PEBAQEREREREREREREhISEhMTExMTExMUFBQUFBUVFRUVFhYWFhYWFxcXFxcXFxcYGBgYGBkZGRkZGRoaGhoaGxsbGxscHBwcHR0dHR0eHh8fHyAgICAhISEhISIiIiMjIyQkJCQlJSUlJSUlJiYmJiYnJycnJygoKCgpKSoqKiorKysrKywsLS0tLi4uLi8vLy8vMDAxMTEyMjIzMzM0NDQ0NDU2NjY2NjY3Nzc3ODg4ODg4OQ=="
+        },
+        {
+          "decimated_data": "///+/v38+vn4+Pf18/Hx8PDv7u7s6+vr6urp6ejm5OLh4ODf397e3Nva2dnX1tbU09LR0M/Pzs3My8vLysnJyMfFxcTDw8LCwMC/v769vLu6ubi3t7a1tbS0tLOysbGvrq6trayrqampqKako6OioaGgn52bmpmYl5aVk5ORkZGQkI+OjYyKioiIh4aGhYWFg4KCgX9/f318e3t6eXl4d3Z1dXRzc3JxcXFwb25tbGtqaWloaGdnZmZlZGNjYWFgX15dXV1cXFxbWlpZWVhXV1dWVVRTUlJRUFBPTkxLS0tKSUhISEdHRkVEQ0NBQD8/PT08PDs6Ojk5OQ=="
+        }
+      ]
+    },
+    {
+      "tcid": "3c41899d-d8a1-45d9-b953-47bf0ffb2f28",
+      "passed_at_utc": "2022-11-07T10:16:06Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "decimate",
+        "data": "//8A/v7+AP7+/QD9/PwA/Pz8Afv7+wH7+/sB+vr6Afr5+QH4+PgB+Pf3Avf39wL39vYC9vb0AvT09ALz8/MD8/PzA/Py8gTy8vEE8fHxBPHx8QXw8PAF8PDvBe/v7wXv7u4F7u7uBu7u7gfu7e0H7e3sB+zs7Afs6+sH6+vqB+rq6Qfp6ekI6OjoCOjn5gjl5OQI4+PjCOPi4gji4uEJ4eDgCd/f3wnf398J397eCd3d3Qnd3NsJ2traCdnZ2QrZ2dgK2NjYC9jX1wvX19cM19bWDNbW1gzW1dUM1dXVDdXV1Q3V1dQN1NTUDdTT0w7T09MO09LSDtHR0A/Pz88Qzs7OEM7OzRDNzcsQy8rKEcrKyRHJyckRycnIEcjIyBHIyMgRx8bGEsbFxRLFxcUSxcXFEsTExBPEw8MTw8LCE8LCwRTBwMAUwMC/FL+/vhS+vr4Vvb28Fby8vBa7uroWurq6Frq6uhe5ubkXubm5GLi4txi3t7cZt7a2Gba2tRm1tbQZtLS0GbS0sxmzs7IZsrKyGrKxsRqxsbEasbCwGrCwrxqvr68ar66uGq6urhqtra0araysGqysrBqsq6sbq6uqG6qpqR2pqakdqKioHaenph2mpqYdpqalHaWlpR6lpaQfpKSkH6OjoyCioqEgoKCgIKCgoCGfn58hn5+eIZ6eniKenp0inZ2dIp2dnSKcnJwinJybIpubmyKbmpoimpqZI5mZmSOZmJgkl5eXJJaWlSSVlZUllZWVJZWUlCaUlJQmlJSTJ5OTkyeTkpInkZGRJ5GQkCeQkI8nj46OJ46NjSeNjY0njY2NKIyMiiiKiokpiYeGKYaGhimGhYUqhISDKoOCgiqCgoIqgYGAK4CAfyt/f34rfn19LHx8eyx7e3sse3t6LHp6eSx5eXkteXh4LXh3dy12dnYtdnV1LnV1dS51dHQudHR0LnNzcy9zcnIvcXFxL3FxcS9xcHAvcHBvMG9vbzBvb24xbm5uMm1tbTJsbGwza2trM2pqajNqaWkzaWlpM2lpaDNoaGgzaGhoM2hnZzRnZ2c0ZmZmNGZmZjVmZWU1ZWRkNmRkZDZkY2M2Y2NiN2JiYjdiYmI3YWFgN2BgYDdfX144Xl5eOF1dXTldXV05XVxcOlxcXDpcXFs6W1tbOlpaWjtaWlk7WVhYO1hXVzxXV1c8V1dXPFZWVj1WVVU9VVVVPlVUVD5UU1M/U1NTP1JSUkBSUlJAUlJRQFFRUUBQUFBAUFBPQU9OTkFOTk5BTk1NQU1NTEJMTExDTEtLQ0tLS0NLS0pDSkpKQ0pJSURJSUhESEdHRUdHRkVGRkVFRQ==",
+        "selectors": [
+          {},
+          {
+            "offset": 0,
+            "stride": 4
+          },
+          {
+            "offset": 1,
+            "stride": 4
+          },
+          {
+            "offset": 2,
+            "stride": 4
+          },
+          {
+            "offset": 3,
+            "stride": 4
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "decimated_data": "//8A/v7+AP7+/QD9/PwA/Pz8Afv7+wH7+/sB+vr6Afr5+QH4+PgB+Pf3Avf39wL39vYC9vb0AvT09ALz8/MD8/PzA/Py8gTy8vEE8fHxBPHx8QXw8PAF8PDvBe/v7wXv7u4F7u7uBu7u7gfu7e0H7e3sB+zs7Afs6+sH6+vqB+rq6Qfp6ekI6OjoCOjn5gjl5OQI4+PjCOPi4gji4uEJ4eDgCd/f3wnf398J397eCd3d3Qnd3NsJ2traCdnZ2QrZ2dgK2NjYC9jX1wvX19cM19bWDNbW1gzW1dUM1dXVDdXV1Q3V1dQN1NTUDdTT0w7T09MO09LSDtHR0A/Pz88Qzs7OEM7OzRDNzcsQy8rKEcrKyRHJyckRycnIEcjIyBHIyMgRx8bGEsbFxRLFxcUSxcXFEsTExBPEw8MTw8LCE8LCwRTBwMAUwMC/FL+/vhS+vr4Vvb28Fby8vBa7uroWurq6Frq6uhe5ubkXubm5GLi4txi3t7cZt7a2Gba2tRm1tbQZtLS0GbS0sxmzs7IZsrKyGrKxsRqxsbEasbCwGrCwrxqvr68ar66uGq6urhqtra0araysGqysrBqsq6sbq6uqG6qpqR2pqakdqKioHaenph2mpqYdpqalHaWlpR6lpaQfpKSkH6OjoyCioqEgoKCgIKCgoCGfn58hn5+eIZ6eniKenp0inZ2dIp2dnSKcnJwinJybIpubmyKbmpoimpqZI5mZmSOZmJgkl5eXJJaWlSSVlZUllZWVJZWUlCaUlJQmlJSTJ5OTkyeTkpInkZGRJ5GQkCeQkI8nj46OJ46NjSeNjY0njY2NKIyMiiiKiokpiYeGKYaGhimGhYUqhISDKoOCgiqCgoIqgYGAK4CAfyt/f34rfn19LHx8eyx7e3sse3t6LHp6eSx5eXkteXh4LXh3dy12dnYtdnV1LnV1dS51dHQudHR0LnNzcy9zcnIvcXFxL3FxcS9xcHAvcHBvMG9vbzBvb24xbm5uMm1tbTJsbGwza2trM2pqajNqaWkzaWlpM2lpaDNoaGgzaGhoM2hnZzRnZ2c0ZmZmNGZmZjVmZWU1ZWRkNmRkZDZkY2M2Y2NiN2JiYjdiYmI3YWFgN2BgYDdfX144Xl5eOF1dXTldXV05XVxcOlxcXDpcXFs6W1tbOlpaWjtaWlk7WVhYO1hXVzxXV1c8V1dXPFZWVj1WVVU9VVVVPlVUVD5UU1M/U1NTP1JSUkBSUlJAUlJRQFFRUUBQUFBAUFBPQU9OTkFOTk5BTk1NQU1NTEJMTExDTEtLQ0tLS0NLS0pDSkpKQ0pJSURJSUhESEdHRUdHRkVGRkVFRQ=="
+        },
+        {
+          "decimated_data": "//7+/Pz7+/r5+Pf39vb08/Py8vHx8PDv7u7u7e3s6+vq6ejn5OPi4uDf397d3NrZ2djX19bW1dXV1dTT09LRz87OzcrKycnIyMbFxcXEw8LCwMC/vr28urq6ubm4t7a2tbS0s7KxsbCwr66uraysq6upqainpqalpaSjoqCgn5+enp2dnJybmpqZmJeWlZWUlJSTkpGQkI6NjY2MioeGhYSCgoGAf318e3t6eXh3dnV1dHRzcnFxcHBvb25tbGtqaWlpaGhnZ2ZmZWRkY2NiYmFgX15dXVxcXFtaWlhXV1dWVVVUU1NSUlJRUFBOTk1NTEtLS0pJSUdHRg=="
+        },
+        {
+          "decimated_data": "//79/Pz7+/r5+Pf39vT08/Py8fHx8O/v7u7u7ezs6+rp6ejm5OPi4eDf397d29rZ2NjX19bW1dXV1NTT09LQz87Ny8rJycjIyMbFxcXEw8LBwL++vry8urq6ubm3t7a1tLSzsrKxsbCvr66uraysq6qpqaimpqWlpKSjoaCgn56enZ2dnJubmpmZmJeVlZWUlJOTkpGQj46NjY2KiYaGhYOCgoB/fn17e3p5eXh3dnV1dHRzcnFxcG9vbm5tbGtqaWloaGhnZ2ZmZWRkY2JiYmBgXl5dXVxcW1taWVhXV1dWVVVUU1NSUlFRUE9OTk1MTEtLSkpJSEdGRQ=="
+        },
+        {
+          "decimated_data": "AAAAAAEBAQEBAQICAgICAwMEBAQFBQUFBQYHBwcHBwcHCAgICAgICQkJCQkJCQkKCgsLDAwMDA0NDQ0ODg4PEBAQEBERERERERISEhITExMUFBQUFRUWFhYXFxgYGRkZGRkZGRoaGhoaGhoaGhoaGxsdHR0dHR0eHx8gICAhISEiIiIiIiIiIiMjJCQkJSUmJicnJycnJycnJygoKSkpKioqKisrKywsLCwsLS0tLS4uLi4vLy8vLzAwMTIyMzMzMzMzMzM0NDQ1NTY2Njc3Nzc3ODg5OTo6Ojo7Ozs8PDw9PT4+Pz9AQEBAQEFBQUFCQ0NDQ0NEREVFRQ=="
+        },
+        {
+          "decimated_data": "/v79/Pv7+vr4+Pf39vTz8/Py8fHw8O/v7u7u7ezs6+rp6Ojl4+Pi4d/f393d2tnZ2NjX19bW1dXV1NTT09HPzs7Ny8rJycjIx8bFxcTEw8LBwL++vby7urq5ubi3t7a1tLSzsrKxsbCvr66traysq6qpqKempqWlpKOioKCfn56enZ2cnJubmpmZl5aVlZWUlJOTkZGQj46NjYyKiYaGhIOCgYB/fnx7e3p5eXh2dnV1dHNzcXFxcG9vbm1sa2pqaWloaGhnZmZmZWRkY2JiYWBfXl1dXVxcW1paWVhXV1ZWVVVUU1JSUlFQUE9OTk1MTEtLSkpJSEdGRQ=="
+        }
+      ]
+    },
+    {
+      "tcid": "b20ab897-a7d3-4661-b01b-9fb6f7646e0b",
+      "passed_at_utc": "2022-11-07T10:16:07Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "decimate",
+        "data": "//8A//7+AP7+/gD9/fwA/Pz8APz7+wH7+/oB+vn5Afn4+AH4+PgC+Pf3Avf39gL29fUC9fX1A/T09AP08/MD8/PzA/Ly8gTy8vIE8fHxBPHw8AXw7+8G7+/uB+7u7gfu7e0H7e3tCOzs7Ajs7OsI6+vrCOvr6wnq6uoK6urqCurq6Qrp6ekK6ejoCujo5wvn5+YL5ublC+Xl5Azk5OQM5OPjDOPj4gzh4OAN39/fDd7e3g3d3d0N3dzcDdvb2w7b29oO2traDtnZ2Q7Y2NgP2NjYD9fX1w/W1tYP1dXVENXV1RDU1NQQ1NTUENPR0RHR0NAR0M/PEc/PzxHPzs4Rzc3NEc3NzBHMzMsRy8vLEcvLyxLLysoSysrKEsnJyRPJyMgTyMjHE8bGxRTFxcUUxcTEFMTDwxXCwsEVwcHAFcDAwBW/v78Wvr6+F76+vhe+vr4Yvr69Gb29vRm8vLwZvLu7Gbu6uhm6uroZubm4Gbe3txm3t7cZtra2Gba2thq1tbUbtbW0HLS0tBy0s7Mcs7OyHLKyshyxsbEdsLCwHbCvrh2urq4drq2tHa2srB+rq6sfqqqqH6qqqh+qqqkfqainIKempSClpaUgpaWkIKSkoyCjo6IgoqKiIKGhoSChoaEhoaCgIaCgoCGfn58in56eI56eniOenZ0jnZ2dI5ycnCOcnJwkm5uaJJqamSSYmJgll5eWJZaWlSWUlJQlk5OTJZOTkyWTkpImkpKSJpKSkiaSkZAmkI+PJ4+OjieOjo4njo2NJ42NjSeNjIwni4uLKIuLiyiLi4opioqKKYqJiSmJiIgpiIiIKoeHhyqHh4YrhoaGLIWFhSyFhIQshISELISEgyyDg4ItgYGBLYGAgC2Af38tf35+LX5+fi1+fX0tfX19Lnx8fC97e3sve3t7L3p6ei95eHgweHd3MHd3dzF3d3cxdnZ1MXV1dTF1dXUydXV0MnRzczJzc3MzcnJyM3JycjNycnIzcnFxM3FxcTNwcHA0cHBwNG9vbzRvbm01bGxrNWtrazVqamo1ampqNWpqaTVoaGg1aGhnNmdmZjZmZmU2ZWVkNmRkZDZkY2M3YmJiN2JiYThhYGA4YGBgOGBgXzhfXl44Xl5dOF1dXThcXFs4W1tbOVpaWjlaWVk5WVlZOllZWDpXV1c6V1ZWOlZWVjpWVVU7VVRUPFRUVDxUU1M8U1NTPFNSUj1SUlI+UlJSPlJRUT9RUVE/UFBQP1BQUEBPT09AT05OQU5NTUFNTU1BTExMQUxMS0JLS0tCSklJQklJSEJISEhDR0dHQ0dHRkNGRkZDRUVFQ0VFRUNERERERA==",
+        "selectors": [
+          {},
+          {
+            "offset": 0,
+            "stride": 4
+          },
+          {
+            "offset": 1,
+            "stride": 4
+          },
+          {
+            "offset": 2,
+            "stride": 4
+          },
+          {
+            "offset": 3,
+            "stride": 4
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "decimated_data": "//8A//7+AP7+/gD9/fwA/Pz8APz7+wH7+/oB+vn5Afn4+AH4+PgC+Pf3Avf39gL29fUC9fX1A/T09AP08/MD8/PzA/Ly8gTy8vIE8fHxBPHw8AXw7+8G7+/uB+7u7gfu7e0H7e3tCOzs7Ajs7OsI6+vrCOvr6wnq6uoK6urqCurq6Qrp6ekK6ejoCujo5wvn5+YL5ublC+Xl5Azk5OQM5OPjDOPj4gzh4OAN39/fDd7e3g3d3d0N3dzcDdvb2w7b29oO2traDtnZ2Q7Y2NgP2NjYD9fX1w/W1tYP1dXVENXV1RDU1NQQ1NTUENPR0RHR0NAR0M/PEc/PzxHPzs4Rzc3NEc3NzBHMzMsRy8vLEcvLyxLLysoSysrKEsnJyRPJyMgTyMjHE8bGxRTFxcUUxcTEFMTDwxXCwsEVwcHAFcDAwBW/v78Wvr6+F76+vhe+vr4Yvr69Gb29vRm8vLwZvLu7Gbu6uhm6uroZubm4Gbe3txm3t7cZtra2Gba2thq1tbUbtbW0HLS0tBy0s7Mcs7OyHLKyshyxsbEdsLCwHbCvrh2urq4drq2tHa2srB+rq6sfqqqqH6qqqh+qqqkfqainIKempSClpaUgpaWkIKSkoyCjo6IgoqKiIKGhoSChoaEhoaCgIaCgoCGfn58in56eI56eniOenZ0jnZ2dI5ycnCOcnJwkm5uaJJqamSSYmJgll5eWJZaWlSWUlJQlk5OTJZOTkyWTkpImkpKSJpKSkiaSkZAmkI+PJ4+OjieOjo4njo2NJ42NjSeNjIwni4uLKIuLiyiLi4opioqKKYqJiSmJiIgpiIiIKoeHhyqHh4YrhoaGLIWFhSyFhIQshISELISEgyyDg4ItgYGBLYGAgC2Af38tf35+LX5+fi1+fX0tfX19Lnx8fC97e3sve3t7L3p6ei95eHgweHd3MHd3dzF3d3cxdnZ1MXV1dTF1dXUydXV0MnRzczJzc3MzcnJyM3JycjNycnIzcnFxM3FxcTNwcHA0cHBwNG9vbzRvbm01bGxrNWtrazVqamo1ampqNWpqaTVoaGg1aGhnNmdmZjZmZmU2ZWVkNmRkZDZkY2M3YmJiN2JiYThhYGA4YGBgOGBgXzhfXl44Xl5dOF1dXThcXFs4W1tbOVpaWjlaWVk5WVlZOllZWDpXV1c6V1ZWOlZWVjpWVVU7VVRUPFRUVDxUU1M8U1NTPFNSUj1SUlI+UlJSPlJRUT9RUVE/UFBQP1BQUEBPT09AT05OQU5NTUFNTU1BTExMQUxMS0JLS0tCSklJQklJSEJISEhDR0dHQ0dHRkNGRkZDRUVFQ0VFRUNERERERA=="
+        },
+        {
+          "decimated_data": "//7+/fz7+/n4+Pf39fX08/Py8vHw7+/u7e3s7Ovr6urq6ejo5+bl5OPj4N/e3dzb29rZ2NjX1tXV1NTR0M/Pzs3NzMvLysrJyMjGxcTDwsHAv76+vr69vLu6urm3t7a2tbW0s7OysbCvrq2sq6qqqqimpaWko6KhoaCgn56enZ2cnJuamJeWlJOTkpKSkY+Ojo2NjIuLi4qJiIiHh4aFhISEg4GAf35+fX18e3t6eHd3d3Z1dXVzc3JycnFxcHBvbmxrampqaGhmZmVkY2JiYGBgXl5dXFtaWVlZV1ZWVVRUU1NSUlJRUVBQT05NTUxMS0lJSEdHRkVFRA=="
+        },
+        {
+          "decimated_data": "//7+/Pz7+vn4+Pf29fX08/Py8vHw7+7u7e3s6+vr6urp6ejn5uXk5OPi4N/e3dzb2trZ2NjX1tXV1NTR0M/Pzs3My8vLysrJyMfFxcTDwcDAv76+vr29vLu6uri3t7a2tbS0s7KysbCurq2sq6qqqaelpaSjoqKhoaCgn56enZ2cnJqZmJaVlJOTkpKSkI+Ojo2NjIuLioqJiIiHhoaFhISDgoGAf35+fX18e3t6eHd3d3V1dXRzc3JycnFxcHBvbWtramppaGdmZWRkY2JhYGBfXl1dW1taWVlYV1ZWVVRUU1NSUlJRUVBQT05NTUxLS0lISEdGRkVFRA=="
+        },
+        {
+          "decimated_data": "AAAAAAABAQEBAgICAgMDAwMEBAQFBgcHBwgICAgJCgoKCgoLCwsMDAwMDQ0NDQ0ODg4ODw8PDxAQEBARERERERERERESEhITExMUFBQVFRUVFhcXGBkZGRkZGRkZGRkaGxwcHBwcHR0dHR0fHx8fHyAgICAgICAgISEhIiMjIyMjJCQkJSUlJSUlJiYmJicnJycnJygoKSkpKSoqKywsLCwsLS0tLS0tLS4vLy8vMDAxMTExMjIyMzMzMzMzNDQ0NTU1NTU1NTY2NjY2Nzc4ODg4ODg4ODk5OTo6Ojo6Ozw8PDw9Pj4/Pz9AQEFBQUFCQkJCQ0NDQ0NDRA=="
+        },
+        {
+          "decimated_data": "//79/Pz7+vn4+Pf29fT08/Ly8fHw7+7u7ezs6+vq6urp6ejn5uXk5OPh397d3dvb2tnY2NfW1dXU1NPR0M/Pzc3My8vLysnJyMbFxcTCwcC/vr6+vr28vLu6ube3tra1tbS0s7KxsLCurq2rqqqqqaelpaSjoqGhoaCfn56enZycm5qYl5aUk5OTkpKSkI+Ojo2Ni4uLioqJiIeHhoWFhISDgYGAf35+fXx7e3p5eHd3dnV1dXRzcnJycnFwcG9vbGtqampoaGdmZWRkYmJhYGBfXl1cW1paWVlXV1ZWVVRUU1NSUlJRUFBPT05NTExLSklIR0dGRUVERA=="
+        }
+      ]
+    },
+    {
+      "tcid": "ab6e21ed-ad03-4fe2-b54d-b70c4d2bc8b9",
+      "passed_at_utc": "2022-11-07T10:16:07Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "decimate",
+        "data": "AAECAwQFBgc=",
+        "selectors": [
+          {}
+        ]
+      }
+    },
+    {
+      "tcid": "21a682db-275a-41e3-b999-c95e46d6b8e3",
+      "passed_at_utc": "2022-11-07T10:08:44Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "decimate",
+        "data": "PHBgrpCNMHGQw+BhSjJ/OSKMQVDzZurYJrHA+grr",
+        "selectors": [
+          {
+            "offset": 0,
+            "stride": 1
+          },
+          {
+            "offset": 0,
+            "stride": 2
+          },
+          {
+            "offset": 1,
+            "stride": 2
+          },
+          {
+            "offset": 0,
+            "stride": 3
+          },
+          {
+            "offset": 1,
+            "stride": 3
+          },
+          {
+            "offset": 2,
+            "stride": 3
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "4f7a78a1-2ef1-437b-81e2-1871dbdc067c",
+      "passed_at_utc": "2022-11-07T10:08:44Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "decimate",
+        "data": "NQEnRj2iel79RppZq/KkO9ddC69ggnznIdMgYdBN",
+        "selectors": [
+          {
+            "offset": 0,
+            "stride": 1
+          },
+          {
+            "offset": 0,
+            "stride": 2
+          },
+          {
+            "offset": 1,
+            "stride": 2
+          },
+          {
+            "offset": 0,
+            "stride": 3
+          },
+          {
+            "offset": 1,
+            "stride": 3
+          },
+          {
+            "offset": 2,
+            "stride": 3
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "b3a726c4-499d-4df1-b753-27abb4cef70a",
+      "passed_at_utc": "2022-11-07T10:08:44Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "decimate",
+        "data": "K1ZpE9jAlAf99cm8z2zlqAuxocIRnOjduJVHaJVc",
+        "selectors": [
+          {
+            "offset": 0,
+            "stride": 1
+          },
+          {
+            "offset": 0,
+            "stride": 2
+          },
+          {
+            "offset": 1,
+            "stride": 2
+          },
+          {
+            "offset": 0,
+            "stride": 3
+          },
+          {
+            "offset": 1,
+            "stride": 3
+          },
+          {
+            "offset": 2,
+            "stride": 3
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "be868a0b-aa75-4c55-9ef7-c727c3b0e8a2",
+      "passed_at_utc": "2022-11-07T10:15:04Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "decimate",
+        "data": "vgnORzmYfNihFceCa8n9yWTMHV3JAVo4Ryf5UWmJEh/I63/Tp85pU9r3WXSVel8R+gizQr2wX3gucterNJwM9hw+4nTLwITx51G63dUX17JJkjb9T2wpJFm4C/qD2T0SPw2+2A==",
+        "selectors": [
+          {
+            "stride": 1
+          },
+          {
+            "stride": 2
+          },
+          {
+            "stride": 3
+          },
+          {
+            "stride": 4
+          },
+          {
+            "stride": 5
+          },
+          {
+            "stride": 6
+          },
+          {
+            "stride": 7
+          },
+          {
+            "stride": 8
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "bd397227-f630-46fa-b92a-fe8496618c8d",
+      "passed_at_utc": "2022-11-07T10:16:07Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "decimate",
+        "data": "YcEFmTks1JHZOWCNeIRRSDlY2HXIeCRtWJlIGHE9Van4SN3NCLjRYY0ZReSU8YworMjsxIRgZfzBpR0Z0QSZkamkAL0IuPwArdQcaEQIMTSpXH0JfMy8dDUQTZWxPNnM/PA9JJDEkPAoCEGUiBmd0Cm0rGGteLFssB097f0FQQjQWWz5aSjhKDmY3U1c1YEk+J0ZsMRgHUWseAT0dJG84RjJybVoyNnEhbxceSHATeSV+J05JF3kJcVAfdDAdZGt2UClYUkhZciBvIG4INBZKPQ9OXXZLNS9GPkVZAk9oUi4bJWIPbCQlU3gUTVh+aykVD1gVchhRWmlRFVh5Ow5LHycsLV8CXXQEIEtGW3YZbRV7KUhSU3ZsOGUMEUk0Vkk4WngsWzNREEBXX2heSgw7SzI1FwwVLEJkfHdAQ2ItezASGhIrfTcJHW47EWs9dUB7JVwlEgExJlkMXV5KYk0+IR5OK1ZPbxUtTmhDKxcvCQ1vEwtcYTF4MFxUIAghJElsBzFwCjpnWUgoKD5/HDNoBxh1KCJRCRY+FDMSAQQrXgp6LEsAFho6RhcBV04QMltBEhZ5Uhp9BGw3OlAscTYoYTFhAFdNGHYyJjtqHzo5an0SQTdQPBQZTgE7cg1lT2Ivc2xJXDt3KVBNPyMbbm8CDRx2enMLBXIecQ4IXSw3dWkBXz9hJSlaPRgPXBtFTEgnXEgjEV0ASWpMYw0FKAAnN0wrUAgCZ20TSiBmBUpXSWNWF0pzaVAIVksKXHsYKVxedi4NRz4TdAEMVlE+Nm9qRlpDbAQhEBklRQMGWHUAADsEJWRWDhIUDiU7XiZvGGEsViEfNGtZLhxFPCYXEg1/OQ9FEQ1YdXcVW28rZQ5gYwxTJzJudD9jNwM0AnNRKW0NeFQtdQ5+J3NbHmh3c1Q5Pjc5Yy4UcAM5bC5fLHMpczA0OjcjYQZJcHkBaSZBMWocAxUFClxwI0xjc2Vodm0NCDgwbCxkCX9aOXEwMTx7PyQmfgo7blw3KGteXDRVL1lfLUY4dx1NCGohaTo+KkNMDkVQbxh+b2stSXIPcndwZXRTNXlPGhITDRFiXB0JJ3RgFiFkWUQ1Fg5rW3sdTCEzBlNPNSsLBX4JJClTXj1GKUs4YyVdV0EAPBxDFScoIQtkHnc8CnQcHg11Fhx1XBFUZFQZTHInWFwYfBogdRNbYGpuF25iWSEiNV87Znk3NH5TWQJZbhRTGQ9XRh9+dVYZBX1PEDFrS1RYFFhYek4dEQtASRMQLkUhbygiBT9VNjV2eGcvWwRqM0w4WHkKAGklAX9XJxFUMj4BQQU6IVo0bSVffG13UHl8A==",
+        "selectors": [
+          {}
+        ]
+      }
+    },
+    {
+      "tcid": "b4efb5c2-f0d3-4c22-a441-d40aa62d69c7",
+      "passed_at_utc": "2022-11-07T10:16:07Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "decimate",
+        "data": "//8A//7+AP7+/gH9/f0B/f38Afz8/AH8+/sB+/v7Avr6+gL6+vkD+fn5A/n4+AP4+PgD+Pf3A/f39gP29fUE9fTzBPPz8gTy8vIE8fDwBPDv7wTv7u4E7u7uBO7u7gbt7e0G7OzsBuzs6wbr6+sH6+rqB+rq6Qjp6ekI6ejoCOjn5wjn5+cI5ubmCebl5Qnl5OQJ5OTkCuPi4gri4eEK4eDgCuDg4Avf398M3t7eDN7d3Qzd3d0N3d3dDtzb2w7b29sO2traDtrZ2A7Y19cO19fXD9fW1g/V1dUQ1NTUENTU1BDU1NQQ1NPTENLS0hDR0dEQ0dDQEdDQ0BHQ0M8Rz8/PEs7OzhLOzs4Tzs7NE83NzRPMzMwTy8rKFMrJyRTIyMgUyMjIFcjIyBXHxsYVxsXFFcXFxRXFxMQVxMTDFcPDwxXDw8MVwsLCFsHBwRbBwcEXwMDAF8C/vxe/v78Xvr6+Gb28vBm8vLwZu7u7Gbu6uhm5ubkaubm5G7i4uBu3t7cbtra2HLa2tRy1tbQdtLSzHbOzsx6zsrIesrGxHrGwsB6wsLAfr6+uH66urR+tra0gra2sIKysrCCrq6ogqqqqIKqqqSCpqakgqKioIaenpyGmpqYhpqalIaWlpSKkpKQipKOiI6KioiOhoaEjoaGhI6GhoCOgoJ8kn56eJJ6eniSenp4lnp6dJZ2dnSWdnJwlnJycJZybmyabmpkmmZmZJpiYmCaXlpYmlpaWJ5aVlSiUlJQok5OTKZOSkimSkZEqkZGQKo+PjyqPj44qjo6OKo6OjiqNjY0qjYyMKoyMjCuLi4srioqKK4mJiSuJiIgsh4eHLIeGhiyGhoYshYWFLYSEhC2Eg4Mtg4OCLYKCgi2BgYEtgYCALoCAfy5/f34ufX18Lnx8fC97e3svenp6L3p6ei96eXkveHh3L3d3djB2dnYwdnZ1MHV0dDB0c3IwcnJyMHFxcTBxcHAxcHBwMXBwcDJwcHAzb29vM29vbjNubW0zbW1sM2xrazNra2ozampqM2ppaTRpaWg0aGhnNGZmZTRlZWU0ZWVkNGRkZDVjY2M1Y2JiNWJiYjViYWE1YWFhNmFhYDZgYGA2X19fN19eXjdeXl43XV1dN11cXDhcXFw4XFtbOVtbWjlZWVk5WVlZOVhYWDlYV1c6VlZVOlVVVTpVVVQ6VFRTOlNTUzpTUlI7UlFRO1BQUDtPT087Tk1NO01NTTtMTEw7TEtLPEtLSjxKSkk8SUlJPEhISDxISEc8R0dHPUdHRz1GRkY9RUVFPkVERD5EREQ+RERDP0NDQz9CQkE/QUFBP0FBQT9AQEBAQA==",
+        "selectors": [
+          {},
+          {
+            "offset": 0,
+            "stride": 4
+          },
+          {
+            "offset": 1,
+            "stride": 4
+          },
+          {
+            "offset": 2,
+            "stride": 4
+          },
+          {
+            "offset": 3,
+            "stride": 4
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "73decf9c-e9b5-4aca-a793-c7d6dac26707",
+      "passed_at_utc": "2022-11-07T10:16:07Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "decimate",
+        "data": "//8A/v7+AP7+/gD+/f0A/fz8APz8/AD8+/sB+vn5Afj4+AH4+PgB9/f3Avb29gL29fUC9fX1AvX09AL09PQC8/PyAvLy8gLy8vIC8fHxAvHx8APw8O8D7+/vA+7u7QPt7e0D7ezsBOzs7ATs6+sE6+vrBevq6gbq6OgG6OjoBujo5wbn5+cG5+fnB+bm5gfl5eUI5eTkCOTj4wjj4+MJ4uLiCeLh4Qrh4eEK4ODgCuDg3wvf398L39/eC93d3Qvd3d0M3dzcDdzc3A3c29sO29vaDtra2g/Z2dkP2NfXENfX1xDX19cQ1tbWENXV1BHU1NMR09PTEdPT0xHS0tER0dHREdHR0RHQz88Sz83NEs3NzBPLy8oTysrKE8rJyRPJyckTyMjIFMjHxhTGxsYUxsXFFMXFxBTExMMUw8PCFMLCwhXBwcEVwcHAFcDAvxW/v78Wv76+Fr6+vRa8vLwWvLy7Fru7uxe6uroXubi4GLi3thm2trYZtra2Gra1tRu1tbUbtbS0G7S0sxyzs7Mcs7KyHbKysh2ysrEdsbGxHbCwsB6wsLAesLCvHq+vrx+vrq4frq6uH66urR+srKsfq6qpH6mpqSCoqKggqKioIKenpyCmpqYgpqamIKalpSGlpKQhpKOjIqOjoyKioqIioaGhIqCgoCKgn58jn56eI52dnSOdnZ0knJycJJycnCWbm5slm5ubJZubmyWampklmZiXJZeXlyaXlpYmlpWVJpWVlSeUlJQnlJSUJ5SUkyeSkpInkpKRJ5GRkSiRkJAokI+PKI+PjyiPj48ojo6NKI2NjCmMjIwpjIyLKYuKiimKiYkpiYmIKoiIiCqHh4cqh4eGKoaGhiuFhYUrhIODK4ODgiuBgYErgYGALICAgCx/f38sf35+LH59fSx9fX0sfHx8LXx8fC17e3otenp6LXl5eS15eXgud3d2LnZ1dS51dHQudHNzL3Nzcy9ycnIvcXFxMHFwcDBwb28wbm5uMG5tbTBsbGwwbGxrMWtqajFqamoxampqMWppaTFpaWgyaGhoMmhoaDJnZ2czZ2dmM2ZmZTRlZGQ0ZGRkNGNjYzRiYmI0YmJhNGFhYDRgYGA0X19eNF5eXjVeXV02XV1cNlxcXDZcXFw2XFtbN1taWjdaWlk3WVlZN1lZWDhYWFg4WFhXOFdXVzhWVlY4VlVVOVVVVTlVVVQ5VFRTOVNTUjlSUlI6UlFROlFRUDpQUFA7T09PO09PTjtOTU08TU1NPExMTDxLS0s8S0pKPEpJSTxJSEc8R0VFPUVFRT5FRUQ+REREPkREQz5DQ0M/Q0JCP0FBQD9AQD8/Pw==",
+        "selectors": [
+          {},
+          {
+            "offset": 0,
+            "stride": 4
+          },
+          {
+            "offset": 1,
+            "stride": 4
+          },
+          {
+            "offset": 2,
+            "stride": 4
+          },
+          {
+            "offset": 3,
+            "stride": 4
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "903c01d6-fb71-4f0b-b7fa-817e05a3d7a1",
+      "passed_at_utc": "2022-11-07T10:16:07Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "decimate",
+        "data": "//8A/v7+AP7+/gD+/v0A/f39AP39/QH9/PsB+/v7Avv7+wL6+voD+vr5A/n4+AP4+PgD+Pj3BPf29gT29fUE9fT0BPTz8wTz8/ME8vLyBPLy8gTy8vIF8vLyBfHx8QXw8O8F7u7tBu3t7Qbt7ewG7OzsBuzr6wbr6+oH6unpB+jo5wfn5+cI5+fnCOfm5gjm5eUI5eXkCOTj4wji4uIJ4eHhCeDg4Ang4N8J39/eCt7e3Qrd3d0K3dzcCtzb2wrb29sK2trZCtnZ2QvZ2dcL19fXC9fX1wzX1tYM1tbWDNbV1QzV1dUM1dTUDNPT0wzT0tIN0tLSDdHR0Q3Q0NANz8/PDc/Pzg3Ozs4Pzc3ND83NzA/MzMwPy8vLEMvLyhDKyskQycnJEMnJyRDIyMgQyMjHEcfHxxHGxsYRxsbGEsbFxRLFxcUTxcTEE8TEwxPDw8MTw8LCFMLCwRTBwMAUwMDAFL+/vhS+vr4Vvr69Fby8vBW8vLwVvLu7Fbu7uxa7uroWurm5Frm5uRa5uLgWuLe3F7a2thi2tbUYtLSzGLOzsxizsbEYsbCwGbCwsBmwsK8Zr6+vGa6urhmtra0ZrKysGqurqxqrq6saqqqqGqqqqhqpqakbqKioG6iopxunp6cbpqamG6WlpRulpKQbpKSjG6Ojoxyjo6IcoqGhHKGhoBygoKAcoKCgHJ+fnxyfnp4dnp6eHZ2dnR2dnJwdm5ubHZubmh2ZmZkdmJeXHZaWlh6WlpYelZWVHpWVlR6VlJQflJSTH5OSkh+SkpIfkZGRH5GPjyCPj48gjo2NII2MjCGLi4sji4qKJImIiCSIh4ckh4aGJIaFhSWFhIQlhISDJYODgyWDg4IlgoKCJoKBgSaBgYEmgIB+Jn59fSd9fHwne3t7J3t6eid6enonenp5KHl5eSh4eHgpeHh4KXd2dil2dnUqdXV1KnR0dCpzc3Mqc3NzK3NycitycXErcXFwLHBwcCxwb28sb25uLG5tbSxtbWwsbGxrLGtqai1qaWgtaGhoLWhnZy5nZ2YuZWVlLmRkZC9jY2MvY2NjL2JiYjBiYmExYWFhMmFgXzJeXl4yXl1dM11cWzRbW1s0W1taNFpaWTRZWFg0WFdXNFdXVzRXVlY0VlZWNFZWVTRVVVU0VFNTNVNTUzVTU1M1U1NTNlJSUjZSUlE2UVFQNlBQUDZPT083T09ON05OTjdOTk03TU1MN0xMSzdLS0s3SkpKN0pKSDdISEg4SEhIOEdGRjhGRUU4RENDOENDQjlBQUE5QUFAOUBAQDlAQEA6QEA/Oj8/Pzo+Pj47Pj09Oz08PDs8PDw8PA==",
+        "selectors": [
+          {},
+          {
+            "offset": 0,
+            "stride": 4
+          },
+          {
+            "offset": 1,
+            "stride": 4
+          },
+          {
+            "offset": 2,
+            "stride": 4
+          },
+          {
+            "offset": 3,
+            "stride": 4
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "fc6f3979-9890-4d79-95bd-4c7ad867e28c",
+      "passed_at_utc": "2022-11-07T10:20:44Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "histogram",
+        "data": "AAECAwQFBgc=",
+        "selectors": [
+          {}
+        ]
+      },
+      "expect_solution": [
+        {
+          "histogram": {
+            "0": 1,
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1,
+            "7": 1
+          }
+        }
+      ]
+    },
+    {
+      "tcid": "ebe2efec-58b4-4f5e-8735-5be6ce65a98d",
+      "passed_at_utc": "2022-11-07T10:20:44Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "histogram",
+        "data": "1Am+IOMIIA98vvvTHI/MWnpeI3ohJYxDyFFyz2zK",
+        "selectors": [
+          {
+            "offset": 0,
+            "stride": 1
+          },
+          {
+            "offset": 0,
+            "stride": 2
+          },
+          {
+            "offset": 1,
+            "stride": 2
+          },
+          {
+            "offset": 0,
+            "stride": 3
+          },
+          {
+            "offset": 1,
+            "stride": 3
+          },
+          {
+            "offset": 2,
+            "stride": 3
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "histogram": {
+            "212": 1,
+            "9": 1,
+            "190": 2,
+            "32": 2,
+            "227": 1,
+            "8": 1,
+            "15": 1,
+            "124": 1,
+            "251": 1,
+            "211": 1,
+            "28": 1,
+            "143": 1,
+            "204": 1,
+            "90": 1,
+            "122": 2,
+            "94": 1,
+            "35": 1,
+            "33": 1,
+            "37": 1,
+            "140": 1,
+            "67": 1,
+            "200": 1,
+            "81": 1,
+            "114": 1,
+            "207": 1,
+            "108": 1,
+            "202": 1
+          }
+        },
+        {
+          "histogram": {
+            "212": 1,
+            "190": 1,
+            "227": 1,
+            "32": 1,
+            "124": 1,
+            "251": 1,
+            "28": 1,
+            "204": 1,
+            "122": 1,
+            "35": 1,
+            "33": 1,
+            "140": 1,
+            "200": 1,
+            "114": 1,
+            "108": 1
+          }
+        },
+        {
+          "histogram": {
+            "9": 1,
+            "32": 1,
+            "8": 1,
+            "15": 1,
+            "190": 1,
+            "211": 1,
+            "143": 1,
+            "90": 1,
+            "94": 1,
+            "122": 1,
+            "37": 1,
+            "67": 1,
+            "81": 1,
+            "207": 1,
+            "202": 1
+          }
+        },
+        {
+          "histogram": {
+            "212": 1,
+            "32": 2,
+            "190": 1,
+            "28": 1,
+            "90": 1,
+            "35": 1,
+            "37": 1,
+            "200": 1,
+            "207": 1
+          }
+        },
+        {
+          "histogram": {
+            "9": 1,
+            "227": 1,
+            "15": 1,
+            "251": 1,
+            "143": 1,
+            "122": 2,
+            "140": 1,
+            "81": 1,
+            "108": 1
+          }
+        },
+        {
+          "histogram": {
+            "190": 1,
+            "8": 1,
+            "124": 1,
+            "211": 1,
+            "204": 1,
+            "94": 1,
+            "33": 1,
+            "67": 1,
+            "114": 1,
+            "202": 1
+          }
+        }
+      ]
+    },
+    {
+      "tcid": "2958f6c7-10bd-4b05-9c2f-ecdaa1e51e40",
+      "passed_at_utc": "2022-11-07T10:20:44Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "histogram",
+        "data": "2HxRiSE11KryijP4VPoKIG7JhqMb9JO22cv07voB",
+        "selectors": [
+          {
+            "offset": 0,
+            "stride": 1
+          },
+          {
+            "offset": 0,
+            "stride": 2
+          },
+          {
+            "offset": 1,
+            "stride": 2
+          },
+          {
+            "offset": 0,
+            "stride": 3
+          },
+          {
+            "offset": 1,
+            "stride": 3
+          },
+          {
+            "offset": 2,
+            "stride": 3
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "histogram": {
+            "216": 1,
+            "124": 1,
+            "81": 1,
+            "137": 1,
+            "33": 1,
+            "53": 1,
+            "212": 1,
+            "170": 1,
+            "242": 1,
+            "138": 1,
+            "51": 1,
+            "248": 1,
+            "84": 1,
+            "250": 2,
+            "10": 1,
+            "32": 1,
+            "110": 1,
+            "201": 1,
+            "134": 1,
+            "163": 1,
+            "27": 1,
+            "244": 2,
+            "147": 1,
+            "182": 1,
+            "217": 1,
+            "203": 1,
+            "238": 1,
+            "1": 1
+          }
+        },
+        {
+          "histogram": {
+            "216": 1,
+            "81": 1,
+            "33": 1,
+            "212": 1,
+            "242": 1,
+            "51": 1,
+            "84": 1,
+            "10": 1,
+            "110": 1,
+            "134": 1,
+            "27": 1,
+            "147": 1,
+            "217": 1,
+            "244": 1,
+            "250": 1
+          }
+        },
+        {
+          "histogram": {
+            "124": 1,
+            "137": 1,
+            "53": 1,
+            "170": 1,
+            "138": 1,
+            "248": 1,
+            "250": 1,
+            "32": 1,
+            "201": 1,
+            "163": 1,
+            "244": 1,
+            "182": 1,
+            "203": 1,
+            "238": 1,
+            "1": 1
+          }
+        },
+        {
+          "histogram": {
+            "216": 1,
+            "137": 1,
+            "212": 1,
+            "138": 1,
+            "84": 1,
+            "32": 1,
+            "134": 1,
+            "244": 1,
+            "217": 1,
+            "238": 1
+          }
+        },
+        {
+          "histogram": {
+            "124": 1,
+            "33": 1,
+            "170": 1,
+            "51": 1,
+            "250": 2,
+            "110": 1,
+            "163": 1,
+            "147": 1,
+            "203": 1
+          }
+        },
+        {
+          "histogram": {
+            "81": 1,
+            "53": 1,
+            "242": 1,
+            "248": 1,
+            "10": 1,
+            "201": 1,
+            "27": 1,
+            "182": 1,
+            "244": 1,
+            "1": 1
+          }
+        }
+      ]
+    },
+    {
+      "tcid": "1c7a3be9-6470-4480-afa9-43c14bfb9daa",
+      "passed_at_utc": "2022-11-07T10:20:44Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "histogram",
+        "data": "MqKeLLYLSFKhL0B8bD0uJ07RrKyeiG23UzojbcwR",
+        "selectors": [
+          {
+            "offset": 0,
+            "stride": 1
+          },
+          {
+            "offset": 0,
+            "stride": 2
+          },
+          {
+            "offset": 1,
+            "stride": 2
+          },
+          {
+            "offset": 0,
+            "stride": 3
+          },
+          {
+            "offset": 1,
+            "stride": 3
+          },
+          {
+            "offset": 2,
+            "stride": 3
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "histogram": {
+            "50": 1,
+            "162": 1,
+            "158": 2,
+            "44": 1,
+            "182": 1,
+            "11": 1,
+            "72": 1,
+            "82": 1,
+            "161": 1,
+            "47": 1,
+            "64": 1,
+            "124": 1,
+            "108": 1,
+            "61": 1,
+            "46": 1,
+            "39": 1,
+            "78": 1,
+            "209": 1,
+            "172": 2,
+            "136": 1,
+            "109": 2,
+            "183": 1,
+            "83": 1,
+            "58": 1,
+            "35": 1,
+            "204": 1,
+            "17": 1
+          }
+        },
+        {
+          "histogram": {
+            "50": 1,
+            "158": 2,
+            "182": 1,
+            "72": 1,
+            "161": 1,
+            "64": 1,
+            "108": 1,
+            "46": 1,
+            "78": 1,
+            "172": 1,
+            "109": 1,
+            "83": 1,
+            "35": 1,
+            "204": 1
+          }
+        },
+        {
+          "histogram": {
+            "162": 1,
+            "44": 1,
+            "11": 1,
+            "82": 1,
+            "47": 1,
+            "124": 1,
+            "61": 1,
+            "39": 1,
+            "209": 1,
+            "172": 1,
+            "136": 1,
+            "183": 1,
+            "58": 1,
+            "109": 1,
+            "17": 1
+          }
+        },
+        {
+          "histogram": {
+            "50": 1,
+            "44": 1,
+            "72": 1,
+            "47": 1,
+            "108": 1,
+            "39": 1,
+            "172": 1,
+            "136": 1,
+            "83": 1,
+            "109": 1
+          }
+        },
+        {
+          "histogram": {
+            "162": 1,
+            "182": 1,
+            "82": 1,
+            "64": 1,
+            "61": 1,
+            "78": 1,
+            "172": 1,
+            "109": 1,
+            "58": 1,
+            "204": 1
+          }
+        },
+        {
+          "histogram": {
+            "158": 2,
+            "11": 1,
+            "161": 1,
+            "124": 1,
+            "46": 1,
+            "209": 1,
+            "183": 1,
+            "35": 1,
+            "17": 1
+          }
+        }
+      ]
+    },
+    {
+      "tcid": "2cd63504-4b00-4c44-a4c6-255442b81d85",
+      "passed_at_utc": "2022-11-07T10:20:44Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "histogram",
+        "data": "ufbnlA9HMzkwU26EZkF39fPTxmX7kTPoyrF4ICLjsJinpjGxE4XtQxYFxdaO3iiIHlEXpHDu1pHVyjgoeyAmibIcezDwl/dXMxOZovIlKbNB4SFzwUPGHR3FdYXqkjYNQ4s3fA==",
+        "selectors": [
+          {
+            "stride": 1
+          },
+          {
+            "stride": 2
+          },
+          {
+            "stride": 3
+          },
+          {
+            "stride": 4
+          },
+          {
+            "stride": 5
+          },
+          {
+            "stride": 6
+          },
+          {
+            "stride": 7
+          },
+          {
+            "stride": 8
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "histogram": {
+            "185": 1,
+            "246": 1,
+            "231": 1,
+            "148": 1,
+            "15": 1,
+            "71": 1,
+            "51": 3,
+            "57": 1,
+            "48": 2,
+            "83": 1,
+            "110": 1,
+            "132": 1,
+            "102": 1,
+            "65": 2,
+            "119": 1,
+            "245": 1,
+            "243": 1,
+            "211": 1,
+            "198": 2,
+            "101": 1,
+            "251": 1,
+            "145": 2,
+            "232": 1,
+            "202": 2,
+            "177": 2,
+            "120": 1,
+            "32": 2,
+            "34": 1,
+            "227": 1,
+            "176": 1,
+            "152": 1,
+            "167": 1,
+            "166": 1,
+            "49": 1,
+            "19": 2,
+            "133": 2,
+            "237": 1,
+            "67": 3,
+            "22": 1,
+            "5": 1,
+            "197": 2,
+            "214": 2,
+            "142": 1,
+            "222": 1,
+            "40": 2,
+            "136": 1,
+            "30": 1,
+            "81": 1,
+            "23": 1,
+            "164": 1,
+            "112": 1,
+            "238": 1,
+            "213": 1,
+            "56": 1,
+            "123": 2,
+            "38": 1,
+            "137": 1,
+            "178": 1,
+            "28": 1,
+            "240": 1,
+            "151": 1,
+            "247": 1,
+            "87": 1,
+            "153": 1,
+            "162": 1,
+            "242": 1,
+            "37": 1,
+            "41": 1,
+            "179": 1,
+            "225": 1,
+            "33": 1,
+            "115": 1,
+            "193": 1,
+            "29": 2,
+            "117": 1,
+            "234": 1,
+            "146": 1,
+            "54": 1,
+            "13": 1,
+            "139": 1,
+            "55": 1,
+            "124": 1
+          }
+        },
+        {
+          "histogram": {
+            "185": 1,
+            "231": 1,
+            "15": 1,
+            "51": 3,
+            "48": 1,
+            "110": 1,
+            "102": 1,
+            "119": 1,
+            "243": 1,
+            "198": 2,
+            "251": 1,
+            "202": 1,
+            "120": 1,
+            "34": 1,
+            "176": 1,
+            "167": 1,
+            "49": 1,
+            "19": 1,
+            "237": 1,
+            "22": 1,
+            "197": 1,
+            "142": 1,
+            "40": 1,
+            "30": 1,
+            "23": 1,
+            "112": 1,
+            "214": 1,
+            "213": 1,
+            "56": 1,
+            "123": 2,
+            "38": 1,
+            "178": 1,
+            "240": 1,
+            "247": 1,
+            "153": 1,
+            "242": 1,
+            "41": 1,
+            "65": 1,
+            "33": 1,
+            "193": 1,
+            "29": 1,
+            "117": 1,
+            "234": 1,
+            "54": 1,
+            "67": 1,
+            "55": 1
+          }
+        },
+        {
+          "histogram": {
+            "185": 1,
+            "148": 1,
+            "51": 2,
+            "83": 1,
+            "102": 1,
+            "245": 1,
+            "198": 1,
+            "145": 1,
+            "202": 2,
+            "32": 1,
+            "176": 1,
+            "166": 1,
+            "19": 1,
+            "67": 2,
+            "197": 1,
+            "222": 1,
+            "30": 1,
+            "164": 1,
+            "214": 1,
+            "123": 2,
+            "137": 1,
+            "151": 1,
+            "162": 1,
+            "41": 1,
+            "225": 1,
+            "193": 1,
+            "29": 1,
+            "117": 1,
+            "146": 1,
+            "124": 1
+          }
+        },
+        {
+          "histogram": {
+            "185": 1,
+            "15": 1,
+            "48": 1,
+            "102": 1,
+            "243": 1,
+            "251": 1,
+            "202": 1,
+            "34": 1,
+            "167": 1,
+            "19": 1,
+            "22": 1,
+            "142": 1,
+            "30": 1,
+            "112": 1,
+            "213": 1,
+            "123": 1,
+            "178": 1,
+            "240": 1,
+            "51": 1,
+            "242": 1,
+            "65": 1,
+            "193": 1,
+            "29": 1,
+            "234": 1,
+            "67": 1
+          }
+        },
+        {
+          "histogram": {
+            "185": 1,
+            "71": 1,
+            "110": 1,
+            "245": 1,
+            "251": 1,
+            "177": 2,
+            "176": 1,
+            "22": 1,
+            "222": 1,
+            "23": 1,
+            "145": 1,
+            "123": 1,
+            "28": 1,
+            "247": 1,
+            "162": 1,
+            "65": 1,
+            "67": 1,
+            "117": 1,
+            "13": 1
+          }
+        },
+        {
+          "histogram": {
+            "185": 1,
+            "51": 2,
+            "102": 1,
+            "198": 1,
+            "202": 1,
+            "176": 1,
+            "19": 1,
+            "197": 1,
+            "30": 1,
+            "214": 1,
+            "123": 2,
+            "41": 1,
+            "193": 1,
+            "117": 1,
+            "67": 1
+          }
+        },
+        {
+          "histogram": {
+            "185": 1,
+            "57": 1,
+            "119": 1,
+            "145": 1,
+            "34": 1,
+            "177": 1,
+            "197": 1,
+            "81": 1,
+            "213": 1,
+            "137": 1,
+            "247": 1,
+            "37": 1,
+            "193": 1,
+            "133": 1,
+            "55": 1
+          }
+        },
+        {
+          "histogram": {
+            "185": 1,
+            "48": 1,
+            "243": 1,
+            "202": 1,
+            "167": 1,
+            "22": 1,
+            "30": 1,
+            "213": 1,
+            "178": 1,
+            "51": 1,
+            "65": 1,
+            "29": 1,
+            "67": 1
+          }
+        }
+      ]
+    },
+    {
+      "tcid": "0448c485-7a25-4e53-a819-4f2bc1cff3f6",
+      "passed_at_utc": "2022-11-07T10:20:44Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "histogram",
+        "data": "39aeLf2Phswvd5fuflV05xWNDs3G1mSfzWafzU18PxykhtQeTgZf9tfXn7yHL24lvNw+DGTHXEXXlrZHBVY1BhwPtaWm7p0VtIel/YWtDi7GXtZ8ZLV133+XbeRllkwUvYbMlc5GX3Q/r2TMp6V213YNzPbNvEQ+PaY+J+3shF9cjM1dLXyHru4OPZ7H1mdurlwMXWYvbpSct1clDiVcnH5tnme0pO2OBa71lG+0Vi3nfYVOPyysvDZ2zrwkrLYNx7xErw0mZV6VLaWVnrS1Lpz0HDRdHY6VJ0T8R5/MNaY+HPVHnHxEBWXU/bbFhFwOLv1HlKdkt+W3Hv2PTxVFxdzfryRfL2SX/HTUzp7k5q+0LMaG/IQ9pVc3he8t7K693H0mtT/e1150/o09ni53HjdVTEVe/dxX/PXFr94N7a0HLzWn58R29f5EFyxeTBfPd1aurz50bo5kxPSVBGW27UYPBPRGJM63Hb2njKZkNDZ1zjz/rsw/LTY9D4zexO7sRm7lBh4U5D8uVeaPnwYtjyUMJU0O3i3+Zlz2J3619GQ1FO/1NC6Nlr/vfCQuzRdVphRlZSWnjTcMfG2n9w7f9vd27KXdvyRXxkd1hr/WF25Nv6VUl4atZD6MTt79fOVur313b+S+1Q9/1TTmvvzP/u5G5H40TfUMjCRnpN30xT7PB8f/zt70xiSW7IUWl8Rm1K3HBz539K18XnTGlD2mb0UeRiWVzaRXjpR0Hlb95kwVTC4ujHVVlXx1b8Xdbr9MBm4PhvVk711tTU1XT2bVrK0HnCR2HKYO1LTU1kUOXFeMtff1t63frO4lJZxub93dlbyXnI6G3jWPnswdZIysZL8cZrSnTH3XjcYE3bR1RAxVD520RGzPlGVUZP6lBlam1g7Npmd+rqVf/Yb0N9ydJS7uJwUUnweuFN0kTy6GNu2lRE7lf5YtBlzWrIzNhEzkDITFJ6T1rOTGFfbtxS5Ot34dRV/thzVO7sa/ZI21B6YX7mee1z6X5+XmTbSv/09UhZT3zAQtNIbdbY/Uni3mZj4VpQ8VT8zW1U7+1M33fjx0fbUXXLUFxE+GFve/Vv6lpmTGhKa/9zYcP63dtDfeT31VHRz3pHykt9//tpymbp40PCa0nibdx0dXTJaNJKYevU/1R6eN77wfbz0cxT2mNf93PsT8xf7PPtwtZhR8/0Tl9K0nnBU8X7fWjuZ978zEXZTV3cX2P901tzwO935XlW63FSRuHjcHBcVcTYxsBYefTzVWl66nJ4XtR1+UnxyH/tzFFLaFbYTfNa3ejv72vZzMDO8f/mYdxh1fTEQtPmUOLgUfBvQWNw==",
+        "selectors": [
+          {}
+        ]
+      },
+      "expect_solution": [
+        {
+          "histogram": {
+            "223": 7,
+            "214": 10,
+            "158": 11,
+            "45": 13,
+            "253": 9,
+            "143": 6,
+            "134": 12,
+            "204": 11,
+            "47": 5,
+            "119": 6,
+            "151": 8,
+            "238": 9,
+            "126": 8,
+            "85": 7,
+            "116": 8,
+            "231": 4,
+            "21": 9,
+            "141": 8,
+            "14": 12,
+            "205": 10,
+            "198": 11,
+            "100": 16,
+            "159": 8,
+            "102": 9,
+            "77": 8,
+            "124": 11,
+            "63": 8,
+            "28": 10,
+            "164": 7,
+            "212": 8,
+            "30": 8,
+            "78": 7,
+            "6": 8,
+            "95": 9,
+            "246": 7,
+            "215": 7,
+            "188": 8,
+            "135": 6,
+            "110": 13,
+            "37": 10,
+            "220": 7,
+            "62": 13,
+            "12": 8,
+            "199": 6,
+            "92": 10,
+            "69": 6,
+            "150": 6,
+            "182": 6,
+            "71": 8,
+            "5": 8,
+            "86": 7,
+            "53": 10,
+            "15": 7,
+            "181": 9,
+            "165": 12,
+            "166": 15,
+            "157": 3,
+            "180": 12,
+            "133": 7,
+            "173": 10,
+            "46": 13,
+            "94": 6,
+            "117": 6,
+            "127": 3,
+            "109": 6,
+            "228": 7,
+            "101": 8,
+            "76": 10,
+            "20": 8,
+            "189": 5,
+            "149": 9,
+            "206": 6,
+            "70": 6,
+            "175": 8,
+            "167": 9,
+            "118": 6,
+            "13": 4,
+            "68": 10,
+            "61": 8,
+            "39": 7,
+            "237": 8,
+            "236": 5,
+            "132": 7,
+            "140": 10,
+            "93": 5,
+            "174": 9,
+            "103": 5,
+            "148": 9,
+            "156": 10,
+            "183": 10,
+            "87": 9,
+            "142": 7,
+            "245": 10,
+            "111": 6,
+            "125": 7,
+            "44": 3,
+            "172": 7,
+            "54": 5,
+            "36": 11,
+            "38": 4,
+            "244": 10,
+            "52": 7,
+            "29": 7,
+            "252": 6,
+            "197": 12,
+            "229": 6,
+            "79": 9,
+            "230": 7,
+            "55": 7,
+            "239": 7,
+            "222": 9,
+            "254": 11,
+            "7": 7,
+            "196": 7,
+            "23": 6,
+            "207": 5,
+            "4": 4,
+            "60": 5,
+            "255": 6,
+            "191": 9,
+            "247": 9,
+            "221": 12,
+            "84": 3,
+            "190": 2,
+            "213": 5,
+            "22": 3,
+            "108": 2,
+            "31": 3
+          }
+        }
+      ]
+    },
+    {
+      "tcid": "5ad29b6b-8d2a-4e35-9a63-b54da3781ad3",
+      "passed_at_utc": "2022-11-07T10:20:44Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "histogram",
+        "data": "//8A///+AP7+/gD9/f0B/f38Afz8/AH8+/sC+/v7A/r6+gP6+fkD+fn5BPj4+AT39vUE9PT0BPT09AX08/MF8/LyBfLy8gXx8PAF8PDwBfDw8AXv7+4G7u7uBu7u7gbt7ewG7OzsBuzs6wbr6uoH6enpB+no6Afn5+cI5+fnCOfm5gjm5uYI5uXlCeTk5Ank5OMJ4+PjCePj4gni4OAK4N/fCt7e3gre3t0L3d3cC9zc3Avb29oL2traC9nZ2QvZ2NgL2NjYC9jY1wzX19YM1tbWDNXV1QzV1dUM1NTUDNTT0wzS0tEM0dHRDdDQzw7Pzs4Ozs3NDs3NzQ/MzMsPy8vLD8vKyQ/JycgQyMfHEMfHxxDGxsYQxsbGEMbFxRHFxcURxcXFEcXFxBLExMQSw8PDEsLCwhLCwcETwcHBE8HAwBPAv78Tvr6+E76+vhO+vb0Uvb29FL29vBW8vLsVu7u7Fbu6uha5ubkWuLi4Fre3txa3t7YWtbW1F7W0tBe0tLQYs7OzGLOzsxiysrIYsrKyGbGxsBmwr64Zra2tGa2srBmsrKwZrKurGaurqhmqqqgZqKioGaioqBmnpqUapaWlG6Wkoxujo6IboqGhHKGhoBygoKAeoJ+fHp6enh6enZ0enZycHpycmx+bm5sfmpqaH5mZmB+YmJgfmJiYIJeXlyCXl5chl5aVIZWVlSGVlZQilJSUIpSTkyOTk5Mjk5OTI5KRkSSRkZEkkZCQJI+PjySPj48kj46OJI2NjSWNjIwljIyMJYyLiyWLiooliomJJomJiSaJiYgmiIiIJoiIhyaHh4cnh4aGKIaFhSiFhYUphYWEKYSEhCmEhIMqg4ODKoKCgiuCgYEsgYGBLICAgCyAf38tf39/LX9+fi1+fn4ufn5+Ln5+fS59fX0ufXx8Lnx8fC57e3sue3p6L3p5eS94eHgveHh4L3Z2di92dXUvdXV0L3R0czBzc3Mwc3JyMXFxcTFxcXExcXFwMXBwcDFvb28yb29vMm9vbjNubW00bW1tNG1sbDVsbGw1a2pqNWpqaTVpaWk2aGhoNmhoaDZnZ2c2ZmZmN2ZmZTdlZGQ3ZGRkN2NjYzdjY2M5YmJiOWJiYTlgYGA6X19fOl9fXzpfX146Xl5eOl1dXTtdXV07XVtaO1lZWTtZWVk7WFhYO1hYWDxYV1c8V1dXPFZWVjxWVlY8VVVVPFVUVD1UU1I9UlJSPVJSUT1RUVE/UFBPP09OTj9OTk4/Tk5NP01NTT9NTEw/TExLQEtLSkBKSUhASEhIQEhISEBHR0dAR0dGQEZGRkFGRUVCRUVEQkRDQ0JDQkJCQg==",
+        "selectors": [
+          {},
+          {
+            "offset": 0,
+            "stride": 4
+          },
+          {
+            "offset": 1,
+            "stride": 4
+          },
+          {
+            "offset": 2,
+            "stride": 4
+          },
+          {
+            "offset": 3,
+            "stride": 4
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "histogram": {
+            "255": 4,
+            "0": 3,
+            "254": 4,
+            "253": 5,
+            "1": 3,
+            "252": 5,
+            "251": 5,
+            "2": 1,
+            "3": 3,
+            "250": 4,
+            "249": 5,
+            "4": 4,
+            "248": 3,
+            "247": 1,
+            "246": 1,
+            "245": 1,
+            "244": 7,
+            "5": 7,
+            "243": 3,
+            "242": 5,
+            "241": 1,
+            "240": 8,
+            "239": 2,
+            "238": 7,
+            "6": 6,
+            "237": 2,
+            "236": 6,
+            "235": 2,
+            "234": 2,
+            "7": 3,
+            "233": 4,
+            "232": 2,
+            "231": 7,
+            "8": 4,
+            "230": 6,
+            "229": 2,
+            "9": 5,
+            "228": 5,
+            "227": 6,
+            "226": 2,
+            "224": 3,
+            "10": 3,
+            "223": 2,
+            "222": 5,
+            "221": 3,
+            "11": 8,
+            "220": 4,
+            "219": 2,
+            "218": 4,
+            "217": 4,
+            "216": 7,
+            "215": 3,
+            "12": 8,
+            "214": 4,
+            "213": 6,
+            "212": 4,
+            "211": 2,
+            "210": 2,
+            "209": 4,
+            "13": 1,
+            "208": 2,
+            "207": 2,
+            "14": 3,
+            "206": 3,
+            "205": 5,
+            "15": 4,
+            "204": 2,
+            "203": 5,
+            "202": 1,
+            "201": 3,
+            "200": 2,
+            "16": 5,
+            "199": 5,
+            "198": 7,
+            "197": 10,
+            "17": 3,
+            "196": 4,
+            "18": 4,
+            "195": 3,
+            "194": 4,
+            "193": 6,
+            "19": 6,
+            "192": 3,
+            "191": 2,
+            "190": 7,
+            "189": 7,
+            "20": 2,
+            "188": 3,
+            "21": 3,
+            "187": 5,
+            "186": 2,
+            "22": 5,
+            "185": 3,
+            "184": 3,
+            "183": 5,
+            "182": 1,
+            "181": 4,
+            "23": 2,
+            "180": 5,
+            "24": 4,
+            "179": 6,
+            "178": 6,
+            "25": 11,
+            "177": 2,
+            "176": 2,
+            "175": 1,
+            "174": 1,
+            "173": 4,
+            "172": 6,
+            "171": 4,
+            "170": 3,
+            "168": 7,
+            "167": 1,
+            "166": 1,
+            "165": 5,
+            "26": 1,
+            "27": 3,
+            "164": 1,
+            "163": 3,
+            "162": 2,
+            "161": 4,
+            "28": 2,
+            "160": 5,
+            "30": 5,
+            "159": 2,
+            "158": 4,
+            "157": 3,
+            "156": 4,
+            "155": 4,
+            "31": 5,
+            "154": 3,
+            "153": 2,
+            "152": 7,
+            "32": 2,
+            "151": 7,
+            "33": 3,
+            "150": 1,
+            "149": 6,
+            "148": 5,
+            "34": 2,
+            "147": 8,
+            "35": 3,
+            "146": 1,
+            "145": 6,
+            "36": 6,
+            "144": 2,
+            "143": 7,
+            "142": 2,
+            "141": 4,
+            "37": 5,
+            "140": 6,
+            "139": 3,
+            "138": 3,
+            "137": 7,
+            "38": 5,
+            "136": 6,
+            "135": 5,
+            "39": 1,
+            "134": 3,
+            "40": 2,
+            "133": 7,
+            "41": 3,
+            "132": 6,
+            "131": 4,
+            "42": 2,
+            "130": 4,
+            "43": 1,
+            "129": 5,
+            "44": 3,
+            "128": 4,
+            "127": 6,
+            "45": 3,
+            "126": 10,
+            "46": 7,
+            "125": 5,
+            "124": 5,
+            "123": 4,
+            "122": 3,
+            "47": 7,
+            "121": 2,
+            "120": 6,
+            "118": 4,
+            "117": 4,
+            "116": 3,
+            "115": 5,
+            "48": 2,
+            "114": 2,
+            "49": 5,
+            "113": 8,
+            "112": 4,
+            "111": 8,
+            "50": 2,
+            "110": 2,
+            "51": 1,
+            "109": 6,
+            "52": 2,
+            "108": 5,
+            "53": 4,
+            "107": 1,
+            "106": 4,
+            "105": 4,
+            "54": 4,
+            "104": 6,
+            "103": 3,
+            "102": 5,
+            "55": 5,
+            "101": 2,
+            "100": 5,
+            "99": 6,
+            "57": 3,
+            "98": 5,
+            "97": 1,
+            "96": 3,
+            "58": 5,
+            "95": 8,
+            "94": 4,
+            "93": 7,
+            "59": 6,
+            "91": 1,
+            "90": 1,
+            "89": 6,
+            "88": 7,
+            "60": 6,
+            "87": 5,
+            "86": 6,
+            "85": 4,
+            "84": 3,
+            "61": 4,
+            "83": 1,
+            "82": 6,
+            "81": 4,
+            "63": 7,
+            "80": 2,
+            "79": 2,
+            "78": 7,
+            "77": 5,
+            "76": 4,
+            "75": 3,
+            "64": 7,
+            "74": 2,
+            "73": 1,
+            "72": 7,
+            "71": 5,
+            "70": 5,
+            "65": 1,
+            "69": 4,
+            "66": 7,
+            "68": 2,
+            "67": 3
+          }
+        },
+        {
+          "histogram": {
+            "255": 2,
+            "254": 1,
+            "253": 2,
+            "252": 1,
+            "251": 2,
+            "250": 1,
+            "249": 2,
+            "248": 1,
+            "246": 1,
+            "244": 2,
+            "243": 1,
+            "242": 2,
+            "240": 3,
+            "239": 1,
+            "238": 2,
+            "237": 1,
+            "236": 2,
+            "234": 1,
+            "233": 1,
+            "232": 1,
+            "231": 2,
+            "230": 2,
+            "229": 1,
+            "228": 2,
+            "227": 2,
+            "224": 1,
+            "223": 1,
+            "222": 2,
+            "221": 1,
+            "220": 1,
+            "219": 1,
+            "218": 1,
+            "217": 1,
+            "216": 3,
+            "215": 1,
+            "214": 1,
+            "213": 2,
+            "212": 1,
+            "211": 1,
+            "210": 1,
+            "209": 1,
+            "208": 1,
+            "206": 1,
+            "205": 2,
+            "204": 1,
+            "203": 1,
+            "202": 1,
+            "201": 1,
+            "199": 2,
+            "198": 2,
+            "197": 4,
+            "196": 1,
+            "195": 1,
+            "194": 1,
+            "193": 2,
+            "192": 1,
+            "191": 1,
+            "190": 2,
+            "189": 3,
+            "188": 1,
+            "187": 1,
+            "186": 1,
+            "185": 1,
+            "184": 1,
+            "183": 2,
+            "181": 1,
+            "180": 2,
+            "179": 2,
+            "178": 2,
+            "177": 1,
+            "175": 1,
+            "173": 1,
+            "172": 2,
+            "171": 2,
+            "170": 1,
+            "168": 2,
+            "166": 1,
+            "165": 1,
+            "164": 1,
+            "163": 1,
+            "161": 2,
+            "160": 1,
+            "159": 1,
+            "158": 1,
+            "157": 1,
+            "156": 2,
+            "155": 1,
+            "154": 1,
+            "153": 1,
+            "152": 2,
+            "151": 2,
+            "150": 1,
+            "149": 2,
+            "148": 1,
+            "147": 3,
+            "145": 2,
+            "144": 1,
+            "143": 2,
+            "142": 1,
+            "141": 1,
+            "140": 2,
+            "139": 1,
+            "138": 1,
+            "137": 3,
+            "136": 2,
+            "135": 1,
+            "134": 1,
+            "133": 3,
+            "132": 2,
+            "131": 1,
+            "130": 1,
+            "129": 2,
+            "128": 1,
+            "127": 2,
+            "126": 4,
+            "125": 1,
+            "124": 2,
+            "123": 1,
+            "122": 1,
+            "121": 1,
+            "120": 2,
+            "118": 1,
+            "117": 2,
+            "116": 1,
+            "115": 1,
+            "114": 1,
+            "113": 3,
+            "112": 1,
+            "111": 3,
+            "109": 2,
+            "108": 2,
+            "106": 2,
+            "105": 1,
+            "104": 2,
+            "103": 1,
+            "102": 2,
+            "100": 2,
+            "99": 2,
+            "98": 2,
+            "96": 1,
+            "95": 3,
+            "94": 1,
+            "93": 2,
+            "91": 1,
+            "89": 2,
+            "88": 2,
+            "87": 2,
+            "86": 2,
+            "85": 1,
+            "84": 1,
+            "83": 1,
+            "82": 2,
+            "81": 1,
+            "80": 1,
+            "78": 3,
+            "77": 1,
+            "76": 2,
+            "75": 1,
+            "73": 1,
+            "72": 2,
+            "71": 2,
+            "70": 1,
+            "69": 2,
+            "67": 1,
+            "66": 1
+          }
+        },
+        {
+          "histogram": {
+            "255": 1,
+            "254": 2,
+            "253": 1,
+            "252": 2,
+            "251": 2,
+            "250": 1,
+            "249": 2,
+            "248": 1,
+            "245": 1,
+            "244": 2,
+            "243": 1,
+            "242": 2,
+            "240": 3,
+            "238": 3,
+            "236": 2,
+            "235": 1,
+            "234": 1,
+            "233": 1,
+            "232": 1,
+            "231": 2,
+            "230": 2,
+            "229": 1,
+            "228": 1,
+            "227": 2,
+            "226": 1,
+            "224": 1,
+            "223": 1,
+            "222": 1,
+            "221": 1,
+            "220": 2,
+            "218": 2,
+            "217": 1,
+            "216": 2,
+            "215": 1,
+            "214": 2,
+            "213": 2,
+            "212": 1,
+            "211": 1,
+            "209": 2,
+            "207": 1,
+            "206": 1,
+            "205": 2,
+            "203": 2,
+            "201": 1,
+            "200": 1,
+            "199": 2,
+            "198": 2,
+            "197": 3,
+            "196": 2,
+            "195": 1,
+            "194": 1,
+            "193": 2,
+            "192": 1,
+            "191": 1,
+            "190": 2,
+            "189": 2,
+            "188": 1,
+            "187": 2,
+            "186": 1,
+            "185": 1,
+            "184": 1,
+            "183": 1,
+            "182": 1,
+            "181": 1,
+            "180": 2,
+            "179": 2,
+            "178": 2,
+            "176": 1,
+            "174": 1,
+            "173": 1,
+            "172": 2,
+            "171": 1,
+            "170": 1,
+            "168": 3,
+            "165": 2,
+            "163": 1,
+            "162": 1,
+            "161": 1,
+            "160": 2,
+            "159": 1,
+            "158": 1,
+            "157": 1,
+            "156": 1,
+            "155": 2,
+            "154": 1,
+            "152": 3,
+            "151": 2,
+            "149": 2,
+            "148": 2,
+            "147": 3,
+            "145": 2,
+            "144": 1,
+            "143": 2,
+            "142": 1,
+            "141": 1,
+            "140": 2,
+            "139": 1,
+            "138": 1,
+            "137": 2,
+            "136": 2,
+            "135": 2,
+            "134": 1,
+            "133": 2,
+            "132": 2,
+            "131": 2,
+            "130": 1,
+            "129": 2,
+            "128": 1,
+            "127": 2,
+            "126": 3,
+            "125": 2,
+            "124": 2,
+            "123": 1,
+            "122": 1,
+            "121": 1,
+            "120": 2,
+            "118": 1,
+            "117": 1,
+            "116": 1,
+            "115": 2,
+            "114": 1,
+            "113": 2,
+            "112": 2,
+            "111": 2,
+            "110": 1,
+            "109": 2,
+            "108": 2,
+            "106": 1,
+            "105": 2,
+            "104": 2,
+            "103": 1,
+            "102": 1,
+            "101": 1,
+            "100": 2,
+            "99": 2,
+            "98": 1,
+            "97": 1,
+            "96": 1,
+            "95": 2,
+            "94": 2,
+            "93": 2,
+            "90": 1,
+            "89": 2,
+            "88": 2,
+            "87": 2,
+            "86": 2,
+            "85": 1,
+            "84": 1,
+            "82": 2,
+            "81": 2,
+            "79": 1,
+            "78": 2,
+            "77": 2,
+            "76": 1,
+            "75": 1,
+            "74": 1,
+            "72": 3,
+            "71": 1,
+            "70": 2,
+            "69": 1,
+            "68": 1,
+            "67": 1,
+            "66": 1
+          }
+        },
+        {
+          "histogram": {
+            "0": 3,
+            "1": 3,
+            "2": 1,
+            "3": 3,
+            "4": 4,
+            "5": 7,
+            "6": 6,
+            "7": 3,
+            "8": 4,
+            "9": 5,
+            "10": 3,
+            "11": 8,
+            "12": 8,
+            "13": 1,
+            "14": 3,
+            "15": 4,
+            "16": 5,
+            "17": 3,
+            "18": 4,
+            "19": 6,
+            "20": 2,
+            "21": 3,
+            "22": 5,
+            "23": 2,
+            "24": 4,
+            "25": 11,
+            "26": 1,
+            "27": 3,
+            "28": 2,
+            "30": 5,
+            "31": 5,
+            "32": 2,
+            "33": 3,
+            "34": 2,
+            "35": 3,
+            "36": 6,
+            "37": 5,
+            "38": 5,
+            "39": 1,
+            "40": 2,
+            "41": 3,
+            "42": 2,
+            "43": 1,
+            "44": 3,
+            "45": 3,
+            "46": 7,
+            "47": 7,
+            "48": 2,
+            "49": 5,
+            "50": 2,
+            "51": 1,
+            "52": 2,
+            "53": 4,
+            "54": 4,
+            "55": 5,
+            "57": 3,
+            "58": 5,
+            "59": 6,
+            "60": 6,
+            "61": 4,
+            "63": 7,
+            "64": 7,
+            "65": 1,
+            "66": 4
+          }
+        },
+        {
+          "histogram": {
+            "255": 1,
+            "254": 1,
+            "253": 2,
+            "252": 2,
+            "251": 1,
+            "250": 2,
+            "249": 1,
+            "248": 1,
+            "247": 1,
+            "244": 3,
+            "243": 1,
+            "242": 1,
+            "241": 1,
+            "240": 2,
+            "239": 1,
+            "238": 2,
+            "237": 1,
+            "236": 2,
+            "235": 1,
+            "233": 2,
+            "231": 3,
+            "230": 2,
+            "228": 2,
+            "227": 2,
+            "226": 1,
+            "224": 1,
+            "222": 2,
+            "221": 1,
+            "220": 1,
+            "219": 1,
+            "218": 1,
+            "217": 2,
+            "216": 2,
+            "215": 1,
+            "214": 1,
+            "213": 2,
+            "212": 2,
+            "210": 1,
+            "209": 1,
+            "208": 1,
+            "207": 1,
+            "206": 1,
+            "205": 1,
+            "204": 1,
+            "203": 2,
+            "201": 1,
+            "200": 1,
+            "199": 1,
+            "198": 3,
+            "197": 3,
+            "196": 1,
+            "195": 1,
+            "194": 2,
+            "193": 2,
+            "192": 1,
+            "190": 3,
+            "189": 2,
+            "188": 1,
+            "187": 2,
+            "185": 1,
+            "184": 1,
+            "183": 2,
+            "181": 2,
+            "180": 1,
+            "179": 2,
+            "178": 2,
+            "177": 1,
+            "176": 1,
+            "173": 2,
+            "172": 2,
+            "171": 1,
+            "170": 1,
+            "168": 2,
+            "167": 1,
+            "165": 2,
+            "163": 1,
+            "162": 1,
+            "161": 1,
+            "160": 2,
+            "158": 2,
+            "157": 1,
+            "156": 1,
+            "155": 1,
+            "154": 1,
+            "153": 1,
+            "152": 2,
+            "151": 3,
+            "149": 2,
+            "148": 2,
+            "147": 2,
+            "146": 1,
+            "145": 2,
+            "143": 3,
+            "141": 2,
+            "140": 2,
+            "139": 1,
+            "138": 1,
+            "137": 2,
+            "136": 2,
+            "135": 2,
+            "134": 1,
+            "133": 2,
+            "132": 2,
+            "131": 1,
+            "130": 2,
+            "129": 1,
+            "128": 2,
+            "127": 2,
+            "126": 3,
+            "125": 2,
+            "124": 1,
+            "123": 2,
+            "122": 1,
+            "120": 2,
+            "118": 2,
+            "117": 1,
+            "116": 1,
+            "115": 2,
+            "113": 3,
+            "112": 1,
+            "111": 3,
+            "110": 1,
+            "109": 2,
+            "108": 1,
+            "107": 1,
+            "106": 1,
+            "105": 1,
+            "104": 2,
+            "103": 1,
+            "102": 2,
+            "101": 1,
+            "100": 1,
+            "99": 2,
+            "98": 2,
+            "96": 1,
+            "95": 3,
+            "94": 1,
+            "93": 3,
+            "89": 2,
+            "88": 3,
+            "87": 1,
+            "86": 2,
+            "85": 2,
+            "84": 1,
+            "82": 2,
+            "81": 1,
+            "80": 1,
+            "79": 1,
+            "78": 2,
+            "77": 2,
+            "76": 1,
+            "75": 1,
+            "74": 1,
+            "72": 2,
+            "71": 2,
+            "70": 2,
+            "69": 1,
+            "68": 1,
+            "67": 1,
+            "66": 1
+          }
+        }
+      ]
+    },
+    {
+      "tcid": "27618746-f9fa-4db1-b069-cd72711df10d",
+      "passed_at_utc": "2022-11-07T10:20:44Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "histogram",
+        "data": "//4A/v79Af39/QH9/PsC+/v6Avr5+QL5+fgD+Pj3A/f39wP39vYD9vb1A/X19QT19fQE9PT0BPT09AX08/MF8/PzBfLy8QXx8fAF8PDvBe/v7gXu7u4F7u3tBuzs7Abr6ukH6ejoB+jo6Afo6OgH5+fmCOXl5Qjk5OMI4+PiCeLi4gnh4eEJ4eDgCeDg4Anf398J39/fCt7e3grd3d0K3NzcC9zc3Avb29sM2trZDNnZ2QzZ2dgM2NjYDdjX1w3X1tUO1dTUDtPT0w7T09MO09LSDtLS0g7R0dEO0dHRDtHR0Q7R0NAP0NDQD9DQ0A/Pz88Pz8/OEM7OzhDOzs4Qzs3MEMzMzBDLy8sSy8vLEsrKyRLJycgSyMjIEsjIyBPHx8YTxsbGFMbGxRXFxcQVxMPDFcPCwhXCwsIWwcHBFsHBwRbBwMAWwMC/Fr++vhe+vb0Xvby8F7u7uxe6uroXurq5F7i4uBi3t7cYt7a2GLa2thq2trYatbS0GrSzsxuzsrIbsrKyG7KxsRuxsbEbsLCwG7Cvrxuvr68br6+vHK+vrxyurq4crq6tHK2trRytrawdrKysHquqqh6qqqoeqqqqHqmpqR+oqKggqKemIKalpSClpKQgpKSkIKSkpCCjo6Mgo6OjIKOioiGioqIhoaGhIaGhoCKgoKAin56eI56eniOenp0knZ2dJJ2dnSSdnJwknJycJJybmySbm5skm5qaJZqZmSWZmZglmJiYJZiYlyaXl5cml5eWJpaWlieVlZUnlJSTJ5OTkyiSkpIokZGRKJCPjyiPj44ojo6OKI2NjSmNjIwpi4uLKYuLiymKioopiYmJKYmJiCqHh4cqhoaGKoaGhiqGhYUqhYWFKoWEgyqDg4Mqg4KCK4KCgiuBgYEtgX9/LX9/fy5/fn0ufX19Ln19fC98fHwvfHx8L3x8ey97e3ovenp6MHl5eTB5eXgweHh4MHd3dzF3dXUxdHNzMnJycTJxcXEycXFxM3BwcDNwcHA0b29uNG5ubTRtbW00bGxsNGxsbDRsa2s1a2trNWpqajVqamk1aWloNWhoaDVnZ2Y2ZmZlNmVlZDdkZGM3Y2NjN2JiYjdiYmE4YWFgOGBfXzhfXl45Xl5dOl1dXTpdXFw6XFxcOlxbWztbW1s7W1paO1lZWTtZWFg7WFhWO1ZWVjtVVVU8VFRTPFNTUzxTUlI8UlJSPVJQUD1QUFA+UFBQP09PTz9PT08/Tk5OQE5NTUBNTU1ATU1NQExMTEFMTEtBS0tLQktLS0JKSkpDSkpKQ0lJSUNJSUhDSEhIQ0hIR0NHR0dER0dHREdGRkRFRUVERQ==",
+        "selectors": [
+          {},
+          {
+            "offset": 0,
+            "stride": 4
+          },
+          {
+            "offset": 1,
+            "stride": 4
+          },
+          {
+            "offset": 2,
+            "stride": 4
+          },
+          {
+            "offset": 3,
+            "stride": 4
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "histogram": {
+            "255": 1,
+            "254": 3,
+            "0": 1,
+            "253": 5,
+            "1": 2,
+            "252": 1,
+            "251": 3,
+            "2": 3,
+            "250": 2,
+            "249": 4,
+            "248": 3,
+            "3": 5,
+            "247": 5,
+            "246": 4,
+            "245": 6,
+            "4": 3,
+            "244": 8,
+            "5": 8,
+            "243": 5,
+            "242": 2,
+            "241": 3,
+            "240": 3,
+            "239": 3,
+            "238": 5,
+            "237": 2,
+            "6": 2,
+            "236": 3,
+            "235": 1,
+            "234": 1,
+            "233": 2,
+            "7": 4,
+            "232": 8,
+            "231": 2,
+            "230": 1,
+            "8": 3,
+            "229": 3,
+            "228": 2,
+            "227": 3,
+            "226": 4,
+            "9": 6,
+            "225": 4,
+            "224": 5,
+            "223": 6,
+            "10": 3,
+            "222": 3,
+            "221": 3,
+            "220": 6,
+            "11": 2,
+            "219": 3,
+            "12": 4,
+            "218": 2,
+            "217": 6,
+            "216": 5,
+            "13": 2,
+            "215": 3,
+            "214": 1,
+            "213": 2,
+            "14": 9,
+            "212": 2,
+            "211": 7,
+            "210": 5,
+            "209": 10,
+            "208": 8,
+            "15": 4,
+            "207": 5,
+            "206": 8,
+            "16": 5,
+            "205": 1,
+            "204": 4,
+            "203": 6,
+            "18": 5,
+            "202": 2,
+            "201": 3,
+            "200": 7,
+            "19": 2,
+            "199": 2,
+            "198": 6,
+            "20": 1,
+            "197": 3,
+            "21": 4,
+            "196": 2,
+            "195": 3,
+            "194": 5,
+            "22": 5,
+            "193": 7,
+            "192": 4,
+            "191": 2,
+            "190": 3,
+            "23": 6,
+            "189": 3,
+            "188": 2,
+            "187": 3,
+            "186": 5,
+            "185": 1,
+            "184": 3,
+            "24": 3,
+            "183": 4,
+            "182": 8,
+            "26": 3,
+            "181": 1,
+            "180": 3,
+            "179": 3,
+            "27": 8,
+            "178": 6,
+            "177": 5,
+            "176": 4,
+            "175": 11,
+            "28": 5,
+            "174": 5,
+            "173": 6,
+            "172": 4,
+            "29": 1,
+            "30": 4,
+            "171": 1,
+            "170": 8,
+            "169": 3,
+            "31": 1,
+            "168": 4,
+            "32": 8,
+            "167": 1,
+            "166": 2,
+            "165": 3,
+            "164": 8,
+            "163": 7,
+            "162": 5,
+            "33": 3,
+            "161": 5,
+            "160": 4,
+            "34": 2,
+            "159": 1,
+            "158": 7,
+            "35": 2,
+            "157": 8,
+            "36": 7,
+            "156": 6,
+            "155": 6,
+            "154": 3,
+            "37": 4,
+            "153": 4,
+            "152": 6,
+            "151": 6,
+            "38": 3,
+            "150": 4,
+            "39": 3,
+            "149": 3,
+            "148": 2,
+            "147": 4,
+            "40": 6,
+            "146": 3,
+            "145": 3,
+            "144": 1,
+            "143": 4,
+            "142": 4,
+            "141": 4,
+            "41": 6,
+            "140": 2,
+            "139": 6,
+            "138": 3,
+            "137": 5,
+            "136": 1,
+            "42": 8,
+            "135": 3,
+            "134": 7,
+            "133": 6,
+            "132": 1,
+            "131": 5,
+            "130": 5,
+            "43": 2,
+            "129": 4,
+            "45": 2,
+            "127": 6,
+            "46": 3,
+            "126": 1,
+            "125": 6,
+            "124": 9,
+            "47": 5,
+            "123": 3,
+            "122": 4,
+            "48": 4,
+            "121": 5,
+            "120": 4,
+            "119": 4,
+            "49": 2,
+            "117": 2,
+            "116": 1,
+            "115": 2,
+            "50": 3,
+            "114": 2,
+            "113": 7,
+            "51": 2,
+            "112": 6,
+            "52": 6,
+            "111": 2,
+            "110": 3,
+            "109": 4,
+            "108": 7,
+            "107": 5,
+            "53": 6,
+            "106": 5,
+            "105": 3,
+            "104": 4,
+            "103": 2,
+            "102": 3,
+            "54": 2,
+            "101": 3,
+            "100": 3,
+            "55": 4,
+            "99": 4,
+            "98": 5,
+            "97": 3,
+            "56": 3,
+            "96": 2,
+            "95": 3,
+            "94": 4,
+            "57": 1,
+            "93": 5,
+            "58": 4,
+            "92": 6,
+            "91": 6,
+            "59": 7,
+            "90": 2,
+            "89": 4,
+            "88": 4,
+            "86": 4,
+            "85": 3,
+            "60": 4,
+            "84": 2,
+            "83": 5,
+            "82": 6,
+            "61": 2,
+            "80": 8,
+            "62": 1,
+            "63": 3,
+            "79": 6,
+            "78": 4,
+            "64": 4,
+            "77": 8,
+            "76": 5,
+            "65": 2,
+            "75": 7,
+            "66": 2,
+            "74": 6,
+            "67": 6,
+            "73": 5,
+            "72": 6,
+            "71": 8,
+            "68": 4,
+            "70": 2,
+            "69": 4
+          }
+        },
+        {
+          "histogram": {
+            "255": 1,
+            "254": 1,
+            "253": 1,
+            "252": 1,
+            "251": 1,
+            "249": 2,
+            "248": 1,
+            "247": 1,
+            "246": 2,
+            "245": 2,
+            "244": 2,
+            "243": 2,
+            "242": 1,
+            "241": 1,
+            "240": 1,
+            "239": 1,
+            "238": 1,
+            "237": 1,
+            "236": 1,
+            "234": 1,
+            "232": 3,
+            "231": 1,
+            "229": 1,
+            "228": 1,
+            "227": 1,
+            "226": 1,
+            "225": 1,
+            "224": 2,
+            "223": 2,
+            "222": 1,
+            "221": 1,
+            "220": 2,
+            "219": 1,
+            "218": 1,
+            "217": 2,
+            "216": 1,
+            "215": 1,
+            "214": 1,
+            "212": 1,
+            "211": 2,
+            "210": 2,
+            "209": 3,
+            "208": 3,
+            "207": 2,
+            "206": 2,
+            "205": 1,
+            "204": 1,
+            "203": 2,
+            "202": 1,
+            "201": 1,
+            "200": 2,
+            "199": 1,
+            "198": 2,
+            "197": 1,
+            "195": 1,
+            "194": 2,
+            "193": 2,
+            "192": 2,
+            "190": 1,
+            "189": 1,
+            "188": 1,
+            "187": 1,
+            "186": 2,
+            "184": 1,
+            "183": 1,
+            "182": 3,
+            "180": 1,
+            "179": 1,
+            "178": 2,
+            "177": 2,
+            "176": 1,
+            "175": 4,
+            "174": 2,
+            "173": 2,
+            "172": 1,
+            "170": 3,
+            "169": 1,
+            "168": 1,
+            "167": 1,
+            "165": 1,
+            "164": 3,
+            "163": 2,
+            "162": 2,
+            "161": 2,
+            "160": 1,
+            "158": 3,
+            "157": 2,
+            "156": 2,
+            "155": 2,
+            "154": 1,
+            "153": 2,
+            "152": 2,
+            "151": 2,
+            "150": 1,
+            "149": 1,
+            "148": 1,
+            "147": 1,
+            "146": 1,
+            "145": 1,
+            "143": 2,
+            "142": 1,
+            "141": 1,
+            "140": 1,
+            "139": 2,
+            "138": 1,
+            "137": 2,
+            "135": 1,
+            "134": 2,
+            "133": 2,
+            "132": 1,
+            "131": 1,
+            "130": 2,
+            "129": 1,
+            "127": 2,
+            "126": 1,
+            "125": 2,
+            "124": 3,
+            "123": 1,
+            "122": 1,
+            "121": 2,
+            "120": 1,
+            "119": 1,
+            "117": 1,
+            "115": 1,
+            "114": 1,
+            "113": 2,
+            "112": 2,
+            "111": 1,
+            "110": 1,
+            "109": 1,
+            "108": 2,
+            "107": 2,
+            "106": 2,
+            "105": 1,
+            "104": 1,
+            "103": 1,
+            "102": 1,
+            "101": 1,
+            "100": 1,
+            "99": 1,
+            "98": 2,
+            "97": 1,
+            "95": 1,
+            "94": 2,
+            "93": 1,
+            "92": 2,
+            "91": 2,
+            "90": 1,
+            "89": 1,
+            "88": 2,
+            "86": 1,
+            "85": 1,
+            "84": 1,
+            "83": 1,
+            "82": 2,
+            "80": 3,
+            "79": 2,
+            "78": 1,
+            "77": 3,
+            "76": 2,
+            "75": 2,
+            "74": 2,
+            "73": 2,
+            "72": 2,
+            "71": 2,
+            "70": 1,
+            "69": 1
+          }
+        },
+        {
+          "histogram": {
+            "254": 1,
+            "253": 2,
+            "251": 1,
+            "250": 1,
+            "249": 1,
+            "248": 1,
+            "247": 2,
+            "246": 1,
+            "245": 2,
+            "244": 3,
+            "243": 2,
+            "241": 1,
+            "240": 1,
+            "239": 1,
+            "238": 2,
+            "237": 1,
+            "236": 1,
+            "233": 1,
+            "232": 3,
+            "230": 1,
+            "229": 1,
+            "227": 1,
+            "226": 2,
+            "225": 1,
+            "224": 2,
+            "223": 2,
+            "222": 1,
+            "221": 1,
+            "220": 2,
+            "219": 1,
+            "217": 2,
+            "216": 2,
+            "215": 1,
+            "213": 1,
+            "212": 1,
+            "211": 2,
+            "210": 2,
+            "209": 3,
+            "208": 3,
+            "207": 1,
+            "206": 3,
+            "204": 2,
+            "203": 2,
+            "201": 1,
+            "200": 3,
+            "198": 2,
+            "197": 1,
+            "196": 1,
+            "195": 1,
+            "194": 2,
+            "193": 2,
+            "192": 1,
+            "191": 1,
+            "190": 1,
+            "189": 1,
+            "188": 1,
+            "187": 1,
+            "186": 1,
+            "185": 1,
+            "184": 1,
+            "183": 1,
+            "182": 3,
+            "180": 1,
+            "179": 1,
+            "178": 2,
+            "177": 2,
+            "176": 1,
+            "175": 4,
+            "174": 1,
+            "173": 2,
+            "172": 2,
+            "170": 3,
+            "169": 1,
+            "168": 1,
+            "166": 1,
+            "165": 1,
+            "164": 3,
+            "163": 2,
+            "162": 2,
+            "161": 1,
+            "160": 2,
+            "158": 2,
+            "157": 3,
+            "156": 2,
+            "155": 2,
+            "154": 1,
+            "153": 1,
+            "152": 2,
+            "151": 2,
+            "150": 2,
+            "149": 1,
+            "147": 2,
+            "146": 1,
+            "145": 1,
+            "143": 1,
+            "142": 2,
+            "141": 1,
+            "140": 1,
+            "139": 2,
+            "138": 1,
+            "137": 1,
+            "136": 1,
+            "135": 1,
+            "134": 2,
+            "133": 2,
+            "131": 2,
+            "130": 2,
+            "129": 1,
+            "127": 2,
+            "125": 2,
+            "124": 3,
+            "123": 1,
+            "122": 2,
+            "121": 1,
+            "120": 2,
+            "119": 1,
+            "117": 1,
+            "115": 1,
+            "113": 3,
+            "112": 2,
+            "110": 1,
+            "109": 2,
+            "108": 2,
+            "107": 2,
+            "106": 1,
+            "105": 1,
+            "104": 2,
+            "102": 1,
+            "101": 1,
+            "100": 1,
+            "99": 2,
+            "98": 1,
+            "97": 1,
+            "96": 1,
+            "95": 1,
+            "94": 1,
+            "93": 2,
+            "92": 2,
+            "91": 2,
+            "90": 1,
+            "89": 1,
+            "88": 1,
+            "86": 2,
+            "85": 1,
+            "83": 2,
+            "82": 2,
+            "80": 3,
+            "79": 2,
+            "78": 1,
+            "77": 3,
+            "76": 1,
+            "75": 3,
+            "74": 2,
+            "73": 1,
+            "72": 2,
+            "71": 3,
+            "70": 1,
+            "69": 1
+          }
+        },
+        {
+          "histogram": {
+            "0": 1,
+            "1": 2,
+            "2": 3,
+            "3": 5,
+            "4": 3,
+            "5": 8,
+            "6": 2,
+            "7": 4,
+            "8": 3,
+            "9": 6,
+            "10": 3,
+            "11": 2,
+            "12": 4,
+            "13": 2,
+            "14": 9,
+            "15": 4,
+            "16": 5,
+            "18": 5,
+            "19": 2,
+            "20": 1,
+            "21": 4,
+            "22": 5,
+            "23": 6,
+            "24": 3,
+            "26": 3,
+            "27": 8,
+            "28": 5,
+            "29": 1,
+            "30": 4,
+            "31": 1,
+            "32": 8,
+            "33": 3,
+            "34": 2,
+            "35": 2,
+            "36": 7,
+            "37": 4,
+            "38": 3,
+            "39": 3,
+            "40": 6,
+            "41": 6,
+            "42": 8,
+            "43": 2,
+            "45": 2,
+            "46": 3,
+            "47": 5,
+            "48": 4,
+            "49": 2,
+            "50": 3,
+            "51": 2,
+            "52": 6,
+            "53": 6,
+            "54": 2,
+            "55": 4,
+            "56": 3,
+            "57": 1,
+            "58": 4,
+            "59": 7,
+            "60": 4,
+            "61": 2,
+            "62": 1,
+            "63": 3,
+            "64": 4,
+            "65": 2,
+            "66": 2,
+            "67": 6,
+            "68": 4
+          }
+        },
+        {
+          "histogram": {
+            "254": 1,
+            "253": 2,
+            "251": 1,
+            "250": 1,
+            "249": 1,
+            "248": 1,
+            "247": 2,
+            "246": 1,
+            "245": 2,
+            "244": 3,
+            "243": 1,
+            "242": 1,
+            "241": 1,
+            "240": 1,
+            "239": 1,
+            "238": 2,
+            "236": 1,
+            "235": 1,
+            "233": 1,
+            "232": 2,
+            "231": 1,
+            "229": 1,
+            "228": 1,
+            "227": 1,
+            "226": 1,
+            "225": 2,
+            "224": 1,
+            "223": 2,
+            "222": 1,
+            "221": 1,
+            "220": 2,
+            "219": 1,
+            "218": 1,
+            "217": 2,
+            "216": 2,
+            "215": 1,
+            "213": 1,
+            "211": 3,
+            "210": 1,
+            "209": 4,
+            "208": 2,
+            "207": 2,
+            "206": 3,
+            "204": 1,
+            "203": 2,
+            "202": 1,
+            "201": 1,
+            "200": 2,
+            "199": 1,
+            "198": 2,
+            "197": 1,
+            "196": 1,
+            "195": 1,
+            "194": 1,
+            "193": 3,
+            "192": 1,
+            "191": 1,
+            "190": 1,
+            "189": 1,
+            "187": 1,
+            "186": 2,
+            "184": 1,
+            "183": 2,
+            "182": 2,
+            "181": 1,
+            "180": 1,
+            "179": 1,
+            "178": 2,
+            "177": 1,
+            "176": 2,
+            "175": 3,
+            "174": 2,
+            "173": 2,
+            "172": 1,
+            "171": 1,
+            "170": 2,
+            "169": 1,
+            "168": 2,
+            "166": 1,
+            "165": 1,
+            "164": 2,
+            "163": 3,
+            "162": 1,
+            "161": 2,
+            "160": 1,
+            "159": 1,
+            "158": 2,
+            "157": 3,
+            "156": 2,
+            "155": 2,
+            "154": 1,
+            "153": 1,
+            "152": 2,
+            "151": 2,
+            "150": 1,
+            "149": 1,
+            "148": 1,
+            "147": 1,
+            "146": 1,
+            "145": 1,
+            "144": 1,
+            "143": 1,
+            "142": 1,
+            "141": 2,
+            "139": 2,
+            "138": 1,
+            "137": 2,
+            "135": 1,
+            "134": 3,
+            "133": 2,
+            "131": 2,
+            "130": 1,
+            "129": 2,
+            "127": 2,
+            "125": 2,
+            "124": 3,
+            "123": 1,
+            "122": 1,
+            "121": 2,
+            "120": 1,
+            "119": 2,
+            "116": 1,
+            "114": 1,
+            "113": 2,
+            "112": 2,
+            "111": 1,
+            "110": 1,
+            "109": 1,
+            "108": 3,
+            "107": 1,
+            "106": 2,
+            "105": 1,
+            "104": 1,
+            "103": 1,
+            "102": 1,
+            "101": 1,
+            "100": 1,
+            "99": 1,
+            "98": 2,
+            "97": 1,
+            "96": 1,
+            "95": 1,
+            "94": 1,
+            "93": 2,
+            "92": 2,
+            "91": 2,
+            "89": 2,
+            "88": 1,
+            "86": 1,
+            "85": 1,
+            "84": 1,
+            "83": 2,
+            "82": 2,
+            "80": 2,
+            "79": 2,
+            "78": 2,
+            "77": 2,
+            "76": 2,
+            "75": 2,
+            "74": 2,
+            "73": 2,
+            "72": 2,
+            "71": 3,
+            "69": 2
+          }
+        }
+      ]
+    },
+    {
+      "tcid": "2822d834-4e35-4338-abac-3bd9e56aba91",
+      "passed_at_utc": "2022-11-07T10:20:44Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "histogram",
+        "data": "//8A////AP7+/gD+/f0A/f39APz8/AH8/PsB+/r6Afr5+QH5+fkB+fj4Avf39gL29vYD9vb2A/X09AT09PME8/PzBfPz8wXz8/IF8vLyBfLx8QXx8fEF8fHxBvHw8Abw7+8G7+/vBu/u7gfu7u4H7e3sB+zs7Afr6+sI6urqCOrp6Qjp6ekI6OjnCOfn5wnm5uUK5eXlCuTk5Ark5OML4+PjC+Pj4gzi4uIN4uHhDeHg4A3g4N8O39/fDt7e3g7e3t4O3d3dD93b2w/b29oP2traD9ra2RDZ2NgQ2NjYENfX1xDX1tYQ1tbWENbV1RHV1NQR1NTTEdPT0xLS0tIS0tHREtHR0RPQ0NAT0M/OE87OzhPOzc0TzczME8vLyxTKysoUysrKFMnJyRTJyMgVyMjIFcfHxxXGxsYWxsXEFsTExBbDw8IWwsLCFsLBwRfBwcAXv7+/F7+/vxe/v74Xvr6+F76+vhe9vLwXvLy8GLu6uhi6ubkYubm4GLi3txm3trYZtbW1GbS0tBmzs7MZs7OzGbKysRqxsbAasLCwGrCvrxqvr68arq6uG66urhuurq0brayrG6uqqhyqqqkcqaioHKioqBynp6cdp6emHaampR2lpKQdpKSkHqOjox6ioqIeoaGhHqGhoB6goKAeoKCfH5+enR+dnZwfnJybH5ubmyCbmpogmpqaIJmZmSGZmJghmJeXIZeXliGWlpYhlZWVIZWVlSKVlZQilJSUIpSUkyKTk5Mjk5OTI5OTkySSkpIkkZGRJJGRkCSQkJAlkI+OJY6OjiWOjY0ljIyMJYyLiyWLi4sli4uKJYqKiiWKiYkliYmJJoiIiCaIiIcmhoaGJoaGhSeFhYUnhYWEJ4ODgyeCgoIogoKCKIKBgSiBgYEogYCAKICAgCiAgH8pf39/Kn9+fip+fX0qfX18Knx7eyp7e3oqenp5Knl3dyt3dnYrdnZ1LHV1dCx0dHMscnJyLHFxcS1xcXEtcXBwLnBwcC5wcG8ub21sLmxsbC5ra2ovaWlpL2lpaS9oaGcwZmVlMGVlZTBlZWQwZGRkMGRkZDBjY2MxY2JiMWJiYjFiYWExYWBgMV9fXzFeXl4yXl5eMl1dXTNdXFwzXFxbM1taWjRaWlo0WFhYNFhXVzZXV1Y2VlZWNlVVVTdVVVU3VVRTN1NSUjdSUlI4UlFROFFRUDhQUFA4UFBQOE9PTzlPT046Tk5OO05OTjtOTk07TU1NO01NTTxNTEw9TExLPUtLSz1KSko9SklJPUlJST5JSUk+SEhHPkdHRz5HR0Y+RUVEP0REQz9DQ0M/QkJCP0FBQT9BQEA/QA==",
+        "selectors": [
+          {},
+          {
+            "offset": 0,
+            "stride": 4
+          },
+          {
+            "offset": 1,
+            "stride": 4
+          },
+          {
+            "offset": 2,
+            "stride": 4
+          },
+          {
+            "offset": 3,
+            "stride": 4
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "histogram": {
+            "255": 5,
+            "0": 5,
+            "254": 4,
+            "253": 5,
+            "252": 5,
+            "1": 5,
+            "251": 2,
+            "250": 3,
+            "249": 6,
+            "248": 2,
+            "2": 2,
+            "247": 2,
+            "246": 7,
+            "3": 2,
+            "245": 1,
+            "244": 4,
+            "4": 2,
+            "243": 9,
+            "5": 6,
+            "242": 5,
+            "241": 9,
+            "6": 4,
+            "240": 3,
+            "239": 6,
+            "238": 5,
+            "7": 4,
+            "237": 2,
+            "236": 4,
+            "235": 3,
+            "8": 5,
+            "234": 4,
+            "233": 5,
+            "232": 2,
+            "231": 4,
+            "9": 1,
+            "230": 2,
+            "229": 4,
+            "10": 3,
+            "228": 5,
+            "227": 6,
+            "11": 2,
+            "226": 5,
+            "12": 1,
+            "13": 3,
+            "225": 3,
+            "224": 4,
+            "223": 4,
+            "14": 4,
+            "222": 6,
+            "221": 4,
+            "15": 4,
+            "219": 4,
+            "218": 6,
+            "217": 2,
+            "16": 6,
+            "216": 5,
+            "215": 4,
+            "214": 6,
+            "213": 3,
+            "17": 3,
+            "212": 4,
+            "211": 4,
+            "18": 3,
+            "210": 4,
+            "209": 5,
+            "19": 6,
+            "208": 4,
+            "207": 1,
+            "206": 5,
+            "205": 3,
+            "204": 2,
+            "203": 3,
+            "20": 4,
+            "202": 6,
+            "201": 4,
+            "200": 5,
+            "21": 3,
+            "199": 3,
+            "198": 4,
+            "22": 5,
+            "197": 1,
+            "196": 4,
+            "195": 2,
+            "194": 5,
+            "193": 4,
+            "23": 8,
+            "192": 1,
+            "191": 8,
+            "190": 7,
+            "189": 1,
+            "188": 5,
+            "24": 4,
+            "187": 1,
+            "186": 3,
+            "185": 4,
+            "184": 2,
+            "183": 3,
+            "25": 6,
+            "182": 2,
+            "181": 3,
+            "180": 3,
+            "179": 6,
+            "178": 2,
+            "177": 3,
+            "26": 5,
+            "176": 5,
+            "175": 5,
+            "174": 8,
+            "27": 4,
+            "173": 2,
+            "172": 1,
+            "171": 2,
+            "170": 4,
+            "28": 4,
+            "169": 2,
+            "168": 5,
+            "167": 5,
+            "29": 4,
+            "166": 3,
+            "165": 2,
+            "164": 5,
+            "30": 6,
+            "163": 3,
+            "162": 3,
+            "161": 5,
+            "160": 6,
+            "159": 2,
+            "31": 4,
+            "158": 1,
+            "157": 3,
+            "156": 3,
+            "155": 5,
+            "32": 3,
+            "154": 5,
+            "153": 4,
+            "33": 6,
+            "152": 3,
+            "151": 4,
+            "150": 4,
+            "149": 8,
+            "34": 4,
+            "148": 6,
+            "147": 10,
+            "35": 2,
+            "36": 4,
+            "146": 3,
+            "145": 5,
+            "144": 5,
+            "37": 10,
+            "143": 1,
+            "142": 5,
+            "141": 2,
+            "140": 4,
+            "139": 7,
+            "138": 5,
+            "137": 5,
+            "38": 4,
+            "136": 5,
+            "135": 1,
+            "134": 5,
+            "133": 6,
+            "39": 4,
+            "132": 1,
+            "131": 3,
+            "130": 7,
+            "40": 6,
+            "129": 6,
+            "128": 7,
+            "127": 5,
+            "41": 1,
+            "42": 7,
+            "126": 3,
+            "125": 4,
+            "124": 2,
+            "123": 4,
+            "122": 3,
+            "121": 2,
+            "119": 3,
+            "43": 2,
+            "118": 4,
+            "117": 3,
+            "44": 4,
+            "116": 3,
+            "115": 1,
+            "114": 3,
+            "113": 7,
+            "45": 2,
+            "112": 7,
+            "46": 5,
+            "111": 2,
+            "109": 1,
+            "108": 4,
+            "107": 2,
+            "106": 1,
+            "47": 3,
+            "105": 6,
+            "104": 2,
+            "103": 1,
+            "48": 6,
+            "102": 1,
+            "101": 7,
+            "100": 7,
+            "99": 4,
+            "49": 6,
+            "98": 6,
+            "97": 3,
+            "96": 2,
+            "95": 3,
+            "94": 6,
+            "50": 2,
+            "93": 4,
+            "51": 3,
+            "92": 4,
+            "91": 2,
+            "90": 5,
+            "52": 3,
+            "88": 4,
+            "87": 4,
+            "54": 3,
+            "86": 4,
+            "85": 7,
+            "55": 4,
+            "84": 1,
+            "83": 2,
+            "82": 6,
+            "56": 5,
+            "81": 4,
+            "80": 7,
+            "79": 5,
+            "57": 1,
+            "78": 9,
+            "58": 1,
+            "59": 4,
+            "77": 8,
+            "60": 1,
+            "76": 4,
+            "61": 5,
+            "75": 4,
+            "74": 4,
+            "73": 8,
+            "62": 5,
+            "72": 2,
+            "71": 6,
+            "70": 1,
+            "69": 2,
+            "68": 3,
+            "63": 6,
+            "67": 4,
+            "66": 3,
+            "65": 4,
+            "64": 3
+          }
+        },
+        {
+          "histogram": {
+            "255": 2,
+            "254": 1,
+            "253": 2,
+            "252": 2,
+            "250": 1,
+            "249": 2,
+            "248": 1,
+            "247": 1,
+            "246": 2,
+            "244": 2,
+            "243": 3,
+            "242": 1,
+            "241": 3,
+            "240": 1,
+            "239": 2,
+            "238": 2,
+            "237": 1,
+            "236": 1,
+            "235": 1,
+            "234": 1,
+            "233": 2,
+            "232": 1,
+            "231": 1,
+            "230": 1,
+            "229": 1,
+            "228": 2,
+            "227": 2,
+            "226": 1,
+            "225": 1,
+            "224": 2,
+            "223": 1,
+            "222": 2,
+            "221": 1,
+            "219": 2,
+            "218": 2,
+            "216": 2,
+            "215": 1,
+            "214": 2,
+            "213": 1,
+            "212": 2,
+            "211": 1,
+            "210": 1,
+            "209": 2,
+            "208": 1,
+            "207": 1,
+            "206": 1,
+            "205": 1,
+            "204": 1,
+            "203": 1,
+            "202": 2,
+            "201": 1,
+            "200": 2,
+            "199": 1,
+            "198": 1,
+            "197": 1,
+            "196": 1,
+            "195": 1,
+            "194": 1,
+            "193": 2,
+            "191": 3,
+            "190": 2,
+            "188": 2,
+            "186": 1,
+            "185": 2,
+            "183": 1,
+            "182": 1,
+            "181": 1,
+            "180": 1,
+            "179": 2,
+            "178": 1,
+            "177": 1,
+            "176": 1,
+            "175": 2,
+            "174": 3,
+            "172": 1,
+            "170": 2,
+            "168": 2,
+            "167": 2,
+            "166": 1,
+            "164": 2,
+            "163": 1,
+            "162": 1,
+            "161": 2,
+            "160": 2,
+            "158": 1,
+            "157": 1,
+            "156": 1,
+            "155": 1,
+            "154": 2,
+            "153": 1,
+            "152": 1,
+            "151": 2,
+            "150": 1,
+            "149": 3,
+            "148": 2,
+            "147": 3,
+            "146": 1,
+            "145": 2,
+            "144": 1,
+            "143": 1,
+            "142": 1,
+            "141": 1,
+            "140": 1,
+            "139": 3,
+            "138": 1,
+            "137": 2,
+            "136": 2,
+            "134": 2,
+            "133": 2,
+            "131": 1,
+            "130": 2,
+            "129": 2,
+            "128": 3,
+            "127": 1,
+            "126": 1,
+            "125": 2,
+            "123": 2,
+            "122": 1,
+            "119": 1,
+            "118": 2,
+            "117": 1,
+            "116": 1,
+            "114": 1,
+            "113": 2,
+            "112": 3,
+            "109": 1,
+            "108": 1,
+            "107": 1,
+            "105": 2,
+            "104": 1,
+            "101": 3,
+            "100": 2,
+            "99": 1,
+            "98": 2,
+            "97": 1,
+            "96": 1,
+            "95": 1,
+            "94": 2,
+            "93": 1,
+            "92": 2,
+            "90": 2,
+            "88": 1,
+            "87": 2,
+            "86": 1,
+            "85": 2,
+            "84": 1,
+            "82": 2,
+            "81": 2,
+            "80": 2,
+            "79": 2,
+            "78": 3,
+            "77": 2,
+            "76": 2,
+            "75": 1,
+            "74": 1,
+            "73": 3,
+            "72": 1,
+            "71": 2,
+            "69": 1,
+            "68": 1,
+            "67": 1,
+            "66": 1,
+            "65": 1,
+            "64": 1
+          }
+        },
+        {
+          "histogram": {
+            "255": 2,
+            "254": 1,
+            "253": 2,
+            "252": 1,
+            "251": 1,
+            "250": 1,
+            "249": 2,
+            "248": 1,
+            "246": 3,
+            "244": 1,
+            "243": 3,
+            "242": 2,
+            "241": 3,
+            "240": 1,
+            "239": 2,
+            "238": 2,
+            "236": 2,
+            "235": 1,
+            "234": 1,
+            "233": 2,
+            "231": 2,
+            "229": 2,
+            "228": 1,
+            "227": 2,
+            "226": 2,
+            "225": 1,
+            "224": 1,
+            "223": 2,
+            "222": 2,
+            "221": 1,
+            "219": 1,
+            "218": 2,
+            "217": 1,
+            "216": 2,
+            "215": 1,
+            "214": 2,
+            "213": 1,
+            "212": 1,
+            "211": 2,
+            "210": 1,
+            "209": 2,
+            "208": 1,
+            "206": 2,
+            "205": 1,
+            "204": 1,
+            "203": 1,
+            "202": 2,
+            "201": 1,
+            "200": 2,
+            "199": 1,
+            "198": 1,
+            "196": 2,
+            "194": 2,
+            "193": 1,
+            "192": 1,
+            "191": 2,
+            "190": 3,
+            "188": 2,
+            "186": 1,
+            "185": 1,
+            "184": 1,
+            "183": 1,
+            "182": 1,
+            "181": 1,
+            "180": 1,
+            "179": 2,
+            "177": 1,
+            "176": 2,
+            "175": 2,
+            "174": 2,
+            "173": 1,
+            "171": 1,
+            "170": 1,
+            "169": 1,
+            "168": 2,
+            "167": 1,
+            "166": 1,
+            "165": 1,
+            "164": 2,
+            "163": 1,
+            "162": 1,
+            "161": 1,
+            "160": 2,
+            "159": 1,
+            "157": 1,
+            "156": 1,
+            "155": 2,
+            "154": 2,
+            "153": 1,
+            "152": 1,
+            "151": 1,
+            "150": 2,
+            "149": 2,
+            "148": 2,
+            "147": 4,
+            "146": 1,
+            "145": 1,
+            "144": 2,
+            "142": 2,
+            "141": 1,
+            "140": 1,
+            "139": 2,
+            "138": 2,
+            "137": 2,
+            "136": 1,
+            "135": 1,
+            "134": 1,
+            "133": 2,
+            "132": 1,
+            "131": 1,
+            "130": 2,
+            "129": 2,
+            "128": 2,
+            "127": 2,
+            "126": 1,
+            "125": 1,
+            "124": 1,
+            "123": 1,
+            "122": 1,
+            "121": 1,
+            "119": 1,
+            "118": 1,
+            "117": 1,
+            "116": 1,
+            "115": 1,
+            "114": 1,
+            "113": 2,
+            "112": 2,
+            "111": 1,
+            "108": 2,
+            "106": 1,
+            "105": 2,
+            "103": 1,
+            "101": 2,
+            "100": 3,
+            "99": 1,
+            "98": 2,
+            "97": 1,
+            "96": 1,
+            "95": 1,
+            "94": 2,
+            "93": 1,
+            "92": 1,
+            "91": 1,
+            "90": 2,
+            "88": 1,
+            "87": 1,
+            "86": 2,
+            "85": 2,
+            "83": 1,
+            "82": 2,
+            "81": 1,
+            "80": 3,
+            "79": 1,
+            "78": 3,
+            "77": 3,
+            "76": 1,
+            "75": 2,
+            "74": 1,
+            "73": 3,
+            "71": 2,
+            "70": 1,
+            "68": 1,
+            "67": 2,
+            "66": 1,
+            "65": 1,
+            "64": 1
+          }
+        },
+        {
+          "histogram": {
+            "0": 5,
+            "1": 5,
+            "2": 2,
+            "3": 2,
+            "4": 2,
+            "5": 6,
+            "6": 4,
+            "7": 4,
+            "8": 5,
+            "9": 1,
+            "10": 3,
+            "11": 2,
+            "12": 1,
+            "13": 3,
+            "14": 4,
+            "15": 4,
+            "16": 6,
+            "17": 3,
+            "18": 3,
+            "19": 6,
+            "20": 4,
+            "21": 3,
+            "22": 5,
+            "23": 8,
+            "24": 4,
+            "25": 6,
+            "26": 5,
+            "27": 4,
+            "28": 4,
+            "29": 4,
+            "30": 6,
+            "31": 4,
+            "32": 3,
+            "33": 6,
+            "34": 4,
+            "35": 2,
+            "36": 4,
+            "37": 10,
+            "38": 4,
+            "39": 4,
+            "40": 6,
+            "41": 1,
+            "42": 7,
+            "43": 2,
+            "44": 4,
+            "45": 2,
+            "46": 5,
+            "47": 3,
+            "48": 6,
+            "49": 6,
+            "50": 2,
+            "51": 3,
+            "52": 3,
+            "54": 3,
+            "55": 4,
+            "56": 5,
+            "57": 1,
+            "58": 1,
+            "59": 4,
+            "60": 1,
+            "61": 5,
+            "62": 5,
+            "63": 6
+          }
+        },
+        {
+          "histogram": {
+            "255": 1,
+            "254": 2,
+            "253": 1,
+            "252": 2,
+            "251": 1,
+            "250": 1,
+            "249": 2,
+            "247": 1,
+            "246": 2,
+            "245": 1,
+            "244": 1,
+            "243": 3,
+            "242": 2,
+            "241": 3,
+            "240": 1,
+            "239": 2,
+            "238": 1,
+            "237": 1,
+            "236": 1,
+            "235": 1,
+            "234": 2,
+            "233": 1,
+            "232": 1,
+            "231": 1,
+            "230": 1,
+            "229": 1,
+            "228": 2,
+            "227": 2,
+            "226": 2,
+            "225": 1,
+            "224": 1,
+            "223": 1,
+            "222": 2,
+            "221": 2,
+            "219": 1,
+            "218": 2,
+            "217": 1,
+            "216": 1,
+            "215": 2,
+            "214": 2,
+            "213": 1,
+            "212": 1,
+            "211": 1,
+            "210": 2,
+            "209": 1,
+            "208": 2,
+            "206": 2,
+            "205": 1,
+            "203": 1,
+            "202": 2,
+            "201": 2,
+            "200": 1,
+            "199": 1,
+            "198": 2,
+            "196": 1,
+            "195": 1,
+            "194": 2,
+            "193": 1,
+            "191": 3,
+            "190": 2,
+            "189": 1,
+            "188": 1,
+            "187": 1,
+            "186": 1,
+            "185": 1,
+            "184": 1,
+            "183": 1,
+            "181": 1,
+            "180": 1,
+            "179": 2,
+            "178": 1,
+            "177": 1,
+            "176": 2,
+            "175": 1,
+            "174": 3,
+            "173": 1,
+            "171": 1,
+            "170": 1,
+            "169": 1,
+            "168": 1,
+            "167": 2,
+            "166": 1,
+            "165": 1,
+            "164": 1,
+            "163": 1,
+            "162": 1,
+            "161": 2,
+            "160": 2,
+            "159": 1,
+            "157": 1,
+            "156": 1,
+            "155": 2,
+            "154": 1,
+            "153": 2,
+            "152": 1,
+            "151": 1,
+            "150": 1,
+            "149": 3,
+            "148": 2,
+            "147": 3,
+            "146": 1,
+            "145": 2,
+            "144": 2,
+            "142": 2,
+            "140": 2,
+            "139": 2,
+            "138": 2,
+            "137": 1,
+            "136": 2,
+            "134": 2,
+            "133": 2,
+            "131": 1,
+            "130": 3,
+            "129": 2,
+            "128": 2,
+            "127": 2,
+            "126": 1,
+            "125": 1,
+            "124": 1,
+            "123": 1,
+            "122": 1,
+            "121": 1,
+            "119": 1,
+            "118": 1,
+            "117": 1,
+            "116": 1,
+            "114": 1,
+            "113": 3,
+            "112": 2,
+            "111": 1,
+            "108": 1,
+            "107": 1,
+            "105": 2,
+            "104": 1,
+            "102": 1,
+            "101": 2,
+            "100": 2,
+            "99": 2,
+            "98": 2,
+            "97": 1,
+            "95": 1,
+            "94": 2,
+            "93": 2,
+            "92": 1,
+            "91": 1,
+            "90": 1,
+            "88": 2,
+            "87": 1,
+            "86": 1,
+            "85": 3,
+            "83": 1,
+            "82": 2,
+            "81": 1,
+            "80": 2,
+            "79": 2,
+            "78": 3,
+            "77": 3,
+            "76": 1,
+            "75": 1,
+            "74": 2,
+            "73": 2,
+            "72": 1,
+            "71": 2,
+            "69": 1,
+            "68": 1,
+            "67": 1,
+            "66": 1,
+            "65": 2,
+            "64": 1
+          }
+        }
+      ]
+    },
+    {
+      "tcid": "9662a56b-2f3d-4685-8332-e705ad871f9e",
+      "passed_at_utc": "2022-11-07T10:20:44Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "histogram",
+        "data": "AAECAwQFBgc=",
+        "selectors": [
+          {}
+        ]
+      }
+    },
+    {
+      "tcid": "5cdde95e-3e73-4e3e-9500-66bd6e15959f",
+      "passed_at_utc": "2022-11-07T10:20:44Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "histogram",
+        "data": "US2cxAw0FVVpw7X0ah4czxVr57GMUpDNo2Vfgvl7",
+        "selectors": [
+          {
+            "offset": 0,
+            "stride": 1
+          },
+          {
+            "offset": 0,
+            "stride": 2
+          },
+          {
+            "offset": 1,
+            "stride": 2
+          },
+          {
+            "offset": 0,
+            "stride": 3
+          },
+          {
+            "offset": 1,
+            "stride": 3
+          },
+          {
+            "offset": 2,
+            "stride": 3
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "8860a38e-eb0b-40f6-aa6a-be07d124d44e",
+      "passed_at_utc": "2022-11-07T10:20:45Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "histogram",
+        "data": "GQ/GYnLsBcS5vHJikdmSY0bqDLUpZ78FQAbtopMZ",
+        "selectors": [
+          {
+            "offset": 0,
+            "stride": 1
+          },
+          {
+            "offset": 0,
+            "stride": 2
+          },
+          {
+            "offset": 1,
+            "stride": 2
+          },
+          {
+            "offset": 0,
+            "stride": 3
+          },
+          {
+            "offset": 1,
+            "stride": 3
+          },
+          {
+            "offset": 2,
+            "stride": 3
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "e5ef63e3-c3e4-40c7-9ae4-77e9c3709241",
+      "passed_at_utc": "2022-11-07T10:20:45Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "histogram",
+        "data": "XtzIkc4v9Q5mHU69bkM2H8FEklvM0n4HcdY/U+n/",
+        "selectors": [
+          {
+            "offset": 0,
+            "stride": 1
+          },
+          {
+            "offset": 0,
+            "stride": 2
+          },
+          {
+            "offset": 1,
+            "stride": 2
+          },
+          {
+            "offset": 0,
+            "stride": 3
+          },
+          {
+            "offset": 1,
+            "stride": 3
+          },
+          {
+            "offset": 2,
+            "stride": 3
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "7cb9dfd6-f954-4528-baf1-ec1f16e044f9",
+      "passed_at_utc": "2022-11-07T10:20:45Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "histogram",
+        "data": "y2Rs92Mu83DmB5D5/OGd8pEACn04y8M1Cvh66Sb7phsy1uScTS+H6l4PbQZeeY/o6TajGCt64oGtSRk647Fxz0xagAgpqq0OaRW+MYHnaZnMW+50i9CgRqg4TcpFduKDyZl4YQ==",
+        "selectors": [
+          {
+            "stride": 1
+          },
+          {
+            "stride": 2
+          },
+          {
+            "stride": 3
+          },
+          {
+            "stride": 4
+          },
+          {
+            "stride": 5
+          },
+          {
+            "stride": 6
+          },
+          {
+            "stride": 7
+          },
+          {
+            "stride": 8
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "ff44cf48-82b9-4dd6-8b3e-72a3f917bd2c",
+      "passed_at_utc": "2022-11-07T10:20:45Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "histogram",
+        "data": "hWwGrQ9uCM4m7k0sR6RCZSGN5eRKCiFv5EJrT+eBCifkgQ6lJ8DHYM9lyalmziAt5EepQuDqLwEvL4msp8/NwwSvyGxkbI0rC+6thYPsLIZoqODpgmdo4SpnLurr5G9pS03Cr4wIaaZIiWTBgYAHwAYARwcgqWuqBi3vSK7Djk+rYyHNZI8mpQtlqcNkbOegQeEgwS5gyaACJQLGC4siy2ZngqlMIE6pz0iEDOaHawrthczpz+2thSAPD20tI6HOo0MKJSqtIOPCLIqiIMOqSstLoQ7AA0TChOXBD0kPJ6tHja/OgSYg5sHP44BFaIFtZCOJZGfGTiAka+cIjQYkiAssQwQCZ09ih+igxKaCYAyoiAJuza2nxeBsgkkpRkvo7eAF6Gemqojho4YC4abCjWpkbcJI4wFoxgbCy25FYIEJAosoL05hDWoJR+vNDQdEoQAHjcbCSYaoqYaixC9gAKQMrsem5KkOy8Pj7keObOBOqmvtq+xvxGapBOwiQe1NDk/hx6NvACpiQCFF6MMkLuttYw6lTsFAKIts5oRrxW2nCKLq52pFamtPKIMHa6wsiiXKha1i6Angg8YF4SKiIMLnzgqERoJHzGqJ7OiCz+1PpKMIBGdIaSPvZukJauNKBA7OrWnCCCcMQQzvROAHRQQAICLkg21IBGPm6EpLwi0IqgACQC+MiMJH52nLS+pNp03IiEkDiYeIImThhIWAoGTP7iek7G0owoVuou4Gz+tLpmnEjKWLBisiLY4KiS5vae9MTYxhgA1t6Mnqbc8k4S6KLMKn6ENgh4mvwUGjqSWs4gOnaw5ma6PpbuCiRCis4kivYMkg6U1oTU6OZI1L6uzE4KYCyYpHR2SKhCWjzutraQ1IZuAKRcoF74bBzkMvoyTpCieA66qloIDNQcklzsHJaqwBZ43DIOPgD0WsR4jh6YzuSUOMRONprUylTqVsRcjDLwmJpIXp4w/Bwwivp6dOBsto54ylLm7hL8CGL6ppzMmvZi5IZoFtRgpL5UImbKaFpCinCsWKSIcrZkgs58/vjE4IieRtqwskZKXLYA1swylNwKtpb4Op7seKxw9MImmnbw6KhstIxo2M5QpJRwlLx65n4Y6nbkLgqINtjm1JRiNG6s8rD4hk4wlrSiHg7msma2KjbaxMAyuCQczlBWRBaOHoAOlEh+lF4OJkDqAro0vFg29JAG+LwOOJKe0KBAdoSWZub8OqLOjNQyeHpqsEi2lM5sprCsUOIGUNz8Rmruyt481iB6YgyGVNqKOiYkFo50tmC6RixCevqyHIjEHLZkepSEwsKWBiAcamQqTrxwrggq8qjQ==",
+        "selectors": [
+          {}
+        ]
+      }
+    },
+    {
+      "tcid": "47a8762d-83f1-45e0-afa5-e74915449a19",
+      "passed_at_utc": "2022-11-07T10:20:45Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "histogram",
+        "data": "//8A////AP///gH+/v4B/v39Af38/AH8/PwC/Pz7Avv7+wL7+voC+vn5A/j4+AP4+PgD+Pf3BPf39wT29fUE9fX1BPX09AT09PQF8/PzBfPz8wXz8vEG8fHxBvHx8Qbx8PAG8PDvB+/v7gft7e0H7ezsB+zs6wfr6uoH6urqB+rq6Qjp6OgI6OjoCefn5wnn5+YJ5ubmCubl5Qrl5OQK4+PjC+Li4Qvh4eEL4ODgC+Df3wvf398M3t7dDN3c3A3c3NwN3NzbDdvb2w7a2toO2dnYDtjY1w7X19YO1dXVD9XU1A/U1NMP0dHRENHR0RDR0NAQ0NDQENDQzxDPz88Qz8/OEc7OzhHNzc0RzczMEcvLyxHKysoSysnJEsnJyRLJyckTycnIE8fHxxPHx8cUxsbGFcXFxRXFxcQVxMTEFcTExBXEw8MVw8PDFsLCwhbBwcEXwcHAF8DAwBe/v78Yv76+GL6+vRi9vb0Zvby8Gby8vBq8u7sburq6G7q6uhy6urkcubi4HLe3tx22trUdtbW1HbW0tB20tLMds7OzHbKysh2ysrAesLCvHq6urh6urq0eraysH6ysqx+rq6ofqampH6moqCCoqKcgp6amIKampiClpaUhpaWlIaWlpCGjo6MhoqKhIaGhoSGhoaEioKCgIqCgoCKfn58in56eIp6dnSOcnJwknJybJJubmySampkkmZmYJZiYmCWYl5cll5eWJpaWlieWlpYnlZWVJ5SUlCiUk5MokpKSKJKRkSiRkJApkJCQKZCPjymPjo4qjY2NKoyMjCqMjIwqi4uKKoqKiiqKiooqioqJKomJiSqJiYgriIiIK4eHhyyGhoYshYWFLISEhCyEhIQthISELYSDgy2Dg4Mtg4KBLYGAgC1/f38tfn5+Ln59fS59fX0ufHx8Lnt7ey97e3swenp6MHp6eTF5eXkxeXh4MXh4dzF3d3cxd3Z2MXZ2dTJ1dXUydXV0MnR0czJzc3MycnJyM3JycTNxcXEzcXFwM3BwcDNwb28zbm5uNG5tbTRsbGw0bGxsNGtrajRqamk0aWloNWdnZzVnZ2Y1ZmZmNmVlZTZlZGQ3ZGRkN2RjYzdjY2M4Y2NiOGJhYThgYGA4YGBgOGBgYDhgX184X15eOV5eXTldXFw5XFtbOVtbWzpaWlk6WVlZOlhYWDtXV1c7V1dWO1ZWVjtUVFQ7VFRUO1NTUzxSUlI8UlFRPFFQUDxQUFA9UFBPPU9PTz1PT049TU1NPkxLSz5LS0o+SkpKPkpKSj5KSkk+SUlJP0lJSD9IR0dARkZGQEVFRUBEQ0NAQ0NCQEJCQkBBQUFBQQ==",
+        "selectors": [
+          {},
+          {
+            "offset": 0,
+            "stride": 4
+          },
+          {
+            "offset": 1,
+            "stride": 4
+          },
+          {
+            "offset": 2,
+            "stride": 4
+          },
+          {
+            "offset": 3,
+            "stride": 4
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "1ad906ce-d755-4c98-ae47-e41ea0c5d1b8",
+      "passed_at_utc": "2022-11-07T10:20:45Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "histogram",
+        "data": "//8A////AP7+/gD+/v0A/f38APz8/AD8/PsB+/v7Afv6+gH6+voC+vr6Avr5+QP5+fkD+fn4BPj4+AT4+PcE9/f3BPf39wT39vYE9vX1BfX19QX19PQG9PT0BvT08wfz8/IH8vLxCPHx8Anw8O8J7u7uCe3t7Ars7OwK7OzsC+vr6wvr6+sL6+vqC+rp6Qvp6egL6OjnC+fn5wvm5uYM5uXlDeXk5A3k5OQN5OPjDuPj4w7j4uIO4uLhDuHg4A7g4N8P39/fD97e3hDe3d0Q3d3cENzb2xDb29sQ2trZENnZ2RHY2NgR2NjXEdfW1RHV1dUS1dXVEtTU1BPU1NMT09PSE9LS0RPR0dEU0NDQFc/PzxXPz88Vz87OFc7OzhXNzc0Vzc3MFszLyxbLy8oWysrKFsnJyBbIyMgYx8fHGMfHxhjGxcUZxcXFGcTExBrExMMaw8PCGsLCwhrCwsIawsLCGsLBwRvBwMAbwMDAG7+/vxy+vr4cvr6+HL29vRy9vLwcvLy7HLu7ux26urkeubm4Hri4tx63trYetra2HrW1tR+1tbQftLS0H7S0syCzsrIgsrKxILGxsCCwr68grq6uIK6uriCtra0hra2sIqyrqyKrq6siqqqqIqqpqSKpqakiqamoIqiopyOnp6cjp6amI6ampSOlpaUjpaSkI6OjoyOioqEjoaCgI6CgoCSfnp4knp6dJJycnCScnJwknJybJJubmySbmpolmZmZJZmZmSWZmJgmmJiYJpiYmCeXl5cnlpaWJ5aWlSeVlZUnlZWUKJSUkyiTk5IokpKSKJGRkSiRkZAokJCQKI+OjSiNjYwpjIyMKYuLiymLi4spi4qKKYqKiimJiYgqiIiHKoeHhyqGhoYqhoaFKoSEhCuEhIQrg4ODK4KCgSyBgYEsgYGALICAgCyAfn4sfn5+LH19fS19fHwtfHx7LXt7ei16enkteXh3Lnd3di52dnYudnZ2LnV1dS50dHMvc3JyL3JxcS9wcHAwb25uMG1tbTFtbWwxbGxsMWtrazJramoyamlpMmlpaDJoaGgyZ2dnM2dnZzNmZmYzZWVlM2VlZDRkZGQ0ZGNjNGNjYzRiYmI1YmJiNWJiYTVhYWA2YGBgNmBfXzZfX183X15dN11cXDdbW1s3W1paN1pZWDdYWFg3V1dXOFdXVzhWVlY4VlZWOFZVVTlVVFQ5VFRUOVRUUzlTU1I6UlFROlFRUTpQUE87T09PO05NTTtNS0s7S0tKPElJSTxJSUk8SEhHPUdGRj5GRkY+RkZFPkVFRT5EREQ/REREP0RDQz9DQkI/QkJCQEJBQUBBQUFAQA==",
+        "selectors": [
+          {},
+          {
+            "offset": 0,
+            "stride": 4
+          },
+          {
+            "offset": 1,
+            "stride": 4
+          },
+          {
+            "offset": 2,
+            "stride": 4
+          },
+          {
+            "offset": 3,
+            "stride": 4
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "4206ba6b-f1aa-4267-a333-bb66c569dcd2",
+      "passed_at_utc": "2022-11-07T10:20:45Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "histogram",
+        "data": "//8A////AP7+/gH+/f0B/f38Afv7+wH7+voC+vn5Avn4+AL4+PgD+Pj3A/f39wP39/YD9vb2A/b19QT09PQE8/PzBPPy8gTy8vIE8fHxBPHx8QXx8O8F7+/uBu7u7gbu7u0H7e3sB+zs6wfr6+sH6+rpB+no6Ajo6OcI5+bmCObm5gjm5eUJ5eXlCeXl5Qnk5OIJ4uLiCeLi4Qrh4eEK4eHhCuDg4Arf398K3t3dC9zc3Avc3NwL29raC9ra2QzZ2dkM2djYDNjY2AzX19cM19fXDNbW1g3W1dUN1dTUDdTU1A3U1NQN1NPTDdPS0g7S0tIO0tLSD9HR0Q/R0NAQ0NDQENDQzxDPz88Qz8/PEM/PzhHOzs4Rzs7OEc7NzRHMzMwRzMzMEczLyxHKysoRysnJEsnJyRLJycgSyMjIEsfHxxLGxsYTxsbGE8XExBPExMMUw8PCFcLCwhXBwcEWwcC/Fr+/vxa/v74Wvr6+Fr69vRe9vb0Xvby8F7u7uhe6urkXubm5F7i3txi3tbUYtbW1GbSzsxmzs7IZsbGxGrGxsBqwsLAasLCvG6+vrxuvr64brq2sG6ysrBusrKsbq6urG6uqqhyqqqkcqampHainpx2npqYdpqalHqWkpB6kpKQepKOjHqOjoh6ioqIeoaGgHqCfnx+fnp4fnp6dH5ycnCCcnJsgm5ubIJuamiGampohmZmZIZmZmSGXl5cil5aWIpaWliKWlZUilZWUI5SUlCOTk5Mjk5OTI5OSkiOSkpEjkJCPJI+PjiSOjYwkjIyMJYyMjCWMi4sli4qKJoqKiSaJiYkmiIiIJ4iHhyeHh4cnhoaFJ4WFhCiEhIQohISEKIODgyiCgoEogYGBKIGBgCmAgIApgH9/KX5+fil9fXwpfHx7KXt7eyl7e3sqe3t6Knp6eSp5eXgqeHZ2K3Z2dSt1dXUrdHR0K3Rzcytzc3Mrc3NzLHJyci1ycnItcXFwLXBwcC1wcG8tb29vLW5ubS1tbW0tbGxsLWxray5ramkuaWlpL2lpaS9oaGgvZmZmL2ZlZS9lZGMvY2JiMGJiYjBhYWEwYWFgMWBgXzFeXl4yXl1dMl1dXTJcXFwyXFxbM1tbWjNaWlozWlpaM1pZWTNZWVkzWFhYM1hXVzRXVlY0VlZVNFVVVDRUVFQ1U1NTNVNTUzVSUlE2UFBQNlBPTzZOTk42Tk5NNkxMSzZLS0s3S0pKN0pKSjdJSUk3SUhIN0hIRzdHR0c3R0dGOEZGRjhGRkU4RUVFOUREQzlDQ0I5QkJCOUJBQTpBQUE6QUFAOkBAQDo/Pz86Pj4+Oj09PDo8Ozs6Ow==",
+        "selectors": [
+          {},
+          {
+            "offset": 0,
+            "stride": 4
+          },
+          {
+            "offset": 1,
+            "stride": 4
+          },
+          {
+            "offset": 2,
+            "stride": 4
+          },
+          {
+            "offset": 3,
+            "stride": 4
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "39a176ee-1b9c-4e57-bdc1-50ad1e5c828f",
+      "passed_at_utc": "2022-11-07T14:54:45Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "chi_square",
+        "data": "AAECAwQFBgc=",
+        "selectors": [
+          {}
+        ]
+      },
+      "expect_solution": [
+        {
+          "chi_square_statistic": 248,
+          "verdict": "no_result"
+        }
+      ]
+    },
+    {
+      "tcid": "8c6e9d91-ad42-4761-9a83-2cb4515a9e9e",
+      "passed_at_utc": "2022-11-07T14:54:45Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "chi_square",
+        "data": "K8maUw0G7ozS3nZXLyz0HfonakQp/EwF3aChodR/",
+        "selectors": [
+          {
+            "offset": 0,
+            "stride": 1
+          },
+          {
+            "offset": 0,
+            "stride": 2
+          },
+          {
+            "offset": 1,
+            "stride": 2
+          },
+          {
+            "offset": 0,
+            "stride": 3
+          },
+          {
+            "offset": 1,
+            "stride": 3
+          },
+          {
+            "offset": 2,
+            "stride": 3
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "chi_square_statistic": 243,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 241,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 241,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 246,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 246,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 246,
+          "verdict": "no_result"
+        }
+      ]
+    },
+    {
+      "tcid": "7caddc5b-be2a-4daa-9bd8-514d86bdc864",
+      "passed_at_utc": "2022-11-07T14:54:45Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "chi_square",
+        "data": "Q7htIbS66fVitVDnwplPBZCINBj1l1WHw0a42DV+",
+        "selectors": [
+          {
+            "offset": 0,
+            "stride": 1
+          },
+          {
+            "offset": 0,
+            "stride": 2
+          },
+          {
+            "offset": 1,
+            "stride": 2
+          },
+          {
+            "offset": 0,
+            "stride": 3
+          },
+          {
+            "offset": 1,
+            "stride": 3
+          },
+          {
+            "offset": 2,
+            "stride": 3
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "chi_square_statistic": 260,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 241,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 241,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 246,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 246,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 246,
+          "verdict": "no_result"
+        }
+      ]
+    },
+    {
+      "tcid": "27805284-c7d1-4918-bc12-56a86d695c3e",
+      "passed_at_utc": "2022-11-07T14:54:45Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "chi_square",
+        "data": "oWXE1rSK2zRPUDB+0Dq/mNpMGF/3o8+aWbOs5N07",
+        "selectors": [
+          {
+            "offset": 0,
+            "stride": 1
+          },
+          {
+            "offset": 0,
+            "stride": 2
+          },
+          {
+            "offset": 1,
+            "stride": 2
+          },
+          {
+            "offset": 0,
+            "stride": 3
+          },
+          {
+            "offset": 1,
+            "stride": 3
+          },
+          {
+            "offset": 2,
+            "stride": 3
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "chi_square_statistic": 226,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 241,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 241,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 246,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 246,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 246,
+          "verdict": "no_result"
+        }
+      ]
+    },
+    {
+      "tcid": "30f732f2-2467-48d9-8bd9-ddb8bbc083e0",
+      "passed_at_utc": "2022-11-07T14:59:30Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "chi_square",
+        "data": "nvy7y8lHCI5qlfx80GT1znS3kCStMdpfj6PBrEvot2pOJUMltHKP/zdb0jmJiJiGAys84MW5LXBMgqmmZcsa/kcCMxTR4OepQ3jMf9P9WStGutv3URk4E7XWaI7FYCbzeYXdqg==",
+        "selectors": [
+          {
+            "stride": 1
+          },
+          {
+            "stride": 2
+          },
+          {
+            "stride": 3
+          },
+          {
+            "stride": 4
+          },
+          {
+            "stride": 5
+          },
+          {
+            "stride": 6
+          },
+          {
+            "stride": 7
+          },
+          {
+            "stride": 8
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "chi_square_statistic": 223,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 237,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 237,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 251,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 236,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 239,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 275,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 243,
+          "verdict": "no_result"
+        }
+      ]
+    },
+    {
+      "tcid": "749790b4-7192-4d41-8347-b605e70f6a31",
+      "passed_at_utc": "2022-11-07T15:01:22Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "chi_square",
+        "data": "rQ2MCUy9JDUAefn1yVzB9MhJKWlJhSn5XdF5NQ0gLLDYAaStKCzt6YRtVEA9LE2RVCXNoBy1lAEVOfh4QWDN3GH5MZiUCDVFFc3hmKiZ8bGkwGw8WSFAvJh12YFhcAidJTyE4dHxzBRNvVyQzKjtLDjkUMWVQTHEfbjZ5PRMnf2g4eQomUXBaTmobIHYAQyoRUh0aM3ZwOm1IOWtneUAaDFl1MHMeIypwZxJOYFBfEEwTWRoqG2tTUhdjXh9LcmQXWSxnZR0RA1cDewhaQnBoRVkzLQ8fd0BPCXglCnpaAj4XcV5fVTtXCRk5ah8WWXF/WX5zThlpGVkuDWJRBFNgWwQdcEI5eDF3JX9YWXEcCxw0ZV8odApvH2YVE0woantGclM5dVZOLgIidGhhakwQMgoIWSN8SW9MEA5bLCAgNnVAdWxPPx0nLWdoBxswODocdUNeHTRfKwYIRnR3QGo6JEhHQmtpMwAQYQI1SUBKeyZWODlPHkEJGBVoZgBsLAJiPExJUDVkYl4TYExUeXoZBWxoYgZ8X1F2ZgFRRzc6CRNpVT1iEHVLIwkfAiIVRwxiT2NuFhAuJCodfV9XHTh0Ahgzf2lLJDJ4IHUbXTJ0EDQYTF57QVYzLic8ECEvZE8+YDhxfwhcXRVbZ0YmWVYPRlIifA97V1VsViU7LyMcIidIcBh7OHZxdTQBKnl1b3pqVjsrYG5gM2pZLXkIPg9WMFd+eFlYcm9SGUodO1NSWHB4dTdrC285IA1dSUVpWmQpIx4mPCN1IG02GWwSZjMjFE4ScToQUFguKHoKQlNOQUk7Y2IgFUQ4LRB6Rk4WFlgDAnEUZxUSMUpuVCN5FxcuAQAXJmU+WzNOBx4jUEFldDpPZ3kuCn1tDU9NbUk8Ly5fcw1yJwwzcUQrWjgCZBQib2FCRgZjfTFyUmIYeToaPg1ocQl3GUchGAsaHDEsNkFfej10WWgOGlFKAypzPVJXY183MzcQS2lUNjRkBwlibjRRNmYfWQ9mCi8+Q0QkERwGGTZUHTEZU2kbCHMDczlSQQhNdCElXBkdFU0OJQ0WFVx6WAdiVTx8PTMmLTo2W2IuAHE+TQxAOU92I29tTT9MNxcdHFJ3cFpeH3YYKHYAHm4sJGQ7RX1AIl1tREIGOB5MT3BYG2IkYWQ2Y088PlQpWTooY0MMIBFIDkw8FjgcWxg/EUQ6Ph14YlkUfWsZfGkHUFtkEUxwWCcFT2J6WzROfBAcWjFHORExLTN9JHR0BnUkbgpIICYEQ3xvSTE7DSMvPE1HARsxGlNHDmhvHGRnClVNdAVCSmwIeAVZaVs5SWQzMg19b10pA==",
+        "selectors": [
+          {}
+        ]
+      },
+      "expect_solution": [
+        {
+          "chi_square_statistic": 1246,
+          "verdict": "non_uniform"
+        }
+      ]
+    },
+    {
+      "tcid": "c8503718-e0fa-45bf-91e7-79021ed5cb1f",
+      "passed_at_utc": "2022-11-07T15:01:22Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "chi_square",
+        "data": "//4A/v7+AP39/QD9/f0A/fz8Afz8+wH7+/sC+vr6Avn5+QL5+PgC+Pf3Avf39wL29vUC9fX1A/X19AT08/ME8/PzBPPy8gTy8vIE8fHxBPHx8QTw8O8F7+/vBe/u7gXu7u4G7ezsBuvr6wbq6uoH6urpB+np6Afo6OcH5+fnB+fm5Qfl5eUI5OTjCOPj4wjj4+II4uHhCOHh4Qjh4eEI4eDgCeDg4Ang4OAJ4ODfCd/e3gre3t4K3t7dCtzc3Avc3NsM29vbDNvb2w3a2toN2traDdrZ2Q3Z2dgN2NjYDdjX1w3X19cN1tbWDtXV1A7U1NQO1NTUDtTT0w/T09MP09LSD9LS0Q/Q0NAP0NDQD9DQzw/Pz88Qz87OEM7NzBHMzMwSzMzLEsvKyhLKyckSycnIE8jIyBPHx8cTx8bGFMbGxRTFxcUUxcTEFMTExBTDw8MUw8PDFcLCwRXBwcEWwcDAFsDAwBa/v78Wvr69F7y8vBe7u7sXu7u6F7q5uRe5ubkXuLi4GLe3thm2trYZtra1GbW1tRm0tLQatLSzGrOzsxqzs7IbsbGxG7GxsRywsLAcsLCwHLCwsB2vr68dr6+vHa6urh2tra0eraysHqysqx6rq6seq6qqHqmpqR6pqKgfqKenH6enpx+mpaUfpaWlH6SkpCCjo6Mgo6OiIKKhoSChoKAhoKCfIZ+fnyGenp4hnp6eIp6dnSKcnJsjm5ubI5ubmiOampojmpqZI5iYmCOXl5cjl5eXI5aWliSWlpYklZOTJJKSkiSSkZEkkJCQJZCQkCWPj48lj46OJY6NjCaMjIwmi4uLJoqKiiaKiYkniYmIJ4eHhyeHh4YnhoaFKIWFhSiEhIQpg4ODKoOCgiqCgoIqgYCAKoCAfyp/f38rfn19LH19fSx9fHwsfHx7LHt7ey16enoteXl5Lnl5eC54eHcud3Z2LnZ2di91dXUvdHR0L3R0dC9zc3MwcnJxMHFwcDBvb28wb25uMG1tbTBtbWwxbGxsMWxrazFpaWgxaGhoMWhnZzJnZ2cyZ2ZmMmVlZDJkZGQyZGNjMmNjYzJiYmIyYWFhM2FgYDNfX14zXl5eM15eXTNdXV0zXFxcNFxcXDVcW1s1W1paNlpaWjZZWVk2WVlYN1hYWDdXV1Y4VlZWOFZVVThUVFM4U1NTOFJSUThRUVE5UVFQOVBQUDpQUE86T09OOk5OTTpNTUw7TExMO0tLSztKSkk7SUlJO0lISDtIR0c7R0dGO0ZGRjtFRUU8RUVFPERERDxEQ0M8Q0NDPEJCQjxCQkI9QUFBPUFAQD1AQD89Pz8/PT8/Pz0+Pj49Pg==",
+        "selectors": [
+          {},
+          {
+            "offset": 0,
+            "stride": 4
+          },
+          {
+            "offset": 1,
+            "stride": 4
+          },
+          {
+            "offset": 2,
+            "stride": 4
+          },
+          {
+            "offset": 3,
+            "stride": 4
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "chi_square_statistic": 234,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 178,
+          "verdict": "uniform"
+        },
+        {
+          "chi_square_statistic": 188,
+          "verdict": "uniform"
+        },
+        {
+          "chi_square_statistic": 1057,
+          "verdict": "non_uniform"
+        },
+        {
+          "chi_square_statistic": 186,
+          "verdict": "uniform"
+        }
+      ]
+    },
+    {
+      "tcid": "5e0fb069-c9ce-4b86-b9bc-d6caa274c3a6",
+      "passed_at_utc": "2022-11-07T15:01:22Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "chi_square",
+        "data": "//8A///+AP7+/QD9/fwA/Pz8Afz7+wH7+voC+vn5Avn4+AL4+PcD9/b2A/b29gP29vYD9fX1A/X09AP09PQD9PPzBPPz8wTz8/IE8vLyBPHx8ATw8PAE7+/uBe7u7gXt7e0F7ezsBezs6wXr6+sF6+rqBerq6gbp6ekG6ejoBujo5wbn5+cH5ubmB+Xl5Qfl5OQH5OPjCOLi4gjh4eEI4ODgCN/f3wne3t4K3t7eCt7d3Avc3NwL29vbC9va2gva2NgM2NfXDNfX1g3W1tUN1dXVDdXU1A7U09MO09PTD9PT0w/S0dEP0dDQD9DPzg/Nzc0Pzc3MEMzMzBDMy8sQysrKEMrKyhDJyckQycnIEcjIyBHHxsYSxsbFEsXFxBLExMMSw8PDEsPDwhPCwsITwsHBFMHBwRTBwMAUwMDAFMC/vxS/v78Vv76+Fb69vBW8vLwVu7u7Fbu6uhW6uroVurq5Frm5uRa4uLgWuLe3F7e2the2trUXtbW1GLW0tBi0tLQZs7OzGbOzsxmysrIZsrKyGrGxsBqwsLAbsK+vG6+urhuurq4cra2rHKurqx2rq6sdq6qqHampqR6pqakeqamoHqiopx6npqYfpqamH6amph+lpaUfo6OjH6Oioh+ioqIfoaGhIKGgoCCgoKAgn5+fIZ+eniGdnZ0hnZycIpycnCKcm5sim5uaI5qamiOZmZkjmZiYJJiYlySXl5cklpaWJJWVlSSVlZUklJSUJJSUkyWTk5Mlk5KSJZKSkiWRkZElkZGQJZCPjyWOjY0ljY2MJYyMjCaMi4smi4uLJouLiyeLioonioqKJ4qJiSeJiYkoiIiIKIiIiCiIh4cohoaFKIWFhSmEhIQphISEKYSDgymDg4MpgoKCKoGBgSqBgYEqgIB/K39/fyt+fn4sfn19LH19fSx9fHwsfHx8LXx7ey17e3steXl5LXh4eC53d3cudnZ2LnZ2di51dXUudXV1L3R0cy9zcnIvcnJyMHFxcTBxcHAxcHBvMW9ubjJubm0ybW1sMmxrazJra2syampqMmlpaTNpaWgzaGhnM2dnZzNmZmYzZWVlNGVlZTRlZGQ0ZGRjNGNjYzRjY2M0Y2JiNWJhYTVhYWA1YGBgNmBgYDZgX182X15eNl5eXjZeXl42Xl5eN15eXThcXFw4XFxcOFxbWjhaWlo5WlpaOVpaWjpZWVk6WVhYO1hYVztXV1c8VlZWPFVVVTxUU1M8U1JSPVJSUj1SUlI9UVFRPVFRUD5PT08+Tk5OPk1NTD5MTEs/S0tKP0pKST9JSUk/SUhHP0dHR0BGRkVARUREQEREQ0FDQ0JBQg==",
+        "selectors": [
+          {},
+          {
+            "offset": 0,
+            "stride": 4
+          },
+          {
+            "offset": 1,
+            "stride": 4
+          },
+          {
+            "offset": 2,
+            "stride": 4
+          },
+          {
+            "offset": 3,
+            "stride": 4
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "chi_square_statistic": 238,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 199,
+          "verdict": "uniform"
+        },
+        {
+          "chi_square_statistic": 203,
+          "verdict": "uniform"
+        },
+        {
+          "chi_square_statistic": 919,
+          "verdict": "non_uniform"
+        },
+        {
+          "chi_square_statistic": 194,
+          "verdict": "uniform"
+        }
+      ]
+    },
+    {
+      "tcid": "493f529c-a993-4b55-82ab-0546a7edc2ec",
+      "passed_at_utc": "2022-11-07T15:01:23Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "chi_square",
+        "data": "//8A/v7+AP7+/QD9/fwB/Pz7Afv7+wH7+voB+vr6Avn5+AL49/cC9/f3A/b29gP29vUD9fX1BPX19AT09PQE9PPzBPPy8gXy8fEF8fDwBfDw8AXv7+4G7u7tBuzs7Abs7OsG6+vrBurq6gbq6ukH6enpB+jo6Afo5+cH5+fnCOfm5gnm5eQJ5OTkCeTk5Anj4+MK4uHhCuHh4Qrh4eAK4ODgCuDf3wrf394K3t7eC97e3gze3d0M3NzcDNvb2w3Z2dgN2NjYDdjY2A3X19cN19fXDdfX1g3W1tYO1dXVDtXU1A7U1NQO1NTTD9PT0w/T0tIP0tLRD9HR0RDR0NAQ0NDPEM/PzxDPz88Qzs7OEM7OzRHNzcwRy8vLEcrKyhHKyckRycjIEcjIxxLHx8cSxsbGEsbGxRPFxcQTxMTEE8TExBPExMQUw8PDFMPDwhXBwcEVwcDAFcC/vxW/vr4Vvry8Fby8uxW7u7sVu7u7Fbu6uRW5ubkWubi4Fri4uBa3t7cWt7a2Fra1tRe1tbUXtLOzF7Ozsxezs7IXsrKxF7GxsRixsbEYsLCwGK+vrxivr68Zr6+uGa6urhqtra0araysGqysqxurq6sbqqqpG6mpqRupqKgbqKioG6enpxunpaUbpaWkG6SkpBykpKQcpKOjHKGhoBygoKAcoKCfHJ+fnh2enp0dnJycHZycnB2cnJwem5ubHpubmx6ampoempqZH5iYlx+Xl5YflpaWIJWVlSCVlZQglJOTIJKSkiGSkZEhkZGRIZCQjyGPjo4hjo2NIo2MjCKMjIwijIuLIouLiyKLi4siiYmJIomJiCKIiIcjh4aFI4WFhSOFhYQjhISEJISDgySDgoIkgoGBJYCAgCWAf38lf39/JX5+fiV+fX0mfXx8Jnx7eyZ7e3sme3t6Jnp6eSZ5eXgneHh4KHh4eCh3d3cpd3Z2KXZ2dip2dnYqdnR0K3R0cytzc3Mrc3NyLHJycixxcXEscHBwLHBwby1vb28tb25uLW5tbS1tbWwubGtrLmtrai5qamouaWlpL2hoZy9nZ2YvZmZmL2VkZC9kY2MwY2JiMGJiYjBhYWExYWFgMWBgYDFgYF8xXl5eMV5dXTFdXFwyW1tbMltbWzJaWVkzWFhYM1hYVzNXV1c0V1dWNFZVVTRVVVU0VFRUNFNTUzVTUlI1UlFRNVFQTzVPT041Tk5ONU5NTTVNTUw2TExLNktLSzZKSUk2SUlJNkhIRzZHR0Y2RkZGN0ZGRjdFRUU4RUREOEREQzhDQkI5QkJCOUFBQTlBQUA5QEBAOj8/Pzo/Pz46Pj4+Oz09PTs8PDw8PA==",
+        "selectors": [
+          {},
+          {
+            "offset": 0,
+            "stride": 4
+          },
+          {
+            "offset": 1,
+            "stride": 4
+          },
+          {
+            "offset": 2,
+            "stride": 4
+          },
+          {
+            "offset": 3,
+            "stride": 4
+          }
+        ]
+      },
+      "expect_solution": [
+        {
+          "chi_square_statistic": 239,
+          "verdict": "no_result"
+        },
+        {
+          "chi_square_statistic": 186,
+          "verdict": "uniform"
+        },
+        {
+          "chi_square_statistic": 196,
+          "verdict": "uniform"
+        },
+        {
+          "chi_square_statistic": 1028,
+          "verdict": "non_uniform"
+        },
+        {
+          "chi_square_statistic": 180,
+          "verdict": "uniform"
+        }
+      ]
+    },
+    {
+      "tcid": "0047ce14-572b-4f08-a209-2ae3c891404d",
+      "passed_at_utc": "2022-11-07T14:54:46Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "chi_square",
+        "data": "AAECAwQFBgc=",
+        "selectors": [
+          {}
+        ]
+      }
+    },
+    {
+      "tcid": "27347f44-b7b1-45f3-b79d-fa4bfac6eead",
+      "passed_at_utc": "2022-11-07T14:54:46Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "chi_square",
+        "data": "H+ZvXo7oh9BaatXkpIM8ijjBxLbABMSXvG4hPZKz",
+        "selectors": [
+          {
+            "offset": 0,
+            "stride": 1
+          },
+          {
+            "offset": 0,
+            "stride": 2
+          },
+          {
+            "offset": 1,
+            "stride": 2
+          },
+          {
+            "offset": 0,
+            "stride": 3
+          },
+          {
+            "offset": 1,
+            "stride": 3
+          },
+          {
+            "offset": 2,
+            "stride": 3
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "4fe986c0-d725-4228-8190-5af2cb10ade6",
+      "passed_at_utc": "2022-11-07T14:54:46Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "chi_square",
+        "data": "e/IZwYSERG3dUtnnKNlMk34lyfgkfeKjiEze002c",
+        "selectors": [
+          {
+            "offset": 0,
+            "stride": 1
+          },
+          {
+            "offset": 0,
+            "stride": 2
+          },
+          {
+            "offset": 1,
+            "stride": 2
+          },
+          {
+            "offset": 0,
+            "stride": 3
+          },
+          {
+            "offset": 1,
+            "stride": 3
+          },
+          {
+            "offset": 2,
+            "stride": 3
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "e5bab384-2a46-4db3-97b6-5e43cf1f9fb5",
+      "passed_at_utc": "2022-11-07T14:54:46Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "chi_square",
+        "data": "3ftMnumWwkLpHUyPh0hQYJmpfrh54/8oDxWzhCED",
+        "selectors": [
+          {
+            "offset": 0,
+            "stride": 1
+          },
+          {
+            "offset": 0,
+            "stride": 2
+          },
+          {
+            "offset": 1,
+            "stride": 2
+          },
+          {
+            "offset": 0,
+            "stride": 3
+          },
+          {
+            "offset": 1,
+            "stride": 3
+          },
+          {
+            "offset": 2,
+            "stride": 3
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "62e86604-b377-49f1-bdf1-58135e58fa92",
+      "passed_at_utc": "2022-11-07T14:59:30Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "chi_square",
+        "data": "OfAQXXG6b+1sZs9mRUCqD9l7/71vHsqylsxjbzi/yoH/Fo4rp4j7VRNCZLEoUivCVdNYp4pqhGl/eD8g4wd1aJ3v8Ma8/9YMoRCgjG0p8Vxm8dAF9wbF190Gba943GE/6cWYmg==",
+        "selectors": [
+          {
+            "stride": 1
+          },
+          {
+            "stride": 2
+          },
+          {
+            "stride": 3
+          },
+          {
+            "stride": 4
+          },
+          {
+            "stride": 5
+          },
+          {
+            "stride": 6
+          },
+          {
+            "stride": 7
+          },
+          {
+            "stride": 8
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "b55b92fb-d602-4ec6-b858-8785282f9ac6",
+      "passed_at_utc": "2022-11-07T15:01:24Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "chi_square",
+        "data": "YTRiRywQPl4XC0MMC2JiQmBKAiBvZCsScH8yQidBBg0BSFJTOxMJIwkCRQhiQ2YgPCVjdn54OQxVH3Ukb38TNgJXFWpoM35GfzoxCTVzOlwodWcuM1hwO2d5WGYINktJNGI5AkV+UkZ6YUp+MSovAWtnMmxVXxYFKmhQd05bPBUEGVRqD1w6RXdUCHlPWQ5TdDsgCDl4BCs4CiZhZxtcNT9NJGAoFWZSAhhiawonHWgANhd2NFllcXtfeUU6GndwGm19IU1XGSxtf11wd1ArDiAQeU59IRcZQ0ZhWj8GPQIdfm9HbUVwBgFkEhcxfyB+DV8yKmFmZmI4fV1eHB9SE0xPAnsJVSdXKglaLGovLhFWd28ncFE/dWsqHWAQeXkIMXI3OEQ9ZV0PbSQJPlsufltEUiZGJDB2C3ACMgA8AUptOx4jYnRTb3xSK1RzFnUPOQdaI3BWKhlmbiE6WzsXVgwAVWRhbWx/SR9HGmosAhM5ClcKOkpeKk9oCR55DQFkEhBRfDMLT1wuHhBpKQcRZSEaGmEDOVRlNSxIECx1XToMDgh7JntTZ0kRMVlLMC4PIzsHCVJaITIvY216Fm9MDwhMfCwTYERAA0dvRztmIiN4MAlsf2VKVF5xPy57bAFQVmVsDDp1Cw4ZZAI7Cl4FQg8KLHVvTlkjWyJfXjtCSjYRA0A5LWQfBnYrAw5FJllYCw5cNxl1AjUOKE83Jy10S1cXdQxUf1B1BHglYlk2cScKL3wpVVcLay14dzxVF0k9H3RxXEMabVRqcVMBLA1vcltACQtaJABfTz9GKDVgQRB9XkNQNwJVXAsscARQYRUHb0JUFxVAJ34DXg1OFQ5xMnUkO2QVHndFXxVxLQk2WnlmA1VrI0p5ZiEVMVVcMjtYdEhPawcJaERdBjUwIS9YbFwXYV8wXBUjEWpfdSEeJBA/NkEgUC9WOAUvUAceeShcazFBKANSEn9QXRktAwcebVlPD35PHS8kdC8sOSkWdHgMEB5mC1YacVQAbEkNc0QGf1ElT1weK24wXRUOC3dNVC8+MGYqH1QDTjFVeH1fBhBNMFZNDFxDa0c1HiIxO2UrBipHXT4hPRREWV8WInY0JTB1MHNCdh4SBlwMOBkvY0QmFWxLeGEkWH9qdAE1M2UdAB4dJkkKF3Ffe20QZxMjE2lkV3xdWDcYImkpCBwQFwNbAAxgGVUPdT95Ji54IyE6OxJ3Akl/M3kVZXM2Di5BV2MjRyNjBmEKJCZKAC4COAk8QHMLJgo+JDRZGSQ+YSAxGCB0W1RKGzxnIV58cCgZZTAdaRIiWjoMEXwpWE8bDgxsQTJ6TXxxXQ==",
+        "selectors": [
+          {}
+        ]
+      }
+    },
+    {
+      "tcid": "383cfd50-54d2-4b48-9f01-a1f9e2cdedfa",
+      "passed_at_utc": "2022-11-07T15:01:24Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "chi_square",
+        "data": "//8A///+AP7+/gD9/f0A/f39AP39/QD8/PwB/Pz8Afr6+gH5+fkC+fj4Avj39wL39/cC9/b2A/b29gP29vUD9fX1A/T09AP09PMD8/PzBPPz8gTy8vIE8fHxBPHw8ATv7u0F7e3sBezs6wXr6+sF6+rqBerq6gbp6ekH6enoB+jo5wjn5+cI5+bmCebl5Qnl5OQJ5OTkCePj4wnj4+MJ4+PjC+Pi4gvi4uIL4eHhDODg4Azg394M3t7eDN7d3Q3c3NwN3NzbDdvb2w3b29oN2traDdnZ2Q7Z2dkO2NjYDtjX1g/W1tYP1dXVD9XV1A/U09IP0tLSENLS0RDR0dEQ0dDQENDPzxHOzs4Rzs3NEszMzBLMzMwSy8vLEsvLyxPLysoTycjIE8jHxhPGxMQTxMTDE8PCwhTCwsIUwsLCFMHBwRTBwcEUwcHAFcDAwBXAv78Vv7+/Fr6+vRa9vb0Xvb29F7y8vBe8vLwXu7u7F7u6uhe5ubkYubm3Gbe3txm2trYZtrW1GbW0tBq0s7Mas7KyGrKysRqxsbAasLCwGrCwrxuvrq4brq6tG62trRutrawcrKysHKyrqhyqqqodqqqqHaqpqR2pqakdqamoHaioqB2np6cepqalHqWlpR6lpaQepKSkHqOioh6ioqEfoaGgH6CgoB+gn58fn5+eIJ6dnSCdnJsgm5uaIJqZmSCYmJcgl5eXIJeXlyGWlpUhlZWVIZWUlCGTk5IhkpKSIZGQkCKPj48ij4+PI46OjSONjYwjjIyMI4uLiyOLiookioqKJImJiSSJiYgkiIiIJIeHhySGhoYkhoaFJYWFhSWEhIQmhISDJoODgyaDgoImgoKBJoGAgCaAf38nf39/J35+fid+fn0ofX19KH18fCh8fHwoe3t7KHt7eih6enkpeXl5KXh3dyl2dXUpdXV0KXR0dCl0c3Mpc3NzKXJycilycXApcHBwKm9vbypvb28qbm5tKm1tbSptbW0qbW1sKmxsbCtra2sra2pqK2pqaStoaGgraGdnK2dnZitmZWUsZWVlLGVkZCxkZGMsY2NjLGNjYi1hYWEtYWFhLWFhYC1gYF8tX19eLl5eXS5dXVwuXFxcL1tbWy9aWlovWVlYL1hYVzBXV1cwV1ZWMFZWVTFVVVUxVVVUMVRUVDFTU1MyU1JSMlJRUTJRUVAzUFBQM09PTjNOTk00TUxMNExMSzRLS0o0SkpJNElIRzVHR0c1R0ZGNUZGRjVGRkY1RUVFNURERDZEREQ3RENCN0JCQjhBQUA5QEBAOUBAQDk/Pz45Pj4+OT09PTk9PTw6PDw8Ojw8Ozo7Ojo6Og==",
+        "selectors": [
+          {},
+          {
+            "offset": 0,
+            "stride": 4
+          },
+          {
+            "offset": 1,
+            "stride": 4
+          },
+          {
+            "offset": 2,
+            "stride": 4
+          },
+          {
+            "offset": 3,
+            "stride": 4
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "4e87ff24-8925-4fc6-ad9f-cbcff7666a2d",
+      "passed_at_utc": "2022-11-07T15:01:24Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "chi_square",
+        "data": "//8A///+AP79/QD8+/sA+vr6APr6+gH6+fkB+fj4Aff39wL39/YC9vX1AvT09AL09PMD8/PzA/Lx8QPw8PAD7+/vBO/v7gTt7ewE7OvqBOrq6gTp6ekF6OjoBejn5wXn5+YF5ubmBeXl5QXk5OQF5OPjBePj4gbi4uIH4uLhB+Hh4Qfh4OAH4ODfB9/f3gje3t4I3t7eCN7e3gje3d0I3d3cCNzc3Ajc3NwJ29vaCdra2gnZ2dkJ2dnZCtjY2ArX19cL1tbWC9XV1QvV1dUL1dTUC9TU1AzU1NQM09PTDNPS0g3S0tIN0tLRDdHR0A3Q0NAO0NDPDs/Pzw7Pz88Oz87ODs7Ozg7Nzc0Ozc3ND83NzQ/MzMsPy8vLEMvLyxDLy8oQysrJEMnJyRHIyMcSx8fHEsfGxhLGxcUTxcXEE8TEwxPDw8MTw8LCE8LCwhTBwcAUwL+/FL6+vhW+vr0Vvby8Fby8uxW7u7sWurq6Frq5uRa5ubkWubi4Fri3txa3t7cXt7a2F7a1tRe1tbUXtbSzGLOzsxizs7IYsrKxGLGxsRmxsLAZsLCwGbCwsBmvr68Zr66uGa6trRqtra0arKyrGqurqxqrq6oaqqqqGqqpqRupqKgbqKenHKemphympqYcpqamHKWlpR2lpaUdpKOjHaOhoB2fn58dn56eHp6enR6cnJsem5uaHpmZmR6ZmZgemJiYH5iYlx+Xl5YglpaVIJWVlSCVlZQglJSTIJOSkSCRkZEhkJCQIZCQkCGQkI8hj4+OIY6OjiGNjYwhjIuLIouLiyKKiooiioqKIomJiSOJiYgjiIiHI4eHhyOHh4ckh4aGJIaGhSSFhYUkhYWEJISEhCSDg4Mkg4ODJIODgiWCgoIlgYGBJYGAgCWAf38mfn5+Jn59fSZ8fHwmfHx7Jnt7eyd7e3sne3p6J3p6eid5eXkoeXh4KHd3dyh3dnYodnV1KXV1dCl0dHIpcnJyKXJycilxcXEpcHBwKW9vbylvbm4qbW1tKm1tbCpsbGwqbGtrLGpqaSxpaWksaWlpLGhoaC1oaGYtZmZmLWVlZS1lZWQtZGRjLmNjYi5hYWAuYGBgL15eXi9eXV0vXFxcMFxcWzBbW1swW1paMFpaWTBZWVkxWVlYMVhYWDJYWFgyV1dXMlZVVTJUVFQyVFRUM1NTUjNSUlIzUlJSNFJRUTVRUVE1UFBQNVBQTzVPT081T05ONk5OTjZNTUw2TEtLNkpKSjdKSko3SUlJN0lJSDdISEc3R0dGOEZGRjhFRUQ5REREOURCQjpCQkI6QkJCOkJCQTpBQUE7QEA+Oz4+PTs9PDw7Ow==",
+        "selectors": [
+          {},
+          {
+            "offset": 0,
+            "stride": 4
+          },
+          {
+            "offset": 1,
+            "stride": 4
+          },
+          {
+            "offset": 2,
+            "stride": 4
+          },
+          {
+            "offset": 3,
+            "stride": 4
+          }
+        ]
+      }
+    },
+    {
+      "tcid": "afe1185b-6fcc-469e-8eba-4748381dd200",
+      "passed_at_utc": "2022-11-07T15:01:24Z",
+      "type": "chi_square",
+      "assignment": {
+        "action": "chi_square",
+        "data": "//8A//7+AP7+/gH+/fwB/Pv7Afv6+gH6+vkC+fj4Avj49wL39/cC9/f2Avb29gL29fUD9fX1A/X19AP09PQD9PT0A/Tz8wPz8/IE8vLyBPLx8QXx8fEG8PDvCO/v7gju7u4J7e3tCezs7Ans6+sJ6urqCenp6Qro6OcK5+fnCubm5Qrl5eQK5OTkCuTk5Avj4+ML4+PiC+Lh4Qvh4eEM4eDgDODg3wzf398M3t7eDN7d3Qzd3dwM3NzcDdzc3A3c3NwN3NzbDtvb2w7a2dkP2dnZD9nY2A/Y2NgQ19fXENfX1xDX1tYQ1dXUENTU0xHT0tIS0tHREtHR0BLQz88Tz87NE83MyxPLy8oUysnJFMnJyRTJycgUyMjIFcfHxxXGxsYVxsbFFsXFxBbEw8MWwsLCFsLBwRbAwMAWwMDAFr+/vhe+vr4Xvr69F729vBi8vLwYvLu7GLu7uxi7uroaurq5G7m5uBu4t7cbt7e2HLa2thy1tbUctLS0HLS0tBy0s7Mcs7OzHLOyshyysbEdsbCwHbCwsB2vr68er66uH66trR+trawgrKysIKuqqiCqqqkhqampIampqCKop6cip6amIqampiKlpaUjpKSkI6SkpCSkpKQko6OiJaKioiWioqIloaCgJaCfnyWenp4mnp6eJp6enSadnZwmnJycJpybmyebmponmZmZJ5mZmSiYmJgomJiXKZeXlymXlpYqlpaWKpWVlSqVlZQrlJSUK5SUlCuTk5MrkpKRLJGRkSyRkZAskJCQLY+Pjy2Pj44tjY2NLYyMjC2Mi4sti4uKLYqKii2KiYkuiYmILoiIiC6Hh4cuhoaGL4aGhi+FhIQwhISDMIODgjCBgYAwgICAMYCAgDKAf38yf39+Mn5+fjJ+fn0yfX18Mnx8fDJ7e3sze3t7M3t7ezN6enozenp6M3l5eDN4eHczd3d3NHd3djR2dnY0dXRzNXNycjVycnI1cXFxNnFxcDZwcG82b29vNm9vbzdvb283bm5uOG5ubThtbW04bGxsOGxrazhra2s4ampqOWpqajlpaWg5aGhoOWdnZzpmZmY6ZmVlOmVlYzpjY2I6YmJiO2JiYTtgYGA7YF9fO15dXTxdXFw8XFxcPFxcXDxcXFw9W1tbPVpaWT1ZWFg+WFhYPlhXVz5XV1c+VlZWPlZWVj5WVlU/VVVVP1VVVT9VVFQ/VFRUQFRUU0BTUlJAUlJRQFFRUUBRUVBAUFBPQE9PTkBOTk1BTU1NQU1MTEFMTEtBS0tLQUtLSkFKSkpCSklJQklISEJISEhCSEhHQ0dGRkNGRkZDRkZFQ0VFRUNFRERERA==",
+        "selectors": [
+          {},
+          {
+            "offset": 0,
+            "stride": 4
+          },
+          {
+            "offset": 1,
+            "stride": 4
+          },
+          {
+            "offset": 2,
+            "stride": 4
+          },
+          {
+            "offset": 3,
+            "stride": 4
+          }
+        ]
+      }
+    }
+  ]
+}
