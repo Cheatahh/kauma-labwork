@@ -152,7 +152,7 @@ def rc4_fms_handler(assignment, api, _log, case_id):
     """Handler-function for the 'rc4_fms' type"""
 
     # Note: During testing with some higher difficulty cases, i´ve transferred the implementation to C++17.
-    # If you´re interested, you can find the implementation in /c/main.cpp.
+    # If you´re interested, you can find the implementation in ../c/main.cpp.
     # The C++ implementation cracks the difficult case in like 100ms (without the cheaty way below).
 
     # extracted captured_ivs and group them by their corresponding key character index

@@ -7,16 +7,18 @@ fi
 
 # repack tar & make executable
 tar -xvf labwork.tar.gz >/dev/null
+
 chmod +x labwork/*
-chmod +x rc4-bonus/*
+chmod +x labwork/rc4-bonus/*
+
 rm labwork/labwork*.json
-rm -r c/.idea
-rm -r c/cmake-*
+rm -r labwork/c/.idea
+rm -r labwork/c/cmake-*
 rm labwork.tar.gz
-tar -czvf labwork.tar.gz labwork rc4-bonus c >/dev/null
+
+tar -czvf labwork.tar.gz labwork >/dev/null
+
 rm -r labwork
-rm -r rc4-bonus
-rm -r c
 
 # test for all labs
 labs=("labwork01" "labwork02" "labwork03" "labwork04" "labwork05")
