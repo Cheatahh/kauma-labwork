@@ -1,0 +1,84 @@
+{
+  "name": "labwork07",
+  "description": "This is the seventh assignment. You are presented with an implementation of a password validation mechanism that is susceptible to a timing side channel attack and are asked to crack passwords of users.",
+  "start_utc": "2022-11-14T00:00:00Z",
+  "end_utc": "2022-11-23T00:00:00Z",
+  "max_points": 8,
+  "testcases": [
+    {
+      "tcid": "c05aa6e2-b7b1-4c63-93f5-538aa7803d97",
+      "passed_at_utc": "2022-11-14T09:51:21Z",
+      "type": "timing_sidechannel",
+      "assignment": {
+        "user": "jeanluc"
+      },
+      "expect_solution": {
+        "password": "Picard47AlphaTango"
+      }
+    },
+    {
+      "tcid": "57a602f0-a93f-47b5-89c3-314a868e4342",
+      "passed_at_utc": "2022-11-14T09:54:00Z",
+      "type": "timing_sidechannel",
+      "assignment": {
+        "user": "will"
+      }
+    },
+    {
+      "tcid": "468bff4a-a5c8-4290-9a7f-3d8cade1beec",
+      "passed_at_utc": "2022-11-14T09:56:37Z",
+      "type": "timing_sidechannel",
+      "assignment": {
+        "user": "geordi"
+      }
+    },
+    {
+      "tcid": "e0225e37-53cf-4e69-90ac-db173ce5393a",
+      "passed_at_utc": "2022-11-14T10:21:04Z",
+      "type": "timing_sidechannel",
+      "assignment": {
+        "user": "tasha"
+      }
+    },
+    {
+      "tcid": "82a8337e-4668-4210-b337-abe85ab12e69",
+      "passed_at_utc": "2022-11-14T09:56:39Z",
+      "type": "timing_sidechannel",
+      "assignment": {
+        "user": "worf"
+      }
+    },
+    {
+      "tcid": "923fd019-a0f6-4fb3-a93a-02c7e5a1aa6b",
+      "passed_at_utc": "2022-11-14T10:23:28Z",
+      "type": "timing_sidechannel",
+      "assignment": {
+        "user": "data"
+      }
+    },
+    {
+      "tcid": "fc9f771e-4919-470d-9bc4-0dc60828ab83",
+      "passed_at_utc": "2022-11-14T09:54:21Z",
+      "type": "timing_sidechannel",
+      "assignment": {
+        "user": "beverly"
+      }
+    },
+    {
+      "tcid": "f571181a-b362-49f2-9aac-7a18597e5b2d",
+      "passed_at_utc": "2022-11-14T09:56:10Z",
+      "type": "timing_sidechannel",
+      "assignment": {
+        "user": "deanna"
+      }
+    },
+    {
+      "tcid": "db01f1a7-a159-4d2c-bddf-9b13fba00f19",
+      "passed_at_utc": "2022-11-14T10:00:48Z",
+      "type": "timing_sidechannel",
+      "assignment": {
+        "user": "wesley"
+      }
+    }
+  ]
+}

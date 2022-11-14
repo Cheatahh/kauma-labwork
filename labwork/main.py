@@ -33,6 +33,7 @@ from handlers.mulGF128Handler import mul_gf_128_handler
 from handlers.passwordKeyspaceHandler import password_keyspace_handler
 from handlers.pkcs7paddingHandler import pkcs7_padding_handler
 from handlers.strcatHandler import strcat_handler
+from handlers.timingSidechannel import timing_side_channel_handler
 
 # handler lookup
 handlers = {
@@ -47,36 +48,45 @@ handlers = {
     "gcm_mul_gf2_128": gcm_mul_gf2_128_handler,
     "cbc_key_equals_iv": cbc_key_equals_iv_handler,
     "rc4_fms": rc4_fms_handler,
-    "chi_square": chi_square_handler
+    "chi_square": chi_square_handler,
+    "timing_sidechannel": timing_side_channel_handler
 }
 
 
 # process a single case
 # the function will be parallelized by the ProcessPool
 def process_case(case_type, case, api, log):
-    submit_response = None
 
-    # handle case
-    start = time.time()
-    try:
-        # lookup & run handler for case type
-        result = handlers[case_type](case["assignment"], api, log, case["tcid"])
-        # submit result
-        submit_response = api.post_submission(case["tcid"], result)
-    except Exception as err:
-        result = err
-    end = time.time()
+    if case["passed_at_utc"] is None or not config.debug:
 
-    # create log message
-    log_msg = "%s------ Result Case #%d '%s' ------%s\n%s%s\n" % (
-        ansi_blue, log.identifier, case_type, ansi_reset,
-        f'Case: {json.dumps(case, indent=2)}\n' if config.verbosity > 2 else '',
-        f'{ansi_red}{type(result).__name__}:{ansi_reset} {result}' if isinstance(result, Exception) else
-        f'Result: {result}\nTime: {end - start} seconds\nResponse: {submit_response}'
-    ) if config.verbosity > 0 else ""
+        submit_response = None
 
-    # update progressbar and set diagnostics
-    passed = submit_response["status"] == "pass" if submit_response is not None else False
+        # handle case
+        start = time.time()
+        try:
+            # lookup & run handler for case type
+            result = handlers[case_type](case["assignment"], api, log, case["tcid"])
+            # submit result
+            submit_response = api.post_submission(case["tcid"], result)
+        except Exception as err:
+            result = err
+        end = time.time()
+
+        # create log message
+        log_msg = "%s------ Result Case #%d '%s' ------%s\n%s%s\n" % (
+            ansi_blue, log.identifier, case_type, ansi_reset,
+            f'Case: {json.dumps(case, indent=2)}\n' if config.verbosity > 2 else '',
+            f'{ansi_red}{type(result).__name__}:{ansi_reset} {result}' if isinstance(result, Exception) else
+            f'Result: {result}\nTime: {end - start} seconds\nResponse: {submit_response}\n'
+        ) if config.verbosity > 0 else ""
+
+        # update progressbar and set diagnostics
+        passed = submit_response["status"] == "pass" if submit_response is not None else False
+
+    else:
+        log_msg = f"Case #{log.identifier} '{case_type}' {ansi_green}already passed{ansi_reset} at {case['passed_at_utc']}\n"
+        passed = True
+
     log.progress_bar.step(passed, log_msg)
 
 
