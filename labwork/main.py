@@ -33,7 +33,7 @@ from handlers.mulGF128Handler import mul_gf_128_handler
 from handlers.passwordKeyspaceHandler import password_keyspace_handler
 from handlers.pkcs7paddingHandler import pkcs7_padding_handler
 from handlers.strcatHandler import strcat_handler
-from handlers.timingSidechannel import timing_side_channel_handler
+from handlers.timingSideChannel import timing_side_channel_handler
 
 # handler lookup
 handlers = {
