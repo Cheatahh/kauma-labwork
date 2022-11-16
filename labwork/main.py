@@ -57,7 +57,7 @@ handlers = {
 # the function will be parallelized by the ProcessPool
 def process_case(case_type, case, api, log):
 
-    if case["passed_at_utc"] is None or not config.debug:
+    if case.get("passed_at_utc", None) is None or not config.debug:
 
         submit_response = None
 

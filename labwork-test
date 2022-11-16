@@ -14,6 +14,8 @@ chmod +x labwork/rc4-bonus/*
 rm labwork/labwork*.json
 rm -r labwork/c/.idea
 rm -r labwork/c/cmake-*
+rm -r labwork/memcmp-sidechannel/.idea
+rm -r labwork/memcmp-sidechannel/cmake-*
 rm labwork.tar.gz
 
 tar -czvf labwork.tar.gz labwork >/dev/null

