@@ -14,6 +14,7 @@ from multiprocessing import freeze_support, Manager
 
 # imports
 import config
+from handlers.rsaCrtFaultInjectionHandler import rsa_crt_fault_injection_handler
 from util.ansiEscape import ansi_red, ansi_reset, ansi_blue, ansi_green, ansi_white
 from util.api import LabworkAPI
 from util.log import Log
@@ -49,7 +50,8 @@ handlers = {
     "cbc_key_equals_iv": cbc_key_equals_iv_handler,
     "rc4_fms": rc4_fms_handler,
     "chi_square": chi_square_handler,
-    "timing_sidechannel": timing_side_channel_handler
+    "timing_sidechannel": timing_side_channel_handler,
+    "rsa_crt_fault_injection": rsa_crt_fault_injection_handler
 }
 
 

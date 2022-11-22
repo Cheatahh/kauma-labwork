@@ -38,6 +38,18 @@ def bytes2int(value):
     return int.from_bytes(value, byteorder="little")
 
 
+# helper function to convert an integer to a bytes block (length = min)
+def Int2bytes(value):
+    # fixed byteorder="big"
+    return value.to_bytes(byteorder="big", length=(value.bit_length() + 7) // 8)
+
+
+# helper function to convert a bytes block to an integer
+def bytes2Int(value):
+    # fixed byteorder="big"
+    return int.from_bytes(value, byteorder="big")
+
+
 # shorthand for base64.b64decode(text)
 def b64decode(text):
     return base64.b64decode(text)
