@@ -1,6 +1,8 @@
 """
     Response program (T3INF9004: Cryptanalysis und Method-Audit).
 
+    https://github.com/Cheatahh/kauma-labwork/
+
     License: CC-0
     Authors: DHBW Students 200374 & 200357 (2022)
 """
