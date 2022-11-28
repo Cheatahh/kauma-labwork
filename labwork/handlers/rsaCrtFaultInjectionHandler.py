@@ -38,7 +38,7 @@ def recover_p(sigs, e, n, m, padding):
         # 1. version, can discard directly, requires padding
         corrupted = Int2bytes(se)[:len(padding)] != padding
         if corrupted:
-            p_candidate = gcd((se - m), n)
+            p_candidate = gcd(se - m, n)
             return p_candidate
 
         # 2. version, requires full calculation of p
