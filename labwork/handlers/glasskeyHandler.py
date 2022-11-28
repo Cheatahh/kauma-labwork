@@ -11,20 +11,14 @@
 """
 
 import hashlib
-import random
 from hmac import HMAC
 
 from util.functions import b64decode, bytes2Int, b64encode, Int2bytes
+from util.prime import miller_rabin_test
 
 
 def hmac_sha256(key, data):
     return HMAC(key, data, hashlib.sha256).digest()
-
-
-def gk_drbg(drbg_key, index):
-    data = index.to_bytes(4, "big")
-    mic = hmac_sha256(drbg_key, data)
-    return mic[0]
 
 
 def round_up(value, multiple):
@@ -41,11 +35,14 @@ def set_bit(self, bit):
     return self
 
 
+def gk_drbg(drbg_key, index):
+    data = index.to_bytes(4, "big")
+    mic = hmac_sha256(drbg_key, data)
+    return mic[0]
+
+
 def gk_intrg(drbg_key, bit_len):
-    if (bit_len % 8) != 0:
-        byte_count = round_up(bit_len, 8)
-    else:
-        byte_count = bit_len // 8
+    byte_count = round_up(bit_len, 8) if (bit_len % 8) != 0 else bit_len // 8
     values = []
     for i in range(byte_count):
         values.append(gk_drbg(drbg_key, i))
@@ -63,34 +60,10 @@ def gk_candprime(drbg_key, bit_len):
     return raw_integer
 
 
-def is_prime_miller_rabin(n, k=400):
-    if n == 2 or n == 3:
-        return True
-    if n <= 1 or n % 2 == 0:
-        return False
-    d = n - 1
-    r = 0
-    while d % 2 == 0:
-        d //= 2
-        r += 1
-    for _ in range(k):
-        a = random.randint(2, n - 2)
-        x = pow(a, d, n)
-        if x == 1 or x == n - 1:
-            continue
-        for _ in range(r - 1):
-            x = pow(x, 2, n)
-            if x == n - 1:
-                break
-        else:
-            return False
-    return True
-
-
 def gk_nextprime(value):
     value = set_bit(value, 0)
     while True:
-        if is_prime_miller_rabin(value):
+        if miller_rabin_test(value):
             return value
         value += 2
 
@@ -121,8 +94,9 @@ def extract_topmost_bits(value, bit_len):
     assert(bit_len > 0)
     assert(bit_len <= value.bit_length())
     mask = gen_bitmask(bit_len)
-    mask = mask << (value.bit_length() - bit_len)
-    return (value & mask) >> (value.bit_length() - bit_len)
+    shift = value.bit_length() - bit_len
+    mask <<= shift
+    return (value & mask) >> shift
 
 
 def gk_rsa_escrow(agency_key, n):
