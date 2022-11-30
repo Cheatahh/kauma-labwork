@@ -26,7 +26,7 @@ def round_up(value, multiple):
 
 
 def gen_bitmask(bit_len):
-    assert(bit_len > 0)
+    assert bit_len > 0
     return (1 << bit_len) - 1
 
 
@@ -79,8 +79,8 @@ def gk_pgen(drbg_key, modulus_bit_len):
 
 
 def gk_derive_drbg_key(agency_key, seed):
-    assert(isinstance(seed, bytes))
-    assert(len(seed) == 8)
+    assert isinstance(seed, bytes)
+    assert len(seed) == 8
     return hashlib.sha256(agency_key + seed).digest()
 
 
@@ -91,8 +91,8 @@ def gk_p_from_seed(agency_key, seed, modulus_bit_len):
 
 
 def extract_topmost_bits(value, bit_len):
-    assert(bit_len > 0)
-    assert(bit_len <= value.bit_length())
+    assert bit_len > 0
+    assert bit_len <= value.bit_length()
     mask = gen_bitmask(bit_len)
     shift = value.bit_length() - bit_len
     mask <<= shift

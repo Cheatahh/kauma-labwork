@@ -1,0 +1,124 @@
+{
+  "name": "labwork09",
+  "description": "This is the ninth assignment. You have been given the secret specification of an RSA backdoor construction and need to implement a mechanism to escrow backdoored RSA keys.",
+  "start_utc": "2022-11-28T00:00:00Z",
+  "end_utc": "2022-12-07T00:00:00Z",
+  "max_points": 14,
+  "testcases": [
+    {
+      "tcid": "ad006f79-6c41-42e4-b517-4051b913912f",
+      "passed_at_utc": null,
+      "type": "glasskey",
+      "assignment": {
+        "agency_key": "3F21f6cmBf4iSSyajV6HXw==",
+        "e": 65537,
+        "n": "A6bfc2uZ5h9lujH48lbz1oog5vU6TJ2S7aeTqcC5"
+      }
+    },
+    {
+      "tcid": "367eccbc-db0b-4320-aa0f-9096aa390940",
+      "passed_at_utc": null,
+      "type": "glasskey",
+      "assignment": {
+        "agency_key": "3F21f6cmBf4iSSyajV6HXw==",
+        "e": 65537,
+        "n": "AngHTa5OkNJao9JvAbFNu2Rh2LCNQZjjEZo7Zuw1"
+      },
+      "expect_solution": {
+        "d": "SS/nUejtIj62u7Z5BrQIwkjbr4tVbL24I3AYhQE="
+      }
+    },
+    {
+      "tcid": "2fe18d9b-3ba2-4f78-b749-d338c8a657f6",
+      "passed_at_utc": null,
+      "type": "glasskey",
+      "assignment": {
+        "agency_key": "U+99lwVQdE+n+KWf2NHd0w==",
+        "e": 65537,
+        "n": "oUAeZwEFKIrwbRe30UmnGrAYkORWDmE+ypO0D1+sAeUxI0X41/hwBCGuMJp+mXDIB4ofRq156SJspiZa1xB79w=="
+      }
+    },
+    {
+      "tcid": "21fda850-087f-4151-a05a-0317d3b0883f",
+      "passed_at_utc": null,
+      "type": "glasskey",
+      "assignment": {
+        "agency_key": "U+99lwVQdE+n+KWf2NHd0w==",
+        "e": 65537,
+        "n": "la3f8AgNIeCgEppux5/s60GrQpTXK/8niSRwfhdAKHKFfEvxmf/tsc0olGIraoYsy/tsIcW9jm1WaBUh4uU3MQ=="
+      },
+      "expect_solution": {
+        "d": "Npbpm4N0NqzT9LT6Pjgnkk2rBmd+an9ujegKVxJnxdgfWspAoj5POF8aSzLjnvoYd/W63s9mc7A4NPZyQQf7mQ=="
+      }
+    },
+    {
+      "tcid": "95cb0136-b018-478c-aacd-8a4ba4aba352",
+      "passed_at_utc": null,
+      "type": "glasskey",
+      "assignment": {
+        "agency_key": "YiyMdj5J6A/tRDJOyoLD+g==",
+        "e": 65537,
+        "n": "xxLRIP3YdMTKx24fq5JvPCQ5zmjvXQ4+e2tFa4Tk9a7Zmd7U2CpVH+/0s+ZOVp2CXIk+BvgC6TrXQZ7+nk0h58YAcmqdA6osFeggPCcj+qjNVYes3w0OyL13IUGf3vJymDr+jf65rh9YN3a2rVcAnh99pqsYqJ3Bvv/wByUqmas="
+      }
+    },
+    {
+      "tcid": "8309c0b9-a0cb-4a43-b72e-68cc946c98f8",
+      "passed_at_utc": null,
+      "type": "glasskey",
+      "assignment": {
+        "agency_key": "YiyMdj5J6A/tRDJOyoLD+g==",
+        "e": 65537,
+        "n": "1rcIA3R60mKIPz8/dFoeMPDwi8s9EGB54GkFQ6sggWlRGQXjk5jpYGIdOCC9o353vZzXc8Zm/UVs+O9OuyaiyDac3PcvHfoCKahmTFGs5U9yPJv3tOaHgkZLedHW5wiT21E74Chj9FCLWoOhK0D+cdE04fVq8V2dSF/MuOfkYy0="
+      },
+      "expect_solution": {
+        "d": "Cs/Ek4f190oG2khxBYbUJlq7gg6F0KFLAcXIAhRH2rxW3Q+y2efFOJk4J29enTDtDpsrLiU7Yl1wk0hZiorzf1FUuyDcAe1RaCETqZMBB7LDPlT+QWD0tE3XKp0w9qUPYnT9Q+BLIa5b//+bkhokQ/QiwwJV6M1gh/cWEO62d3E="
+      }
+    },
+    {
+      "tcid": "0aaa9e86-9278-45e0-bdbc-91ecb33e7c33",
+      "passed_at_utc": null,
+      "type": "glasskey",
+      "assignment": {
+        "agency_key": "Q2Fv9Lp9olPx3iTdqg44Lw==",
+        "e": 65537,
+        "n": "AZ4IimTXGWxMB1zQqnieTTeBNJ3NHujGqdXN6cEcTPlZjU1NYKd5BOiTN45OHtsXTUo0o110hZJbvXjydi5UssirxRM6+NMV3H5faNrcGn/8TOQAVdy9VScIRI4gisOaSXtOJOdmSL/YdFfwgJ0qUXKPTpM2EI1o6MApwbWz3sD82kolvSfWb+I/7LUWd0rLHaXuskpKk7wnfs+UQVL/6c+ZAM9dMlOQDI46jFejYeyD0bvAqt1RcCn9aqYto7TyIeBuNT7+RLHh+6GIZ8yn8t19nwgMKJOqF6A6Ir7FNQ=="
+      }
+    },
+    {
+      "tcid": "d77ca680-734a-4c7b-88c8-b210784cd840",
+      "passed_at_utc": null,
+      "type": "glasskey",
+      "assignment": {
+        "agency_key": "Q2Fv9Lp9olPx3iTdqg44Lw==",
+        "e": 65537,
+        "n": "ASowc/ugGZsOlfac0CzTOktc4q6U1NYNNbno+p7uDPh7OWKupWh6w3U6DtBjHKhS+vN+f7Oc+4nNGrPK4AEQ4Tl///lktYz3PAtnJL/IBPVNZbh7rpB9ja1HGxvaFYBqwVqidMWr9+j7CHgREJtie3Q+8YNvW5OYL0J2Yw53EtzcUo7oVD+QqJoAtN5r/XMJObocnO6EVZE+Z+M/r99DIjODdAkrwOn1igSG5+nEPBv8J8dhKXGidJmar9l8jZQTauRgd3ZAZWzvGpP5LcG+fOzsHQ5SMRHng/DnjOzUvw=="
+      },
+      "expect_solution": {
+        "d": "GH4IWMeqssC88peoxbXH2P7VI6/X14kYO5/2Te2RpStB6Ggd7/n9afiN1PH/HZhLQorGZHNleckeA1yLj6raRQXNeaea/ewkw28CZrpAJgHodAG8seOOKohnop8EGxsprI8hdkcMwtczt+D28zxgZhcoH8NzpnPUDSbgpzRXeGirQAH5e2wjndOyWdFHjnUCl9Atheal09cocZAbHNqj3ORErUOP5s7GCb88sqU8xaVcIs9JdT5jsSnPJS1GiPPQBpfr6O03b97SdfWBpH4cVguaY0rs3djTx7YFL3hR"
+      }
+    },
+    {
+      "tcid": "569821b9-1a5c-4422-a70b-65288accb2d5",
+      "passed_at_utc": null,
+      "type": "glasskey",
+      "assignment": {
+        "agency_key": "kyBgIcSQK6W1JjPfYzpchA==",
+        "e": 65537,
+        "n": "4US+5g38TgnODBHgciEsC5EXHrAcZx2lCMsKM9NcCYaLqsvUYVL6+KcMZwl6KMIBpIUSjpfX7IBbWLT6EoZ2Oc7ZdtVjFVWpGI8CepfpmEFiglH2Z8lZvT6D+z4M2gXVI3MyWRs2VQmBONcJ2A21cnxoLXPZdSJT60Fr0ECnr7ArGqwsZSlF1JjVsxA+TvusLj8As97StwKg3+HvC/FMuSNmPfVLfWF7c2Yx9xfEwJ2vTflHpkln5JeV+rR+bhojwuRIeALKgY5izSGFrYO6rQfeeXYUsQq5hariQDhaakjYJAnC1hokzpxE/0W8U2Jjh6ZiyPxs/2sR1JU9Lb2bJw=="
+      }
+    },
+    {
+      "tcid": "78549333-22c9-408c-b341-1049a260eff7",
+      "passed_at_utc": null,
+      "type": "glasskey",
+      "assignment": {
+        "agency_key": "kyBgIcSQK6W1JjPfYzpchA==",
+        "e": 65537,
+        "n": "weWY0sIgtNCm6Nb72raGW5HcLDfOAP/TH5X0wRDWPSCDZ+ima9cyWa/aRki8wgKt9S5R41Cfo0G9ixjQF2H8CDOdicLM7sbR4jHF21X61KlKZ10vb5JiXoEZRhXNeiCDz8er2WHAmrD2YoYyvEq5pBr78TZQjDlqupcVc+gDQd+y+FELdsoCMEF2iiJEKF95nm+WswE/hxbnmla54q+bFWqlix2H5yPlODsDx674HyQUxaZzPzwO+OjslSPIrKPD+hY6mZeoVDX1Gt6oZSoKHLGEX5eARMZVJfylmTJcCP8Fni3Uy6elTAy73sOJQtqvt83ENq9sHVNFx6/whzmkCQ=="
+      },
+      "expect_solution": {
+        "d": "c0BxDV2cqT2Y6K/Y9lEmHcnecF4fUhK+QHkXCadjYOQxl5L/UPySDiNr//j+Uefb1O/adt6WdSj/bG2sSynP8GQV0Sv8OjXtzaC+NbiupreV5UjLiGsfk4LzLeiJwX0QPHI4ILdtD8X+PeP8xlU4cWYkuWUKjb8XRJ/HfaS8QuuXBhtDDRF4EmwMFxEpRdvAym64X2XXtzFt3WGMLXob2KNbwV6mmmSlGM9iOHJ1tCpc6IGNw7kabX8/Ffr9NLFwWyT526ZoqedhBv2P+iyKYizz49roQfvjnc2/76lXXBjkKz6UVB6/hhZtXT5EQilppeKWAlUI5/zBvoaRU564XQ=="
+      }
+    }
+  ]
+}
