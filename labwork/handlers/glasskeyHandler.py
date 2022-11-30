@@ -108,6 +108,7 @@ def gk_rsa_escrow(agency_key, n):
     return p, q
 
 
+# `Sie erblicken mich rollend, sie hegen Groll`
 def glasskey_handler(assignment, _api, _log, _case_id):
     """Handler-function for the 'glasskey' type"""
 
