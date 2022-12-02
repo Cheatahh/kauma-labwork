@@ -1,6 +1,6 @@
 # kauma-labwork
 
-Uni project > Response program to process & solve assignemnts given by an api (T3INF9004: Cryptanalysis und Method-Audit).
+Uni project > Response program to process & solve assignments given by an api (T3INF9004: Cryptanalysis und Method-Audit).
 
 usage: ```main.py [-h] [-v] [-p PROCESS_COUNT] [--debug] endpoint client_id labwork_id```
 
