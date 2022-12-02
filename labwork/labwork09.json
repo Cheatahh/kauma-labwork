@@ -7,7 +7,7 @@
   "testcases": [
     {
       "tcid": "ad006f79-6c41-42e4-b517-4051b913912f",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-11-30T08:03:20Z",
       "type": "glasskey",
       "assignment": {
         "agency_key": "3F21f6cmBf4iSSyajV6HXw==",
@@ -17,7 +17,7 @@
     },
     {
       "tcid": "367eccbc-db0b-4320-aa0f-9096aa390940",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-11-30T08:03:20Z",
       "type": "glasskey",
       "assignment": {
         "agency_key": "3F21f6cmBf4iSSyajV6HXw==",
@@ -30,7 +30,7 @@
     },
     {
       "tcid": "2fe18d9b-3ba2-4f78-b749-d338c8a657f6",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-11-30T08:03:20Z",
       "type": "glasskey",
       "assignment": {
         "agency_key": "U+99lwVQdE+n+KWf2NHd0w==",
@@ -40,7 +40,7 @@
     },
     {
       "tcid": "21fda850-087f-4151-a05a-0317d3b0883f",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-11-30T08:03:21Z",
       "type": "glasskey",
       "assignment": {
         "agency_key": "U+99lwVQdE+n+KWf2NHd0w==",
@@ -53,7 +53,7 @@
     },
     {
       "tcid": "95cb0136-b018-478c-aacd-8a4ba4aba352",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-11-30T08:03:23Z",
       "type": "glasskey",
       "assignment": {
         "agency_key": "YiyMdj5J6A/tRDJOyoLD+g==",
@@ -63,7 +63,7 @@
     },
     {
       "tcid": "8309c0b9-a0cb-4a43-b72e-68cc946c98f8",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-11-30T08:03:24Z",
       "type": "glasskey",
       "assignment": {
         "agency_key": "YiyMdj5J6A/tRDJOyoLD+g==",
@@ -76,7 +76,7 @@
     },
     {
       "tcid": "0aaa9e86-9278-45e0-bdbc-91ecb33e7c33",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-11-30T08:03:26Z",
       "type": "glasskey",
       "assignment": {
         "agency_key": "Q2Fv9Lp9olPx3iTdqg44Lw==",
@@ -86,7 +86,7 @@
     },
     {
       "tcid": "d77ca680-734a-4c7b-88c8-b210784cd840",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-11-30T08:03:28Z",
       "type": "glasskey",
       "assignment": {
         "agency_key": "Q2Fv9Lp9olPx3iTdqg44Lw==",
@@ -99,7 +99,7 @@
     },
     {
       "tcid": "569821b9-1a5c-4422-a70b-65288accb2d5",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-11-30T08:03:30Z",
       "type": "glasskey",
       "assignment": {
         "agency_key": "kyBgIcSQK6W1JjPfYzpchA==",
@@ -109,7 +109,7 @@
     },
     {
       "tcid": "78549333-22c9-408c-b341-1049a260eff7",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-11-30T08:03:32Z",
       "type": "glasskey",
       "assignment": {
         "agency_key": "kyBgIcSQK6W1JjPfYzpchA==",
