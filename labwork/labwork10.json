@@ -1,0 +1,138 @@
+{
+  "name": "labwork10",
+  "description": "This is the tenth and last assignment. You will recover the internal state from a Dual_EC_DBRG.",
+  "start_utc": "2022-12-05T00:00:00Z",
+  "end_utc": "2022-12-20T00:00:00Z",
+  "max_points": 14,
+  "testcases": [
+    {
+      "tcid": "bfb4f81f-3e60-40b6-a34e-5f8653d06927",
+      "passed_at_utc": null,
+      "type": "dual_ec_dbrg",
+      "assignment": {
+        "P": "BMJ+WPzG6A4LxlUP94TpxXUb8N4QU6Nld9IrrOkgI4beOl/HchPPl1XN5ztk0biWBY8VYSqwJBlO5vrTqLBv57s=",
+        "Q": "BGHzL7SqMvDJihpQLfVNQaYhrrT+WWcsehJABPS/J/l1I2iWklqYBcHizJF9HQJoucfwm7bIuVNxdbLed9SIlUQ=",
+        "backdoor_key": "X9CoJQzSOIjGJDnldvpqXLH6npE2XWATY1h/ji6WeUI=",
+        "dbrg_output": "qNlT5wpqenQBhpfcoshI2e33gvUZiWLSLHBnwyE9TY3a4YVTMdsv9NpxCJvDyifRMGoVUVSGlCJz+zp6TpQm6NPmOg1qo146el5kPi07KKHuzKStZ9am3adE0Kd+2tz25Kq8MmVcqpatzMUqhIeqTBeDWoSYF3civIthDBsxIDOMTOoZQG1QcDXQbMCAHMV6TJsBE7uNzelqBEeZJscYSfeqCTk/+BRzEq/BQHWdc6QeZngC8pO9T26SrZDDCU3UOyWTDVszzxghx8Kv/Ae2mdCWu4FLqo+Red+IfjAMTbL+M+kBHVwwzkTsAzlBDgolBeV5WeG4teU=",
+        "outbits": 248
+      },
+      "expect_solution": {
+        "next": "0QqcVdMQbQvkjrhtDLC42Oq9H/LpmLznt4RlFPaN/g=="
+      }
+    },
+    {
+      "tcid": "d890e3a1-b091-4be8-8d5c-2926bfbabcd1",
+      "passed_at_utc": null,
+      "type": "dual_ec_dbrg",
+      "assignment": {
+        "P": "BOkiZR0NSszbK2T8a9wY8+gl/bAkz4E0SvTrTxlFroTw+4YCbWwMW28KFvFtRWC7ZEm87Yhw47lOn8Nr9kmKrcc=",
+        "Q": "BPLLSJ+WJXS/lbQzYXzE1lT9XgOvbVVLBoMKOlLkAtrm1q70JbyXVnm+0kBcErimXWiAd80T/NJVgSS+h9jb3Ho=",
+        "backdoor_key": "t0PgzlpcQu8fIh9SVaJdgFLutosu71C9IJ7jl6C36nc=",
+        "dbrg_output": "YzudDmA9vBOG1ktEQ1cIwAJylTjXupP5V0wAs8i+ch7Q+Af5/N9SVZDoIehbFxAftJ0hrW7FTH+bnfRDazLdmbXE2YR0NRh7J7ucTDe5SCSr6H/fwS6XOrTaJXlEcEi6vRKmpqDJt+dxH+fUVLiHyL4PA8Mej+6OU8IYrlPlKRABN4fgtZKdrko8PscJV0JYI4neTbbuCWBZIG4bebhYOqSpytoYH+b+eYdfYySO+uOVVm+QU2o+HI1OFqy0HRsrsoQ5eSqYIF9DtDWZDQf/vDmOwIq2K6einJpjSgKnBd56zxRdivTnahLTyKMszeUVF/hX1+6eQDg=",
+        "outbits": 248
+      },
+      "expect_solution": {
+        "next": "gseyWkBXM3OvPvA6RQiij32pCzXAqRaJkH3A431JCw=="
+      }
+    },
+    {
+      "tcid": "6999f5c8-9592-4bee-8048-b9b8095800b3",
+      "passed_at_utc": null,
+      "type": "dual_ec_dbrg",
+      "assignment": {
+        "P": "BPFntITKKl8KGdbyc4yg7rhMpHQ4ccVVZ1JmFAOCix33RDtu9vdF9GjzS/cDfK2BnknccX0drdbIVeeShGpJwJM=",
+        "Q": "BBJf5Gho1SQMm3SypVhRm/1zhu5cb6iV7m9l7NRCV+HXE4hdLLjarTQ0JdgV12/FMIpoE6QMNPLDpp+pI0zBMOw=",
+        "backdoor_key": "dwJ57W38T4jZsVsvi52Y+XhxM4QZCoOWxDMImmwljTM=",
+        "dbrg_output": "HbcniZ4tYLkpJyeKgGfqZSmOgjwlIKu4IYTZ95QFdcW61J4qzvyY+FUK+fg3K66jsSWu28hWzjpzTowV/3qZtP1k2nE2zhn/vYCq22b5vdyo0K5K25SSUq4VheazdUTEiXNzMYHCA2ak/cAWQ1OJoEiz+MUr7fEj5dgW3CiCDumzhOk1wVdmQfVLowROUC3AD8LS3plSBqwL7QEEeI+OyhpCYXXnyiuTUPIqovg7mc34RpWP3gAnMOTkYQEchcHEtJ4XHXx9W/sQdk9aKz7O+2U5ozDkJar9F0PGSorusGLj7W2ddGbID9GaRSkZBeR0Ho3BNZ6Zw8k=",
+        "outbits": 248
+      },
+      "expect_solution": {
+        "next": "d+r9UGpYuEL1E9lGgpkk/yeCC/iP7iYOsUdBUIok6Q=="
+      }
+    },
+    {
+      "tcid": "0caac7b6-2950-4d57-9c95-de01505847b9",
+      "passed_at_utc": null,
+      "type": "dual_ec_dbrg",
+      "assignment": {
+        "P": "BGznEYwRJwhFwTNUA3ZSa9+bN/QEfpXu9znesQIXnw0FPemmxtc1Qgth3dlZLFTZcyKZ+P3hNs/TxVk1onFza+I=",
+        "Q": "BDpBoo9WGjz72yp74AuYOtA5TmrrhBgGd2qqKdmGZo9rZ2UL8M5IWe2jxLiE8YKsjGKDanF1LUYUbxsm308Dw3Y=",
+        "backdoor_key": "/XvHgtwXztzo11xtB55HlC+1FieoIbWB8AttdIOSV6Q=",
+        "dbrg_output": "G2VMNmt1L3Qwu2lmUB6+wavyVSX8KQ5TszzqZogirUE2MBjK/Tv5pujGtgjlUXt1NzgjsXX/oFvXx9N4SgQtCelOpffIiwyxleS5P++lMxJVGEb2GJVlLBIjspQAO/v9uKoaJCeZwHMeD31ppsSmX+56/tYkwGZ8B8/cz9SqfzQGV56V0N5w0hXRWn71ih4Gt15FNbSvCcGk8XoWl77JJy/dAJkgzP5G8h81Kxw3Wz2k7vTqB58OvYaMMIo/qSzXE0rPq74qx45BOvWrwSGcPtMhw0TEfp3RMmawPhoMVny889HccWQam7XPvvt66iviLEM0RnDMJ3w=",
+        "outbits": 248
+      }
+    },
+    {
+      "tcid": "9ed5d943-9c2a-4744-b1dd-5b1f71546589",
+      "passed_at_utc": null,
+      "type": "dual_ec_dbrg",
+      "assignment": {
+        "P": "BBRZy9NdeN/DlxKJxNuCtgzoAAM4RznfWPjaz++EciWAysE1mhTsdcsXLFGcSWCp2veQBlB0drvKvOs7bLdNlqc=",
+        "Q": "BPFk/tWcEwTiv8Hi85CJHF3rlFvpozY6uXr+8qgBE8UZn3M+9exFww69YdUygdZ3wB0X1zOKjgPAa4n8+/Nj1Rs=",
+        "backdoor_key": "Hpkp8ZsqcT4eTFofLYDn6Y76MgEUSHX5zAsHzhOBjUE=",
+        "dbrg_output": "/khPyn/Rl84UYLjvVGBRWH42YDvf+MDVeVm0NnbyxgULpMa/W4hLpG7mF9FgxkbYbV09BEUSKRpUUN88ye4cZr8NsgvcGZLwt5kTjY4vZO92isa0WfQTeoFLxpNItS/ZeBi6D/2SJq0PXWONL6uAdggx8t65xX++6bSaUkIBd5Jdw5GobLQqPv21K3i1A0609Vb1YvCWTmBQvkJkoYFCLsbWn9/B9IK9Fu94lRAEuFjIAnZ/8Oa+k0AjHOrrH2uxZFcOCbAR0b6gmhNHc0irG52aes7mfKI+t5RlylPaIl3b3ol1vzZVqqJiGtlLyUwCr+afPPOBk98=",
+        "outbits": 248
+      }
+    },
+    {
+      "tcid": "e4c4eeef-60de-41d4-a759-fc046b40632e",
+      "passed_at_utc": null,
+      "type": "dual_ec_dbrg",
+      "assignment": {
+        "P": "BCZULI+VZMZaa6FUWZZblRARJbUN2lZqBJzcHA2gpa/JFpfkrONuvS7QduWN544DJkVSV8ZWPw8hf+vcKlTc2iA=",
+        "Q": "BPJnK8aMQUXES+aEh1eaM2MMhHvRRF1IIBEFvp1RWhT7bu22OLsvfl8ox2//rfjQsC33jzrCeg16BNgXVaUJpdE=",
+        "backdoor_key": "ZN1Ii1hN4JIKrKd7auJU4vM1AiFMkiKvsNLGhkQpVd0=",
+        "dbrg_output": "0Mq2WeTYBWMCZAL2lvLqANpNki3psFMw4JFTDNs7LW8fDWPFhxlKOMsWfhWZ5Ixm6KtjDvlH8X/DgV4Q2+rD5BOWXQwdZuAquA4r3RKwBqehTk9AkhB5/E+wUAr42vzzqS8bHyn6hxSR2Q8Kr2af5kB7c+UERDtl9AsyfCF90EqrGsRYvUW1qkFBmykvsNWn8eMgdF53qbV/6GAay2Ng64gSX1gJwuRTYtZBvlTbgazNsoGiSifG1pMejagLSvUM3Qz8hddri3wwTzrOYxlLu3czcAMzo6avAiqbtG/Jn1gsa7YPsR9rI/7xo90dBkOn6caXCf+BoTQ=",
+        "outbits": 248
+      }
+    },
+    {
+      "tcid": "544a589e-fe06-4d9d-81cb-e6cea1a1cc40",
+      "passed_at_utc": null,
+      "type": "dual_ec_dbrg",
+      "assignment": {
+        "P": "BJiK+OKU2G1UNObC89hdsEkrbQNbB+6pzq+IemA2ztGm+ZgduMJzAjGRBdTqDpIpE5AOKCcqhMR9jZUIuYb92Co=",
+        "Q": "BJZZ9L1y556LjqDJ+7q7O1aukvDYi/M70N5Qni7WcvILUFhP+bLcRmWqd2rE/7ahLb2ytYG73F4y+1RSOXj57zU=",
+        "backdoor_key": "bEYt4YpzC7tPl62zOx0LICbTKrcHBgIeoB44NkVxg+I=",
+        "dbrg_output": "i3LOzrpSHYX0bOoRg3l0pD32wi16UUX6LowzVTHaF5TFkon4VD03NjS9ulOLTWQEqIduXiH2aPSnoTzc9Gw0W3vsZ3YDsebm8Q3v1XJ+aM2y36xnPqS1r8S2RvBjr+43daIzLWNbyFUCx9KUHMEjYbuWehXXPdXkZ1A014PuE5dk3SMYlR0Onvq52809F+Pxi0wE0uCJYASml4l6hgkH63htGC4YmlXdJ6atGbQYYsA1gh5dzVTObpkjRw63RgJ3wCcTOK5cvtQ99+yY5SZ2jB37cpDSOCIIoFm1fkr3BvTv/hXyYs1QwyvXk8b86KpY1KSAiIY3fK4=",
+        "outbits": 248
+      }
+    },
+    {
+      "tcid": "795c4645-ede1-4efb-86d5-ea62e1497572",
+      "passed_at_utc": null,
+      "type": "dual_ec_dbrg",
+      "assignment": {
+        "P": "BIBcQV1Vw4pE5e1SL9rGMT/ciICvBBjZSs744UiVEoUIj4RxxMCEKRl/hTqX4dOBE9neq0X0/SvVwWqermAWroA=",
+        "Q": "BCg4ylkZ14rZkct01zrLEIKw8j5XcmBIcMO3dmZ7E8cqmuFtiMX7rKTVC8UY/XID/RtbGKW3bhEJHcX/l8XIrGE=",
+        "backdoor_key": "mvO4w1BAbg3oXZJUU5sZGD/J7R9CR7h0dgaJadZAULU=",
+        "dbrg_output": "aLWKcS4cv+0sgUNvkovTxSjb/rVRxx4ZnoqTswGqOng7L3bdC7QjdZcXqGCRUHSTYjRmqyRB4QvNf5/qaOumlbxa1+bTvs0skGBd4nnbrDzkLMQrGLoNrRXSXWOFskPULj+LtAcKKlt0jnLYKslXKjUGZ1qJjlYo79kPOU1E+sFdv682BLsWHewVCJ7Fqc7vHRxpWeqFXRTj6RVuMtMszXJmNvv9xn56TTyPWY/uWEiePsUSfHM32/e5m8lDtKwUhQWomtUEt4sQCHhHHjHCzgt4NP2j6Lk/NJIrVU4ffCNi4dRDz2kz/eGgekFMzfgqD4kWNyWv7aU=",
+        "outbits": 248
+      }
+    },
+    {
+      "tcid": "a92d439c-95d2-4c1b-952f-6ab3f30f2169",
+      "passed_at_utc": null,
+      "type": "dual_ec_dbrg",
+      "assignment": {
+        "P": "BIWF7HedVxbF9T09smGK6BLU+H9AY7GDNiY18fQTKpYDJchn2fUhJ7thnmCko8/fNeMj05OjgxmGhsA1/qHjCHY=",
+        "Q": "BBhaBZay5fF/K8iLAxoPZxqSra+AX5HwHSdcrJLrFVWy/wYlAu0Q8fBrPyS0qW8qMjBCJqPfwvNCOuzIwD+gUgA=",
+        "backdoor_key": "JCHUrhNCXzU5KoudvJ5zn1HpjKKXNco2r5K4WWV6l/o=",
+        "dbrg_output": "64x7B/DxrJtev8AbAkDvTKSDZe+eC2AgwsHYDaMxzCbMVpZgPyGDm+RDxj4VfzxhFirt3P2hSXXV0fRuButa4TCAqOg0+YT2NOXDi053ymgRJtZBTakfFridc2qXfNeQXCidLnJpm4ICLTVF5VBs8Rx6l5AZCg6VYuxawLSFD3QYV58+e1xSEAFqtAOrZurpmhOPSuR4moT0cyDxiYDUxoDK137R3KsGLrn3I+urklOPfynou3c7lptGF+86VBVxZ+AL+1/Yit4CK87kkRUryrMFC5uJFawWkCw3BKD0cVHgFNjGW9OUCJRQj/gHZdWAZ7vW5TSPd+s=",
+        "outbits": 248
+      }
+    },
+    {
+      "tcid": "71a2f42f-c3ce-403d-aae9-7c882c3e80dd",
+      "passed_at_utc": null,
+      "type": "dual_ec_dbrg",
+      "assignment": {
+        "P": "BEoRlJUEl0c+shj8x+kpPEHq9xyqtvXWoxd1L6/2ry4ypogDsszNX/SztECYZHqbPT1aMSbyDcwPWO6T+5/3ilY=",
+        "Q": "BJRFPfTXxU4x5Aruf4k69VJbTg4srTU1r1ufrOmPXoLp/PUQ5X6UceuDhD1xstRV8ovDHPdjQ2KO/t4u7sWiUew=",
+        "backdoor_key": "TjAkp3kEltBTKUP1js49wTQm6tkW1LN4sYyF4Llxx2Q=",
+        "dbrg_output": "gR0qFHJcLLArwaXXxhZoiUtGyeq5yGTXRZnrw1s+6K9v93lO4iQi+SYW29bVto+soLVnVjjcdGjtUYRIO3ryPVUnirbHYtP1CXvXzhpH9GYTOEFWP0oLZnAjvgLUNJMgA1jfeTm2LuwkOxnFe9m3s3ahRnwwO2ip5XhkaTOrgMcpT0EClfZImN6Xagl3gYOoc1Hufnzdf0R9Oy/dwnULBTV7UfS236T29/GdSsBA270D2j7MLZyvYAIEExbW8oMuijMI6UG4joytS060u9nN0FfhBALy9otMwuwU76jt7f7BTwQZ7ZeACrEsG5TgngymPbz48obDPBI=",
+        "outbits": 248
+      }
+    }
+  ]
+}

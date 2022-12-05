@@ -16,6 +16,7 @@ from multiprocessing import freeze_support, Manager
 
 # imports
 import config
+from handlers.dualECDrbgHandler import dual_ec_drbg_handler
 from handlers.glasskeyHandler import glasskey_handler
 from handlers.rsaCrtFaultInjectionHandler import rsa_crt_fault_injection_handler
 from util.ansiEscape import ansi_red, ansi_reset, ansi_blue, ansi_green, ansi_white
@@ -55,7 +56,8 @@ handlers = {
     "chi_square": chi_square_handler,
     "timing_sidechannel": timing_side_channel_handler,
     "rsa_crt_fault_injection": rsa_crt_fault_injection_handler,
-    "glasskey": glasskey_handler
+    "glasskey": glasskey_handler,
+    "dual_ec_dbrg": dual_ec_drbg_handler
 }
 
 
