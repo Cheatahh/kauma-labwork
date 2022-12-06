@@ -7,7 +7,7 @@
   "testcases": [
     {
       "tcid": "bfb4f81f-3e60-40b6-a34e-5f8653d06927",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-12-05T22:13:27Z",
       "type": "dual_ec_dbrg",
       "assignment": {
         "P": "BMJ+WPzG6A4LxlUP94TpxXUb8N4QU6Nld9IrrOkgI4beOl/HchPPl1XN5ztk0biWBY8VYSqwJBlO5vrTqLBv57s=",
@@ -22,7 +22,7 @@
     },
     {
       "tcid": "d890e3a1-b091-4be8-8d5c-2926bfbabcd1",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-12-05T22:13:32Z",
       "type": "dual_ec_dbrg",
       "assignment": {
         "P": "BOkiZR0NSszbK2T8a9wY8+gl/bAkz4E0SvTrTxlFroTw+4YCbWwMW28KFvFtRWC7ZEm87Yhw47lOn8Nr9kmKrcc=",
@@ -37,7 +37,7 @@
     },
     {
       "tcid": "6999f5c8-9592-4bee-8048-b9b8095800b3",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-12-05T22:15:08Z",
       "type": "dual_ec_dbrg",
       "assignment": {
         "P": "BPFntITKKl8KGdbyc4yg7rhMpHQ4ccVVZ1JmFAOCix33RDtu9vdF9GjzS/cDfK2BnknccX0drdbIVeeShGpJwJM=",
@@ -52,7 +52,7 @@
     },
     {
       "tcid": "0caac7b6-2950-4d57-9c95-de01505847b9",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-12-05T22:15:12Z",
       "type": "dual_ec_dbrg",
       "assignment": {
         "P": "BGznEYwRJwhFwTNUA3ZSa9+bN/QEfpXu9znesQIXnw0FPemmxtc1Qgth3dlZLFTZcyKZ+P3hNs/TxVk1onFza+I=",
@@ -64,7 +64,7 @@
     },
     {
       "tcid": "9ed5d943-9c2a-4744-b1dd-5b1f71546589",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-12-05T22:15:23Z",
       "type": "dual_ec_dbrg",
       "assignment": {
         "P": "BBRZy9NdeN/DlxKJxNuCtgzoAAM4RznfWPjaz++EciWAysE1mhTsdcsXLFGcSWCp2veQBlB0drvKvOs7bLdNlqc=",
@@ -76,7 +76,7 @@
     },
     {
       "tcid": "e4c4eeef-60de-41d4-a759-fc046b40632e",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-12-05T22:15:31Z",
       "type": "dual_ec_dbrg",
       "assignment": {
         "P": "BCZULI+VZMZaa6FUWZZblRARJbUN2lZqBJzcHA2gpa/JFpfkrONuvS7QduWN544DJkVSV8ZWPw8hf+vcKlTc2iA=",
@@ -88,7 +88,7 @@
     },
     {
       "tcid": "544a589e-fe06-4d9d-81cb-e6cea1a1cc40",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-12-05T22:15:43Z",
       "type": "dual_ec_dbrg",
       "assignment": {
         "P": "BJiK+OKU2G1UNObC89hdsEkrbQNbB+6pzq+IemA2ztGm+ZgduMJzAjGRBdTqDpIpE5AOKCcqhMR9jZUIuYb92Co=",
@@ -100,7 +100,7 @@
     },
     {
       "tcid": "795c4645-ede1-4efb-86d5-ea62e1497572",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-12-05T22:15:52Z",
       "type": "dual_ec_dbrg",
       "assignment": {
         "P": "BIBcQV1Vw4pE5e1SL9rGMT/ciICvBBjZSs744UiVEoUIj4RxxMCEKRl/hTqX4dOBE9neq0X0/SvVwWqermAWroA=",
@@ -112,7 +112,7 @@
     },
     {
       "tcid": "a92d439c-95d2-4c1b-952f-6ab3f30f2169",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-12-05T22:16:01Z",
       "type": "dual_ec_dbrg",
       "assignment": {
         "P": "BIWF7HedVxbF9T09smGK6BLU+H9AY7GDNiY18fQTKpYDJchn2fUhJ7thnmCko8/fNeMj05OjgxmGhsA1/qHjCHY=",
@@ -124,7 +124,7 @@
     },
     {
       "tcid": "71a2f42f-c3ce-403d-aae9-7c882c3e80dd",
-      "passed_at_utc": null,
+      "passed_at_utc": "2022-12-05T22:16:10Z",
       "type": "dual_ec_dbrg",
       "assignment": {
         "P": "BEoRlJUEl0c+shj8x+kpPEHq9xyqtvXWoxd1L6/2ry4ypogDsszNX/SztECYZHqbPT1aMSbyDcwPWO6T+5/3ilY=",

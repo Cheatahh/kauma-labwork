@@ -16,9 +16,6 @@ from multiprocessing import freeze_support, Manager
 
 # imports
 import config
-from handlers.dualECDrbgHandler import dual_ec_drbg_handler
-from handlers.glasskeyHandler import glasskey_handler
-from handlers.rsaCrtFaultInjectionHandler import rsa_crt_fault_injection_handler
 from util.ansiEscape import ansi_red, ansi_reset, ansi_blue, ansi_green, ansi_white
 from util.api import LabworkAPI
 from util.log import Log
@@ -39,6 +36,9 @@ from handlers.passwordKeyspaceHandler import password_keyspace_handler
 from handlers.pkcs7paddingHandler import pkcs7_padding_handler
 from handlers.strcatHandler import strcat_handler
 from handlers.timingSideChannel import timing_side_channel_handler
+from handlers.dualECDrbgHandler import dual_ec_drbg_handler
+from handlers.glasskeyHandler import glasskey_handler
+from handlers.rsaCrtFaultInjectionHandler import rsa_crt_fault_injection_handler
 
 # handler lookup
 handlers = {
@@ -57,6 +57,7 @@ handlers = {
     "timing_sidechannel": timing_side_channel_handler,
     "rsa_crt_fault_injection": rsa_crt_fault_injection_handler,
     "glasskey": glasskey_handler,
+    # typo in external assignment name :o
     "dual_ec_dbrg": dual_ec_drbg_handler
 }
 
@@ -146,7 +147,7 @@ if __name__ == "__main__":
                     results.append((case_type, progressbar.passed.value, progressbar.max_value, req_time))
 
             except KeyboardInterrupt:
-                print("Interrupted by user :(")
+                print("\n\nInterrupted by user :(")
                 # noinspection PyUnresolvedReferences, PyProtectedMember
                 # bad practice, but we need to terminate the child processes somehow
                 os._exit(1)

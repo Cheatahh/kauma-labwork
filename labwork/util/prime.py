@@ -7,6 +7,7 @@
     Functions:
 
     miller_rabin_test
+    mod_inverse
 """
 
 import random
@@ -34,3 +35,21 @@ def miller_rabin_test(n, k=400):
         else:
             return False
     return True
+
+def mod_inverse(k, n):
+    assert k != 0
+    if k < 0:
+        return n - mod_inverse(-k, n)
+    # extended euclidean
+    s, old_s = 0, 1
+    t, old_t = 1, 0
+    r, old_r = n, k
+    while r != 0:
+        quotient = old_r // r
+        old_r, r = r, old_r - quotient * r
+        old_s, s = s, old_s - quotient * s
+        old_t, t = t, old_t - quotient * t
+    gcd, x, y = old_r, old_s, old_t
+    assert gcd == 1
+    assert (k * x) % n == 1
+    return x % n

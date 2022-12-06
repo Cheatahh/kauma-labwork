@@ -19,6 +19,7 @@
     reverse_bits
     bytes2gcm
     gcm2bytes
+    truncate
 """
 
 import base64
@@ -99,3 +100,7 @@ def gcm2bytes(value):
     value = int2bytes(value)
     # reverse each byte
     return bytes(reverse_bits(byte, 8) for byte in value)
+
+# truncate x down to n bits (most significant bits are discarded)
+def truncate(x, bits):
+    return x & ((1 << bits) - 1)

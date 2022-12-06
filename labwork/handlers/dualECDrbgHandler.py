@@ -1,159 +1,83 @@
 import base64
 
-from util.functions import split_blocks, b64encode, Int2bytes
+from util.ec import EllipticCurve
+from util.functions import split_blocks, b64encode, Int2bytes, bytes2Int, b64decode, truncate
+from util.prime import mod_inverse
 
 
-def truncate(x, bits):
-    return x & ((1 << bits) - 1)
+def dual_ec_drbg_next(curve, P, Q, d, output_size, drbg_output, log):
 
-class EllipticCurve:
+    # Q = dP, missing value could be calculated
 
-    def __init__(self, a, b, p, n):
-        self.a = a
-        self.b = b
-        self.p = p
-        self.n = n
+    dm1 = mod_inverse(d, curve.n)
+    drbg_output_window = drbg_output[1:]
 
-    def __repr__(self):
-        return "y^2 = x^3 + %dx + %d" % (self.a, self.b)
+    for high_bits in range((1 << (33 * 8 - output_size)) - 1):
 
-    def contains(self, x, y):
-        return y**2 == x**3 + self.a*x + self.b
+        if high_bits % 20 == 0:
+            log.log(f"Trying prefix range >= {20 * (high_bits // 20)}", 2)
+        high_bits <<= output_size
 
-    def __contains__(self, point):
-        return self.contains(*point)
+        # guesses
+        r0_x = high_bits | drbg_output[0]
+        r0 = (r0_x, curve.lift_x(r0_x))
 
-    def scalar_mult(self, k, P):
-        """Scalar multiplication of a point P by a scalar k"""
-        assert k >= 0
-        if k == 0 or P == (None, None):
-            return None, None
-        Q = P
-        R = (None, None)
-        while k:
-            if k & 1:
-                R = self.add_points(R, Q)
-            Q = self.add_points(Q, Q)
-            k >>= 1
-        return R
+        # reverse the scalar multiplication
+        # t * Q = r0                        Q = dP
+        # t * d * P = r0                    * d^-1
+        # t * d * d^-1 * P = r0 * d^-1
+        # t * P = r0 * d^-1
+        t1_x = curve.scalar_multiply(dm1, r0)[0]
 
-    def add_points(self, P, Q):
-        """Add two points P and Q on the elliptic curve defined by a, b"""
-        if P == (None, None):
-            return Q
-        if Q == (None, None):
-            return P
-        x1, y1 = P
-        x2, y2 = Q
-        if x1 == x2 and y1 != y2:
-            return None, None
-        if x1 == x2:
-            m = (3 * x1 * x1 + self.a) * self.inverse_mod(2 * y1, self.p)
-        else:
-            m = (y1 - y2) * self.inverse_mod(x1 - x2, self.p)
-        x3 = m * m - x1 - x2
-        y3 = y1 + m * (x3 - x1)
-        return x3 % self.p, -y3 % self.p
+        def validate_drbg_output_chain(tn_x):
 
-    def inverse_mod(self, k, p):
-        """Returns the inverse of k modulo p.
-        This function returns the only integer x such that (x * k) % p == 1.
-        k must be non-zero and p must be a prime.
-        """
-        if k == 0:
-            raise ZeroDivisionError('division by zero')
-        if k < 0:
-            # k ** -1 = p - (-k) ** -1  (mod p)
-            return p - self.inverse_mod(-k, p)
-        # Extended Euclidean algorithm.
-        s, old_s = 0, 1
-        t, old_t = 1, 0
-        r, old_r = p, k
-        while r != 0:
-            quotient = old_r // r
-            old_r, r = r, old_r - quotient * r
-            old_s, s = s, old_s - quotient * s
-            old_t, t = t, old_t - quotient * t
-        gcd, x, y = old_r, old_s, old_t
-        assert gcd == 1
-        assert (k * x) % p == 1
-        return x % p
+            # already starting with next t
+            for drbg_output_value in drbg_output_window:
 
-    def order(self):
-        """Returns the order of the curve"""
-        return self.p + 1 - self.a - self.b
+                rn_x = curve.scalar_multiply(tn_x, Q)[0]
+                rn_x = truncate(rn_x, output_size)
+                if rn_x != drbg_output_value:
+                    return None
 
-    def lift_x(self, x):
-        """Returns the y coordinate of the point with x coordinate x"""
-        return pow(x**3 + self.a * x + self.b, (self.p + 1) // 4, self.p)
+                # feed forward
+                tn_x = curve.scalar_multiply(tn_x, P)[0]
 
-    def get_next(self, P, Q, d, bits, drbg_output, log):
-        dm1 = self.inverse_mod(d, n)
-        for high_bits in range(2 ** 16):
-            log.log(high_bits, 0)
-            high_bits <<= 248
-            r0Guess = high_bits | drbg_output[0]
-            guess = (r0Guess, self.lift_x(r0Guess))
-            t = self.scalar_mult(dm1, guess)[0]
-            r = truncate(self.scalar_mult(t, Q)[0], bits)
+            rn_x = curve.scalar_multiply(tn_x, Q)[0]
+            rn_x = truncate(rn_x, output_size)
 
-            def check(r, t):
-                if r == drbg_output[1]:
-                    log.log("Found!", 0)
-                    for drbg_output_value in drbg_output[2:]:
-                        t = self.scalar_mult(t, P)[0]
-                        r = truncate(self.scalar_mult(t, Q)[0], bits)
-                        if r != drbg_output_value:
-                            return None
-                    t = self.scalar_mult(t, P)[0]
-                    r = truncate(self.scalar_mult(t, Q)[0], bits)
-                    return r
+            return rn_x
 
-            r = check(r, t)
-            if r is not None:
-                return r
-
-a = 0x3
-b = 0xc2660dc9f6f5e79fd5ccc80bdacf5361870469b61646b05efe3c96c38ff96bad
-p = 0xffffffff00000001000000000000000000000000ffffffffffffffffffffffff
-n = 0xffffffff00000000fffffffffffffffe8f4e0793de3b9c2e0f61060a88b13657
-
-c = EllipticCurve(a, b, p, n)
+        next_r = validate_drbg_output_chain(t1_x)
+        if next_r is not None:
+            return next_r
 
 def dual_ec_drbg_handler(assignment, _api, log, _case_id):
 
+    # curve parameters
+    a = 0x3
+    b = 0xc2660dc9f6f5e79fd5ccc80bdacf5361870469b61646b05efe3c96c38ff96bad
+    p = 0xffffffff00000001000000000000000000000000ffffffffffffffffffffffff
+    n = 0xffffffff00000000fffffffffffffffe8f4e0793de3b9c2e0f61060a88b13657
+    curve = EllipticCurve(a, b, p, n)
+
+    # extract values
     P = base64.b64decode(assignment["P"])
-    P_x = int.from_bytes(P[1:33], "big")
-    P_y = int.from_bytes(P[33:], "big")
-    P = (P_x, P_y)
+    P = (bytes2Int(P[1:33]), bytes2Int(P[33:]))
 
     Q = base64.b64decode(assignment["Q"])
-    Q_x = int.from_bytes(Q[1:33], "big")
-    Q_y = int.from_bytes(Q[33:], "big")
-    Q = (Q_x, Q_y)
+    Q = (bytes2Int(Q[1:33]), bytes2Int(Q[33:]))
 
-    d = int.from_bytes(base64.b64decode(assignment["backdoor_key"]), "big")
+    d = bytes2Int(b64decode(assignment["backdoor_key"]))
 
-    dP = c.scalar_mult(d, P)
+    # sanity check
+    dP = curve.scalar_multiply(d, P)
     assert dP == Q
 
-    #print("P =", P)
-    #print("d =", d)
-    #print("dP =", dP)
-    #print("Q =", Q)
+    output_size = assignment["outbits"]
+    drbg_output = [bytes2Int(it) for it in split_blocks(b64decode(assignment["dbrg_output"]), output_size // 8)]
 
-    drbg_output = [int.from_bytes(it, "big") for it in split_blocks(base64.b64decode(assignment["dbrg_output"]), 31)]
-
-    res = c.get_next(P, Q, d, assignment["outbits"], drbg_output, log)
+    next_r = dual_ec_drbg_next(curve, P, Q, d, output_size, drbg_output, log)
 
     return {
-        "next": b64encode(Int2bytes(res))
+        "next": b64encode(Int2bytes(next_r))
     }
-
-
-# Q = d * P
-# dm1 * Q = dm1 * d * P
-# dm1 * Q = P
-
-# P_ex = c.scalar_mult(dm1, Q)
-# print("P_ex =", P_ex)
